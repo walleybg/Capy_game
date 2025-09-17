@@ -1,364 +1,280 @@
-// Arquivo-depósito de todas as perguntas do jogo para a Arena "Arena dos Números". Versão: 4.2 (Conteúdo Completo e V/F Corrigido)
-
 const dadosDoQuiz = [
     // --- GRUPO 1: MÚLTIPLA ESCOLHA ---
     {
         tipo: "multipla_escolha",
         titulo: "Barraca de Adivinhas",
-        contexto: "Na escola de Helena, iniciaram os preparativos para mais uma festa junina. O cartaz na barraca de adivinhas tinha o desafio: 'Descubra o número usando as pistas!'. As pistas eram: 'Tem três dezenas a mais que o número 135', 'Tem oito unidades a menos que o número 98', e 'Tem cinco centenas a mais que o número 143'.",
-        pergunta: "Analisando as pistas, qual opção contém a resposta correta para cada pista, na ordem?",
+        contexto: "Na escola de Helena, iniciaram os preparativos para mais uma festa junina. Uma das brincadeiras favoritas da criançada é a barraca de adivinhas. O cartaz exposto nessa barraca, estava escrito o desafio a seguir: \"Descubra o número usando as pistas!\". As pistas eram: \"Tem três dezenas a mais que o número 135\", \"Tem oito unidades a menos que o número 98\", e \"Tem cinco centenas a mais que o número 143\".",
+        pergunta: "Analisando as pistas do cartaz da barraca de adivinhas, qual das seguintes opções contém a resposta correta para cada pista, na ordem em que aparecem?",
         opcoes: ["165, 90, 643", "138, 90, 148", "165, 106, 643", "138, 106, 148"],
         respostaCorreta: "165, 90, 643",
         justificativa: "Pista 1: 135 + 30 = 165. Pista 2: 98 - 8 = 90. Pista 3: 143 + 500 = 643."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "O Segredo da Sequência",
-        contexto: "Em um jogo de matemática, você precisa descobrir a regra de uma sequência numérica para prever o próximo número. A sequência é: 3, 7, 11, 15, ...",
-        pergunta: "Qual é o próximo número na sequência?",
-        opcoes: ["17", "18", "19", "20"],
-        respostaCorreta: "19",
-        justificativa: "A regra da sequência é adicionar 4 ao número anterior. 15 + 4 = 19."
+        titulo: "Venda de Convites",
+        contexto: "Todas as crianças estão se esforçando para vender convites para a festa. Na sala de Helena, as meninas venderam 367 convites, e os meninos venderam 243.",
+        pergunta: "Marque a opção que não reflete corretamente uma informação sobre a venda de convites na sala de Helena.",
+        opcoes: ["As meninas venderam 124 convites a mais que os meninos.", "Juntos, meninos e meninas venderam um total de 610 convites.", "Para as meninas terem vendido o dobro dos meninos, elas precisariam ter vendido 486 convites.", "Se cada menino tivesse vendido 10 convites a mais, o total de convites vendidos pelos meninos seria 253."],
+        respostaCorreta: "Se cada menino tivesse vendido 10 convites a mais, o total de convites vendidos pelos meninos seria 253.",
+        justificativa: "Se cada um dos meninos tivesse vendido 10 convites a mais, o total seria 243 + (número de meninos * 10), e não 253. As outras opções estão corretas."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Desconto na Loja",
-        contexto: "Maria comprou um brinquedo que custava R$ 80,00 e ganhou um desconto de 15% por pagar à vista.",
-        pergunta: "Quanto Maria pagou pelo brinquedo?",
-        opcoes: ["R$ 68,00", "R$ 72,00", "R$ 75,00", "R$ 80,00"],
-        respostaCorreta: "R$ 68,00",
-        justificativa: "15% de R$ 80,00 é (15/100) * 80 = R$ 12,00. O valor pago foi R$ 80,00 - R$ 12,00 = R$ 68,00."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Perímetro do Jardim",
-        contexto: "Um jardineiro precisa cercar um jardim retangular que mede 12 metros de comprimento por 8 metros de largura.",
-        pergunta: "Quantos metros de cerca ele precisará comprar?",
-        opcoes: ["20 metros", "40 metros", "48 metros", "96 metros"],
-        respostaCorreta: "40 metros",
-        justificativa: "O perímetro de um retângulo é 2 * (comprimento + largura). Então, 2 * (12 + 8) = 2 * 20 = 40 metros."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Fração da Pizza",
-        contexto: "Uma pizza foi dividida em 8 pedaços iguais. João comeu 3 pedaços.",
-        pergunta: "Que fração da pizza João comeu?",
-        opcoes: ["1/8", "3/8", "5/8", "8/3"],
-        respostaCorreta: "3/8",
-        justificativa: "A fração é o número de pedaços comidos dividido pelo total de pedaços. 3 pedaços de um total de 8 é 3/8."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Horas e Minutos",
-        contexto: "Um filme começou às 14h30 e durou 1 hora e 45 minutos.",
-        pergunta: "A que horas o filme terminou?",
-        opcoes: ["15h45", "16h00", "16h15", "16h30"],
-        respostaCorreta: "16h15",
-        justificativa: "14h30 + 1h45min = 15h75min. Como 75 minutos são 1 hora e 15 minutos, somamos 1 hora a 15h, resultando em 16h15."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Medidas de Volume",
-        contexto: "Uma garrafa de refrigerante tem capacidade para 2 litros. Quantos mililitros isso representa?",
-        pergunta: "Qual é o volume em mililitros?",
-        opcoes: ["20 ml", "200 ml", "1000 ml", "2000 ml"],
-        respostaCorreta: "2000 ml",
-        justificativa: "1 litro equivale a 1000 mililitros. Portanto, 2 litros equivalem a 2 * 1000 = 2000 mililitros."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Cálculo de Média",
-        contexto: "Em uma prova, os alunos tiraram as seguintes notas: 7, 8, 6, 9.",
-        pergunta: "Qual a média das notas?",
-        opcoes: ["6", "7", "7.5", "8"],
-        respostaCorreta: "7.5",
-        justificativa: "A média é a soma das notas dividida pelo número de notas: (7 + 8 + 6 + 9) / 4 = 30 / 4 = 7.5."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Formas Geométricas",
-        contexto: "Um objeto tem 6 faces quadradas, 12 arestas e 8 vértices.",
-        pergunta: "Qual forma geométrica é essa?",
-        opcoes: ["Pirâmide", "Cilindro", "Cubo", "Esfera"],
-        respostaCorreta: "Cubo",
-        justificativa: "O cubo é um poliedro com 6 faces quadradas, 12 arestas e 8 vértices."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Moedas e Cédulas",
-        contexto: "Você tem 3 moedas de R$ 0,50, 2 moedas de R$ 0,25 e 1 cédula de R$ 5,00.",
-        pergunta: "Qual o valor total que você possui?",
-        opcoes: ["R$ 6,00", "R$ 6,50", "R$ 6,75", "R$ 7,00"],
-        respostaCorreta: "R$ 6,00",
-        justificativa: "3 * R$ 0,50 = R$ 1,50. 2 * R$ 0,25 = R$ 0,50. R$ 1,50 + R$ 0,50 + R$ 5,00 = R$ 7,00."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Sequência em P.A.",
-        contexto: "Uma progressão aritmética (P.A.) começa com o número 5 e sua razão é 3. Qual o quarto termo dessa P.A.?",
-        pergunta: "Qual é o quarto termo da P.A. (5, _, _, _)?",
-        opcoes: ["8", "11", "14", "17"],
-        respostaCorreta: "14",
-        justificativa: "Os termos são: 5 (1º), 5+3=8 (2º), 8+3=11 (3º), 11+3=14 (4º)."
+        titulo: "Vendas Individuais",
+        contexto: "As informações sobre vendas de convites são: Rafa vendeu 8 convites, e Alice vendeu o dobro do que Rafa vendeu. Walley vendeu 2 convites por dia em 10 dias, Lara vendeu 4 convites por dia em 12 dias.",
+        pergunta: "Todas as afirmativas sobre as vendas de convites são corretas, exceto:",
+        opcoes: ["Alice vendeu 16 convites.", "Walley vendeu um total de 20 convites em 10 dias.", "Lara vendeu um total de 48 convites em 12 dias.", "O total de convites vendidos por Rafa e Alice juntos é 25 convites."],
+        respostaCorreta: "O total de convites vendidos por Rafa e Alice juntos é 25 convites.",
+        justificativa: "Rafa vendeu 8 e Alice vendeu 16 (o dobro). Juntos, eles venderam 8 + 16 = 24 convites, e não 25."
     },
     {
         tipo: "multipla_escolha",
         titulo: "Dobro e Metade",
-        contexto: "O dobro de um número somado com a metade de outro número é igual a 20. Se o primeiro número é 6, qual é o segundo número?",
-        pergunta: "Qual é o segundo número?",
-        opcoes: ["8", "10", "12", "16"],
-        respostaCorreta: "16",
-        justificativa: "O dobro de 6 é 12. Então, 12 + (metade do segundo número) = 20. Metade do segundo número = 8. O segundo número é 16."
+        contexto: "Para determinar o dobro de um número, é preciso multiplicá-lo por 2. Para calcular a metade de um número, é preciso dividir esse número por 2. Por exemplo, o dobro de 3 é 6, logo 2 × 3 = 6. A metade de 6 é 3, logo 6 ÷ 2 = 3.",
+        pergunta: "Considerando os conceitos de \"dobro\" e \"metade\" explicados, qual das opções a seguir apresenta uma afirmação incorreta?",
+        opcoes: ["O dobro de 4 é 8, e a metade de 8 é 4.", "A metade de 10 é 5, e o dobro de 5 é 10.", "O dobro de 16 é 32, e a metade de 32 é 16.", "Se um número é o dobro de 7, então a sua metade é 14."],
+        respostaCorreta: "Se um número é o dobro de 7, então a sua metade é 14.",
+        justificativa: "Se um número é o dobro de 7, ele é 14. A metade de 14 é 7, e não 14."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Cálculo de Área",
-        contexto: "Um terreno quadrado tem lado medindo 10 metros.",
-        pergunta: "Qual a área total do terreno em metros quadrados?",
-        opcoes: ["20 m²", "40 m²", "100 m²", "200 m²"],
-        respostaCorreta: "100 m²",
-        justificativa: "A área de um quadrado é lado * lado. Então, 10 * 10 = 100 m²."
+        titulo: "Divisão de Pipoca",
+        contexto: "Helena estava responsável pela barraca de pipoca da festa junina. Ela dividiu igualmente 18 saquinhos de pipoca para ela e suas duas irmãs venderem, e não sobrou nenhum saquinho.",
+        pergunta: "Sobre a situação de Helena e as pipocas, todas as afirmativas são corretas, exceto:",
+        opcoes: ["Helena e suas duas irmãs totalizam 3 pessoas.", "Cada uma delas recebeu 6 saquinhos de pipoca.", "Se Helena tivesse mais uma irmã, cada uma receberia 4 saquinhos e sobrariam 2.", "A operação matemática realizada para dividir as pipocas é a multiplicação."],
+        respostaCorreta: "A operação matemática realizada para dividir as pipocas é a multiplicação.",
+        justificativa: "A operação para dividir igualmente é a divisão, não a multiplicação."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Operações com Inteiros",
-        contexto: "Calcule o resultado da expressão: (-5) + (+8) - (-2).",
-        pergunta: "Qual o resultado final?",
-        opcoes: ["-1", "5", "-15", "15"],
-        respostaCorreta: "5",
-        justificativa: "(-5) + (+8) - (-2) = -5 + 8 + 2 = 3 + 2 = 5."
+        titulo: "Alunos na Dança",
+        contexto: "No ensaio da festa junina, os professores de Educação Física organizaram as turmas do 3º ano para a apresentação da dança. Na quadra, eles formaram, com os alunos de cada turma, 7 filas com 5 alunos em cada uma. Sabe-se que há 6 turmas de 3º ano na escola.",
+        pergunta: "Quantos alunos de todas as turmas de 3º ano participarão da dança?",
+        opcoes: ["35 alunos", "42 alunos", "210 alunos", "420 alunos"],
+        respostaCorreta: "210 alunos",
+        justificativa: "Cada turma tem 7 filas * 5 alunos/fila = 35 alunos. Como são 6 turmas, o total é 35 * 6 = 210 alunos."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Porcentagem e Total",
-        contexto: "Em uma pesquisa, 25% dos alunos preferem futebol. Se 50 alunos preferem futebol, quantos alunos foram entrevistados no total?",
-        pergunta: "Quantos alunos foram entrevistados?",
-        opcoes: ["100", "150", "200", "250"],
-        respostaCorreta: "200",
-        justificativa: "Se 25% = 50 alunos, então 100% (o total) = (100/25) * 50 = 4 * 50 = 200 alunos."
+        titulo: "Estratégias de Cálculo",
+        contexto: "Para resolver situações-problema de adição, subtração, multiplicação ou divisão, é possível usar diferentes estratégias. Uma estratégia para multiplicação de 4 × 12 pode ser 2 × 12 = 24 e 2 × 24 = 48. Outra estratégia para 4 × 12 é (10 + 2) × 4, resultando em 40 + 8 = 48.",
+        pergunta: "Qual das opções abaixo apresenta uma estratégia de cálculo para 64 × 2 que segue uma lógica semelhante à apresentada no texto?",
+        opcoes: ["60 + 4 × 2", "2 × 32 = 64", "(60 × 2) + (4 × 2)", "64 + 64 + 64"],
+        respostaCorreta: "(60 × 2) + (4 × 2)",
+        justificativa: "A estratégia de decompor o número (64 em 60 + 4) e aplicar a distributiva é semelhante à do exemplo (10 + 2) x 4."
+    },
+    {
+        tipo: "multipla_escolha",
+        titulo: "Divisão de Livros",
+        contexto: "Para calcular a divisão, é possível pensar quantas vezes um número cabe em outro número e observar se há sobra ou não. Por exemplo, o número 4 cabe 2 vezes no 8 e não sobra resto; mas o número 3 cabe 3 vezes no 10 e sobra 1.",
+        pergunta: "Se Malu tivesse 11 livros para repartir igualmente entre seus 3 sobrinhos, quantos livros sobrariam?",
+        opcoes: ["Sobrariam 0 livros.", "Sobrariam 1 livro.", "Sobrariam 2 livros.", "Sobrariam 3 livros."],
+        respostaCorreta: "Sobrariam 2 livros.",
+        justificativa: "11 dividido por 3 é 3, com resto 2. Cada sobrinho receberia 3 livros e sobrariam 2."
+    },
+    {
+        tipo: "multipla_escolha",
+        titulo: "Numeração de Convites",
+        contexto: "Rafa está confeccionando os convites para a festa junina. Ao todo, eles vão produzir 500 convites. Os colegas perceberam que ficaria mais fácil controlar a venda se os convites fossem numerados. Rafa foi escolhido para numerar uma parte deles. Ele começou a numerar a partir do 401.",
+        pergunta: "Se a sequência numérica dos convites de Rafa está organizada em linhas de 10 convites, começando em 401, qual será o último número de convite na terceira linha (que começa em 421)?",
+        opcoes: ["429", "430", "431", "440"],
+        respostaCorreta: "430",
+        justificativa: "A primeira linha vai de 401 a 410. A segunda de 411 a 420. A terceira de 421 a 430."
+    },
+    {
+        tipo: "multipla_escolha",
+        titulo: "Arredondamento de Bandeirinhas",
+        contexto: "Arredondar os números é preciso fazer arredondamentos para estimar resultados. Por exemplo, em vez de dizer que foram vendidos 662 ingressos para a festa, podemos dizer que foram vendidos, aproximadamente, 660 ingressos. O número 662 está mais próximo de 660 do que de 670. Nesse caso, o arredondamento foi para a dezena mais próxima.",
+        pergunta: "A turma da professora Giulia fez 489 bandeirinhas azuis, 625 verdes, 792 vermelhas e 531 amarelas. Arredondando o total de bandeirinhas verdes e vermelhas para a centena mais próxima, qual seria a soma aproximada?",
+        opcoes: ["600 + 700 = 1300", "600 + 800 = 1400", "700 + 800 = 1500", "700 + 700 = 1400"],
+        respostaCorreta: "600 + 800 = 1400",
+        justificativa: "625 arredondado para a centena mais próxima é 600. 792 arredondado para a centena mais próxima é 800. A soma aproximada é 600 + 800 = 1400."
     },
 
-    // --- GRUPO 2: VERDADEIRO OU FALSO (Múltiplas Afirmações) ---
+    // --- GRUPO 2: VERDADEIRO OU FALSO ---
     {
         tipo: "verdadeiro_falso",
-        titulo: "Propriedades Numéricas",
-        contexto: "Avalie as seguintes afirmações sobre propriedades dos números e operações matemáticas, indicando (V) para Verdadeiro ou (F) para Falso.",
-        pergunta: "Classifique as afirmações abaixo:",
-        afirmacoes: [
-            "A ordem dos fatores não altera o produto.",
-            "A divisão por zero é indefinida.",
-            "Números primos são divisíveis apenas por 1 e por ele mesmo.",
-            "Todo número natural é também um número inteiro."
-        ],
-        opcoes: [
-            "V, V, F, V",
-            "F, V, V, V",
-            "V, F, F, V",
-            "V, V, V, V" // Esta é a resposta correta
-        ],
-        respostaCorreta: "V, V, V, V",
-        justificativa: "1. Verdadeiro (Propriedade Comutativa da Multiplicação). 2. Verdadeiro. 3. Verdadeiro. 4. Verdadeiro."
-    },
-    {
-        tipo: "verdadeiro_falso",
-        titulo: "Geometria Plana",
-        contexto: "Considere as características de algumas figuras geométricas planas e avalie as afirmações.",
-        pergunta: "Indique (V) para Verdadeiro ou (F) para Falso:",
-        afirmacoes: [
-            "Um triângulo equilátero possui todos os lados com medidas diferentes.",
-            "Um quadrado é um tipo especial de retângulo.",
-            "A soma dos ângulos internos de um triângulo é sempre 180 graus.",
-            "Um círculo possui infinitos eixos de simetria."
-        ],
-        opcoes: [
-            "F, V, V, V", // Esta é a resposta correta
-            "V, F, V, F",
-            "F, V, F, V",
-            "V, V, V, F"
-        ],
-        respostaCorreta: "F, V, V, V",
-        justificativa: "1. Falso (lados iguais). 2. Verdadeiro. 3. Verdadeiro. 4. Verdadeiro."
-    },
-    {
-        tipo: "verdadeiro_falso",
-        titulo: "Medidas e Unidades",
-        contexto: "Analise as relações entre diferentes unidades de medida e classifique as afirmações.",
-        pergunta: "Assinale (V) ou (F):",
-        afirmacoes: [
-            "1 quilômetro (km) equivale a 1000 metros (m).",
-            "1 litro (L) é equivalente a 100 mililitros (ml).",
-            "1 hora possui 3600 segundos.",
-            "1 quilo (kg) tem 100 gramas (g)."
-        ],
-        opcoes: [
-            "V, F, V, F", // Esta é a resposta correta
-            "F, V, F, V",
-            "V, V, V, V",
-            "V, F, F, V"
-        ],
-        respostaCorreta: "V, F, V, F",
-        justificativa: "1. Verdadeiro. 2. Falso (1L = 1000ml). 3. Verdadeiro (1 hora = 60 min * 60 seg = 3600 seg). 4. Falso (1kg = 1000g)."
-    },
-    {
-        tipo: "verdadeiro_falso",
-        titulo: "Múltiplos e Divisores",
-        contexto: "Avalie afirmações sobre múltiplos e divisores de números naturais.",
-        pergunta: "Marque (V) para Verdadeiro e (F) para Falso:",
-        afirmacoes: [
-            "Todo número é múltiplo de si mesmo.",
-            "O número 1 é divisor de todos os números naturais.",
-            "O maior múltiplo de um número natural é ele mesmo.",
-            "Um número par não pode ser primo."
-        ],
-        opcoes: [
-            "V, V, F, F", // Esta é a resposta correta
-            "F, V, V, F",
-            "V, F, F, V",
-            "V, V, V, F"
-        ],
-        respostaCorreta: "V, V, F, F",
-        justificativa: "1. Verdadeiro. 2. Verdadeiro. 3. Falso (múltiplos são infinitos). 4. Falso (o 2 é par e primo)."
-    },
-    {
-        tipo: "verdadeiro_falso",
-        titulo: "Frações e Decimais",
-        contexto: "Analise as conversões e conceitos relacionados a frações e números decimais.",
-        pergunta: "Assinale (V) ou (F):",
-        afirmacoes: [
-            "A fração 1/2 é equivalente a 0.5.",
-            "Toda fração pode ser representada por um número decimal exato.",
-            "Somar frações com denominadores diferentes sempre exige o cálculo do MMC.",
-            "A fração 3/4 é maior que a fração 2/3."
-        ],
-        opcoes: [
-            "V, F, V, V", // Esta é a resposta correta
-            "F, V, V, V",
-            "V, V, F, F",
-            "V, F, V, F"
-        ],
+        titulo: "Dobro, Metade e Divisão",
+        contexto: "Para determinar o dobro de um número, é preciso multiplicá-lo por 2. Para calcular a metade de um número, é preciso dividir esse número por 2. A divisão representa a ideia de distribuir quantidades em partes iguais.",
+        pergunta: "Analise as afirmações sobre dobro, metade e divisão.",
+        afirmacoes: ["O dobro de 7 é 14, e a metade de 14 é 7.", "Quando dividimos 15 por 2, o resultado é um número inteiro sem sobra.", "Se um número for multiplicado por 2 e depois dividido por 2, o resultado é o número original.", "Distribuir 20 figurinhas igualmente entre 4 amigos é um exemplo de divisão."],
+        opcoes: ["V, F, V, V", "V, V, F, F", "F, V, V, V", "F, F, V, F"],
         respostaCorreta: "V, F, V, V",
-        justificativa: "1. Verdadeiro. 2. Falso (dízimas periódicas). 3. Verdadeiro (para encontrar um denominador comum). 4. Verdadeiro (3/4 = 0.75; 2/3 = 0.66...). "
+        justificativa: "I. Verdadeiro. II. Falso (15/2 = 7,5, não é inteiro). III. Verdadeiro. IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Formação de Pares",
+        contexto: "Na turma do 4º ano A, há 35 alunos. Eles dançarão a quadrilha e, para isso, precisam formar pares. Duplas duplas serão formadas? Todos os alunos terão pares?",
+        pergunta: "Sobre a formação de pares na turma do 4º ano A, analise as afirmações:",
+        afirmacoes: ["Serão formadas 17 duplas completas.", "Um aluno ficará sem par.", "Se houvesse 34 alunos, todos teriam pares.", "É impossível formar pares com 35 alunos de forma que todos tenham um par."],
+        opcoes: ["V, V, V, V", "V, V, F, V", "F, F, V, V", "V, F, F, F"],
+        respostaCorreta: "V, V, V, V",
+        justificativa: "Todas as afirmações estão corretas. 35 dividido por 2 resulta em 17 com resto 1."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Regras do Jogo de Cartas",
+        contexto: "O jogo de cartas tem regras específicas: Forme um trio com seus colegas. Recorte os conjuntos de cartas disponíveis no anexo 6 (páginas 171 a 177). Separe materiais como papel, lápis e borracha para anotar os pontos de cada rodada. As cartas de espadas e de ouros devem ser misturadas e distribuídas entre os participantes. Cada jogador receberá 6 cartas. Depois, as cartas de condição devem ser embaralhadas e colocadas viradas para baixo, formando um monte no centro da mesa.",
+        pergunta: "Sobre a organização e regras do jogo de cartas, analise as afirmações:",
+        afirmacoes: ["O jogo pode ser jogado individualmente.", "É necessário recortar as cartas do anexo 6 antes de iniciar.", "Apenas cartas de espadas e ouros são usadas no jogo.", "Cada jogador começa com 6 cartas."],
+        opcoes: ["V, F, V, V", "F, V, V, V", "V, V, F, F", "F, V, V, F"],
+        respostaCorreta: "F, V, V, V",
+        justificativa: "I. Falso (o jogo é para trios). II. Verdadeiro. III. Verdadeiro. IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Pontuação no Jogo de Cartas",
+        contexto: "No jogo de cartas, o participante puxará uma carta de condição, que servirá apenas ao jogador que a retirou. Em seguida, o participante deve verificar se tem uma ou mais cartas que obedecem ao critério determinado. Por exemplo: \"O valor da carta é maior que a metade de 6\" para uma carta de 10 de ouros. Para a pontuação: \"Se o participante possui mais de uma carta que atenda à condição, ele deve escolher a de maior valor e multiplicar o número dessa carta por 2. Por exemplo, a carta de maior valor de Josiane foi 9. Assim, o cálculo da sua pontuação será: 2 x 9 = 18. Josiane somará 18 pontos na primeira rodada\".",
+        pergunta: "Considerando as regras de pontuação do jogo de cartas, analise as afirmações:",
+        afirmacoes: ["Se o jogador tiver uma carta de valor 8 e a condição for \"valor da carta é maior que 5\", ele multiplica 8 por 2 para a pontuação.", "Se a condição for \"a carta é de ouros\" e o jogador tiver um 3 de espadas e um 7 de ouros, ele escolhe o 7 de ouros para a pontuação.", "Se um jogador tiver apenas uma carta que atenda à condição e o valor for 4, ele ganhará 8 pontos.", "Se um jogador tiver três cartas que atendem à condição (5, 6 e 7), ele deve escolher a carta de maior valor (7) para calcular a pontuação."],
+        opcoes: ["V, F, V, V", "V, V, F, V", "F, V, V, F", "V, V, V, V"],
+        respostaCorreta: "V, V, V, V",
+        justificativa: "Todas as afirmações estão corretas e seguem as regras de pontuação do jogo."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Venda de Convites de Walley",
+        contexto: "Walley vendeu 3 convites por dia. Em quantos dias ele vendeu 12 convites?",
+        pergunta: "Sobre a venda de convites de Walley, analise as afirmações:",
+        afirmacoes: ["Walley vendeu 12 convites em 4 dias.", "Se Walley tivesse vendido 4 convites por dia, ele levaria 3 dias para vender 12 convites.", "A representação dos convites de Walley no dia a dia mostra uma subtração repetida de 3 a partir de 12 até chegar a 0.", "Para vender 15 convites, Walley levaria 5 dias."],
+        opcoes: ["V, V, V, V", "F, V, V, V", "V, F, V, V", "V, V, F, V"],
+        respostaCorreta: "V, V, V, V",
+        justificativa: "Todas as afirmações estão corretas. 12/3=4 dias; 12/4=3 dias; 15/3=5 dias. A divisão pode ser vista como subtração sucessiva."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Divisão de Biscoitos",
+        contexto: "Rafa levou à escola um pacote com 16 biscoitos para seu lanche. No recreio, ele estava em uma mesa com mais três amigos. Rafa resolveu, então, dividir igualmente os biscoitos entre ele e os amigos.",
+        pergunta: "Sobre a divisão de biscoitos de Rafa, analise as afirmações:",
+        afirmacoes: ["Rafa e seus três amigos formam um grupo de 4 pessoas.", "Cada pessoa recebeu 4 biscoitos.", "Se Rafa tivesse 15 biscoitos, sobraria 1 biscoito após a divisão.", "A divisão de biscoitos é um exemplo de repartição equitativa."],
+        opcoes: ["V, V, F, V", "V, V, V, V", "F, V, V, V", "V, F, V, V"],
+        respostaCorreta: "V, V, F, V",
+        justificativa: "I. Verdadeiro. II. Verdadeiro (16/4=4). III. Falso (15/4 = 3 com resto 3). IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Organização de Melancias",
+        contexto: "Na lojinha da dona Alice, acabou de chegar uma porção de melancias. Ela tem que guardá-las em quantidades iguais em 3 caixas.",
+        pergunta: "Sobre a organização das melancias na lojinha, analise as afirmações:",
+        afirmacoes: ["Se dona Alice tem 6 melancias, ela colocará 2 melancias em cada caixa.", "Se dona Alice tem 9 melancias, ela colocará 3 melancias em cada caixa.", "Se dona Alice tem 18 melancias, ela colocará 6 melancias em cada caixa.", "Para ter 7 melancias e distribuí-las igualmente em 3 caixas, sobraria 1 melancia."],
+        opcoes: ["V, V, V, V", "V, V, V, F", "F, V, V, V", "V, F, V, V"],
+        respostaCorreta: "V, V, V, V",
+        justificativa: "Todas as afirmações estão corretas. 6/3=2; 9/3=3; 18/3=6; 7/3=2 com resto 1."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Distribuição de Doces",
+        contexto: "A divisão representa a ideia de distribuir quantidades em partes iguais. Para calcular a divisão, é possível pensar quantas vezes um número cabe em outro número e observar se há sobra ou não.",
+        pergunta: "Gigi vende doces e precisa organizá-los em pacotes com a mesma quantidade. Analise as afirmações sobre a distribuição dos doces:",
+        afirmacoes: ["Ao colocar 12 brigadeiros em 2 pacotes, Gigi colocou 6 brigadeiros em cada pacote.", "Ao colocar 12 beijinhos em 3 pacotes, Gigi colocou 3 beijinhos em cada pacote.", "Ao colocar 12 cajuzinhos em 4 pacotes, Gigi colocou 3 cajuzinhos em cada pacote.", "Ao colocar 12 casadinhos em 6 pacotes, Gigi colocou 2 casadinhos em cada pacote."],
+        opcoes: ["V, F, V, V", "V, V, V, F", "F, V, F, V", "V, F, F, V"],
+        respostaCorreta: "V, F, V, V",
+        justificativa: "I. Verdadeiro (12/2=6). II. Falso (12/3=4). III. Verdadeiro (12/4=3). IV. Verdadeiro (12/6=2)."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Composição de Números",
+        contexto: "Usando a calculadora, compor números e registrar as operações nos espaços. Exemplo: Uma unidade de milhar, vinte e três dezenas e trinta e quatro unidades.",
+        pergunta: "Sobre a composição de números usando unidades de milhar, centenas, dezenas e unidades, analise as afirmações:",
+        afirmacoes: ["Uma unidade de milhar, vinte e três dezenas e trinta e quatro unidades formam o número 1264.", "Oitenta e cinco centenas e noventa e duas unidades formam o número 8592.", "Três unidades de milhar, setenta e quatro centenas, vinte e cinco dezenas e três unidades formam o número 37453.", "O número 471 pode ser formado com 4 centenas, 7 dezenas e 1 unidade."],
+        opcoes: ["V, V, V, V", "V, V, F, V", "V, F, V, F", "F, V, V, F"],
+        respostaCorreta: "F, V, V, F",
+        justificativa: "I. Falso (1000 + 230 + 34 = 1264). II. Verdadeiro (8500 + 92 = 8592). III. Falso (3000 + 7400 + 250 + 3 = 10653). IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Arredondamento de Números",
+        contexto: "Arredondar os números é preciso fazer arredondamentos para estimar resultados. Por exemplo, 662 arredondado para a dezena mais próxima é 660.",
+        pergunta: "Sobre o arredondamento de números, analise as afirmações:",
+        afirmacoes: ["O número 93 arredondado para a dezena mais próxima é 90.", "O número 847 arredondado para a dezena mais próxima é 850.", "O número 1689 arredondado para a centena mais próxima é 1700.", "O número 1532 arredondado para a centena mais próxima é 1500."],
+        opcoes: ["V, V, V, V", "F, V, V, V", "V, F, V, V", "V, V, F, V"],
+        respostaCorreta: "V, V, V, V",
+        justificativa: "Todas as afirmações sobre arredondamento estão corretas."
     },
 
-    // --- GRUPO 3: RESPOSTA ABERTA ---
+    // --- GRUPO 3: PERGUNTAS ABERTAS ---
     {
         tipo: "aberta",
-        titulo: "Cálculo de Consumo",
-        contexto: "Um carro percorre 10 km com 1 litro de gasolina. Se a distância a ser percorrida é de 150 km, e o tanque tem capacidade para 40 litros, qual o consumo total em litros para a viagem?",
-        pergunta: "Quantos litros de gasolina serão necessários para percorrer 150 km?",
-        respostaCorreta: "15 litros",
-        justificativa: "Se 1 litro percorre 10 km, para percorrer 150 km serão necessários 150 / 10 = 15 litros. (A capacidade do tanque é uma distração)."
+        titulo: "Controle de Vendas",
+        contexto: "Rafa está numerando 500 convites para a festa junina, começando do 401. Os colegas perceberam que seria mais fácil controlar a venda se os convites fossem numerados.",
+        pergunta: "Qual é a importância de numerar os convites em ordem crescente, como Rafa está fazendo, para o controle da venda na festa junina?",
+        respostaCorreta: "Para saber quantos convites foram vendidos e evitar fraudes.",
+        justificativa: "A numeração sequencial permite um controle preciso sobre a quantidade de convites vendidos e ajuda a identificar convites falsos ou duplicados."
     },
     {
         tipo: "aberta",
-        titulo: "O Relógio Quebrado",
-        contexto: "Um relógio digital está atrasado 10 minutos por hora. Se ele foi acertado às 08:00, que horas ele estará marcando quando o horário real for 12:00 do mesmo dia?",
-        pergunta: "Que horas o relógio estará marcando quando o horário real for 12:00?",
-        respostaCorreta: "11:20",
-        justificativa: "Das 8:00 às 12:00 são 4 horas. Se ele atrasa 10 minutos por hora, em 4 horas ele atrasará 4 * 10 = 40 minutos. Então, 12:00 - 40 minutos = 11:20."
+        titulo: "Dobro e Metade de Maçãs",
+        contexto: "Para determinar o dobro de um número, é preciso multiplicá-lo por 2. Para calcular a metade de um número, é preciso dividir esse número por 2.",
+        pergunta: "Se você tem 12 maçãs e come a metade, quantas maçãs sobram? E se você tivesse o dobro dessas 12 maçãs inicialmente, quantas seriam?",
+        respostaCorreta: "Sobram 6 maçãs. O dobro seria 24 maçãs.",
+        justificativa: "A metade de 12 é 6. O dobro de 12 é 24."
     },
     {
         tipo: "aberta",
-        titulo: "Idades na Família",
-        contexto: "A soma das idades de pai e filho é 60 anos. O pai tem o triplo da idade do filho.",
-        pergunta: "Quantos anos tem o filho?",
-        respostaCorreta: "15 anos",
-        justificativa: "Seja F a idade do filho. O pai tem 3F. F + 3F = 60 => 4F = 60 => F = 15 anos."
+        titulo: "Divisão de Pipoca",
+        contexto: "Helena dividiu igualmente 18 saquinhos de pipoca para ela e suas duas irmãs venderem, sem sobrar nenhum saquinho.",
+        pergunta: "Explique, usando suas palavras, como Helena e suas irmãs fizeram para dividir igualmente os 18 saquinhos de pipoca. Que operação matemática elas usaram?",
+        respostaCorreta: "Elas usaram a divisão. Dividiram 18 por 3, resultando em 6 para cada uma.",
+        justificativa: "A operação de divisão (18 ÷ 3 = 6) garante que cada uma das 3 pessoas receba a mesma quantidade de saquinhos de pipoca."
     },
     {
         tipo: "aberta",
-        titulo: "Divisão de Doces",
-        contexto: "Maria tem 45 doces para dividir igualmente entre 3 amigos.",
-        pergunta: "Quantos doces cada amigo receberá?",
-        respostaCorreta: "15 doces",
-        justificativa: "45 doces divididos por 3 amigos = 15 doces para cada."
+        titulo: "Pontuação no Jogo",
+        contexto: "No jogo de cartas, \"se o participante possui mais de uma carta que atenda à condição, ele deve escolher a de maior valor e multiplicar o número dessa carta por 2\" para a pontuação.",
+        pergunta: "Imagine que você puxa uma carta de condição que diz: \"A carta é de espadas e o valor é maior que 5\". Você tem na mão um 7 de espadas e um 9 de espadas. Quantos pontos você faria e por quê?",
+        respostaCorreta: "18 pontos, pois escolheria a carta de maior valor (9) e multiplicaria por 2.",
+        justificativa: "A regra manda escolher a carta de maior valor que atende à condição (9 de espadas) e multiplicar por 2, resultando em 18 pontos."
     },
     {
         tipo: "aberta",
-        titulo: "Cálculo de Tempo",
-        contexto: "Você precisa ler um livro de 200 páginas. Se você lê 25 páginas por dia, em quantos dias você terminará o livro?",
-        pergunta: "Em quantos dias o livro será lido?",
-        respostaCorreta: "8 dias",
-        justificativa: "Total de páginas / Páginas por dia = 200 / 25 = 8 dias."
+        titulo: "Estratégia de Multiplicação",
+        contexto: "Uma forma de resolver 5 × 15 é (5 × 10) + (5 × 5).",
+        pergunta: "Usando a mesma ideia da multiplicação (5 × 15), como você resolveria 4 × 14, mostrando os passos?",
+        respostaCorreta: "(4 × 10) + (4 × 4) = 40 + 16 = 56",
+        justificativa: "Decompondo 14 em 10 + 4 e aplicando a propriedade distributiva: (4 × 10) + (4 × 4) = 40 + 16 = 56."
     },
     {
         tipo: "aberta",
-        titulo: "Operação Inversa",
-        contexto: "Pense em um número, multiplique por 3, some 5 e o resultado é 26.",
-        pergunta: "Qual é o número que você pensou?",
-        respostaCorreta: "7",
-        justificativa: "Para resolver, fazemos as operações inversas: 26 - 5 = 21. 21 / 3 = 7."
+        titulo: "Embalando Jogos",
+        contexto: "Uma fábrica embala 18 jogos em 3 caixas, de igual tamanho, cabendo a mesma quantidade de jogos. Se a fábrica tivesse um modelo de caixa maior, utilizando 2 caixas desse modelo, também é possível embalar 18 jogos, de forma igual.",
+        pergunta: "Se a fábrica fosse usar 6 caixas para embalar os mesmos 18 jogos, quantos jogos caberiam em cada caixa? Explique se sobraria algum jogo.",
+        respostaCorreta: "Caberiam 3 jogos em cada caixa, sem sobrar nenhum.",
+        justificativa: "Dividindo 18 jogos por 6 caixas, o resultado é 3 jogos por caixa, sem resto."
     },
     {
         tipo: "aberta",
-        titulo: "Conversão de Unidades",
-        contexto: "Um atleta correu 5000 metros em um treino.",
-        pergunta: "Quantos quilômetros ele correu?",
-        respostaCorreta: "5 km",
-        justificativa: "1 quilômetro = 1000 metros. Então, 5000 metros / 1000 = 5 km."
+        titulo: "Utilidade do Arredondamento",
+        contexto: "O arredondamento ajuda a estimar resultados. Por exemplo, 662 arredondado para a dezena mais próxima é 660.",
+        pergunta: "Por que arredondar um número como 123 para a dezena mais próxima (120) ou para a centena mais próxima (100) pode ser útil no dia a dia? Dê um exemplo.",
+        respostaCorreta: "Para fazer cálculos rápidos de cabeça, como estimar o troco.",
+        justificativa: "O arredondamento simplifica os números, facilitando cálculos mentais rápidos, como ao estimar o custo total de compras ou o troco a receber."
+    },
+
+    // --- GRUPO 4: OPINIÕES (Estudo de Caso) ---
+    {
+        tipo: "aberta",
+        titulo: "Reorganização da Dança",
+        contexto: "A turma do 3º ano A planejou fazer uma apresentação de dança na festa junina. Os professores de Educação Física os organizaram em 7 filas com 5 alunos em cada fila. No dia da apresentação, 3 alunos ficaram doentes e não puderam comparecer. Os professores precisam reorganizar os alunos para que todas as filas tenham o mesmo número de pessoas ou para que a apresentação não seja prejudicada.",
+        pergunta: "Como os professores poderiam reorganizar os alunos que restaram para que a apresentação ainda seja um sucesso? Proponha uma solução.",
+        respostaCorreta: "Formar 4 filas de 8 alunos ou 8 filas de 4 alunos.",
+        justificativa: "Com 32 alunos restantes (35 - 3), os professores podem criar novas formações com divisores de 32, como 4 filas de 8 ou 8 filas de 4, mantendo a organização."
     },
     {
         tipo: "aberta",
-        titulo: "Temperatura",
-        contexto: "A temperatura em uma cidade era de 15°C. À noite, caiu 7°C.",
-        pergunta: "Qual a temperatura na cidade à noite?",
-        respostaCorreta: "8°C",
-        justificativa: "15°C - 7°C = 8°C."
+        titulo: "Decisão no Jogo de Cartas",
+        contexto: "No jogo de cartas, um jogador deve escolher a carta de maior valor que atenda à condição para pontuar. Se não tiver nenhuma carta que obedeça à condição sorteada, ele perderá 5 pontos. Um jogador chamado Walley está com as seguintes cartas: um 2 de espadas, um 5 de ouros e um 8 de espadas. A carta de condição sorteada é: \"O valor da carta é maior que 6\".",
+        pergunta: "Walley tem duas opções de cartas que atendem à condição. Qual carta ele deveria escolher para maximizar seus pontos, e por quê? Se a carta de condição fosse \"A carta é de ouros\", o que Walley deveria fazer?",
+        respostaCorreta: "Ele deve escolher o 8 de espadas para fazer 16 pontos. Se a condição fosse 'ouros', ele escolheria o 5 de ouros.",
+        justificativa: "Para a condição 'maior que 6', ele deve escolher o 8 (maior valor) para fazer 16 pontos. Para a condição 'ouros', ele usaria o 5 de ouros para fazer 10 pontos."
     },
     {
         tipo: "aberta",
-        titulo: "Total de Laranjas",
-        contexto: "Em um cesto, há 2 dúzias de laranjas. Em outro cesto, há mais 15 laranjas.",
-        pergunta: "Quantas laranjas há no total?",
-        respostaCorreta: "39 laranjas",
-        justificativa: "2 dúzias = 2 * 12 = 24 laranjas. Total = 24 + 15 = 39 laranjas."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Dinheiro Poupança",
-        contexto: "João poupa R$ 10,00 por semana. Em quantas semanas ele terá R$ 120,00?",
-        pergunta: "Em quantas semanas João terá R$ 120,00?",
-        respostaCorreta: "12 semanas",
-        justificativa: "R$ 120,00 / R$ 10,00 por semana = 12 semanas."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Festa de Aniversário",
-        contexto: "Para uma festa, foram compradas 5 bandejas de doces, com 20 doces em cada bandeja.",
-        pergunta: "Quantos doces foram comprados no total?",
-        respostaCorreta: "100 doces",
-        justificativa: "5 bandejas * 20 doces/bandeja = 100 doces."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Contagem de Alunos",
-        contexto: "Em uma sala de aula, há 28 alunos. Se 15 são meninos, quantas são meninas?",
-        pergunta: "Quantas meninas há na sala de aula?",
-        respostaCorreta: "13 meninas",
-        justificativa: "28 alunos - 15 meninos = 13 meninas."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Produção de Chocolates",
-        contexto: "Uma fábrica produz 150 chocolates por hora. Em 3 horas, quantos chocolates serão produzidos?",
-        pergunta: "Quantos chocolates serão produzidos em 3 horas?",
-        respostaCorreta: "450 chocolates",
-        justificativa: "150 chocolates/hora * 3 horas = 450 chocolates."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Distância Total",
-        contexto: "Um ciclista percorre 12 km de manhã e 18 km à tarde.",
-        pergunta: "Qual a distância total percorrida pelo ciclista no dia?",
-        respostaCorreta: "30 km",
-        justificativa: "12 km + 18 km = 30 km."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Organização dos pacotes de doces",
-        contexto: "Gigi tem 12 doces de cada tipo. Muitas pessoas querem pacotes com 5 doces, mas 12 não é divisível por 5. Ela percebe que, para atender a esses pedidos sem sobras, precisaria ter uma quantidade de doces que fosse múltiplo de 5.",
-        pergunta: "Se Gigi tivesse um total de 20 doces de um tipo, como ela poderia reorganizar para atender ao pedido de pacotes de 5 doces sem sobras?",
-        respostaCorreta: "Ela poderia montar 4 pacotes com 5 doces em cada.",
-        justificativa: "Se Gigi tivesse 20 doces de um tipo, ela poderia montar 4 pacotes com 5 doces em cada (porque 20 ÷ 5 = 4), sem deixar nenhum doce sobrando. O benefício é atender exatamente ao pedido dos clientes e evitar desperdício."
+        titulo: "Estratégia de Vendas",
+        contexto: "Na festa junina, a barraca de doces está vendendo 3 brigadeiros por R$ 5,00. Um cliente quer comprar apenas um brigadeiro e pergunta o preço. O vendedor não sabe o que fazer, pois a promoção é para 3 unidades.",
+        pergunta: "Qual seria uma boa estratégia para o vendedor lidar com essa situação, considerando que ele não quer perder a venda nem quebrar a lógica da promoção?",
+        respostaCorreta: "Vender um brigadeiro por um preço proporcionalmente maior, como R$ 2,00.",
+        justificativa: "Vender a unidade por um preço maior (ex: R$ 2,00) incentiva a compra do pacote promocional, mas ainda atende o cliente que quer apenas um, garantindo a venda."
     }
 ];
+
