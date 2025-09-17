@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capy Game - Desafie seu Conhecimento!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container-principal">
+
+        <div id="tela-inicial" style="display: flex;">
+            <h1>Capy Game - Olimpíada do Conhecimento</h1>
+            <p>Seja bem-vindo(a)! Escolha uma arena para começar seus estudos.</p>
+            <div id="tela-selecao-arena">
+                
+                <div class="arena-card">
+                    <img src="ICON_Matematica.png" alt="Ícone de Números">
+                    <h3>Arena dos Números</h3>
+                    <p>Desafios de Matemática</p>
+                    <div>
+                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('matematica')">Ouvir Revisão</button>
+                        <button class="btn-principal" onclick="selecionarArena('matematica')">Jogar!</button>
+                    </div>
+                </div>
+                
+                <div class="arena-card">
+                    <img src="ICON_Portugues.png" alt="Ícone de Palavras">
+                    <h3>Torre das Palavras</h3>
+                    <p>Desafios de Língua Portuguesa</p>
+                    <div>
+                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('portugues')">Ouvir Revisão</button>
+                        <button class="btn-principal" onclick="selecionarArena('portugues')">Jogar!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-pergunta" style="display:none;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <img src="" id="header-icon" alt="Ícone da Arena" style="height: 40px; margin-right: 10px; display: none;">
+                <h1 id="header-title" style="margin: 0;">Capy Game</h1>
+            </div>
+
+            <div id="progress-container"><div id="progress-bar"></div></div>
+            <p id="progress-text">Questão 0 de 0</p>
+            
+            <h2 id="cabecalho-pergunta"></h2> <p id="contexto-pergunta" class="contexto"></p>
+            <p id="pergunta-objetiva"></p>
+            
+            <div id="opcoes-resposta" class="opcoes-container"></div>
+            
+            <div id="area-resposta-aberta" style="display:none;">
+                <input type="text" id="input-resposta" class="resposta-aberta" placeholder="Digite sua resposta aqui...">
+            </div>
+            
+            <div id="feedback-imediato" class="feedback" style="display:none;"></div>
+            
+            <div class="botoes-acao">
+                <button id="btn-salvar" class="btn-neutro" onclick="salvarResposta()">Gravar</button>
+                <button id="btn-acao" class="btn-principal" onclick="verificarResposta()">Responder</button>
+            </div>
+            
+            <div id="navegacao-questoes"></div>
+            
+            <div class="dropdown">
+                <button class="btn-neutro">Menu <span style="font-size: 0.8em;">▼</span></button>
+                <div class="dropdown-content">
+                    <button onclick="reiniciarJogo()">Retornar ao menu principal</button>
+                    <button onclick="abrirAudioPlayerPopup(arenaAtual)">Escutar podcast da arena</button>
+                    <button onclick="registrarDiscordancia()">Questionar resposta</button>
+                    <button onclick="mostrarGabarito('parcial')">Gabarito parcial</button>
+                    <button onclick="mostrarGabarito('total')">Gabarito total</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-gabarito" style="display:none;">
+            <h2 id="gabarito-titulo"></h2>
+            <p id="gabarito-texto"></p>
+            <table id="tabela-resultados">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Título da Questão</th>
+                        <th>Sua Resposta</th>
+                        <th>Resposta Correta</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-resultados"></tbody>
+            </table>
+            <button class="btn-principal" onclick="voltarAoJogo()">Voltar ao Jogo</button>
+        </div>
+    </div>
+    
+    <audio id="som-acerto" src="som_acerto.mp3" preload="auto"></audio>
+    <audio id="som-erro" src="som_erro.mp3" preload="auto"></audio>
+
+    <script src="Cap_10_Matematica_questoes.js"></script>
+    <script src="Cap_10_Portugues_questoes.js"></script>
+    <script src="Capy_game_R0_250915.js"></script>
+</body>
+</html>

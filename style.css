@@ -1,0 +1,386 @@
+/* style.css - Estilos para o Capy Game */
+:root {
+    --cor-principal: #3498db;    /* Azul padrão */
+    --cor-sucesso: #27ae60;      /* Verde para acertos */
+    --cor-erro: #e74c3c;         /* Vermelho para erros */
+    --cor-selecionado: #f39c12;  /* Laranja para alternativa selecionada */
+    --cor-neutra: #7f8c8d;       /* Cinza para elementos neutros */
+    --cor-fundo: #f4f7f9;        /* Fundo claro da aplicação */
+    --cor-texto: #333;           /* Cor padrão do texto */
+    --cor-salvo: #f1c40f;        /* Laranja para status "salvo" e botão "Gravar" */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('Capygame_fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: var(--cor-texto);
+    box-sizing: border-box;
+}
+
+.container-principal {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    width: 95%;
+    max-width: 800px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Efeitos Visuais */
+.pulse-correct { animation: pulse-correct 0.8s ease-out; }
+@keyframes pulse-correct {
+    50% { box-shadow: 0 8px 40px rgba(39, 174, 96, 0.5); }
+}
+.shake-error { animation: shake-error 0.8s cubic-bezier(.36,.07,.19,.97) both; }
+@keyframes shake-error {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+h1, h2 { color: #2c3e50; }
+h1 img { vertical-align: middle; height: 40px; margin-left: 10px; }
+#cabecalho-pergunta { font-size: 1.5em; margin-bottom: 20px; }
+#pergunta-objetiva { font-weight: bold; color: #34495e; font-size: 1.1em; }
+
+/* Botões Gerais */
+button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+button:hover { transform: translateY(-2px); }
+button:active { transform: translateY(0); } /* Retorna à posição original ao clicar */
+button:disabled {
+    background-color: #cccccc !important; /* Mais cinza para disabled */
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
+}
+
+/* Tipos de Botões */
+.btn-principal { background-color: var(--cor-sucesso); }
+.btn-principal:hover { background-color: #2ecc71; }
+
+.btn-secundario { background-color: var(--cor-principal); }
+.btn-secundario:hover { background-color: #5dade2; }
+
+/* Botão Gravar */
+#btn-salvar {
+    background-color: var(--cor-salvo); /* Laranja para o botão Gravar */
+}
+#btn-salvar:hover {
+    background-color: #e6b100; /* Um tom ligeiramente mais escuro para o hover */
+}
+
+.btn-neutro { background-color: var(--cor-neutra); }
+.btn-neutro:hover { background-color: #95a5a6; }
+
+
+/* Menu Suspenso */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px; /* Espaço acima do menu */
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px; /* Largura mínima para os itens do menu */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0; /* Alinha à direita do botão "Menu" */
+    border-radius: 8px;
+    padding: 5px 0; /* Padding interno */
+    border: 1px solid #ddd;
+}
+.dropdown-content button {
+    color: var(--cor-texto);
+    background-color: transparent;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px; /* Padding para os itens do menu */
+    margin: 0; /* Remove margens extras */
+    border-radius: 0; /* Sem border-radius nos itens para um menu contínuo */
+    font-weight: normal; /* Texto normal */
+    font-size: 0.95em;
+}
+.dropdown-content button:hover {
+    background-color: #e0e0e0;
+    transform: none; /* Remove transform no hover do item de menu */
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Seleção de Arena (Tela Inicial) */
+#tela-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Mais espaço entre os cards e o título */
+}
+#tela-selecao-arena {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem em telas menores */
+    justify-content: center;
+    gap: 25px; /* Espaço entre os cards */
+}
+.arena-card {
+    background-color: #ffffff;
+    border: 2px solid var(--cor-principal);
+    border-radius: 10px;
+    padding: 25px; /* Mais padding */
+    width: 100%;
+    max-width: 280px; /* Largura ajustada para card */
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.arena-card:hover {
+    transform: translateY(-8px); /* Mais efeito de levantamento */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+.arena-card img {
+    width: 90px; /* Ícones um pouco maiores */
+    height: 90px;
+    margin-bottom: 15px;
+}
+.arena-card h3 {
+    color: var(--cor-principal);
+    margin: 10px 0 15px; /* Ajuste de margem */
+    font-size: 1.4em;
+}
+.arena-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 20px;
+}
+.arena-card div { /* Container para os botões dentro do card */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite que os botões quebrem se a tela for pequena */
+}
+.arena-card button {
+    flex-grow: 1; /* Faz os botões crescerem para preencher o espaço */
+    max-width: 130px; /* Limite de largura para botões em linha */
+}
+
+
+/* Layout da Questão */
+#opcoes-resposta button {
+    background-color: var(--cor-principal);
+    display: block;
+    width: 100%;
+    margin-top: 12px; /* Aumenta o espaçamento entre as alternativas */
+    text-align: left;
+    font-weight: normal;
+    padding: 12px 18px; /* Mais padding para as opções */
+    font-size: 1em;
+}
+#opcoes-resposta button:hover { background-color: #5dade2; }
+#opcoes-resposta button.selecionada {
+    background-color: var(--cor-selecionado);
+    border: 2px solid #d35400; /* Borda mais evidente para selecionado */
+    transform: translateY(-2px); /* Efeito ao selecionar */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+#opcoes-resposta button.correta { background-color: var(--cor-sucesso) !important; color: white !important; }
+#opcoes-resposta button.incorreta { background-color: var(--cor-erro) !important; color: white !important; }
+#opcoes-resposta button:disabled { cursor: not-allowed; opacity: 0.7; }
+
+
+.contexto {
+    text-align: left;
+    white-space: pre-wrap;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--cor-principal); /* Borda lateral */
+    color: #444;
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+#input-resposta {
+    width: calc(100% - 24px); /* Ajustado para considerar padding */
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+#input-resposta.correta { border-color: var(--cor-sucesso); background-color: #eafaf1; }
+#input-resposta.incorreta { border-color: var(--cor-erro); background-color: #fdedec; }
+
+
+#progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 8px; /* Espaçamento menor */
+    height: 8px; /* Altura da barra de progresso */
+    overflow: hidden; /* Garante que a barra interna não transborde */
+}
+#progress-bar {
+    width: 0%;
+    height: 100%; /* Ocupa 100% da altura do container */
+    background-color: var(--cor-sucesso);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+#progress-text {
+    font-size: 0.9em; /* Texto menor */
+    font-weight: bold;
+    color: var(--cor-neutra);
+    margin-bottom: 25px; /* Espaço maior para o conteúdo */
+}
+
+#feedback-imediato {
+    text-align: left;
+    border-left: 5px solid var(--cor-principal);
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #34495e;
+}
+#feedback-imediato strong {
+    color: #2c3e50; /* Cor mais escura para o texto forte */
+}
+
+
+.botoes-acao {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Mais espaço entre os botões de ação */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Navegação entre Questões */
+#navegacao-questoes {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 8px; /* Espaçamento entre os botões */
+    justify-content: center;
+    margin: 20px auto; /* Centraliza o container */
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    max-width: 650px; /* Ajuste esta largura para controlar quantos botões por linha. Ex: 15 botões * 40px (aprox) = 600px + padding/margin */
+}
+.nav-button {
+    width: 38px; /* Botões um pouco maiores */
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-neutra);
+    background-color: white;
+    color: var(--cor-neutra);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 0.9em; /* Tamanho da fonte menor para caber */
+}
+.nav-button:hover { background-color: #e0e0e0; transform: scale(1.05); } /* Efeito de scale no hover */
+.nav-button.atual { border-color: var(--cor-principal); background-color: var(--cor-principal); color: white; transform: scale(1.1); }
+.nav-button.salva { border-color: var(--cor-salvo); background-color: var(--cor-salvo); color: white; } /* Laranja para salvo */
+.nav-button.correta { border-color: var(--cor-sucesso); background-color: var(--cor-sucesso); color: white; }
+.nav-button.incorreta { border-color: var(--cor-erro); background-color: var(--cor-erro); color: white; }
+
+
+/* Gabarito */
+#tabela-resultados {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9em;
+}
+#tabela-resultados th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+#tabela-resultados th {
+    background-color: #ecf0f1;
+    color: #34495e;
+    font-weight: bold;
+}
+#tabela-resultados td {
+    background-color: #ffffff;
+}
+#tabela-resultados .correta { color: var(--cor-sucesso); font-weight: bold; }
+#tabela-resultados .incorreta { color: var(--cor-erro); font-weight: bold; }
+#tabela-resultados .salva { color: var(--cor-salvo); font-weight: bold; }
+
+#gabarito-texto {
+    font-size: 1.1em;
+    margin-top: 15px;
+    color: #444;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .container-principal {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    h1 { font-size: 1.8em; }
+    #header-icon { height: 30px; }
+    .arena-card { max-width: 90%; padding: 20px; }
+    .arena-card img { width: 70px; height: 70px; }
+    .arena-card h3 { font-size: 1.2em; }
+    button { padding: 10px 15px; font-size: 13px; }
+    #opcoes-resposta button { padding: 10px 12px; font-size: 0.95em; }
+    #navegacao-questoes { max-width: 100%; gap: 6px; } /* Ajusta para telas menores */
+    .nav-button { width: 32px; height: 32px; font-size: 0.8em; }
+    #tabela-resultados th, td { padding: 8px; font-size: 0.85em; }
+    .dropdown-content { min-width: 180px; }
+}
+
+@media (max-width: 480px) {
+    .arena-card div { /* Botões da arena em coluna em telas muito pequenas */
+        flex-direction: column;
+        gap: 8px;
+    }
+    .arena-card button {
+        max-width: 100%;
+    }
+    #navegacao-questoes { /* Adapta ainda mais para telas muito pequenas */
+        justify-content: space-around;
+    }
+}
