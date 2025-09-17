@@ -348,3 +348,91 @@ const dadosDoQuizLP = [
 ];
 
 
+
+
+    // --- GRUPO 3: PERGUNTAS ABERTAS (RESPOSTAS CURTAS) ---
+    {
+        tipo: "aberta",
+        titulo: "Infográficos: Super-herói da Informação",
+        contexto: "Um infográfico é como um super-herói da informação.",
+        pergunta: "Por que ele usa desenhos (imagens) e palavras (textos) juntos para nos ensinar algo?",
+        respostaCorreta: "Para passar informações de forma rápida e fácil, misturando elementos visuais e textuais.",
+        justificativa: "Infográficos combinam imagens e textos para tornar a informação mais acessível, rápida e fácil de entender."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Encontro Consonantal em 'Grande'",
+        contexto: "Na palavra 'grande', quais letras formam o encontro consonantal que fica juntinho na mesma sílaba?",
+        pergunta: "Na palavra 'grande', quais letras formam o encontro consonantal que fica juntinho na mesma sílaba?",
+        respostaCorreta: "gr",
+        justificativa: "O encontro consonantal na palavra 'grande' é 'gr', onde as duas consoantes permanecem na mesma sílaba."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Uso de C e Ç: Regra da Cedilha",
+        contexto: "A cedilha (Ç) é um sinal especial que usamos embaixo da letra C.",
+        pergunta: "Em quais letras depois do 'C' nós nunca usamos a cedilha? Dê um exemplo.",
+        respostaCorreta: "Nunca usamos cedilha antes de 'e' e 'i'. Exemplo: 'Cidade' (não 'Cíade').",
+        justificativa: "A cedilha nunca é usada antes das vogais 'e' e 'i' porque o 'c' antes dessas vogais já possui o som de 's'."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Storytelling Visual: Atenção do Cérebro",
+        contexto: "Nosso cérebro gosta muito de imagens e histórias.",
+        pergunta: "Como essa preferência natural ajuda um infográfico a chamar mais a nossa atenção e nos fazer prestar mais atenção?",
+        respostaCorreta: "O storytelling visual aumenta o engajamento, pois o cérebro humano processa imagens e histórias de forma mais eficaz e rápida.",
+        justificativa: "A preferência do cérebro por imagens e histórias faz com que infográficos com storytelling visual sejam mais envolventes e captem a atenção mais facilmente."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Prefixo 're-' em 'Refazer'",
+        contexto: "A palavra 'refazer' usa uma parte no começo, o 're-', que chamamos de prefixo.",
+        pergunta: "O que o 're-' significa nessa palavra?",
+        respostaCorreta: "Repetição ou fazer novamente.",
+        justificativa: "O prefixo 're-' indica repetição, ou seja, fazer algo novamente."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Sustentabilidade: Economia de Água",
+        contexto: "Para economizar água, o infográfico sobre 'Atitudes simples para melhorar o mundo' sugere algo bem fácil de fazer na hora de escovar os dentes.",
+        pergunta: "O que é?",
+        respostaCorreta: "Fechar a torneira enquanto estiver escovando os dentes.",
+        justificativa: "Uma atitude simples para economizar água é fechar a torneira ao escovar os dentes."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Espaço Negativo em Infográficos",
+        contexto: "Em um infográfico, por que é importante deixar 'espaços vazios' (também chamado de espaço negativo) entre os textos e desenhos?",
+        pergunta: "Em um infográfico, por que é importante deixar 'espaços vazios' (também chamado de espaço negativo) entre os textos e desenhos?",
+        respostaCorreta: "Para evitar sobrecarga de informações, facilitar a leitura e o processamento visual, e dar 'respiro' ao leitor.",
+        justificativa: "O espaço negativo ajuda a organizar o conteúdo, evita a sobrecarga visual e melhora a legibilidade, permitindo que o leitor processe as informações de forma mais eficaz."
+    },
+
+    // --- GRUPO 4: OPINIÕES E SOLUÇÕES (ESTUDOS DE CASO) ---
+    {
+        tipo: "aberta",
+        titulo: "Estudo de Caso: Infográfico para Conscientização",
+        contexto: "A escola 'Aprendizes do Futuro' percebeu que muitos alunos não sabem como separar o lixo em casa, e os avisos escritos nas paredes (somente com texto) não estão funcionando. A direção da escola quer uma forma visual e divertida de ensinar as crianças sobre reciclagem para o Dia do Meio Ambiente.",
+        pergunta: "Como um infográfico poderia ajudar a escola a resolver esse problema? Cite duas coisas importantes que ele deveria ter para ser eficaz, baseando-se no que você aprendeu sobre infográficos.",
+        respostaCorreta: "Um infográfico ajudaria a simplificar a informação complexa da separação do lixo, tornando-a visualmente atraente e fácil de entender para as crianças. Duas coisas importantes seriam: 1) Uso de imagens e ícones claros para cada tipo de lixo e lixeira. 2) Storytelling visual ou um design divertido para engajar as crianças.",
+        justificativa: "Infográficos são eficazes para simplificar informações complexas e engajar o público-alvo. Para crianças, elementos visuais claros e um design divertido são cruciais."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Estudo de Caso: Dificuldade com Ortografia",
+        contexto: "Camila sempre se confunde na hora de escrever palavras com S, SS, C ou Ç. Ela tenta decorar todas as regras que vê, mas acaba esquecendo e comete muitos erros nas redações. Ela está ficando desanimada e acha que nunca vai aprender.",
+        pergunta: "Qual é o principal conselho que as fontes dão para alguém como a Camila, que quer melhorar na escrita dessas letras sem ter que decorar todas as regras?",
+        respostaCorreta: "O principal conselho é ler muito e escrever muito. A prática constante leva à assimilação das regras de forma natural, sem a necessidade de memorização intensiva.",
+        justificativa: "As fontes enfatizam que a prática de leitura e escrita é a melhor solução para dominar a ortografia, pois a assimilação ocorre naturalmente com o tempo."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Estudo de Caso: Design de Infográfico Inconsistente",
+        contexto: "Marcos fez um infográfico sobre 'Meus Animais Favoritos' para apresentar na aula. Ele usou 5 tipos de letras diferentes, misturou desenhos coloridos com fotos em preto e branco, e escolheu muitas cores que não combinavam. O resultado ficou um pouco confuso para os colegas entenderem e não ficou visualmente harmonioso.",
+        pergunta: "Que duas dicas de design, relacionadas à escolha de cores e ao estilo dos elementos visuais, Marcos poderia seguir para que seu infográfico ficasse mais fácil de entender e mais bonito?",
+        respostaCorreta: "1) Limitar a paleta de cores a 2 ou 3 cores principais e usá-las de forma consistente. 2) Manter a consistência nos elementos visuais, usando um estilo unificado (desenhos ou fotos, não ambos) e limitando o número de fontes (máximo de três tipos).",
+        justificativa: "A consistência no design, tanto em cores quanto em elementos visuais e tipografia, é fundamental para a clareza e harmonia de um infográfico, evitando a sobrecarga visual e facilitando a compreensão."
+    }
+];
+
+
