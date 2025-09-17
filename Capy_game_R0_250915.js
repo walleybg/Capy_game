@@ -5,7 +5,7 @@ let cabecalhoPergunta, perguntaObjetiva, telaInicial, telaPergunta, telaGabarito
     progressBar, progressText, contextoPergunta, opcoesRespostaDiv,
     areaRespostaAberta, inputResposta, feedbackImediato, btnAcao, btnSalvar,
     navegacaoQuestoes, containerPrincipal, somAcerto, somErro,
-    headerIcon, headerTitle;
+    headerIcon, headerTitle, audioPlayerContainer, audioPlayerIframe;
 
 // --- VARIÁVEIS GLOBAIS DO JOGO ---
 let perguntaAtual = 0;
@@ -37,6 +37,8 @@ function mapearElementos() {
     somErro = document.getElementById('som-erro');
     headerIcon = document.getElementById('header-icon');
     headerTitle = document.getElementById('header-title');
+    audioPlayerContainer = document.getElementById('audio-player-container');
+    audioPlayerIframe = document.getElementById('audio-player-iframe');
 }
 
 // --- FUNÇÕES DE NAVEGAÇÃO E CONTROLE ---
@@ -409,14 +411,8 @@ function abrirAudioPlayerPopup(arena) {
         return;
     }
 
-    const popupWidth = 600;
-    const popupHeight = 150;
-    const left = (window.screen.width / 2) - (popupWidth / 2);
-    const top = (window.screen.height / 2) - (popupHeight / 2);
-
-    const audioWindow = window.open('', 'CapyPodcastPlayer', `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=no,resizable=no`);
-    
-    audioWindow.document.write(`
+    // Conteúdo HTML para o iframe
+    const iframeContent = `
         <!DOCTYPE html>
         <html>
         <head>
@@ -433,11 +429,18 @@ function abrirAudioPlayerPopup(arena) {
                 <source src="${audioSrc}" type="audio/mp4">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
-            <p><small>Reprodução automática. Você pode fechar esta janela a qualquer momento.</small></p>
         </body>
         </html>
-    `);
-    audioWindow.document.close();
+    `;
+
+    // Define o conteúdo do iframe
+    audioPlayerIframe.srcdoc = iframeContent;
+    audioPlayerContainer.style.display = 'flex'; // Mostra o container do iframe
+}
+
+function fecharAudioPlayer() {
+    audioPlayerIframe.srcdoc = ''; // Limpa o conteúdo do iframe
+    audioPlayerContainer.style.display = 'none'; // Esconde o container
 }
 
 function registrarDiscordancia() {
@@ -449,102 +452,71 @@ function registrarDiscordancia() {
         Questão: ${perguntaAtual + 1} - "${questao.titulo}"
         Pergunta: ${questao.pergunta}
         Sua Resposta: ${respostaDoAluno}
-        Status: ${status === 'correta' ? 'Correta' : (status === 'incorreta' ? 'Incorreta' : status)}
+        Status: ${status}
         Resposta Correta: ${questao.respostaCorreta}
-        Justificativa Oficial: ${questao.justificativa}
-
-        Digite seu questionamento ou discórdia abaixo:
-        ------------------------------------------
+        Justificativa: ${questao.justificativa}
+        
+        Por favor, descreva sua discordância:
     `;
-    const questionamento = prompt("Por favor, digite seu questionamento sobre esta questão:\n\n" + mensagem);
 
-    if (questionamento) {
-        alert("Seu questionamento foi registrado! Agradecemos seu feedback.");
-        // Em um sistema real, você enviaria isso para um backend ou salvaria em algum lugar.
-        console.log("Questionamento da Questão " + (perguntaAtual + 1) + ":", questionamento);
-    } else {
-        alert("Questionamento cancelado.");
+    const discordancia = prompt(mensagem);
+    if (discordancia) {
+        alert("Sua discordância foi registrada e será analisada. Obrigado por sua contribuição!");
+        // Aqui você pode adicionar lógica para enviar a discordância para um servidor ou log
+        console.log("Discordância registrada:", { questao, respostaDoAluno, status, discordancia });
     }
 }
 
 function mostrarGabarito(tipo) {
     telaPergunta.style.display = 'none';
     telaGabarito.style.display = 'block';
-    
-    const corpoTabela = document.getElementById('corpo-tabela-resultados');
-    corpoTabela.innerHTML = '';
-    
-    let totalAcertos = 0;
-    let totalRespondidas = 0;
-    
-    const questoesParaExibir = tipo === 'total' ? bancoDeQuestoesAtual : bancoDeQuestoesAtual.filter((_, i) => statusDasQuestoes[i] !== 'nao_respondida');
+    const totalQuestoes = bancoDeQuestoesAtual.length;
 
-    questoesParaExibir.forEach((questao, indexNaLista) => {
-        let indexOriginal = bancoDeQuestoesAtual.indexOf(questao); // Encontra o índice original da questão
-        const status = statusDasQuestoes[indexOriginal];
-        const respostaDoAluno = respostasDoUsuario[indexOriginal] || "Não respondida";
-        
-        const tr = document.createElement('tr');
-        let statusTexto = '';
-        let statusClass = '';
+    let gabaritoHTML = '';
+    let tituloGabarito = '';
 
-        if (status === 'correta') {
-            statusTexto = 'Correta';
-            statusClass = 'correta';
-            totalAcertos++;
-            totalRespondidas++;
-        } else if (status === 'incorreta') {
-            statusTexto = 'Incorreta';
-            statusClass = 'incorreta';
-            totalRespondidas++;
-        } else if (status === 'salva') {
-            statusTexto = 'Salva (Não Confirmada)';
-            statusClass = 'salva';
-        } else {
-            statusTexto = 'Não Respondida';
-            statusClass = '';
-        }
-
-        tr.innerHTML = `
-            <td>${indexOriginal + 1}</td>
-            <td>${questao.titulo}</td>
-            <td>${respostaDoAluno}</td>
-            <td>${questao.respostaCorreta}</td>
-            <td class="${statusClass}">${statusTexto}</td>
-        `;
-        corpoTabela.appendChild(tr);
-    });
-
-    let percentualAcerto = 0;
-    if (totalRespondidas > 0) {
-        percentualAcerto = (totalAcertos / totalRespondidas) * 100;
-    } else if (tipo === 'total' && bancoDeQuestoesAtual.length > 0) {
-         percentualAcerto = (totalAcertos / bancoDeQuestoesAtual.length) * 100;
-    }
-    
-    document.getElementById('gabarito-titulo').innerText = `Gabarito ${tipo === 'parcial' ? 'Parcial' : 'Total'}`;
-    
-    const textoResultado = document.getElementById('gabarito-texto');
     if (tipo === 'parcial') {
-        textoResultado.innerHTML = `Você acertou <strong>${totalAcertos}</strong> questões de um total de <strong>${totalRespondidas}</strong> respondidas, atingindo <strong>${percentualAcerto.toFixed(2)}%</strong> até o momento.`;
-    } else { // total
-        textoResultado.innerHTML = `Você acertou <strong>${totalAcertos}</strong> questões de um total de <strong>${bancoDeQuestoesAtual.length}</strong> questões, totalizando <strong>${(totalAcertos / bancoDeQuestoesAtual.length * 100).toFixed(2)}%</strong> de acerto total.`;
+        tituloGabarito = 'Gabarito Parcial';
+        gabaritoHTML += '<p>Aqui estão as respostas das questões que você já respondeu:</p>';
+    } else {
+        tituloGabarito = 'Gabarito Total';
+        gabaritoHTML += '<p>Aqui estão as respostas de todas as questões:</p>';
     }
-}
 
+    document.getElementById('gabarito-titulo').innerText = tituloGabarito;
+    document.getElementById('gabarito-texto').innerHTML = gabaritoHTML;
+
+    const corpoTabela = document.getElementById('corpo-tabela-resultados');
+    corpoTabela.innerHTML = ''; // Limpa a tabela anterior
+
+    bancoDeQuestoesAtual.forEach((questao, index) => {
+        if (tipo === 'total' || statusDasQuestoes[index] === 'correta' || statusDasQuestoes[index] === 'incorreta') {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${questao.titulo}</td>
+                <td>${respostasDoUsuario[index] || 'Não respondida'}</td>
+                <td>${questao.respostaCorreta}</td>
+                <td>${statusDasQuestoes[index] === 'correta' ? 'Correta' : (statusDasQuestoes[index] === 'incorreta' ? 'Incorreta' : 'N/A')}</td>
+            `;
+            corpoTabela.appendChild(tr);
+        }
+    });
+}
 
 function voltarAoJogo() {
     telaGabarito.style.display = 'none';
     telaPergunta.style.display = 'block';
-    // Garante que a questão atual seja carregada novamente com o estado correto
-    carregarPergunta(); 
 }
 
 // --- INICIALIZAÇÃO ---
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
     mapearElementos();
-    telaInicial.style.display = 'flex';
-    telaPergunta.style.display = 'none';
-    telaGabarito.style.display = 'none';
-    headerIcon.style.display = 'none'; // Garante que o ícone esteja escondido na tela inicial
-});
+    // Adiciona o event listener para garantir que o mapeamento ocorra após o DOM estar pronto
+    document.addEventListener('DOMContentLoaded', mapearElementos);
+};
+
+// Chamar mapearElementos() no início para garantir que os elementos estejam disponíveis
+mapearElementos();
+
+
