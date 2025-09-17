@@ -401,9 +401,9 @@ function atualizarBarraDeProgresso() {
 function abrirAudioPlayerPopup(arena) {
     let audioSrc = '';
     if (arena === 'matematica') {
-        audioSrc = 'Cap_10_Matematica_podcast.mp4';
+        audioSrc = 'Cap_10_Matematica_podcast_compressed.mp4';
     } else if (arena === 'portugues') {
-        audioSrc = 'Cap_10_Portugues_podcast.mp4';
+        audioSrc = 'Cap_10_Portugues_podcast_compressed.mp4';
     } else {
         alert("Podcast não disponível para esta arena.");
         return;
