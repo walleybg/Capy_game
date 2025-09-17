@@ -1,364 +1,350 @@
-// Arquivo-depósito de todas as perguntas do jogo para a Arena "Torre das Palavras". Versão: 1.2 (Conteúdo Completo e V/F Corrigido)
+
+// Arquivo-depósito de todas as perguntas do jogo para a Arena "Torre das Palavras". Versão: 1.3 (Conteúdo atualizado do PDF)
 
 const dadosDoQuizLP = [
     // --- GRUPO 1: MÚLTIPLA ESCOLHA ---
     {
         tipo: "multipla_escolha",
-        titulo: "Infográfico da Árvore",
-        contexto: "Observe o infográfico para responder à questão. Ele mostra o crescimento de uma árvore ao longo de 4 estações: Inverno, Primavera, Verão e Outono, detalhando as características de cada fase. No inverno, a árvore está dormente, sem folhas. Na primavera, as folhas brotam e as flores aparecem. No verão, as folhas estão verdes e cheias, e os frutos começam a amadurecer. No outono, as folhas mudam de cor e caem, preparando a árvore para o próximo inverno.",
-        pergunta: "De acordo com o infográfico, em qual estação a árvore está se preparando para uma nova fase de crescimento, perdendo suas folhas?",
-        opcoes: ["Inverno", "Primavera", "Verão", "Outono"],
-        respostaCorreta: "Outono",
-        justificativa: "O infográfico mostra que no Outono, as folhas da árvore mudam de cor e caem, preparando-a para o inverno e o ciclo de crescimento seguinte."
+        titulo: "Infográficos: Conceito Principal",
+        contexto: "Uma professora está explicando aos seus alunos o que é um infográfico e como ele se diferencia de um texto comum. Ela enfatiza que ele deve ser fácil de entender.",
+        pergunta: "Qual das opções abaixo não representa uma característica essencial de um infográfico, conforme a descrição acima?",
+        opcoes: [
+            "Comunicam informações de maneira condensada e visual.",
+            "Combinam imagens e textos para transmitir conteúdo.",
+            "Visam facilitar a compreensão rápida de informações.",
+            "São predominantemente textos verbais, com poucas imagens, focando em estatísticas complexas."
+        ],
+        respostaCorreta: "São predominantemente textos verbais, com poucas imagens, focando em estatísticas complexas.",
+        justificativa: "A característica essencial de um infográfico é misturar imagens e textos para passar informações de forma rápida e fácil, não sendo predominantemente verbal com poucas imagens."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Sinônimos",
-        contexto: "Identifique a palavra que possui o mesmo sentido ou significado de outra palavra.",
-        pergunta: "Qual é o sinônimo de 'feliz'?",
-        opcoes: ["Triste", "Contente", "Bravo", "Cansado"],
-        respostaCorreta: "Contente",
-        justificativa: "'Contente' é a palavra que melhor expressa o mesmo sentido de 'feliz'."
+        titulo: "Encontros Consonantais com R ou L",
+        contexto: "Um grupo de crianças está jogando \"Caça-palavras\" e precisa encontrar palavras que tenham duas consoantes juntas na mesma sílaba, com \'R\' ou \'L\'.",
+        pergunta: "Analisando as regras de encontros consonantais com R ou L na mesma sílaba, em qual das palavras a seguir não ocorre esse tipo de encontro?",
+        opcoes: [
+            "Bloco",
+            "Brilha",
+            "Prédio",
+            "Rato"
+        ],
+        respostaCorreta: "Rato",
+        justificativa: "Na palavra 'Rato', o 'R' não forma um encontro consonantal com 'L' ou outra consoante na mesma sílaba. 'Bl', 'Br' e 'Pr' são encontros consonantais."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Antônimos",
-        contexto: "Identifique a palavra que possui sentido oposto ao de outra palavra.",
-        pergunta: "Qual é o antônimo de 'claro'?",
-        opcoes: ["Brilhante", "Luminoso", "Escuro", "Transparente"],
-        respostaCorreta: "Escuro",
-        justificativa: "'Escuro' é a palavra que expressa o sentido oposto de 'claro'."
+        titulo: "Uso do C e Ç",
+        contexto: "Joana está aprendendo as regras de ortografia e se lembra de que a cedilha não pode ser usada em algumas situações específicas.",
+        pergunta: "De acordo com as regras de uso da cedilha (Ç), em qual das alternativas abaixo a palavra está grafada incorretamente?",
+        opcoes: [
+            "Coração",
+            "Açúcar",
+            "Força",
+            "Cidra"
+        ],
+        respostaCorreta: "Cidra",
+        justificativa: "A cedilha (Ç) nunca é usada antes das vogais 'e' e 'i'. A palavra correta é 'Sidra' ou 'Cidra' (sem cedilha)."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Classificação de Palavras",
-        contexto: "As palavras podem ser classificadas de acordo com o número de sílabas.",
-        pergunta: "A palavra 'escola' é classificada como:",
-        opcoes: ["Monossílaba", "Dissílaba", "Trissílaba", "Polissílaba"],
-        respostaCorreta: "Trissílaba",
-        justificativa: "A palavra 'escola' possui três sílabas: es-co-la, sendo, portanto, trissílaba."
+        titulo: "Storytelling Visual e Engajamento",
+        contexto: "Uma revista infantil quer criar um conteúdo sobre animais marinhos que prenda a atenção das crianças rapidamente, considerando que elas se distraem fácil.",
+        pergunta: "Considerando a preferência do cérebro humano por imagens e histórias, por que o infográfico do peixe-palhaço seria eficaz em capturar a atenção, segundo as fontes?",
+        opcoes: [
+            "Porque o texto é mínimo, o que não exige raciocínio.",
+            "Porque ele usa muitos números e dados científicos complexos.",
+            "Porque o storytelling visual aumenta o engajamento, já que o cérebro humano ama imagens e histórias.",
+            "Porque ele força o leitor a passar mais de oito segundos para entender a informação."
+        ],
+        respostaCorreta: "Porque o storytelling visual aumenta o engajamento, já que o cérebro humano ama imagens e histórias.",
+        justificativa: "O cérebro humano é feito para amar imagens e histórias, o que torna o storytelling visual eficaz para capturar a atenção e aumentar o engajamento."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Substantivo Comum",
-        contexto: "Substantivos são palavras que nomeiam seres, objetos, lugares, sentimentos.",
-        pergunta: "Qual das palavras abaixo é um substantivo comum?",
-        opcoes: ["Brasil", "Pedro", "Cadeira", "Paris"],
-        respostaCorreta: "Cadeira",
-        justificativa: "'Cadeira' nomeia um objeto de forma genérica, sendo um substantivo comum. Os demais são próprios."
+        titulo: "Uso de O ou U: Confusão na Escrita",
+        contexto: "Miguel está escrevendo uma história e, ao descrever uma \"coruja\" que vive em uma \"cozinha\", ele se confunde sobre qual vogal usar em cada palavra devido à pronúncia.",
+        pergunta: "De acordo com a explicação sobre a confusão entre o \"o\" e o \"u\" na escrita, qual das palavras abaixo está grafada incorretamente?",
+        opcoes: [
+            "Cozinha",
+            "Curioso",
+            "Curujá",
+            "Mochila"
+        ],
+        respostaCorreta: "Curujá",
+        justificativa: "A palavra correta é 'Coruja'. A confusão entre 'o' e 'u' é comum devido à pronúncia, mas 'Curujá' está incorreta."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Verbo no Passado",
-        contexto: "Verbos indicam ação, estado ou fenômeno da natureza e podem variar de acordo com o tempo.",
-        pergunta: "Qual frase o verbo está no passado?",
-        opcoes: ["Eu canto bem.", "Eles lerão o livro.", "Nós comemos pizza.", "Ela estuda muito."],
-        respostaCorreta: "Nós comemos pizza.",
-        justificativa: "O verbo 'comemos' na frase 'Nós comemos pizza' indica uma ação que já aconteceu (passado)."
+        titulo: "Prefixos e Sufixos: Função e Formação de Palavras",
+        contexto: "A professora está ensinando que podemos \"desligar\" e \"ligar\", \"rever\" e \"ver\". Ela quer que os alunos entendam como pequenas partes das palavras mudam seu significado.",
+        pergunta: "Qual das opções abaixo não corresponde a uma função principal dos prefixos e sufixos na língua portuguesa?",
+        opcoes: [
+            "Modificar o significado das palavras originais.",
+            "Auxiliar na formação de novas palavras.",
+            "Serem adicionados no início (prefixos) ou final (sufixos) das palavras.",
+            "Definir o gênero de todas as palavras sem alterar seu significado."
+        ],
+        respostaCorreta: "Definir o gênero de todas as palavras sem alterar seu significado.",
+        justificativa: "Prefixos e sufixos modificam o significado e auxiliam na formação de novas palavras, sendo adicionados no início ou final. Eles não definem o gênero de todas as palavras."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Sinais de Pontuação",
-        contexto: "Os sinais de pontuação são essenciais para a clareza e sentido dos textos.",
-        pergunta: "Qual sinal de pontuação indica uma pergunta?",
-        opcoes: ["Ponto final ( . )", "Vírgula ( , )", "Ponto de interrogação ( ? )", "Ponto de exclamação ( ! )"],
-        respostaCorreta: "Ponto de interrogação ( ? )",
-        justificativa: "O ponto de interrogação (?) é usado para indicar uma pergunta, expressando uma dúvida ou questionamento."
+        titulo: "Planejamento de Infográficos",
+        contexto: "Clara precisa fazer um infográfico para um projeto de ciências. Ela está muito animada para começar a desenhar, mas sua professora a aconselha a primeiro planejar bem o que ela quer mostrar.",
+        pergunta: "Todas as afirmativas são corretas sobre o planejamento eficaz de um infográfico, exceto:",
+        opcoes: [
+            "É fundamental definir a história que se deseja contar antes de iniciar o design.",
+            "Criar um esboço com cabeçalhos e dados é uma boa prática antes de projetar.",
+            "O ângulo escolhido para a história influenciará as informações a serem incluídas.",
+            "O layout deve ser criado imediatamente, sem um esboço, para capturar a inspiração inicial."
+        ],
+        respostaCorreta: "O layout deve ser criado imediatamente, sem um esboço, para capturar a inspiração inicial.",
+        justificativa: "É sempre uma boa ideia criar um esboço antes de projetar o layout, para organizar cabeçalhos, dados e detalhes de design, e não o contrário."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Plural de Substantivos",
-        contexto: "Muitos substantivos formam o plural acrescentando 's' ao final, mas há exceções.",
-        pergunta: "Qual é o plural correto da palavra 'pão'?",
-        opcoes: ["Pãos", "Pães", "Panos", "Poezinhos"],
-        respostaCorreta: "Pães",
-        justificativa: "O plural de 'pão' é 'pães', seguindo a regra de substantivos terminados em '-ão'."
+        titulo: "Tipos de Infográficos Sustentáveis",
+        contexto: "Em uma aula sobre sustentabilidade, a professora mostrou exemplos de como cuidar do planeta. Ela quer que os alunos identifiquem outros exemplos que se encaixem no mesmo tema.",
+        pergunta: "Baseando-se nos exemplos de infográficos sobre sustentabilidade apresentados nas fontes, qual conceito o infográfico \"Economia de Energia em Casa\" aborda de forma semelhante?",
+        opcoes: [
+            "Somente a importância da reutilização.",
+            "A complexidade do ciclo da água no planeta.",
+            "Práticas de consumo consciente e uso eficiente de recursos naturais.",
+            "O impacto do transporte público na poluição."
+        ],
+        respostaCorreta: "Práticas de consumo consciente e uso eficiente de recursos naturais.",
+        justificativa: "Os infográficos apresentados e o exemplo de 'Economia de Energia em Casa' focam em atitudes simples e práticas de consumo consciente e uso eficiente de recursos naturais para melhorar o mundo."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Uso do 'Mas' e 'Mais'",
-        contexto: "As palavras 'mas' e 'mais' são homófonas (mesmo som), mas possuem significados e usos diferentes.",
-        pergunta: "Qual a frase que usa 'mas' corretamente?",
-        opcoes: ["Eu tenho mais amigos.", "Ela é bonita, mas não simpática.", "Ele quer mais um pedaço.", "Eu preciso de mais tempo."],
-        respostaCorreta: "Ela é bonita, mas não simpática.",
-        justificativa: "'Mas' é uma conjunção adversativa, indicando oposição, enquanto 'mais' indica quantidade ou intensidade."
+        titulo: "Encontros Consonantais: Separação de Sílabas",
+        contexto: "Um aluno está identificando palavras com encontros consonantais com \'R\' ou \'L\' que se mantêm na mesma sílaba. Ele usa o infográfico como referência.",
+        pergunta: "Pensando nos encontros consonantais com R e L que permanecem na mesma sílaba, em qual das palavras do infográfico \"Animais da Floresta\" o encontro consonantal não está presente?",
+        opcoes: [
+            "Tigre",
+            "Grilo",
+            "Cobra",
+            "Arara"
+        ],
+        respostaCorreta: "Arara",
+        justificativa: "Nas palavras 'Tigre', 'Grilo' e 'Cobra', os encontros consonantais 'gr', 'gr' e 'br' (respectivamente) permanecem na mesma sílaba. 'Arara' não possui esse tipo de encontro consonantal."
     },
     {
         tipo: "multipla_escolha",
-        titulo: "Classes de Palavras",
-        contexto: "As palavras são divididas em classes, como substantivos, verbos, adjetivos, etc.",
-        pergunta: "Na frase 'O céu azul está lindo.', qual palavra é um adjetivo?",
-        opcoes: ["O", "Céu", "Azul", "Está"],
-        respostaCorreta: "Azul",
-        justificativa: "'Azul' é um adjetivo, pois qualifica o substantivo 'céu', indicando uma característica."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Pontuação para Lista",
-        contexto: "Ao apresentar uma sequência de itens, um sinal de pontuação específico é geralmente usado.",
-        pergunta: "Qual sinal de pontuação é usado para iniciar uma lista?",
-        opcoes: ["Ponto final ( . )", "Vírgula ( , )", "Dois-pontos ( : )", "Ponto e vírgula ( ; )"],
-        respostaCorreta: "Dois-pontos ( : )",
-        justificativa: "Os dois-pontos ( : ) são frequentemente usados para introduzir uma enumeração ou uma lista de itens."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Concordância Verbal",
-        contexto: "O verbo deve concordar em número e pessoa com o sujeito da oração.",
-        pergunta: "Assinale a frase com a concordância verbal correta:",
-        opcoes: ["Nós foi ao parque.", "Eles vai viajar.", "Eu estudamos muito.", "Ela cantou uma música."],
-        respostaCorreta: "Ela cantou uma música.",
-        justificativa: "Na frase 'Ela cantou uma música', o verbo 'cantou' concorda com o sujeito 'Ela' (terceira pessoa do singular)."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Homônimos",
-        contexto: "Palavras homônimas têm a mesma pronúncia ou grafia, mas significados diferentes.",
-        pergunta: "Qual par de palavras é homônimo?",
-        opcoes: ["Casa (moradia) / Caza (verbo)", "Coser (costurar) / Cozer (cozinhar)", "Mal / Mau", "Bom / Mau"],
-        respostaCorreta: "Coser (costurar) / Cozer (cozinhar)",
-        justificativa: "'Coser' e 'cozer' têm a mesma pronúncia, mas grafias e significados diferentes."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Acentuação Gráfica",
-        contexto: "A acentuação gráfica segue regras para indicar a sílaba tônica e a pronúncia das palavras.",
-        pergunta: "Qual palavra está corretamente acentuada?",
-        opcoes: ["Cafe", "Voce", "Sábia", "Arvôre"],
-        respostaCorreta: "Sábia",
-        justificativa: "A palavra 'sábia' é uma paroxítona terminada em ditongo crescente, necessitando de acento."
-    },
-    {
-        tipo: "multipla_escolha",
-        titulo: "Coerência Textual",
-        contexto: "A coerência refere-se à lógica e ao sentido das ideias em um texto.",
-        pergunta: "Qual das opções mostra um problema de coerência?",
-        opcoes: ["Corri muito e cheguei atrasado.", "Li um livro sobre gatos, por isso comprei um cachorro.", "Choveu forte, então peguei meu guarda-chuva.", "Estudei para a prova e tirei nota boa."],
-        respostaCorreta: "Li um livro sobre gatos, por isso comprei um cachorro.",
-        justificativa: "A ação de ler sobre gatos e comprar um cachorro não apresenta uma relação lógica direta, indicando falta de coerência."
+        titulo: "Espaço Negativo em Infográficos",
+        contexto: "Uma designer criou um infográfico que parecia muito bom em sua cabeça, mas na tela, todas as informações pareciam \"amontoadas\", dificultando a leitura para as pessoas.",
+        pergunta: "Considerando a importância do espaço negativo em um infográfico, o que aconteceria com o infográfico \"Como organizar seu quarto\" se ele estivesse muito cheio, de acordo com as fontes?",
+        opcoes: [
+            "Seria mais fácil de ler, pois todas as informações estariam concentradas.",
+            "O design ficaria mais profissional e elegante.",
+            "Poderia sobrecarregar os leitores e dificultar a leitura e o processamento das informações.",
+            "O espaço negativo preencheria as áreas vazias automaticamente."
+        ],
+        respostaCorreta: "Poderia sobrecarregar os leitores e dificultar a leitura e o processamento das informações.",
+        justificativa: "Se um infográfico estiver muito cheio, o espaço negativo insuficiente pode sobrecarregar os leitores e tornar difícil a leitura e o processamento das informações."
     },
 
     // --- GRUPO 2: VERDADEIRO OU FALSO (Múltiplas Afirmações) ---
     {
         tipo: "verdadeiro_falso",
-        titulo: "Ortografia e Gramática",
-        contexto: "Analise as afirmações sobre regras ortográficas e gramaticais da Língua Portuguesa.",
-        pergunta: "Classifique as afirmações como (V) Verdadeiro ou (F) Falso:",
+        titulo: "Infográficos: Comunicação e Eficácia",
+        contexto: "Uma equipe de marketing está discutindo a melhor forma de apresentar um relatório anual complexo. Eles consideram usar um infográfico para simplificar os dados.",
+        pergunta: "Julgue as afirmações sobre infográficos:",
         afirmacoes: [
-            "A palavra 'exceção' é escrita com 'ç'.",
-            "Usa-se 'onde' para lugares e 'aonde' para movimento/destino.",
-            "Todas as palavras terminadas em 's' no plural são oxítonas.",
-            "O artigo definido 'o' concorda em gênero e número com o substantivo."
+            "Infográficos são uma forma eficaz de comunicar informações complexas de maneira simples e visual.",
+            "Um infográfico bem projetado pode condensar informações e torná-las mais fáceis de entender.",
+            "Para ser considerado um infográfico, o conteúdo deve ser puramente visual, sem nenhum texto.",
+            "A principal vantagem dos infográficos é que eles sempre exigem um tempo de leitura muito longo."
         ],
         opcoes: [
-            "V, V, F, V", // Esta é a resposta correta
+            "V, V, F, F",
+            "F, V, F, V",
             "V, F, V, F",
-            "F, V, V, V",
-            "V, V, V, F"
+            "F, F, V, V"
         ],
-        respostaCorreta: "V, V, F, V",
-        justificativa: "1. Verdadeiro. 2. Verdadeiro. 3. Falso (ex: 'lápis' é paroxítona). 4. Verdadeiro."
+        respostaCorreta: "V, V, F, F",
+        justificativa: "I. Verdadeiro. II. Verdadeiro. III. Falso (infográficos misturam texto e imagem). IV. Falso (visam facilitar a compreensão rápida)."
     },
     {
         tipo: "verdadeiro_falso",
-        titulo: "Concordância Nominal e Verbal",
-        contexto: "Avalie as regras de concordância em diversas situações linguísticas.",
-        pergunta: "Marque (V) para Verdadeiro ou (F) para Falso:",
+        titulo: "Encontros Consonantais: Características",
+        contexto: "Um professor pede aos alunos para analisarem a palavra \"bicicleta\" e identificarem se ela possui algum encontro consonantal.",
+        pergunta: "Analise as afirmações sobre encontros consonantais:",
         afirmacoes: [
-            "Em 'Ela e eu iremos ao cinema', o verbo concorda com 'nós'.",
-            "A palavra 'anexo' em 'Segue anexo as fotos' está correta.",
-            "Na frase 'Fazem muitos anos que não o vejo', o verbo 'fazer' está correto.",
-            "O adjetivo concorda em gênero e número com o substantivo a que se refere."
+            "O encontro consonantal sempre ocorre quando duas consoantes estão juntas.",
+            "Na palavra \"bicicleta\", o \"cl\" é um exemplo de encontro consonantal que se une em uma única sílaba.",
+            "O som de cada letra em um encontro consonantal geralmente se perde, dificultando a pronúncia.",
+            "Encontros consonantais com R e L podem acontecer em qualquer posição da palavra, não apenas no início."
         ],
         opcoes: [
-            "V, F, F, V", // Esta é a resposta correta
+            "F, V, F, V",
+            "V, V, F, V",
+            "V, F, V, F",
+            "F, F, V, V"
+        ],
+        respostaCorreta: "F, V, F, V",
+        justificativa: "I. Falso (nem sempre, ex: 'mn' em 'ritmo'). II. Verdadeiro. III. Falso (o som de cada letra é mantido). IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Uso de C e Ç: Regras de Derivação",
+        contexto: "Marina está aprendendo a usar a cedilha e se depara com palavras como \"infração\" e \"detenção\", tentando entender a regra por trás delas.",
+        pergunta: "Julgue as afirmações sobre o uso da cedilha (Ç):",
+        afirmacoes: [
+            "Palavras derivadas de outras terminadas em \"-TOR\" (como \"redator\") usam \"ss\" (redassão).",
+            "Verbos terminados em \"-TER\" (como \"manter\") geram palavras derivadas com cedilha (manutenção).",
+            "A palavra \"cachaça\" usa cedilha porque é uma palavra de origem africana.",
+            "A cedilha pode ser usada antes das vogais \"e\" e \"i\" em algumas exceções."
+        ],
+        opcoes: [
+            "V, V, F, F",
+            "F, F, V, F",
+            "V, F, V, V",
+            "F, V, F, F"
+        ],
+        respostaCorreta: "F, V, F, F",
+        justificativa: "I. Falso (usam 'ção', ex: redação). II. Verdadeiro. III. Falso (origem não define uso de cedilha). IV. Falso (nunca é usada antes de 'e' e 'i')."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Sustentabilidade em Infográficos",
+        contexto: "A turma do 5º ano está estudando sobre o meio ambiente. A professora trouxe vários infográficos para mostrar como pequenas ações no dia a dia podem fazer a diferença.",
+        pergunta: "Analise as afirmações sobre os temas de sustentabilidade abordados nos infográficos:",
+        afirmacoes: [
+            "Os infográficos apresentados focam em como pequenas atitudes diárias podem contribuir para a sustentabilidade.",
+            "A economia de espaço com bicicletas é um tema de sustentabilidade relacionado ao transporte.",
+            "A separação do lixo em casa é uma prática de reciclagem importante para o meio ambiente.",
+            "Os infográficos sugerem que o consumo de água potável no Brasil é insignificante, sem necessidade de preocupação."
+        ],
+        opcoes: [
+            "F, V, V, V",
+            "V, V, V, F",
+            "V, F, F, V",
+            "F, F, V, F"
+        ],
+        respostaCorreta: "V, V, V, F",
+        justificativa: "I. Verdadeiro. II. Verdadeiro. III. Verdadeiro. IV. Falso (a realidade da água potável é um tema de preocupação)."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Ortografia: S, SS, C, Ç",
+        contexto: "Um estudante está frustrado com a quantidade de regras ortográficas para S, SS, C e Ç e se pergunta se existe um método mais eficaz do que apenas decorar.",
+        pergunta: "Considere as afirmações sobre a aprendizagem da ortografia de S, SS, C e Ç:",
+        afirmacoes: [
+            "A melhor solução para dominar o uso de S, SS, C e Ç é ler muito e escrever muito.",
+            "Não é necessário decorar todas as regras, pois a prática leva à assimilação.",
+            "O \"c\" antes de \"e\" e \"i\" nunca recebe cedilha porque já tem o som de \"s\".",
+            "A complexidade do uso dessas letras torna impossível aprender sem memorização intensiva."
+        ],
+        opcoes: [
+            "F, V, V, F",
+            "V, F, V, V",
+            "F, F, V, V",
+            "V, V, V, F"
+        ],
+        respostaCorreta: "V, V, V, F",
+        justificativa: "I. Verdadeiro. II. Verdadeiro. III. Verdadeiro. IV. Falso (a prática e leitura são eficazes)."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Prefixos e Sufixos: Modificando Palavras",
+        contexto: "Uma criança encontra a palavra \"rever\" e tenta entender como o \"re-\" altera o significado do verbo \"ver\".",
+        pergunta: "Analise as afirmações sobre prefixos e sufixos:",
+        afirmacoes: [
+            "O prefixo \"des-\" adiciona a ideia de negação ou o contrário à palavra original (ex: \"desligar\").",
+            "O sufixo \"oso\" em \"amoroso\" modifica a palavra \"amor\" para um adjetivo.",
+            "Prefixos e sufixos são usados apenas para encurtar palavras, sem alterar seu sentido.",
+            "Conhecer o significado de prefixos e sufixos pode ajudar a descobrir o significado de palavras desconhecidas."
+        ],
+        opcoes: [
+            "F, V, V, V",
+            "V, F, F, V",
+            "F, F, V, V",
+            "V, V, F, V"
+        ],
+        respostaCorreta: "V, V, F, V",
+        justificativa: "I. Verdadeiro. II. Verdadeiro. III. Falso (modificam o sentido). IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Design de Infográficos: Cores e Consistência",
+        contexto: "Um designer está criando um infográfico e quer garantir que ele seja visualmente atraente e fácil de entender, usando cores de forma eficaz.",
+        pergunta: "Julgue as afirmações sobre o uso de cores em infográficos:",
+        afirmacoes: [
+            "É recomendável usar uma paleta de cores com muitas cores vibrantes para chamar mais atenção.",
+            "A consistência no uso das cores ajuda a manter a clareza e a organização visual do infográfico.",
+            "Cores podem ser usadas para destacar informações importantes ou agrupar dados relacionados.",
+            "O contraste entre as cores do texto e do fundo é irrelevante para a legibilidade."
+        ],
+        opcoes: [
+            "V, F, V, F",
             "F, V, V, F",
             "V, V, F, F",
             "F, F, V, V"
         ],
-        respostaCorreta: "V, F, F, V",
-        justificativa: "1. Verdadeiro. 2. Falso (o correto é 'anexas as fotos'). 3. Falso (o correto é 'Faz muitos anos'). 4. Verdadeiro."
+        respostaCorreta: "F, V, V, F",
+        justificativa: "I. Falso (duas ou três cores principais são suficientes). II. Verdadeiro. III. Verdadeiro. IV. Falso (o contraste é crucial para a legibilidade)."
     },
     {
         tipo: "verdadeiro_falso",
-        titulo: "Tipos de Frase",
-        contexto: "Identifique as características de diferentes tipos de frases na Língua Portuguesa.",
-        pergunta: "Assinale (V) ou (F):",
+        titulo: "Infográficos: Elementos Essenciais",
+        contexto: "Um estudante está aprendendo sobre infográficos e quer saber quais elementos são cruciais para a sua eficácia.",
+        pergunta: "Analise as afirmações sobre os elementos essenciais de um infográfico:",
         afirmacoes: [
-            "Uma frase exclamativa expressa uma emoção intensa.",
-            "Uma frase interrogativa sempre termina com ponto final.",
-            "A frase imperativa indica uma ordem, conselho ou pedido.",
-            "Toda frase declarativa sempre afirma algo, nunca nega."
+            "Um bom infográfico deve ter um título claro e conciso que resuma o tema.",
+            "O uso de ícones e ilustrações é opcional e não contribui significativamente para a compreensão.",
+            "A fonte dos dados apresentados no infográfico deve ser sempre citada para garantir credibilidade.",
+            "Infográficos são mais eficazes quando apresentam apenas dados numéricos, sem qualquer texto explicativo."
         ],
         opcoes: [
-            "V, F, V, F", // Esta é a resposta correta
+            "V, F, V, F",
             "F, V, F, V",
             "V, V, F, F",
             "F, F, V, V"
         ],
         respostaCorreta: "V, F, V, F",
-        justificativa: "1. Verdadeiro. 2. Falso (termina com ?). 3. Verdadeiro. 4. Falso (pode ser negativa)."
+        justificativa: "I. Verdadeiro. II. Falso (ícones e ilustrações são importantes). III. Verdadeiro. IV. Falso (misturam texto e imagem)."
     },
     {
         tipo: "verdadeiro_falso",
-        titulo: "Figuras de Linguagem",
-        contexto: "Analise as descrições de algumas figuras de linguagem e sua aplicação.",
-        pergunta: "Marque (V) para Verdadeiro ou (F) para Falso:",
+        titulo: "Interpretação de Infográficos",
+        contexto: "Um grupo de alunos está analisando um infográfico complexo sobre mudanças climáticas e discute como interpretá-lo corretamente.",
+        pergunta: "Marque (V) para Verdadeiro ou (F) para Falso sobre a interpretação de infográficos:",
         afirmacoes: [
-            "Metáfora é uma comparação explícita, com 'como' ou 'tal qual'.",
-            "Personificação atribui características humanas a seres inanimados.",
-            "Hipérbole é o exagero intencional para enfatizar uma ideia.",
-            "Ironia é a figura de linguagem que expressa o contrário do que se pensa, com intenção crítica ou humorística."
+            "A leitura de um infográfico deve sempre começar pelo texto principal antes de observar as imagens.",
+            "Infográficos são projetados para serem lidos de forma não linear, permitindo que o leitor explore as informações visualmente.",
+            "Gráficos e diagramas em infográficos são apenas elementos decorativos e não contêm informações cruciais.",
+            "A compreensão de um infográfico é facilitada pela combinação de elementos visuais e textuais."
         ],
         opcoes: [
-            "F, V, V, V", // Esta é a resposta correta
             "V, F, V, F",
             "F, V, F, V",
-            "V, V, V, F"
+            "V, V, F, F",
+            "F, F, V, V"
         ],
-        respostaCorreta: "F, V, V, V",
-        justificativa: "1. Falso (isso é comparação, metáfora é implícita). 2. Verdadeiro. 3. Verdadeiro. 4. Verdadeiro."
+        respostaCorreta: "F, V, F, V",
+        justificativa: "I. Falso (a leitura pode ser não linear). II. Verdadeiro. III. Falso (contêm informações cruciais). IV. Verdadeiro."
     },
     {
         tipo: "verdadeiro_falso",
-        titulo: "Vocezê e Vocativo",
-        contexto: "Observe as regras de uso do 'você' e a função do vocativo na frase.",
-        pergunta: "Assinale (V) ou (F):",
+        titulo: "Infográficos e Tom de Voz",
+        contexto: "Uma empresa está desenvolvendo um infográfico para apresentar seus resultados anuais e discute qual tom de voz deve ser adotado para o público-alvo.",
+        pergunta: "Julgue as afirmações sobre o tom de voz em infográficos:",
         afirmacoes: [
-            "A palavra 'você' é um pronome de tratamento formal.",
-            "O vocativo serve para chamar ou interpelar o interlocutor.",
-            "O vocativo é sempre separado por vírgula na frase.",
-            "O pronome 'você' sempre exige que o verbo esteja na 2ª pessoa do singular."
+            "O tom de voz de um infográfico deve ser sempre formal e técnico, independentemente do público.",
+            "Um tom de voz informal pode ser usado para infográficos direcionados a um público jovem ou para temas leves.",
+            "O tom de voz deve ser consistente em todo o infográfico para evitar confusão.",
+            "A escolha do tom de voz não afeta a forma como a mensagem é recebida pelo público."
         ],
         opcoes: [
-            "F, V, V, F", // Esta é a resposta correta
             "V, F, V, F",
-            "F, V, F, V",
-            "V, V, V, V"
+            "F, V, V, F",
+            "V, V, F, F",
+            "F, F, V, V"
         ],
         respostaCorreta: "F, V, V, F",
-        justificativa: "1. Falso (é informal). 2. Verdadeiro. 3. Verdadeiro. 4. Falso (exige verbo na 3ª pessoa do singular)."
-    },
-
-    // --- GRUPO 3: RESPOSTA ABERTA ---
-    {
-        tipo: "aberta",
-        titulo: "Identificação de Adjetivo",
-        contexto: "Adjetivos são palavras que caracterizam um substantivo, indicando qualidade, estado, etc.",
-        pergunta: "Qual é o adjetivo na frase 'A casa velha foi demolida'?",
-        respostaCorreta: "velha",
-        justificativa: "'Velha' é o adjetivo que caracteriza o substantivo 'casa'."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Significado de 'Emergir'",
-        contexto: "A compreensão do vocabulário é fundamental para a interpretação de textos.",
-        pergunta: "O que significa a palavra 'emergir'?",
-        respostaCorreta: "Vir à tona; aparecer; subir.",
-        justificativa: "'Emergir' significa vir à tona, surgir, aparecer na superfície."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Pontuação em Diálogo",
-        contexto: "Em um diálogo, a fala dos personagens é indicada por sinais de pontuação específicos.",
-        pergunta: "Qual sinal de pontuação é usado para indicar a fala de um personagem?",
-        respostaCorreta: "Travessão (—)",
-        justificativa: "O travessão (—) é o sinal de pontuação utilizado para introduzir a fala de um personagem em um diálogo."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Sinônimo de 'Belo'",
-        contexto: "Ampliar o vocabulário enriquece a capacidade de expressão.",
-        pergunta: "Dê um sinônimo para a palavra 'belo'.",
-        respostaCorreta: "Lindo (ou formoso, bonito, etc.)",
-        justificativa: "'Lindo' é um sinônimo comum para 'belo'."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Classificação da Palavra 'Ontem'",
-        contexto: "As palavras se encaixam em diferentes classes gramaticais.",
-        pergunta: "Qual a classe gramatical da palavra 'ontem'?",
-        respostaCorreta: "Advérbio de tempo",
-        justificativa: "'Ontem' é um advérbio de tempo, pois indica uma circunstância temporal."
-    },
-    {
-        tipo: "aberta",
-        titulo: "O que é um Parágrafo?",
-        contexto: "A organização textual é fundamental para a clareza da escrita.",
-        pergunta: "Em suas palavras, o que é um parágrafo?",
-        respostaCorreta: "É uma divisão de um texto que agrupa ideias relacionadas em torno de uma ideia principal, marcada por um recuo na linha inicial.",
-        justificativa: "Um parágrafo é uma unidade de texto que desenvolve uma ideia central, geralmente marcada por um recuo na primeira linha e terminando em ponto final."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Uso de 'Há' ou 'A'",
-        contexto: "A distinção entre 'há' (verbo 'haver') e 'a' (preposição/artigo) é um erro comum.",
-        pergunta: "Qual palavra completa corretamente a frase '______ anos não o vejo'?",
-        respostaCorreta: "Há",
-        justificativa: "Usa-se 'há' (do verbo haver) para indicar tempo decorrido no sentido de 'faz'."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Prefixo e Sufixo",
-        contexto: "Palavras podem ser formadas por acréscimo de elementos antes ou depois de sua raiz.",
-        pergunta: "Qual a diferença entre prefixo e sufixo?",
-        respostaCorreta: "Prefixo vem antes da raiz da palavra, sufixo vem depois.",
-        justificativa: "Prefixos são adicionados antes do radical, alterando o sentido da palavra (ex: des-fazer). Sufixos são adicionados depois do radical (ex: feliz-mente)."
-    },
-    {
-        tipo: "aberta",
-        titulo: "O que é Sujeito?",
-        contexto: "A identificação dos termos da oração é essencial para a análise sintática.",
-        pergunta: "Em uma oração simples, o que é o sujeito?",
-        respostaCorreta: "É o termo da oração que pratica ou sofre a ação, ou sobre quem se declara algo.",
-        justificativa: "O sujeito é o elemento da oração sobre o qual o verbo faz uma declaração, realizando ou sofrendo a ação."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Verbo Irregular",
-        contexto: "Verbos irregulares não seguem o padrão de conjugação de sua classe.",
-        pergunta: "Dê um exemplo de verbo irregular.",
-        respostaCorreta: "Ser (ou ir, ter, vir, etc.)",
-        justificativa: "O verbo 'ser' é irregular porque sua conjugação se afasta do padrão (ex: eu sou, tu és)."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Conceito de Crônica",
-        contexto: "Crônica é um gênero textual que se situa entre o jornalismo e a literatura.",
-        pergunta: "Em uma frase, defina o que é uma crônica.",
-        respostaCorreta: "É um texto curto que relata fatos cotidianos de forma leve e pessoal, com reflexões.",
-        justificativa: "Crônica é um gênero textual que aborda temas do dia a dia, com linguagem simples e um tom subjetivo ou reflexivo."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Palavra com Ditongo",
-        contexto: "Ditongo é o encontro de uma vogal e uma semivogal (ou vice-versa) na mesma sílaba.",
-        pergunta: "Dê um exemplo de palavra que contenha um ditongo.",
-        respostaCorreta: "Pai (ou caixa, ouro, loiro, etc.)",
-        justificativa: "Na palavra 'pai', as letras 'a' (vogal) e 'i' (semivogal) formam um ditongo na mesma sílaba."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Função do Artigo",
-        contexto: "Artigos são palavras que acompanham o substantivo, determinando-o ou indeterminando-o.",
-        pergunta: "Qual a função principal de um artigo?",
-        respostaCorreta: "Determinar ou indeterminar o substantivo, indicando gênero e número.",
-        justificativa: "A principal função de um artigo é anteceder o substantivo, especificando-o (definido) ou generalizando-o (indefinido), e concordando em gênero e número."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Identificação de Sujeito Simples",
-        contexto: "Em uma oração, o sujeito é classificado de acordo com o número de núcleos.",
-        pergunta: "Qual o sujeito da frase 'Os alunos estudam muito.' e qual sua classificação?",
-        respostaCorreta: "O sujeito é 'Os alunos', e é classificado como Sujeito Simples.",
-        justificativa: "O sujeito é 'Os alunos', e como possui apenas um núcleo ('alunos'), é um Sujeito Simples."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Importância de um Bom Infográfico",
-        contexto: "Infográficos são ferramentas visuais que combinam texto e imagem para explicar informações complexas de forma clara e rápida. Eles são muito usados para apresentar dados, instruções ou histórias, tornando o aprendizado mais acessível e interessante.",
-        pergunta: "Em suas palavras, qual a principal vantagem de usar um infográfico para apresentar informações, em comparação com um texto longo?",
-        respostaCorreta: "A principal vantagem é que o infográfico torna a informação mais clara, visualmente atraente e fácil de entender rapidamente, resumindo conteúdos complexos.",
-        justificativa: "A principal vantagem é que o infográfico torna a informação mais clara, visualmente atraente e fácil de entender rapidamente, resumindo conteúdos complexos e facilitando o aprendizado. Ele combina texto e imagem de forma didática."
+        justificativa: "I. Falso (o tom de voz deve se adequar ao público). II. Verdadeiro. III. Verdadeiro. IV. Falso (afeta diretamente a recepção da mensagem)."
     }
 ];
+
+
