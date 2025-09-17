@@ -513,7 +513,7 @@ function voltarAoJogo() {
 window.onload = () => {
     mapearElementos();
     // Adiciona o event listener para garantir que o mapeamento ocorra após o DOM estar pronto
-    document.addEventListener('DOMContentLoaded', mapearElementos);
+    
 };
 
 // Chamar mapearElementos() no início para garantir que os elementos estejam disponíveis
