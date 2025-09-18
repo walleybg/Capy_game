@@ -300,10 +300,23 @@ function gerarListaCapitulos(capitulos) {
 }
 
 function iniciarCapitulo(capituloId) {
-    const arena = estruturaCapitulos[arenaAtual];
-    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    console.log('iniciarCapitulo chamado com:', capituloId);
     
-    if (!capitulo || !capitulo.disponivel) {
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    if (!capitulo.disponivel) {
         alert('Este capítulo ainda não está disponível!');
         return;
     }
@@ -314,18 +327,36 @@ function iniciarCapitulo(capituloId) {
     // Definir banco de questões baseado no capítulo
     switch(capituloId) {
         case 'cap10_matematica':
+            if (typeof questoesMatematica === 'undefined') {
+                alert('Erro: Questões de Matemática não carregadas!');
+                return;
+            }
             bancoDeQuestoesAtual = questoesMatematica;
             break;
         case 'cap10_portugues':
+            if (typeof questoesPortugues === 'undefined') {
+                alert('Erro: Questões de Português não carregadas!');
+                return;
+            }
             bancoDeQuestoesAtual = questoesPortugues;
             break;
         case 'cap06_historia':
+            if (typeof questoesHistoria === 'undefined') {
+                alert('Erro: Questões de História não carregadas!');
+                return;
+            }
             bancoDeQuestoesAtual = questoesHistoria;
             break;
         default:
             alert('Questões ainda não disponíveis para este capítulo!');
             return;
     }
+    
+    console.log('Banco de questões carregado:', bancoDeQuestoesAtual.length, 'questões');
+    
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
     
     // Inicializar o jogo
     iniciarJogo();
@@ -480,17 +511,24 @@ function togglePlayPause() {
 }
 
 function updateProgress() {
-    if (audioPlayer.duration) {
+    if (audioPlayer.duration && !isNaN(audioPlayer.duration)) {
         const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
         const progressBar = document.getElementById('progress-bar');
-        const progressHandle = document.getElementById('progress-handle');
         
-        progressBar.style.width = progress + '%';
-        progressHandle.style.right = (100 - progress) + '%';
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
         
-        // Atualizar tempo atual
-        document.getElementById('current-time').textContent = formatTime(audioPlayer.currentTime);
-        document.getElementById('total-time').textContent = formatTime(audioPlayer.duration);
+        // Atualizar tempo atual e total
+        const currentTimeEl = document.getElementById('current-time');
+        const totalTimeEl = document.getElementById('total-time');
+        
+        if (currentTimeEl) {
+            currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+        }
+        if (totalTimeEl) {
+            totalTimeEl.textContent = formatTime(audioPlayer.duration);
+        }
     }
 }
 
@@ -502,13 +540,14 @@ function formatTime(seconds) {
 
 function seekAudio(event) {
     const progressContainer = document.getElementById('progress-container');
+    if (!progressContainer || !audioPlayer.duration) return;
+    
     const rect = progressContainer.getBoundingClientRect();
     const clickX = event.clientX - rect.left;
-    const percentage = clickX / rect.width;
+    const percentage = Math.max(0, Math.min(1, clickX / rect.width));
     
-    if (audioPlayer.duration) {
-        audioPlayer.currentTime = percentage * audioPlayer.duration;
-    }
+    audioPlayer.currentTime = percentage * audioPlayer.duration;
+    updateProgress(); // Atualizar imediatamente
 }
 
 function changeVolume(value) {
