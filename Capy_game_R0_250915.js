@@ -287,12 +287,27 @@ function avancarAudio(segundos) {
 function criarNavegadorDeQuestoes() {
     navegacaoQuestoes.innerHTML = '';
     
-    for (let i = 0; i < bancoDeQuestoesAtual.length; i++) {
-        const botao = document.createElement('button');
-        botao.textContent = i + 1;
-        botao.className = 'nav-questao';
-        botao.onclick = () => irParaQuestao(i);
-        navegacaoQuestoes.appendChild(botao);
+    // Criar estrutura de linhas (3 linhas de 10 questões cada)
+    const totalQuestoes = bancoDeQuestoesAtual.length;
+    const questoesPorLinha = 10;
+    const totalLinhas = Math.ceil(totalQuestoes / questoesPorLinha);
+    
+    for (let linha = 0; linha < totalLinhas; linha++) {
+        const linhaDiv = document.createElement('div');
+        linhaDiv.className = 'linha-navegacao';
+        
+        const inicioLinha = linha * questoesPorLinha;
+        const fimLinha = Math.min(inicioLinha + questoesPorLinha, totalQuestoes);
+        
+        for (let i = inicioLinha; i < fimLinha; i++) {
+            const botao = document.createElement('button');
+            botao.textContent = i + 1;
+            botao.className = 'nav-questao';
+            botao.onclick = () => irParaQuestao(i);
+            linhaDiv.appendChild(botao);
+        }
+        
+        navegacaoQuestoes.appendChild(linhaDiv);
     }
     
     atualizarNavegadorDeQuestoes();
@@ -301,12 +316,10 @@ function criarNavegadorDeQuestoes() {
 function atualizarNavegadorDeQuestoes() {
     const botoes = navegacaoQuestoes.querySelectorAll('.nav-questao');
     botoes.forEach((botao, index) => {
+        // Reset classes
         botao.className = 'nav-questao';
         
-        if (index === perguntaAtual) {
-            botao.classList.add('atual');
-        }
-        
+        // Adicionar classe baseada no status
         switch(statusDasQuestoes[index]) {
             case 'correta':
                 botao.classList.add('correta');
@@ -317,6 +330,11 @@ function atualizarNavegadorDeQuestoes() {
             case 'salva':
                 botao.classList.add('salva');
                 break;
+        }
+        
+        // Destacar questão atual
+        if (index === perguntaAtual) {
+            botao.classList.add('atual');
         }
     });
 }
@@ -366,12 +384,14 @@ function mostrarQuestaoMultiplaEscolha(questao) {
     areaRespostaAberta.style.display = 'none';
     
     opcoesRespostaDiv.innerHTML = '';
+    const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+    
     questao.opcoes.forEach((opcao, index) => {
         const div = document.createElement('div');
         div.className = 'opcao-resposta';
         div.innerHTML = `
             <input type="radio" id="opcao${index}" name="resposta" value="${index}">
-            <label for="opcao${index}">${opcao}</label>
+            <label for="opcao${index}"><strong>${letras[index]}</strong> ${opcao}</label>
         `;
         opcoesRespostaDiv.appendChild(div);
     });
@@ -383,40 +403,64 @@ function mostrarQuestaoVerdadeiroFalso(questao) {
     
     opcoesRespostaDiv.innerHTML = '';
     
-    // Mostrar afirmações
+    // Mostrar afirmações com caixas V/F
     if (questao.afirmacoes) {
         const afirmacoesDiv = document.createElement('div');
         afirmacoesDiv.className = 'afirmacoes-container';
-        afirmacoesDiv.innerHTML = '<h4>Analise as afirmações:</h4>';
+        afirmacoesDiv.innerHTML = '<h4>Analise as afirmações e marque V (Verdadeiro) ou F (Falso):</h4>';
         
         questao.afirmacoes.forEach((afirmacao, index) => {
             const div = document.createElement('div');
             div.className = 'afirmacao-item';
             div.innerHTML = `
-                <span class="afirmacao-numero">${['I', 'II', 'III', 'IV'][index]}.</span>
-                <span class="afirmacao-texto">${afirmacao}</span>
+                <div class="afirmacao-header">
+                    <span class="afirmacao-numero">${['I', 'II', 'III', 'IV'][index]}.</span>
+                    <div class="vf-boxes">
+                        <label class="vf-option">
+                            <input type="checkbox" class="vf-checkbox" data-afirmacao="${index}" data-valor="V"> V
+                        </label>
+                        <label class="vf-option">
+                            <input type="checkbox" class="vf-checkbox" data-afirmacao="${index}" data-valor="F"> F
+                        </label>
+                    </div>
+                </div>
+                <div class="afirmacao-texto">${afirmacao}</div>
             `;
             afirmacoesDiv.appendChild(div);
         });
         
         opcoesRespostaDiv.appendChild(afirmacoesDiv);
         
-        // Mostrar opções de resposta
+        // Mostrar opções de resposta (sequências)
         const opcoesDiv = document.createElement('div');
         opcoesDiv.className = 'opcoes-vf-container';
         opcoesDiv.innerHTML = '<h4>Escolha a sequência correta:</h4>';
+        const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
         
         questao.opcoes.forEach((opcao, index) => {
             const div = document.createElement('div');
             div.className = 'opcao-resposta';
             div.innerHTML = `
                 <input type="radio" id="opcao${index}" name="resposta" value="${opcao}">
-                <label for="opcao${index}">${opcao}</label>
+                <label for="opcao${index}"><strong>${letras[index]}</strong> ${opcao}</label>
             `;
             opcoesDiv.appendChild(div);
         });
         
         opcoesRespostaDiv.appendChild(opcoesDiv);
+        
+        // Adicionar event listeners para as caixas V/F
+        document.querySelectorAll('.vf-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const afirmacao = this.dataset.afirmacao;
+                const valor = this.dataset.valor;
+                
+                // Desmarcar a outra opção da mesma afirmação
+                document.querySelectorAll(`[data-afirmacao="${afirmacao}"]`).forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+            });
+        });
     }
 }
 
