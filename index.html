@@ -30,7 +30,7 @@
                     <p>Desafios de Língua Portuguesa</p>
                     <div>
                         <button class="btn-secundario" onclick="abrirAudioPlayerPopup('portugues')">Ouvir Revisão</button>
-                        <button class="btn-principal" onclick="selecionarArena('portugues')">Jogar!</button>
+                        <button class="btn-principal" onclick="mapearElementos(); selecionarArena('portugues')">Jogar!</button>
                     </div>
                 </div>
             </div>
@@ -59,20 +59,19 @@
             <div class="botoes-acao">
                 <button id="btn-salvar" class="btn-neutro" onclick="salvarResposta()">Gravar</button>
                 <button id="btn-acao" class="btn-principal" onclick="verificarResposta()">Responder</button>
+                <div class="dropdown">
+                    <button class="btn-neutro">Menu <span style="font-size: 0.8em;">▼</span></button>
+                    <div class="dropdown-content">
+                        <button onclick="reiniciarJogo()">Retornar ao menu principal</button>
+                        <button onclick="abrirAudioPlayerPopup(arenaAtual)">Escutar podcast da arena</button>
+                        <button onclick="registrarDiscordancia()">Questionar resposta</button>
+                        <button onclick="mostrarGabarito(\'parcial\')">Gabarito parcial</button>
+                        <button onclick="mostrarGabarito(\'total\')">Gabarito total</button>
+                    </div>
+                </div>
             </div>
             
             <div id="navegacao-questoes"></div>
-            
-            <div class="dropdown">
-                <button class="btn-neutro">Menu <span style="font-size: 0.8em;">▼</span></button>
-                <div class="dropdown-content">
-                    <button onclick="reiniciarJogo()">Retornar ao menu principal</button>
-                    <button onclick="abrirAudioPlayerPopup(arenaAtual)">Escutar podcast da arena</button>
-                    <button onclick="registrarDiscordancia()">Questionar resposta</button>
-                    <button onclick="mostrarGabarito('parcial')">Gabarito parcial</button>
-                    <button onclick="mostrarGabarito('total')">Gabarito total</button>
-                </div>
-            </div>
         </div>
 
         <div id="tela-gabarito" style="display:none;">

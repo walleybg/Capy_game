@@ -286,6 +286,13 @@ button:disabled {
     gap: 15px; /* Mais espaço entre os botões de ação */
     margin-top: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que os elementos quebrem em telas menores */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /* Removido margin-top: 20px; para alinhar com os botões */
 }
 
 /* Navegação entre Questões */
