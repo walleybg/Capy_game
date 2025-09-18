@@ -42,7 +42,7 @@ function mapearElementos() {
 // --- FUNÇÕES DE NAVEGAÇÃO E CONTROLE ---
 function selecionarArena(tipoArena) {
     if (tipoArena === 'matematica') {
-        bancoDeQuestoesAtual = dadosDoQuiz; // Carrega dados de matematica
+        bancoDeQuestoesAtual = dadosDoQuizMT; // Carrega dados de matematica
         nomeArenaAtual = 'Arena dos Números';
         arenaAtual = 'matematica';
         headerIcon.src = 'ICON_Matematica.png';
@@ -547,4 +547,5 @@ document.addEventListener('DOMContentLoaded', () => {
     telaPergunta.style.display = 'none';
     telaGabarito.style.display = 'none';
     headerIcon.style.display = 'none'; // Garante que o ícone esteja escondido na tela inicial
+
 });
