@@ -99,7 +99,6 @@ button:disabled {
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-top: 20px; /* Espaço acima do menu */
 }
 .dropdown-content {
     display: none;
