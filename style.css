@@ -774,3 +774,168 @@ button:disabled {
         min-width: 70px;
     }
 }
+
+/* === ESTILOS PARA CAIXAS VISUAIS DAS QUESTÕES === */
+
+/* Caixas de Múltipla Escolha */
+.opcao-multipla-escolha .opcao-caixa {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    background: var(--cor-principal);
+    color: white;
+    border: 2px solid var(--cor-principal);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.opcao-multipla-escolha .opcao-caixa:hover {
+    background: #5dade2;
+    border-color: #5dade2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.opcao-multipla-escolha input[type="radio"]:checked + .opcao-caixa {
+    background: #2980b9;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+/* Feedback Visual das Caixas */
+.feedback-correto-caixa {
+    background: var(--cor-sucesso) !important;
+    border-color: var(--cor-sucesso) !important;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3) !important;
+}
+
+.feedback-incorreto-caixa {
+    background: var(--cor-erro) !important;
+    border-color: var(--cor-erro) !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* Caixas Brancas para Afirmações VF */
+.afirmacao-caixa-branca {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.afirmacao-caixa-branca:hover {
+    border-color: #ced4da;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Caixas de Opções VF */
+.opcao-vf-escolha .opcao-caixa {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    margin: 6px 0;
+    background: var(--cor-principal);
+    color: white;
+    border: 2px solid var(--cor-principal);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+.opcao-vf-escolha .opcao-caixa:hover {
+    background: #5dade2;
+    border-color: #5dade2;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
+}
+
+.opcao-vf-escolha input[type="radio"]:checked + .opcao-caixa {
+    background: #2980b9;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+/* Melhorias nas Caixas V/F */
+.vf-option {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.2s ease;
+    font-weight: bold;
+    min-width: 45px;
+    justify-content: center;
+}
+
+.vf-option:hover {
+    border-color: var(--cor-principal);
+    background: #f0f8ff;
+    transform: translateY(-1px);
+}
+
+.vf-option input[type="checkbox"]:checked {
+    accent-color: var(--cor-principal);
+}
+
+.vf-option:has(input:checked) {
+    border-color: var(--cor-principal);
+    background: var(--cor-principal);
+    color: white;
+}
+
+/* Responsividade para Caixas */
+@media (max-width: 768px) {
+    .opcao-multipla-escolha .opcao-caixa,
+    .opcao-vf-escolha .opcao-caixa {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+    
+    .afirmacao-caixa-branca {
+        padding: 12px;
+    }
+    
+    .vf-boxes {
+        gap: 10px;
+    }
+    
+    .vf-option {
+        padding: 6px 10px;
+        min-width: 40px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .opcao-multipla-escolha .opcao-caixa,
+    .opcao-vf-escolha .opcao-caixa {
+        padding: 10px 12px;
+        font-size: 0.85em;
+        margin: 6px 0;
+    }
+    
+    .afirmacao-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .vf-boxes {
+        align-self: flex-end;
+        gap: 8px;
+    }
+    
+    .afirmacao-texto {
+        padding-left: 0;
+        margin-top: 8px;
+    }
+}

@@ -28,7 +28,7 @@ const estruturaCapitulos = {
                 numero: 10,
                 titulo: 'Novos Cálculos',
                 questoes: 'dadosDoQuiz',
-                audio: 'Cap_10_Matematica_podcast_compressed.mp3',
+                audio: 'Cap_10_Matematica_podcast_compressed.mp4',
                 disponivel: true
             },
             {
@@ -50,7 +50,7 @@ const estruturaCapitulos = {
                 numero: 10,
                 titulo: 'Informação em cores, imagens e números',
                 questoes: 'dadosDoQuizLP',
-                audio: 'Cap_10_Portugues_podcast_compressed.mp3',
+                audio: 'Cap_10_Portugues_podcast_compressed.mp4',
                 disponivel: true
             }
         ]
@@ -388,10 +388,12 @@ function mostrarQuestaoMultiplaEscolha(questao) {
     
     questao.opcoes.forEach((opcao, index) => {
         const div = document.createElement('div');
-        div.className = 'opcao-resposta';
+        div.className = 'opcao-resposta opcao-multipla-escolha';
         div.innerHTML = `
-            <input type="radio" id="opcao${index}" name="resposta" value="${index}">
-            <label for="opcao${index}"><strong>${letras[index]}</strong> ${opcao}</label>
+            <input type="radio" id="opcao${index}" name="resposta" value="${index}" style="display: none;">
+            <label for="opcao${index}" class="opcao-caixa">
+                <strong>${letras[index]}</strong> ${opcao}
+            </label>
         `;
         opcoesRespostaDiv.appendChild(div);
     });
@@ -411,7 +413,7 @@ function mostrarQuestaoVerdadeiroFalso(questao) {
         
         questao.afirmacoes.forEach((afirmacao, index) => {
             const div = document.createElement('div');
-            div.className = 'afirmacao-item';
+            div.className = 'afirmacao-item afirmacao-caixa-branca';
             div.innerHTML = `
                 <div class="afirmacao-header">
                     <span class="afirmacao-numero">${['I', 'II', 'III', 'IV'][index]}.</span>
@@ -439,10 +441,12 @@ function mostrarQuestaoVerdadeiroFalso(questao) {
         
         questao.opcoes.forEach((opcao, index) => {
             const div = document.createElement('div');
-            div.className = 'opcao-resposta';
+            div.className = 'opcao-resposta opcao-vf-escolha';
             div.innerHTML = `
-                <input type="radio" id="opcao${index}" name="resposta" value="${opcao}">
-                <label for="opcao${index}"><strong>${letras[index]}</strong> ${opcao}</label>
+                <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+                <label for="opcao${index}" class="opcao-caixa">
+                    <strong>${letras[index]}</strong> ${opcao}
+                </label>
             `;
             opcoesDiv.appendChild(div);
         });
@@ -570,13 +574,24 @@ function mostrarFeedback(estaCorreta, questao) {
     let mensagem = '';
     
     if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+        let respostaEsperada = '';
+        if (questao.respostaEsperada) {
+            respostaEsperada = `<br><strong>Resposta esperada:</strong> ${questao.respostaEsperada}`;
+        } else if (questao.respostaCorreta && questao.respostaCorreta !== 'Resposta aberta') {
+            respostaEsperada = `<br><strong>Resposta esperada:</strong> ${questao.respostaCorreta}`;
+        }
+        
         mensagem = `
             <div class="feedback-correto">
                 <strong>✓ Resposta registrada!</strong><br>
-                ${questao.explicacao || questao.respostaEsperada || 'Sua resposta foi salva com sucesso.'}
+                ${questao.explicacao || 'Sua resposta foi salva com sucesso.'}
+                ${respostaEsperada}
             </div>
         `;
     } else {
+        // Aplicar feedback visual nas caixas
+        aplicarFeedbackVisual(estaCorreta, questao);
+        
         if (estaCorreta) {
             mensagem = `
                 <div class="feedback-correto">
@@ -604,6 +619,43 @@ function mostrarFeedback(estaCorreta, questao) {
     
     feedbackImediato.innerHTML = mensagem;
     feedbackImediato.style.display = 'block';
+}
+
+function aplicarFeedbackVisual(estaCorreta, questao) {
+    const opcoesCaixas = document.querySelectorAll('.opcao-caixa');
+    
+    if (questao.tipo === 'multipla_escolha') {
+        const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
+        if (respostaSelecionada) {
+            const indexSelecionado = parseInt(respostaSelecionada.value);
+            
+            opcoesCaixas.forEach((caixa, index) => {
+                if (index === indexSelecionado) {
+                    // Caixa selecionada
+                    caixa.classList.add(estaCorreta ? 'feedback-correto-caixa' : 'feedback-incorreto-caixa');
+                } else if (index === questao.respostaCorreta && !estaCorreta) {
+                    // Mostrar resposta correta se errou
+                    caixa.classList.add('feedback-correto-caixa');
+                }
+            });
+        }
+    } else if (questao.tipo === 'verdadeiro_falso') {
+        const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
+        if (respostaSelecionada) {
+            const valorSelecionado = respostaSelecionada.value;
+            
+            opcoesCaixas.forEach((caixa) => {
+                const input = caixa.previousElementSibling;
+                if (input && input.value === valorSelecionado) {
+                    // Caixa selecionada
+                    caixa.classList.add(estaCorreta ? 'feedback-correto-caixa' : 'feedback-incorreto-caixa');
+                } else if (input && input.value === questao.respostaCorreta && !estaCorreta) {
+                    // Mostrar resposta correta se errou
+                    caixa.classList.add('feedback-correto-caixa');
+                }
+            });
+        }
+    }
 }
 
 function atualizarBotoesAcao() {
