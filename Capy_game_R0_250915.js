@@ -31,6 +31,54 @@ const estruturaCapitulos = {
                 audio: 'Cap_10_Portugues_podcast_compressed.mp4',
                 questoes: 'questoesPortugues',
                 disponivel: true
+            },
+            {
+                id: 'cap11_portugues',
+                numero: 11,
+                titulo: 'Notícias do mundo selvagem',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap12_portugues',
+                numero: 12,
+                titulo: 'No meio da gataria',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap13_portugues',
+                numero: 13,
+                titulo: 'Jogando os dados',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap14_portugues',
+                numero: 14,
+                titulo: 'De cabeça para baixo',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap15_portugues',
+                numero: 15,
+                titulo: 'Quais são os meus direitos',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap16_portugues',
+                numero: 16,
+                titulo: 'Nas linha da rede',
+                audio: null,
+                questoes: null,
+                disponivel: false
             }
         ]
     },
