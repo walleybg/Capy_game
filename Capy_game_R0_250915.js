@@ -447,7 +447,14 @@ function abrirAudioPlayerPopup(capituloId = null) {
         return;
     }
     
-    // Configurar player
+    // Usar o player moderno se disponível
+    if (window.modernAudioPlayer) {
+        window.modernAudioPlayer.open(audioFile, titulo, subtitulo);
+        console.log('Player moderno aberto:', audioFile);
+        return;
+    }
+    
+    // Fallback para o player antigo
     audioTitle.textContent = titulo;
     audioSubtitle.textContent = subtitulo;
     audioSource.src = audioFile;
