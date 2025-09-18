@@ -303,3 +303,129 @@ const dadosDoQuizCiencias = [
         justificativa: "I. Falso (nem sempre intencionais). II. Falso (diminuem as chances). III. Verdadeiro. IV. Falso (animais de todos os tamanhos são afetados)."
     }
 ];
+
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Identificação de Áreas Desmatadas e Vegetação",
+        contexto: "Uma turma está analisando imagens de satélite de Bragança Paulista para identificar diferentes tipos de cobertura vegetal.",
+        pergunta: "Analise as afirmações sobre a imagem de Bragança Paulista:",
+        afirmacoes: [
+            "As áreas de cor verde-clara e amarronzada representam apenas pastagens e plantações.",
+            "A mancha marrom no centro da imagem representa uma área de vegetação nativa preservada.",
+            "A área verde-escura na imagem indica vegetação nativa preservada.",
+            "A imagem mostra que o desmatamento pode criar grandes áreas sem cobertura vegetal."
+        ],
+        opcoes: [
+            "V, F, V, V",
+            "F, F, V, V",
+            "V, V, F, F",
+            "F, V, F, V"
+        ],
+        respostaCorreta: "F, F, V, V",
+        justificativa: "I. Falso (podem representar áreas desmatadas também). II. Falso (representa área desmatada). III. Verdadeiro. IV. Verdadeiro."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Ações para Proteger a Vida Selvagem nas Estradas",
+        contexto: "Especialistas discutem medidas para reduzir o número de atropelamentos de animais silvestres nas rodovias brasileiras.",
+        pergunta: "Considere as afirmações sobre ações para proteger animais nas estradas:",
+        afirmacoes: [
+            "A redução das florestas não está relacionada ao problema dos atropelamentos.",
+            "A construção de túneis e passagens aéreas para animais pode ajudar a prevenir atropelamentos.",
+            "Apenas a redução da velocidade dos veículos é suficiente para resolver o problema.",
+            "Instalação de telas nas estradas pode ser uma medida de proteção para animais."
+        ],
+        opcoes: [
+            "F, V, F, V",
+            "V, F, V, F",
+            "F, V, V, F",
+            "V, F, F, V"
+        ],
+        respostaCorreta: "F, V, F, V",
+        justificativa: "I. Falso (redução de florestas contribui para o problema). II. Verdadeiro. III. Falso (são necessárias várias medidas). IV. Verdadeiro."
+    },
+
+    // --- GRUPO 3: PERGUNTAS ABERTAS (21-27) ---
+    {
+        tipo: "aberta",
+        titulo: "Conceito de Desmatamento",
+        contexto: "Um estudante precisa explicar para seus colegas o que é desmatamento e como ele afeta os animais silvestres.",
+        pergunta: "Explique o que é desmatamento e como ele afeta os animais silvestres.",
+        respostaCorreta: "Desmatamento é o corte da vegetação natural. Afeta animais porque eles perdem alimento e abrigo, podendo desaparecer da região.",
+        justificativa: "Resposta deve incluir: definição de desmatamento como remoção da vegetação natural e explicação de como isso prejudica os animais (perda de habitat, alimento e abrigo)."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Formas de Poluição e Impactos nos Animais",
+        contexto: "Uma discussão sobre os diferentes tipos de poluição mencionados no texto e seus efeitos na vida selvagem.",
+        pergunta: "Cite duas formas de poluição mencionadas no texto e como cada uma prejudica os animais.",
+        respostaCorreta: "Poluição do ar: causada por indústrias e veículos, prejudica animais e plantas. Poluição da água: por materiais tóxicos (ex: empresas jogando em rios), mata animais aquáticos e adoece outros que a bebem ou comem animais contaminados.",
+        justificativa: "Resposta deve mencionar pelo menos duas formas de poluição (ar e água) e explicar como cada uma afeta os animais."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Animais Silvestres e Cativeiro",
+        contexto: "Uma conversa sobre por que os animais silvestres não devem ser mantidos como animais de estimação.",
+        pergunta: "Por que os animais silvestres não devem ser criados como animais de estimação?",
+        respostaCorreta: "Eles nasceram para ser livres e precisam de seu ambiente natural para viver com saúde e bem-estar. Em cativeiro, podem sofrer estresse, ter problemas de saúde e comportamento, e não conseguem voltar à natureza.",
+        justificativa: "Resposta deve explicar que animais silvestres precisam de liberdade e seu habitat natural, e que o cativeiro causa problemas físicos e comportamentais."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Passagens Seguras para Animais",
+        contexto: "Um projeto de engenharia está sendo desenvolvido para criar passagens seguras para animais atravessarem rodovias.",
+        pergunta: "O que são as 'passagens seguras' para animais nas estradas e qual a sua finalidade?",
+        respostaCorreta: "São construções como túneis ou pontes sobre ou sob as rodovias que permitem aos animais atravessar com segurança, sem serem atropelados pelos veículos.",
+        justificativa: "Resposta deve explicar que são estruturas (túneis, pontes) que permitem travessia segura dos animais, evitando atropelamentos."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Responsabilidade Humana com Animais Silvestres",
+        contexto: "Uma reflexão sobre o papel dos seres humanos na proteção dos animais silvestres e seus habitats.",
+        pergunta: "De acordo com o texto, qual é a principal responsabilidade do ser humano em relação aos animais silvestres?",
+        respostaCorreta: "Proteger o local em que eles vivem (vegetação, ar e água) e garantir que não sejam capturados ou explorados, permitindo que vivam livres em seu habitat natural.",
+        justificativa: "Resposta deve mencionar a proteção do habitat (vegetação, ar, água) e evitar captura/exploração dos animais."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Guia de Conduta Consciente",
+        contexto: "Um grupo se prepara para visitar um parque nacional e precisa conhecer as orientações do Guia de Conduta Consciente.",
+        pergunta: "Se você estivesse visitando um parque natural, quais duas orientações do Guia de Conduta Consciente você seguiria para respeitar os animais e a natureza?",
+        respostaCorreta: "Observaria os animais à distância, sem tentar tocá-los ou alimentá-los. Não deixaria lixo no local e respeitaria as plantas e o ambiente. Manteria o silêncio e não faria barulhos que pudessem assustar os animais. Não sairia das trilhas demarcadas para não perturbar o ecossistema.",
+        justificativa: "Resposta deve incluir pelo menos duas orientações baseadas nos princípios de conduta: observação à distância, não deixar lixo, manter silêncio, não sair das trilhas, etc."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Exemplos de Animais Silvestres",
+        contexto: "Uma atividade de identificação de animais silvestres mencionados no capítulo sobre proteção ambiental.",
+        pergunta: "Cite dois exemplos de animais silvestres mencionados no capítulo.",
+        respostaCorreta: "Macaco-prego-de-cara-branca, Coruja, Boto-cor-de-rosa, Sapo-garrinheiro, Suaçubóia, Caranguejeira-negra-brasileira.",
+        justificativa: "Resposta deve citar pelo menos dois animais mencionados no texto: Macaco-prego-de-cara-branca, Coruja, Boto-cor-de-rosa, Sapo-garrinheiro, Suaçubóia, Caranguejeira-negra-brasileira."
+    },
+
+    // --- GRUPO 4: QUESTÕES DE OPINIÃO (28-30) ---
+    {
+        tipo: "opiniao",
+        titulo: "Estudo de Caso: Corte Ilegal de Árvores",
+        contexto: "Em uma comunidade próxima a uma floresta, algumas pessoas estão cortando árvores ilegalmente para vender a madeira. Os animais da floresta estão começando a aparecer nas casas das pessoas, buscando alimento.",
+        pergunta: "Qual é a sua opinião sobre o que está acontecendo e o que você propõe para solucionar esse problema?",
+        respostaCorreta: "Resposta aberta - opinião pessoal",
+        justificativa: "Esta é uma questão de opinião. O estudante deve expressar sua visão sobre o problema do desmatamento ilegal e propor soluções como denúncia às autoridades, conscientização da comunidade, proteção da floresta, etc."
+    },
+    {
+        tipo: "opiniao",
+        titulo: "Estudo de Caso: Construção de Nova Rodovia",
+        contexto: "Uma nova rodovia será construída e passará por uma área onde vivem muitos animais silvestres. Alguns moradores estão preocupados com o aumento dos atropelamentos.",
+        pergunta: "Que medidas você sugeriria para que a construção da rodovia seja mais segura para os animais?",
+        respostaCorreta: "Resposta aberta - sugestões pessoais",
+        justificativa: "Esta é uma questão de opinião. O estudante deve sugerir medidas como: construção de passagens de fauna (túneis ou pontes), instalação de cercas ou barreiras, sinalização sobre presença de animais, redução de velocidade, etc."
+    },
+    {
+        tipo: "opiniao",
+        titulo: "Estudo de Caso: Captura de Pequenos Animais",
+        contexto: "Em sua escola, alguns colegas acham divertido capturar pequenos animais como insetos ou pássaros para colocar em potes. Outros colegas argumentam que isso não é certo.",
+        pergunta: "Qual é a sua opinião sobre essa situação e por que você acha que é importante proteger esses pequenos seres vivos?",
+        respostaCorreta: "Resposta aberta - opinião pessoal",
+        justificativa: "Esta é uma questão de opinião. O estudante deve expressar sua visão sobre a captura de pequenos animais e explicar a importância de proteger todos os seres vivos, mesmo os menores, para manter o equilíbrio da natureza."
+    }
+];
