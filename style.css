@@ -185,32 +185,67 @@ button:disabled {
 }
 .arena-card button {
     flex-grow: 1; /* Faz os botões crescerem para preencher o espaço */
-    max-width: 130px; /* Limite de largura para botões em linha */
+    max-width: 130px; /* Limita a largura máxima dos botões */
 }
 
+#opcoes-resposta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-/* Layout da Questão */
-#opcoes-resposta button {
-    background-color: var(--cor-principal);
+/* Estilos para questões múltipla escolha e VF - usando labels como caixas */
+.opcao-resposta {
+    margin: 0;
+}
+
+.opcao-resposta input[type="radio"] {
+    display: none;
+}
+
+.opcao-resposta .opcao-caixa {
     display: block;
     width: 100%;
-    margin-top: 12px; /* Aumenta o espaçamento entre as alternativas */
+    padding: 15px 20px;
+    margin: 8px 0;
+    background: var(--cor-principal);
+    color: white;
+    border: 2px solid var(--cor-principal);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-align: left;
-    font-weight: normal;
-    padding: 12px 18px; /* Mais padding para as opções */
     font-size: 1em;
+    line-height: 1.4;
+    box-sizing: border-box;
 }
-#opcoes-resposta button:hover { background-color: #5dade2; }
-#opcoes-resposta button.selecionada {
-    background-color: var(--cor-selecionado);
-    border: 2px solid #d35400; /* Borda mais evidente para selecionado */
-    transform: translateY(-2px); /* Efeito ao selecionar */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-#opcoes-resposta button.correta { background-color: var(--cor-sucesso) !important; color: white !important; }
-#opcoes-resposta button.incorreta { background-color: var(--cor-erro) !important; color: white !important; }
-#opcoes-resposta button:disabled { cursor: not-allowed; opacity: 0.7; }
 
+.opcao-resposta .opcao-caixa:hover {
+    background: #5dade2;
+    border-color: #5dade2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.opcao-resposta input[type="radio"]:checked + .opcao-caixa {
+    background: #2980b9;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+/* Feedback visual das caixas */
+.opcao-caixa.feedback-correto-caixa {
+    background: var(--cor-sucesso) !important;
+    border-color: var(--cor-sucesso) !important;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3) !important;
+}
+
+.opcao-caixa.feedback-incorreto-caixa {
+    background: var(--cor-erro) !important;
+    border-color: var(--cor-erro) !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3) !important;
+}
 
 .contexto {
     text-align: left;
