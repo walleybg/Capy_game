@@ -231,6 +231,8 @@ function inicializar() {
     progressBar = document.getElementById('progress-bar');
     progressText = document.getElementById('progress-text');
     contextoPergunta = document.getElementById('contexto-pergunta');
+    cabecalhoPergunta = document.getElementById('cabecalho-pergunta');
+    perguntaObjetiva = document.getElementById('pergunta-objetiva');
     opcoesRespostaDiv = document.getElementById('opcoes-resposta');
     areaRespostaAberta = document.getElementById('area-resposta-aberta');
     inputResposta = document.getElementById('input-resposta');
@@ -606,6 +608,13 @@ function configurarEventosAudio() {
     audioPlayer.addEventListener('canplay', function() {
         console.log('Áudio pronto para reprodução');
     });
+    
+    // Adicionar event listener para a barra de progresso
+    const progressContainer = document.getElementById('progress-container');
+    if (progressContainer) {
+        progressContainer.addEventListener('click', seekAudio);
+        console.log('Event listener da barra de progresso configurado');
+    }
 }
 
 function inicializarArrastarPlayer() {
