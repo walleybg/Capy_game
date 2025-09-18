@@ -103,9 +103,57 @@ const estruturaCapitulos = {
         descricao: 'Desafios de Ciências',
         capitulos: [
             {
-                id: 'cap01_ciencias',
-                numero: 1,
-                titulo: 'Em breve',
+                id: 'cap10_ciencias',
+                numero: 10,
+                titulo: 'Seres humanos e outros animais',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap11_ciencias',
+                numero: 11,
+                titulo: 'O planeta terra',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap12_ciencias',
+                numero: 12,
+                titulo: 'O dia e a noite',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap13_ciencias',
+                numero: 13,
+                titulo: 'Lua, estrela e planetas',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap14_ciencias',
+                numero: 14,
+                titulo: 'O solo e sua importância',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap15_ciencias',
+                numero: 15,
+                titulo: 'Características do solo',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap16_ciencias',
+                numero: 16,
+                titulo: 'Usos do solo',
                 audio: null,
                 questoes: null,
                 disponivel: false
