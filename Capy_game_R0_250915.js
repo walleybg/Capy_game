@@ -19,61 +19,123 @@ let nomeCapituloAtual = '';
 
 // --- ESTRUTURA DE DADOS DOS CAPÍTULOS ---
 const estruturaCapitulos = {
+    portugues: {
+        nome: 'Torre das Palavras',
+        icone: 'ICON_Portugues.png',
+        descricao: 'Desafios de Português',
+        capitulos: [
+            {
+                id: 'cap10_portugues',
+                numero: 10,
+                titulo: 'Informação em cores, imagens e números',
+                audio: 'Cap_10_Portugues_podcast_compressed.mp4',
+                questoes: 'questoesPortugues',
+                disponivel: true
+            }
+        ]
+    },
     matematica: {
         nome: 'Arena dos Números',
         icone: 'ICON_Matematica.png',
+        descricao: 'Desafios de Matemática',
         capitulos: [
             {
-                id: 'cap10',
+                id: 'cap10_matematica',
                 numero: 10,
                 titulo: 'Novos Cálculos',
-                questoes: 'dadosDoQuiz',
                 audio: 'Cap_10_Matematica_podcast_compressed.mp4',
+                questoes: 'questoesMatematica',
                 disponivel: true
             },
             {
-                id: 'cap11',
+                id: 'cap11_matematica',
                 numero: 11,
                 titulo: 'Para medir o mundo',
-                questoes: null,
                 audio: null,
+                questoes: null,
                 disponivel: false
             }
         ]
     },
-    portugues: {
-        nome: 'Torre das Palavras',
-        icone: 'ICON_Portugues.png',
+    ciencias: {
+        nome: 'Laboratório da Descoberta',
+        icone: 'ICON_Ciencias.png',
+        descricao: 'Desafios de Ciências',
         capitulos: [
             {
-                id: 'cap10',
-                numero: 10,
-                titulo: 'Informação em cores, imagens e números',
-                questoes: 'dadosDoQuizLP',
-                audio: 'Cap_10_Portugues_podcast_compressed.mp4',
-                disponivel: true
+                id: 'cap01_ciencias',
+                numero: 1,
+                titulo: 'Em breve',
+                audio: null,
+                questoes: null,
+                disponivel: false
             }
         ]
     },
     historia: {
         nome: 'Castelo do Tempo',
         icone: 'ICON_Historia.png',
+        descricao: 'Desafios de História',
         capitulos: [
             {
-                id: 'cap06',
+                id: 'cap06_historia',
                 numero: 6,
                 titulo: 'Da formação à reforma das cidades',
-                questoes: 'questoesHistoria',
                 audio: 'Cap_06_Historia_podcast_compressed.mp3',
+                questoes: 'questoesHistoria',
                 disponivel: true
+            }
+        ]
+    },
+    geografia: {
+        nome: 'Mundo das Aventuras',
+        icone: 'ICON_Geografia.png',
+        descricao: 'Desafios de Geografia',
+        capitulos: [
+            {
+                id: 'cap01_geografia',
+                numero: 1,
+                titulo: 'Em breve',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    english: {
+        nome: 'Castle of Words',
+        icone: 'ICON_English.png',
+        descricao: 'English Challenges',
+        capitulos: [
+            {
+                id: 'cap01_english',
+                numero: 1,
+                titulo: 'Coming Soon',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    math: {
+        nome: 'Numbers Kingdom',
+        icone: 'ICON_Math.png',
+        descricao: 'Math Challenges',
+        capitulos: [
+            {
+                id: 'cap01_math',
+                numero: 1,
+                titulo: 'Coming Soon',
+                audio: null,
+                questoes: null,
+                disponivel: false
             }
         ]
     }
 };
 
-function mapearElementos() {
-    cabecalhoPergunta = document.getElementById('cabecalho-pergunta');
-    perguntaObjetiva = document.getElementById('pergunta-objetiva');
+// --- ELEMENTOS DO DOM ---
+function inicializar() {
     telaInicial = document.getElementById('tela-inicial');
     telaPergunta = document.getElementById('tela-pergunta');
     telaGabarito = document.getElementById('tela-gabarito');
@@ -138,14 +200,14 @@ function gerarListaCapitulos(capitulos) {
             <div class="capitulo-acoes">
                 ${capitulo.disponivel ? `
                     <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
-                    <button class="btn-principal" onclick="selecionarCapitulo('${capitulo.id}')">▶ Jogar</button>
+                    <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
                 ` : `
-                    <button class="btn-desabilitado" disabled>🔒 Bloqueado</button>
+                    <span class="status-indisponivel">🔒 ${capitulo.titulo === 'Em breve' || capitulo.titulo === 'Coming Soon' ? 'Bloqueado' : 'Em breve'}</span>
                 `}
             </div>
         `;
         
-        listaCapitulos.appendChild(capituloCard);
+        capitulosContainer.appendChild(capituloCard);
     });
 }
 
