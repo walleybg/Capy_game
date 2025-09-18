@@ -9,6 +9,7 @@
 <body>
     <div class="container-principal">
 
+        <!-- TELA INICIAL: SELEÇÃO DE ARENAS -->
         <div id="tela-inicial" style="display: flex;">
             <h1>Capy Game - Olimpíada do Conhecimento</h1>
             <p>Seja bem-vindo(a)! Escolha uma arena para começar seus estudos.</p>
@@ -19,8 +20,7 @@
                     <h3>Arena dos Números</h3>
                     <p>Desafios de Matemática</p>
                     <div>
-                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('matematica')">Ouvir Revisão</button>
-                        <button class="btn-principal" onclick="selecionarArena('matematica')">Jogar!</button>
+                        <button class="btn-principal" onclick="selecionarArena('matematica')">Entrar na Arena</button>
                     </div>
                 </div>
                 
@@ -29,8 +29,7 @@
                     <h3>Torre das Palavras</h3>
                     <p>Desafios de Língua Portuguesa</p>
                     <div>
-                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('portugues')">Ouvir Revisão</button>
-                        <button class="btn-principal" onclick="mapearElementos(); selecionarArena('portugues')">Jogar!</button>
+                        <button class="btn-principal" onclick="selecionarArena('portugues')">Entrar na Arena</button>
                     </div>
                 </div>
                 
@@ -39,23 +38,46 @@
                     <h3>Castelo do Tempo</h3>
                     <p>Desafios de História</p>
                     <div>
-                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('historia')">Ouvir Revisão</button>
-                        <button class="btn-principal" onclick="mapearElementos(); selecionarArena('historia')">Jogar!</button>
+                        <button class="btn-principal" onclick="selecionarArena('historia')">Entrar na Arena</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- TELA DE SELEÇÃO DE CAPÍTULOS -->
+        <div id="tela-capitulos" style="display: none;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <img src="" id="arena-icon" alt="Ícone da Arena" style="height: 60px; margin-right: 15px;">
+                <div>
+                    <h1 id="arena-title" style="margin: 0;">Arena</h1>
+                    <p id="arena-subtitle" style="margin: 5px 0; color: #666;">Selecione um capítulo para jogar</p>
+                </div>
+            </div>
+            
+            <div id="lista-capitulos" class="capitulos-container">
+                <!-- Os capítulos serão inseridos dinamicamente aqui -->
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-neutro" onclick="voltarParaArenas()">← Voltar às Arenas</button>
+            </div>
+        </div>
+
+        <!-- TELA DE PERGUNTAS -->
         <div id="tela-pergunta" style="display:none;">
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
                 <img src="" id="header-icon" alt="Ícone da Arena" style="height: 40px; margin-right: 10px; display: none;">
-                <h1 id="header-title" style="margin: 0;">Capy Game</h1>
+                <div>
+                    <h1 id="header-title" style="margin: 0;">Capy Game</h1>
+                    <p id="header-capitulo" style="margin: 5px 0; color: #666; font-size: 0.9em;"></p>
+                </div>
             </div>
 
             <div id="progress-container"><div id="progress-bar"></div></div>
             <p id="progress-text">Questão 0 de 0</p>
             
-            <h2 id="cabecalho-pergunta"></h2> <p id="contexto-pergunta" class="contexto"></p>
+            <h2 id="cabecalho-pergunta"></h2> 
+            <p id="contexto-pergunta" class="contexto"></p>
             <p id="pergunta-objetiva"></p>
             
             <div id="opcoes-resposta" class="opcoes-container"></div>
@@ -72,11 +94,11 @@
                 <div class="dropdown">
                     <button class="btn-neutro">Menu <span style="font-size: 0.8em;">▼</span></button>
                     <div class="dropdown-content">
-                        <button onclick="reiniciarJogo()">Retornar ao menu principal</button>
-                        <button onclick="abrirAudioPlayerPopup(arenaAtual)">Escutar podcast da arena</button>
+                        <button onclick="voltarParaCapitulos()">Voltar aos capítulos</button>
+                        <button onclick="abrirAudioPlayerPopup()">Escutar podcast do capítulo</button>
                         <button onclick="registrarDiscordancia()">Questionar resposta</button>
-                        <button onclick="mostrarGabarito(\'parcial\')">Gabarito parcial</button>
-                        <button onclick="mostrarGabarito(\'total\')">Gabarito total</button>
+                        <button onclick="mostrarGabarito('parcial')">Gabarito parcial</button>
+                        <button onclick="mostrarGabarito('total')">Gabarito total</button>
                     </div>
                 </div>
             </div>
@@ -84,6 +106,7 @@
             <div id="navegacao-questoes"></div>
         </div>
 
+        <!-- TELA DE GABARITO -->
         <div id="tela-gabarito" style="display:none;">
             <h2 id="gabarito-titulo"></h2>
             <p id="gabarito-texto"></p>
@@ -103,6 +126,30 @@
         </div>
     </div>
     
+    <!-- PLAYER DE ÁUDIO -->
+    <div id="audio-player-container" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background-color:white; padding:30px; border-radius:12px; position:relative; max-width:600px; width:90%;">
+            <button onclick="fecharAudioPlayer()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; cursor:pointer; color:#666;">×</button>
+            
+            <div style="text-align:center; margin-bottom:20px;">
+                <h3 id="audio-title" style="margin:0; color:#333;">Podcast de Revisão</h3>
+                <p id="audio-subtitle" style="margin:5px 0; color:#666; font-size:0.9em;"></p>
+            </div>
+            
+            <audio id="audio-player" controls style="width:100%; margin-bottom:15px;">
+                <source id="audio-source" src="" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            
+            <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                <button onclick="retrocederAudio(30)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">⏪ 30s</button>
+                <button onclick="retrocederAudio(10)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">⏪ 10s</button>
+                <button onclick="avancarAudio(10)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">10s ⏩</button>
+                <button onclick="avancarAudio(30)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">30s ⏩</button>
+            </div>
+        </div>
+    </div>
+    
     <audio id="som-acerto" src="som_acerto.mp3" preload="auto"></audio>
     <audio id="som-erro" src="som_erro.mp3" preload="auto"></audio>
 
@@ -112,11 +159,3 @@
     <script src="Capy_game_R0_250915.js"></script>
 </body>
 </html>
-
-    <div id="audio-player-container" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
-        <div style="background-color:white; padding:20px; border-radius:8px; position:relative;">
-            <button onclick="fecharAudioPlayer()" class="btn-fechar-audio">Fechar</button>
-            <iframe id="audio-player-iframe" width="500" height="100" frameborder="0" allow="autoplay" src="about:blank"></iframe>
-        </div>
-    </div>
-
