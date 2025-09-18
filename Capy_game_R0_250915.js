@@ -245,9 +245,17 @@ const estruturaCapitulos = {
         descricao: 'Desafios de Geografia',
         capitulos: [
             {
-                id: 'cap01_geografia',
-                numero: 1,
-                titulo: 'Em breve',
+                id: 'cap07_geografia',
+                numero: 7,
+                titulo: 'De gota em gota, de grão em grão',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap08_geografia',
+                numero: 8,
+                titulo: 'Vegetação e ar: uma conexão vital',
                 audio: null,
                 questoes: null,
                 disponivel: false
