@@ -1,6 +1,3 @@
-
-// Arquivo-depósito de todas as perguntas do jogo para a Arena "Torre das Palavras". Versão: 1.3 (Conteúdo atualizado do PDF)
-
 const dadosDoQuizLP = [
     // --- GRUPO 1: MÚLTIPLA ESCOLHA ---
     {
@@ -29,7 +26,7 @@ const dadosDoQuizLP = [
             "Rato"
         ],
         respostaCorreta: "Rato",
-        justificativa: "Na palavra 'Rato', o 'R' não forma um encontro consonantal com 'L' ou outra consoante na mesma sílaba. 'Bl', 'Br' e 'Pr' são encontros consonantais."
+        justificativa: "Na palavra \'Rato\', o \'R\' não forma um encontro consonantal com \'L\' ou outra consoante na mesma sílaba. \'Bl\', \'Br\' e \'Pr\' são encontros consonantais."
     },
     {
         tipo: "multipla_escolha",
@@ -43,7 +40,7 @@ const dadosDoQuizLP = [
             "Cidra"
         ],
         respostaCorreta: "Cidra",
-        justificativa: "A cedilha (Ç) nunca é usada antes das vogais 'e' e 'i'. A palavra correta é 'Sidra' ou 'Cidra' (sem cedilha)."
+        justificativa: "A cedilha (Ç) nunca é usada antes das vogais \'e\' e \'i\'. A palavra correta é \'Sidra\' ou \'Cidra\' (sem cedilha)."
     },
     {
         tipo: "multipla_escolha",
@@ -71,7 +68,7 @@ const dadosDoQuizLP = [
             "Mochila"
         ],
         respostaCorreta: "Curujá",
-        justificativa: "A palavra correta é 'Coruja'. A confusão entre 'o' e 'u' é comum devido à pronúncia, mas 'Curujá' está incorreta."
+        justificativa: "A palavra correta é \'Coruja\'. A confusão entre \'o\' e \'u\' é comum devido à pronúncia, mas \'Curujá\' está incorreta."
     },
     {
         tipo: "multipla_escolha",
@@ -113,7 +110,7 @@ const dadosDoQuizLP = [
             "O impacto do transporte público na poluição."
         ],
         respostaCorreta: "Práticas de consumo consciente e uso eficiente de recursos naturais.",
-        justificativa: "Os infográficos apresentados e o exemplo de 'Economia de Energia em Casa' focam em atitudes simples e práticas de consumo consciente e uso eficiente de recursos naturais para melhorar o mundo."
+        justificativa: "Os infográficos apresentados e o exemplo de \'Economia de Energia em Casa\' focam em atitudes simples e práticas de consumo consciente e uso eficiente de recursos naturais para melhorar o mundo."
     },
     {
         tipo: "multipla_escolha",
@@ -127,7 +124,7 @@ const dadosDoQuizLP = [
             "Arara"
         ],
         respostaCorreta: "Arara",
-        justificativa: "Nas palavras 'Tigre', 'Grilo' e 'Cobra', os encontros consonantais 'gr', 'gr' e 'br' (respectivamente) permanecem na mesma sílaba. 'Arara' não possui esse tipo de encontro consonantal."
+        justificativa: "Nas palavras \'Tigre\', \'Grilo\' e \'Cobra\', os encontros consonantais \'gr\', \'gr\' e \'br\' (respectivamente) permanecem na mesma sílaba. \'Arara\' não possui esse tipo de encontro consonantal."
     },
     {
         tipo: "multipla_escolha",
@@ -183,7 +180,7 @@ const dadosDoQuizLP = [
             "F, F, V, V"
         ],
         respostaCorreta: "F, V, F, V",
-        justificativa: "I. Falso (nem sempre, ex: 'mn' em 'ritmo'). II. Verdadeiro. III. Falso (o som de cada letra é mantido). IV. Verdadeiro."
+        justificativa: "I. Falso (nem sempre, ex: \'mn\' em \'ritmo\'). II. Verdadeiro. III. Falso (o som de cada letra é mantido). IV. Verdadeiro."
     },
     {
         tipo: "verdadeiro_falso",
@@ -203,7 +200,7 @@ const dadosDoQuizLP = [
             "F, V, F, F"
         ],
         respostaCorreta: "F, V, F, F",
-        justificativa: "I. Falso (usam 'ção', ex: redação). II. Verdadeiro. III. Falso (origem não define uso de cedilha). IV. Falso (nunca é usada antes de 'e' e 'i')."
+        justificativa: "I. Falso (usam \'ção\', ex: redação). II. Verdadeiro. III. Falso (origem não define uso de cedilha). IV. Falso (nunca é usada antes de \'e\' e \'i\')."
     },
     {
         tipo: "verdadeiro_falso",
@@ -268,259 +265,166 @@ const dadosDoQuizLP = [
     {
         tipo: "verdadeiro_falso",
         titulo: "Design de Infográficos: Cores e Consistência",
-        contexto: "Um designer está criando um infográfico e quer garantir que ele seja visualmente atraente e fácil de entender, usando cores de forma eficaz.",
-        pergunta: "Julgue as afirmações sobre o uso de cores em infográficos:",
+        contexto: "Um designer está criando um infográfico para uma campanha e precisa garantir que ele seja visualmente atraente e fácil de entender. Ele sabe que a escolha das cores é crucial.",
+        pergunta: "Analise as afirmações sobre o design de infográficos:",
         afirmacoes: [
-            "É recomendável usar uma paleta de cores com muitas cores vibrantes para chamar mais atenção.",
-            "A consistência no uso das cores ajuda a manter a clareza e a organização visual do infográfico.",
-            "Cores podem ser usadas para destacar informações importantes ou agrupar dados relacionados.",
-            "O contraste entre as cores do texto e do fundo é irrelevante para a legibilidade."
+            "É recomendável usar uma paleta de cores com muitas cores vibrantes para atrair a atenção.",
+            "A consistência visual, incluindo cores e fontes, é importante para a clareza do infográfico.",
+            "Usar cores complementares pode ajudar a destacar informações importantes.",
+            "O uso excessivo de cores pode distrair o leitor e dificultar a compreensão."
         ],
         opcoes: [
-            "V, F, V, F",
-            "F, V, V, F",
-            "V, V, F, F",
-            "F, F, V, V"
+            "F, V, V, V",
+            "V, F, V, V",
+            "F, F, V, V",
+            "V, V, F, V"
         ],
-        respostaCorreta: "F, V, V, F",
-        justificativa: "I. Falso (duas ou três cores principais são suficientes). II. Verdadeiro. III. Verdadeiro. IV. Falso (o contraste é crucial para a legibilidade)."
+        respostaCorreta: "F, V, V, V",
+        justificativa: "I. Falso (duas ou três cores principais são suficientes). II. Verdadeiro. III. Verdadeiro. IV. Verdadeiro."
     },
     {
         tipo: "verdadeiro_falso",
-        titulo: "Infográficos: Elementos Essenciais",
-        contexto: "Um estudante está aprendendo sobre infográficos e quer saber quais elementos são cruciais para a sua eficácia.",
-        pergunta: "Analise as afirmações sobre os elementos essenciais de um infográfico:",
+        titulo: "Função da Linguagem: Infográficos",
+        contexto: "Um infográfico apresenta dados sobre o desmatamento na Amazônia, utilizando gráficos, mapas e textos curtos para explicar as causas e consequências.",
+        pergunta: "Considerando a função da linguagem, qual a principal função de um infográfico como o descrito?",
         afirmacoes: [
-            "Um bom infográfico deve ter um título claro e conciso que resuma o tema.",
-            "O uso de ícones e ilustrações é opcional e não contribui significativamente para a compreensão.",
-            "A fonte dos dados apresentados no infográfico deve ser sempre citada para garantir credibilidade.",
-            "Infográficos são mais eficazes quando apresentam apenas dados numéricos, sem qualquer texto explicativo."
+            "A função principal é expressar os sentimentos do autor sobre o desmatamento.",
+            "A função principal é informar e persuadir o leitor sobre a importância da preservação.",
+            "A função principal é estabelecer contato entre o emissor e o receptor.",
+            "A função principal é descrever a estrutura do próprio infográfico."
+        ],
+        opcoes: [
+            "F, V, F, F",
+            "V, F, V, F",
+            "F, F, V, V",
+            "V, V, V, V"
+        ],
+        respostaCorreta: "F, V, F, F",
+        justificativa: "A principal função de um infográfico é informar e, muitas vezes, persuadir o leitor sobre um tema específico, utilizando dados e elementos visuais."
+    },
+    {
+        tipo: "verdadeiro_falso",
+        titulo: "Conectivos e Coesão Textual",
+        contexto: "Um texto sobre a importância da leitura utiliza palavras como \"portanto\", \"além disso\" e \"contudo\" para ligar as ideias entre as frases e parágrafos.",
+        pergunta: "Analise as afirmações sobre o uso de conectivos:",
+        afirmacoes: [
+            "Conectivos são palavras ou expressões que ligam frases e parágrafos, garantindo a coesão textual.",
+            "O uso de conectivos é opcional e não afeta a clareza do texto.",
+            "A palavra \"portanto\" indica uma conclusão ou consequência.",
+            "A palavra \"contudo\" introduz uma ideia de adição ou continuidade."
         ],
         opcoes: [
             "V, F, V, F",
             "F, V, F, V",
-            "V, V, F, F",
-            "F, F, V, V"
+            "V, V, V, V",
+            "V, F, F, V"
         ],
         respostaCorreta: "V, F, V, F",
-        justificativa: "I. Verdadeiro. II. Falso (ícones e ilustrações são importantes). III. Verdadeiro. IV. Falso (misturam texto e imagem)."
+        justificativa: "I. Verdadeiro. II. Falso (são essenciais para a clareza). III. Verdadeiro. IV. Falso (indica oposição)."
     },
     {
         tipo: "verdadeiro_falso",
-        titulo: "Interpretação de Infográficos",
-        contexto: "Um grupo de alunos está analisando um infográfico complexo sobre mudanças climáticas e discute como interpretá-lo corretamente.",
-        pergunta: "Marque (V) para Verdadeiro ou (F) para Falso sobre a interpretação de infográficos:",
+        titulo: "Variação Linguística: Gírias",
+        contexto: "Em uma conversa entre amigos, um deles diz: \"E aí, beleza? Partiu pro rolê!\" O outro responde: \"Demorou, tô chegando!\"",
+        pergunta: "Analise as afirmações sobre a variação linguística presente no diálogo:",
         afirmacoes: [
-            "A leitura de um infográfico deve sempre começar pelo texto principal antes de observar as imagens.",
-            "Infográficos são projetados para serem lidos de forma não linear, permitindo que o leitor explore as informações visualmente.",
-            "Gráficos e diagramas em infográficos são apenas elementos decorativos e não contêm informações cruciais.",
-            "A compreensão de um infográfico é facilitada pela combinação de elementos visuais e textuais."
+            "O diálogo apresenta um exemplo de variação linguística regional.",
+            "As expressões utilizadas são gírias, comuns em contextos informais.",
+            "A linguagem utilizada é adequada para um ambiente formal, como uma reunião de trabalho.",
+            "A variação linguística é um erro e deve ser evitada em qualquer situação."
         ],
         opcoes: [
+            "F, V, F, F",
             "V, F, V, F",
-            "F, V, F, V",
-            "V, V, F, F",
-            "F, F, V, V"
+            "F, F, V, V",
+            "V, V, V, V"
         ],
-        respostaCorreta: "F, V, F, V",
-        justificativa: "I. Falso (a leitura pode ser não linear). II. Verdadeiro. III. Falso (contêm informações cruciais). IV. Verdadeiro."
+        respostaCorreta: "F, V, F, F",
+        justificativa: "I. Falso (é variação social/situacional). II. Verdadeiro. III. Falso (é informal). IV. Falso (é natural e adaptada ao contexto)."
+    },
+
+    // --- GRUPO 3: PERGUNTAS ABERTAS ---
+    {
+        tipo: "aberta",
+        titulo: "Importância do Infográfico",
+        contexto: "Um infográfico sobre a história do Brasil foi criado para ser exibido em uma exposição escolar. Ele utiliza uma linha do tempo visual, com imagens de eventos importantes e textos curtos.",
+        pergunta: "Qual a principal vantagem de usar um infográfico para apresentar a história do Brasil em uma exposição escolar, em vez de um texto corrido?",
+        respostaCorreta: "Facilita a compreensão e memorização, tornando o conteúdo mais atraente.",
+        justificativa: "Infográficos combinam texto e imagem, tornando informações complexas mais acessíveis, visuais e fáceis de serem compreendidas e memorizadas, especialmente para um público escolar."
     },
     {
-        tipo: "verdadeiro_falso",
-        titulo: "Infográficos e Tom de Voz",
-        contexto: "Uma empresa está desenvolvendo um infográfico para apresentar seus resultados anuais e discute qual tom de voz deve ser adotado para o público-alvo.",
-        pergunta: "Julgue as afirmações sobre o tom de voz em infográficos:",
-        afirmacoes: [
-            "O tom de voz de um infográfico deve ser sempre formal e técnico, independentemente do público.",
-            "Um tom de voz informal pode ser usado para infográficos direcionados a um público jovem ou para temas leves.",
-            "O tom de voz deve ser consistente em todo o infográfico para evitar confusão.",
-            "A escolha do tom de voz não afeta a forma como a mensagem é recebida pelo público."
-        ],
-        opcoes: [
-            "V, F, V, F",
-            "F, V, V, F",
-            "V, V, F, F",
-            "F, F, V, V"
-        ],
-        respostaCorreta: "F, V, V, F",
-        justificativa: "I. Falso (o tom de voz deve se adequar ao público). II. Verdadeiro. III. Verdadeiro. IV. Falso (afeta diretamente a recepção da mensagem)."
+        tipo: "aberta",
+        titulo: "Encontros Consonantais na Prática",
+        contexto: "Uma criança está aprendendo a ler e escrever e se depara com a palavra \"bicicleta\". Ela tem dificuldade em pronunciar o \"cl\".",
+        pergunta: "Explique o que é um encontro consonantal e dê outro exemplo de palavra com encontro consonantal que se mantém na mesma sílaba.",
+        respostaCorreta: "Encontro consonantal é quando duas consoantes estão juntas na mesma sílaba. Exemplo: \"placa\".",
+        justificativa: "Um encontro consonantal ocorre quando duas ou mais consoantes aparecem juntas na mesma sílaba ou em sílabas diferentes. Exemplos de encontros na mesma sílaba incluem \'pl\', \'br\', \'fr\'."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Uso do Ç em Palavras",
+        contexto: "Um aluno está escrevendo uma redação e precisa usar a palavra \"organização\". Ele está em dúvida se usa \"s\", \"ss\" ou \"ç\".",
+        pergunta: "Explique a regra para o uso do \"ç\" na palavra \"organização\" e cite outra palavra que siga a mesma regra.",
+        respostaCorreta: "Usa-se \"ç\" em palavras derivadas de verbos terminados em \"-izar\". Exemplo: \"realização\".",
+        justificativa: "A palavra \'organização\' deriva do verbo \'organizar\'. A regra é que palavras derivadas de verbos terminados em \'-izar\' usam \'ç\' antes de \'ão\'. Outro exemplo é \'realizar\' -> \'realização\'."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Engajamento em Redes Sociais",
+        contexto: "Uma empresa de roupas infantis quer lançar uma nova coleção e decide usar as redes sociais para divulgar. Eles estão em dúvida se devem usar apenas fotos dos produtos ou criar pequenas histórias visuais com as roupas.",
+        pergunta: "Qual estratégia de conteúdo você recomendaria para a empresa nas redes sociais, considerando a preferência do cérebro humano por imagens e histórias? Justifique.",
+        respostaCorreta: "Criar pequenas histórias visuais com as roupas, pois o storytelling visual aumenta o engajamento.",
+        justificativa: "O storytelling visual, com pequenas histórias e imagens, é mais eficaz para capturar a atenção e aumentar o engajamento do público, pois o cérebro humano processa melhor informações visuais e narrativas."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Diferença entre \"Mas\" e \"Mais\"",
+        contexto: "Um aluno escreveu a frase: \"Eu queria ir à festa, mais não pude.\" O professor corrigiu, indicando que o \"mais\" estava incorreto.",
+        pergunta: "Explique a diferença entre \"mas\" e \"mais\" e corrija a frase do aluno.",
+        respostaCorreta: "\"Mas\" é conjunção adversativa (oposição), \"mais\" é advérbio de intensidade. Frase correta: \"Eu queria ir à festa, mas não pude.\"",
+        justificativa: "\"Mas\' é uma conjunção adversativa, indicando oposição ou contraste. \'Mais\' é um advérbio de intensidade, indicando quantidade. A frase correta é \'Eu queria ir à festa, mas não pude.\'"
+    },
+    {
+        tipo: "aberta",
+        titulo: "Formação de Palavras com Prefixos",
+        contexto: "A palavra \"infeliz\" é formada pelo prefixo \"in-\" e a palavra \"feliz\".",
+        pergunta: "Explique como o prefixo \"in-\" altera o significado da palavra \"feliz\" e cite outra palavra que utilize o mesmo prefixo com a mesma função.",
+        respostaCorreta: "O prefixo \"in-\" indica negação, transformando \"feliz\" em seu oposto. Exemplo: \"incapaz\".",
+        justificativa: "O prefixo \'in-\' (ou \'im-\') tem a função de indicar negação ou o contrário do radical. Assim, \'infeliz\' significa \'não feliz\'. Outro exemplo é \'capaz\' -> \'incapaz\'."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Importância do Esboço em Infográficos",
+        contexto: "Um grupo de estudantes está criando um infográfico complexo sobre o sistema solar. Eles estão tentados a pular a etapa de fazer um esboço e ir direto para o design final.",
+        pergunta: "Por que é importante criar um esboço para um infográfico antes de iniciar o design final?",
+        respostaCorreta: "Organiza ideias, estrutura o conteúdo e evita retrabalho.",
+        justificativa: "O esboço permite organizar as ideias, definir a estrutura do conteúdo (cabeçalhos, dados, elementos visuais) e planejar o layout, evitando retrabalho e garantindo a clareza e eficácia do infográfico final."
+    },
+
+    // --- GRUPO 4: OPINIÕES (Estudo de Caso) ---
+    {
+        tipo: "aberta",
+        titulo: "Infográfico para Conscientização",
+        contexto: "Uma ONG deseja criar um infográfico para conscientizar a população sobre a importância da reciclagem. Eles têm muitos dados e estatísticas, mas querem que a mensagem seja impactante e fácil de ser compartilhada.",
+        pergunta: "Que tipo de abordagem visual e textual você sugeriria para este infográfico, considerando o objetivo da ONG?",
+        respostaCorreta: "Design simples, ícones claros, dados impactantes e call to action.",
+        justificativa: "Um design limpo, com ícones e gráficos simples, dados impactantes sobre o lixo e os benefícios da reciclagem, e um claro \'call to action\' (como \'Recicle agora!\') tornaria o infográfico eficaz e compartilhável."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Variação Linguística em Redes Sociais",
+        contexto: "Um jovem está escrevendo um post para suas redes sociais sobre um evento escolar. Ele usa gírias e uma linguagem informal, mas um colega o aconselha a usar uma linguagem mais formal para que todos entendam.",
+        pergunta: "Qual sua opinião sobre o uso de gírias e linguagem informal em redes sociais para um evento escolar? Justifique sua resposta.",
+        respostaCorreta: "Adequado para engajar jovens, mas pode excluir outros públicos.",
+        justificativa: "O uso de gírias e linguagem informal pode ser eficaz para engajar o público jovem, que é o principal usuário de redes sociais. No entanto, pode excluir públicos mais velhos ou que não estão familiarizados com as gírias, sendo importante considerar o público-alvo."
+    },
+    {
+        tipo: "aberta",
+        titulo: "Desafios da Ortografia",
+        contexto: "Um professor de português percebe que seus alunos têm muita dificuldade com a ortografia, especialmente com o uso de S, SS, C e Ç. Ele está buscando novas estratégias para ajudá-los.",
+        pergunta: "Que estratégia de ensino você sugeriria para o professor, além da leitura e escrita, para ajudar os alunos a superarem as dificuldades com a ortografia de S, SS, C e Ç?",
+        respostaCorreta: "Jogos educativos, ditados interativos e análise de textos.",
+        justificativa: "Além da leitura e escrita, jogos educativos (como caça-palavras e palavras cruzadas), ditados interativos e a análise de textos com foco nas regras ortográficas podem tornar o aprendizado mais dinâmico e eficaz."
     }
 ];
-
-
-
-
-    // --- GRUPO 3: PERGUNTAS ABERTAS (RESPOSTAS CURTAS) ---
-    {
-        tipo: "aberta",
-        titulo: "Infográficos: Super-herói da Informação",
-        contexto: "Um infográfico é como um super-herói da informação.",
-        pergunta: "Por que ele usa desenhos (imagens) e palavras (textos) juntos para nos ensinar algo?",
-        respostaCorreta: "Para passar informações de forma rápida e fácil, misturando elementos visuais e textuais.",
-        justificativa: "Infográficos combinam imagens e textos para tornar a informação mais acessível, rápida e fácil de entender."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Encontro Consonantal em 'Grande'",
-        contexto: "Na palavra 'grande', quais letras formam o encontro consonantal que fica juntinho na mesma sílaba?",
-        pergunta: "Na palavra 'grande', quais letras formam o encontro consonantal que fica juntinho na mesma sílaba?",
-        respostaCorreta: "gr",
-        justificativa: "O encontro consonantal na palavra 'grande' é 'gr', onde as duas consoantes permanecem na mesma sílaba."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Uso de C e Ç: Regra da Cedilha",
-        contexto: "A cedilha (Ç) é um sinal especial que usamos embaixo da letra C.",
-        pergunta: "Em quais letras depois do 'C' nós nunca usamos a cedilha? Dê um exemplo.",
-        respostaCorreta: "Nunca usamos cedilha antes de 'e' e 'i'. Exemplo: 'Cidade' (não 'Cíade').",
-        justificativa: "A cedilha nunca é usada antes das vogais 'e' e 'i' porque o 'c' antes dessas vogais já possui o som de 's'."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Storytelling Visual: Atenção do Cérebro",
-        contexto: "Nosso cérebro gosta muito de imagens e histórias.",
-        pergunta: "Como essa preferência natural ajuda um infográfico a chamar mais a nossa atenção e nos fazer prestar mais atenção?",
-        respostaCorreta: "O storytelling visual aumenta o engajamento, pois o cérebro humano processa imagens e histórias de forma mais eficaz e rápida.",
-        justificativa: "A preferência do cérebro por imagens e histórias faz com que infográficos com storytelling visual sejam mais envolventes e captem a atenção mais facilmente."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Prefixo 're-' em 'Refazer'",
-        contexto: "A palavra 'refazer' usa uma parte no começo, o 're-', que chamamos de prefixo.",
-        pergunta: "O que o 're-' significa nessa palavra?",
-        respostaCorreta: "Repetição ou fazer novamente.",
-        justificativa: "O prefixo 're-' indica repetição, ou seja, fazer algo novamente."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Sustentabilidade: Economia de Água",
-        contexto: "Para economizar água, o infográfico sobre 'Atitudes simples para melhorar o mundo' sugere algo bem fácil de fazer na hora de escovar os dentes.",
-        pergunta: "O que é?",
-        respostaCorreta: "Fechar a torneira enquanto estiver escovando os dentes.",
-        justificativa: "Uma atitude simples para economizar água é fechar a torneira ao escovar os dentes."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Espaço Negativo em Infográficos",
-        contexto: "Em um infográfico, por que é importante deixar 'espaços vazios' (também chamado de espaço negativo) entre os textos e desenhos?",
-        pergunta: "Em um infográfico, por que é importante deixar 'espaços vazios' (também chamado de espaço negativo) entre os textos e desenhos?",
-        respostaCorreta: "Para evitar sobrecarga de informações, facilitar a leitura e o processamento visual, e dar 'respiro' ao leitor.",
-        justificativa: "O espaço negativo ajuda a organizar o conteúdo, evita a sobrecarga visual e melhora a legibilidade, permitindo que o leitor processe as informações de forma mais eficaz."
-    },
-
-    // --- GRUPO 4: OPINIÕES E SOLUÇÕES (ESTUDOS DE CASO) ---
-    {
-        tipo: "aberta",
-        titulo: "Estudo de Caso: Infográfico para Conscientização",
-        contexto: "A escola 'Aprendizes do Futuro' percebeu que muitos alunos não sabem como separar o lixo em casa, e os avisos escritos nas paredes (somente com texto) não estão funcionando. A direção da escola quer uma forma visual e divertida de ensinar as crianças sobre reciclagem para o Dia do Meio Ambiente.",
-        pergunta: "Como um infográfico poderia ajudar a escola a resolver esse problema? Cite duas coisas importantes que ele deveria ter para ser eficaz, baseando-se no que você aprendeu sobre infográficos.",
-        respostaCorreta: "Um infográfico ajudaria a simplificar a informação complexa da separação do lixo, tornando-a visualmente atraente e fácil de entender para as crianças. Duas coisas importantes seriam: 1) Uso de imagens e ícones claros para cada tipo de lixo e lixeira. 2) Storytelling visual ou um design divertido para engajar as crianças.",
-        justificativa: "Infográficos são eficazes para simplificar informações complexas e engajar o público-alvo. Para crianças, elementos visuais claros e um design divertido são cruciais."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Estudo de Caso: Dificuldade com Ortografia",
-        contexto: "Camila sempre se confunde na hora de escrever palavras com S, SS, C ou Ç. Ela tenta decorar todas as regras que vê, mas acaba esquecendo e comete muitos erros nas redações. Ela está ficando desanimada e acha que nunca vai aprender.",
-        pergunta: "Qual é o principal conselho que as fontes dão para alguém como a Camila, que quer melhorar na escrita dessas letras sem ter que decorar todas as regras?",
-        respostaCorreta: "O principal conselho é ler muito e escrever muito. A prática constante leva à assimilação das regras de forma natural, sem a necessidade de memorização intensiva.",
-        justificativa: "As fontes enfatizam que a prática de leitura e escrita é a melhor solução para dominar a ortografia, pois a assimilação ocorre naturalmente com o tempo."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Estudo de Caso: Design de Infográfico Inconsistente",
-        contexto: "Marcos fez um infográfico sobre 'Meus Animais Favoritos' para apresentar na aula. Ele usou 5 tipos de letras diferentes, misturou desenhos coloridos com fotos em preto e branco, e escolheu muitas cores que não combinavam. O resultado ficou um pouco confuso para os colegas entenderem e não ficou visualmente harmonioso.",
-        pergunta: "Que duas dicas de design, relacionadas à escolha de cores e ao estilo dos elementos visuais, Marcos poderia seguir para que seu infográfico ficasse mais fácil de entender e mais bonito?",
-        respostaCorreta: "1) Limitar a paleta de cores a 2 ou 3 cores principais e usá-las de forma consistente. 2) Manter a consistência nos elementos visuais, usando um estilo unificado (desenhos ou fotos, não ambos) e limitando o número de fontes (máximo de três tipos).",
-        justificativa: "A consistência no design, tanto em cores quanto em elementos visuais e tipografia, é fundamental para a clareza e harmonia de um infográfico, evitando a sobrecarga visual e facilitando a compreensão."
-    }
-];
-
-
-
-
-    // --- GRUPO 3: PERGUNTAS ABERTAS (RESPOSTAS CURTAS) ---
-    {
-        tipo: "aberta",
-        titulo: "Infográficos: Um super-herói da informação",
-        contexto: "Um infográfico é como um super-herói da informação.",
-        pergunta: "Por que ele usa desenhos (imagens) e palavras (textos) juntos para nos ensinar algo?",
-        respostaCorreta: "Para passar informações de forma rápida e fácil, misturando elementos visuais e textuais.",
-        justificativa: "Infográficos combinam imagens e textos para tornar a informação mais acessível, rápida e fácil de entender."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Encontro Consonantal em 'Grande'",
-        contexto: "Na palavra 'grande', quais letras formam o encontro consonantal que fica juntinho na mesma sílaba?",
-        pergunta: "Na palavra 'grande', quais letras formam o encontro consonantal que fica juntinho na mesma sílaba?",
-        respostaCorreta: "gr",
-        justificativa: "O encontro consonantal na palavra 'grande' é 'gr', onde as duas consoantes permanecem na mesma sílaba."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Uso de C e Ç: Regra da Cedilha",
-        contexto: "A cedilha (Ç) é um sinal especial que usamos embaixo da letra C.",
-        pergunta: "Em quais letras depois do 'C' nós nunca usamos a cedilha? Dê um exemplo.",
-        respostaCorreta: "Nunca usamos cedilha antes de 'e' e 'i'. Exemplo: 'Cidade' (não 'Cíade').",
-        justificativa: "A cedilha nunca é usada antes das vogais 'e' e 'i' porque o 'c' antes dessas vogais já possui o som de 's'."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Storytelling Visual: Atenção do Cérebro",
-        contexto: "Nosso cérebro gosta muito de imagens e histórias.",
-        pergunta: "Como essa preferência natural ajuda um infográfico a chamar mais a nossa atenção e nos fazer prestar mais atenção?",
-        respostaCorreta: "O storytelling visual aumenta o engajamento, pois o cérebro humano processa imagens e histórias de forma mais eficaz e rápida.",
-        justificativa: "A preferência do cérebro por imagens e histórias faz com que infográficos com storytelling visual sejam mais envolventes e captem a atenção mais facilmente."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Prefixo 're-' em 'Refazer'",
-        contexto: "A palavra 'refazer' usa uma parte no começo, o 're-', que chamamos de prefixo.",
-        pergunta: "O que o 're-' significa nessa palavra?",
-        respostaCorreta: "Repetição ou fazer novamente.",
-        justificativa: "O prefixo 're-' indica repetição, ou seja, fazer algo novamente."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Sustentabilidade: Economia de Água",
-        contexto: "Para economizar água, o infográfico sobre 'Atitudes simples para melhorar o mundo' sugere algo bem fácil de fazer na hora de escovar os dentes.",
-        pergunta: "O que é?",
-        respostaCorreta: "Fechar a torneira enquanto estiver escovando os dentes.",
-        justificativa: "Uma atitude simples para economizar água é fechar a torneira ao escovar os dentes."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Espaço Negativo em Infográficos",
-        contexto: "Em um infográfico, por que é importante deixar 'espaços vazios' (também chamado de espaço negativo) entre os textos e desenhos?",
-        pergunta: "Em um infográfico, por que é importante deixar 'espaços vazios' (também chamado de espaço negativo) entre os textos e desenhos?",
-        respostaCorreta: "Para evitar sobrecarga de informações, facilitar a leitura e o processamento visual, e dar 'respiro' ao leitor.",
-        justificativa: "O espaço negativo ajuda a organizar o conteúdo, evita a sobrecarga visual e melhora a legibilidade, permitindo que o leitor processe as informações de forma mais eficaz."
-    },
-
-    // --- GRUPO 4: OPINIÕES E SOLUÇÕES (ESTUDOS DE CASO) ---
-    {
-        tipo: "aberta",
-        titulo: "Estudo de Caso: Infográfico para Conscientização",
-        contexto: "A escola 'Aprendizes do Futuro' percebeu que muitos alunos não sabem como separar o lixo em casa, e os avisos escritos nas paredes (somente com texto) não estão funcionando. A direção da escola quer uma forma visual e divertida de ensinar as crianças sobre reciclagem para o Dia do Meio Ambiente.",
-        pergunta: "Como um infográfico poderia ajudar a escola a resolver esse problema? Cite duas coisas importantes que ele deveria ter para ser eficaz, baseando-se no que você aprendeu sobre infográficos.",
-        respostaCorreta: "Um infográfico ajudaria a simplificar a informação complexa da separação do lixo, tornando-a visualmente atraente e fácil de entender para as crianças. Duas coisas importantes seriam: 1) Uso de imagens e ícones claros para cada tipo de lixo e lixeira. 2) Storytelling visual ou um design divertido para engajar as crianças.",
-        justificativa: "Infográficos são eficazes para simplificar informações complexas e engajar o público-alvo. Para crianças, elementos visuais claros e um design divertido são cruciais."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Estudo de Caso: Dificuldade com Ortografia",
-        contexto: "Camila sempre se confunde na hora de escrever palavras com S, SS, C ou Ç. Ela tenta decorar todas as regras que vê, mas acaba esquecendo e comete muitos erros nas redações. Ela está ficando desanimada e acha que nunca vai aprender.",
-        pergunta: "Qual é o principal conselho que as fontes dão para alguém como a Camila, que quer melhorar na escrita dessas letras sem ter que decorar todas as regras?",
-        respostaCorreta: "O principal conselho é ler muito e escrever muito. A prática constante leva à assimilação das regras de forma natural, sem a necessidade de memorização intensiva.",
-        justificativa: "As fontes enfatizam que a prática de leitura e escrita é a melhor solução para dominar a ortografia, pois a assimilação ocorre naturalmente com o tempo."
-    },
-    {
-        tipo: "aberta",
-        titulo: "Estudo de Caso: Design de Infográfico Inconsistente",
-        contexto: "Marcos fez um infográfico sobre 'Meus Animais Favoritos' para apresentar na aula. Ele usou 5 tipos de letras diferentes, misturou desenhos coloridos com fotos em preto e branco, e escolheu muitas cores que não combinavam. O resultado ficou um pouco confuso para os colegas entenderem e não ficou visualmente harmonioso.",
-        pergunta: "Que duas dicas de design, relacionadas à escolha de cores e ao estilo dos elementos visuais, Marcos poderia seguir para que seu infográfico ficasse mais fácil de entender e mais bonito?",
-        respostaCorreta: "1) Limitar a paleta de cores a 2 ou 3 cores principais e usá-las de forma consistente. 2) Manter a consistência nos elementos visuais, usando um estilo unificado (desenhos ou fotos, não ambos) e limitando o número de fontes (máximo de três tipos).",
-        justificativa: "A consistência no design, tanto em cores quanto em elementos visuais e tipografia, é fundamental para a clareza e harmonia de um infográfico, evitando a sobrecarga visual e facilitando a compreensão."
-    }
-];
-
 
