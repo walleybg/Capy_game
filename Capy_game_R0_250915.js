@@ -1018,9 +1018,40 @@ Por favor, descreva sua discordância:`;
 }
 
 // --- INICIALIZAÇÃO ---
+// --- FUNÇÃO PARA GERAR ARENAS DINAMICAMENTE ---
+function gerarArenas() {
+    const telaSelecaoArena = document.getElementById('tela-selecao-arena');
+    if (!telaSelecaoArena) return;
+    
+    telaSelecaoArena.innerHTML = '';
+    
+    // Ordem específica das arenas
+    const ordemArenas = ['portugues', 'matematica', 'ciencias', 'historia', 'geografia', 'english', 'math'];
+    
+    ordemArenas.forEach(arenaId => {
+        const arena = estruturaCapitulos[arenaId];
+        if (!arena) return;
+        
+        const arenaCard = document.createElement('div');
+        arenaCard.className = 'arena-card';
+        
+        arenaCard.innerHTML = `
+            <img src="${arena.icone}" alt="Ícone de ${arena.nome}">
+            <h3>${arena.nome}</h3>
+            <p>${arena.descricao}</p>
+            <div>
+                <button class="btn-principal" onclick="selecionarArena('${arenaId}')">Entrar na Arena</button>
+            </div>
+        `;
+        
+        telaSelecaoArena.appendChild(arenaCard);
+    });
+}
+
 window.onload = () => {
-    mapearElementos();
+    inicializar();
+    gerarArenas();
 };
 
-// Chamar mapearElementos() no início para garantir que os elementos estejam disponíveis
-mapearElementos();
+// Chamar gerarArenas() no início para garantir que as arenas sejam criadas
+document.addEventListener('DOMContentLoaded', gerarArenas);
