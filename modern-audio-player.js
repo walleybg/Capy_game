@@ -17,20 +17,7 @@ class ModernAudioPlayer {
     }
     
     createPlayer() {
-        // Create overlay
-        this.overlay = document.createElement('div');
-        this.overlay.id = 'modernAudioOverlay';
-        this.overlay.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 9998;
-            display: none;
-        `;
-        document.body.appendChild(this.overlay);
+        // Não criar overlay para permitir navegação no jogo
         
         // Create player
         this.player = document.createElement('div');
@@ -95,13 +82,14 @@ class ModernAudioPlayer {
             width: 400px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
             overflow: hidden;
             transition: all 0.3s ease;
             display: none;
+            pointer-events: auto;
         `;
         
         document.body.appendChild(this.player);
@@ -426,9 +414,6 @@ class ModernAudioPlayer {
         
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
-        
-        // Overlay click to close
-        this.overlay.addEventListener('click', () => this.close());
     }
     
     setupDragging() {
@@ -489,7 +474,6 @@ class ModernAudioPlayer {
         this.audio.load();
         
         this.player.style.display = 'block';
-        this.overlay.style.display = 'block';
         
         // Reset position
         this.player.style.top = '20px';
@@ -503,7 +487,6 @@ class ModernAudioPlayer {
         this.audio.pause();
         this.audio.src = '';
         this.player.style.display = 'none';
-        this.overlay.style.display = 'none';
         this.isPlaying = false;
         this.updatePlayButton();
         console.log('Player moderno fechado');
