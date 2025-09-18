@@ -390,3 +390,65 @@ button:disabled {
         justify-content: space-around;
     }
 }
+
+/* Estilos para o botão Fechar do Audio Player */
+.btn-fechar-audio {
+    background-color: var(--cor-erro); /* Vermelho para o botão de fechar */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001; /* Garante que o botão esteja acima do iframe */
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn-fechar-audio:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Ajustes para o container do Audio Player */
+#audio-player-container > div {
+    background-color: white;
+    padding: 30px; /* Aumenta o padding para dar mais espaço */
+    border-radius: 12px;
+    position: relative;
+    display: flex; /* Usa flexbox para centralizar o iframe */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%; /* Limita a largura máxima */
+    max-height: 90%; /* Limita a altura máxima */
+    box-sizing: border-box;
+}
+
+#audio-player-iframe {
+    width: 600px; /* Largura maior para o player */
+    height: 120px; /* Altura maior para o player */
+    max-width: 100%; /* Garante responsividade */
+    max-height: 100%; /* Garante responsividade */
+    border: none; /* Remove a borda padrão do iframe */
+    margin-top: 20px; /* Espaço entre o botão fechar e o player */
+}
+
+@media (max-width: 768px) {
+    .btn-fechar-audio {
+        padding: 8px 15px;
+        font-size: 1em;
+        top: 10px;
+        right: 10px;
+    }
+    #audio-player-iframe {
+        width: 100%; /* Ocupa toda a largura disponível em telas menores */
+        height: 80px; /* Altura ajustada para telas menores */
+    }
+    #audio-player-container > div {
+        padding: 20px;
+    }
+}
+
+
