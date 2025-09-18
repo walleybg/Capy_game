@@ -154,9 +154,9 @@ const estruturaCapitulos = {
                 id: 'cap10_ciencias',
                 numero: 10,
                 titulo: 'Seres humanos e outros animais',
-                audio: null,
-                questoes: null,
-                disponivel: false
+                audio: 'Cap_10_Ciencias_podcast.mp3',
+                questoes: 'dadosDoQuizCiencias',
+                disponivel: true
             },
             {
                 id: 'cap11_ciencias',
@@ -420,6 +420,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = questoesHistoria;
+            break;
+        case 'cap10_ciencias':
+            if (typeof dadosDoQuizCiencias === 'undefined') {
+                alert('Erro: Questões de Ciências não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias;
             break;
         default:
             alert('Questões ainda não disponíveis para este capítulo!');
