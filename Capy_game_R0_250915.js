@@ -227,6 +227,9 @@ function iniciarJogo() {
 }
 
 // --- FUNÇÕES DO PLAYER DE ÁUDIO ---
+let audioPlayerMinimizado = false;
+let audioPlayerPosicao = { x: 20, y: 20 };
+
 function abrirAudioPlayerPopup(capituloId = null) {
     let audioFile = '';
     let titulo = 'Podcast de Revisão';
@@ -239,7 +242,7 @@ function abrirAudioPlayerPopup(capituloId = null) {
         
         if (capitulo && capitulo.audio) {
             audioFile = capitulo.audio;
-            titulo = `Podcast de Revisão - ${arena.nome}`;
+            titulo = arena.nome;
             subtitulo = `Cap. ${capitulo.numero} - ${capitulo.titulo}`;
         }
     } else {
@@ -249,7 +252,7 @@ function abrirAudioPlayerPopup(capituloId = null) {
         
         if (capitulo && capitulo.audio) {
             audioFile = capitulo.audio;
-            titulo = `Podcast de Revisão - ${arena.nome}`;
+            titulo = arena.nome;
             subtitulo = `Cap. ${capitulo.numero} - ${capitulo.titulo}`;
         }
     }
@@ -265,14 +268,50 @@ function abrirAudioPlayerPopup(capituloId = null) {
     audioSource.src = audioFile;
     audioPlayer.load();
     
-    // Mostrar player
-    audioPlayerContainer.style.display = 'flex';
+    // Mostrar player como popup não-modal
+    audioPlayerContainer.style.display = 'block';
+    
+    // Restaurar posição se foi movido
+    audioPlayerContainer.style.top = audioPlayerPosicao.y + 'px';
+    audioPlayerContainer.style.right = audioPlayerPosicao.x + 'px';
+    
+    // Restaurar estado minimizado
+    if (audioPlayerMinimizado) {
+        document.getElementById('audio-player-content').style.display = 'none';
+        document.querySelector('#audio-player-container button[onclick="minimizarAudioPlayer()"]').textContent = '□';
+    } else {
+        document.getElementById('audio-player-content').style.display = 'block';
+        document.querySelector('#audio-player-container button[onclick="minimizarAudioPlayer()"]').textContent = '−';
+    }
+    
+    // Inicializar funcionalidade de arrastar (apenas uma vez)
+    if (!audioPlayerContainer.hasAttribute('data-drag-initialized')) {
+        inicializarArrastarPlayer();
+        audioPlayerContainer.setAttribute('data-drag-initialized', 'true');
+    }
 }
 
 function fecharAudioPlayer() {
     audioPlayerContainer.style.display = 'none';
     audioPlayer.pause();
-    audioPlayer.currentTime = 0;
+    audioPlayerMinimizado = false;
+}
+
+function minimizarAudioPlayer() {
+    const audioContent = document.getElementById('audio-player-content');
+    const minimizeBtn = document.querySelector('#audio-player-container button[onclick="minimizarAudioPlayer()"]');
+    
+    if (audioPlayerMinimizado) {
+        // Expandir
+        audioContent.style.display = 'block';
+        minimizeBtn.textContent = '−';
+        audioPlayerMinimizado = false;
+    } else {
+        // Minimizar
+        audioContent.style.display = 'none';
+        minimizeBtn.textContent = '□';
+        audioPlayerMinimizado = true;
+    }
 }
 
 function retrocederAudio(segundos) {
@@ -281,6 +320,58 @@ function retrocederAudio(segundos) {
 
 function avancarAudio(segundos) {
     audioPlayer.currentTime = Math.min(audioPlayer.duration || 0, audioPlayer.currentTime + segundos);
+}
+
+function inicializarArrastarPlayer() {
+    const dragHandle = document.getElementById('audio-drag-handle');
+    const audioContainer = document.getElementById('audio-player-container');
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+    
+    dragHandle.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        
+        const rect = audioContainer.getBoundingClientRect();
+        initialX = rect.left;
+        initialY = rect.top;
+        
+        dragHandle.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        
+        const newX = initialX + deltaX;
+        const newY = initialY + deltaY;
+        
+        // Limitar às bordas da tela
+        const maxX = window.innerWidth - audioContainer.offsetWidth;
+        const maxY = window.innerHeight - audioContainer.offsetHeight;
+        
+        const boundedX = Math.max(0, Math.min(newX, maxX));
+        const boundedY = Math.max(0, Math.min(newY, maxY));
+        
+        audioContainer.style.left = boundedX + 'px';
+        audioContainer.style.top = boundedY + 'px';
+        audioContainer.style.right = 'auto';
+        
+        // Salvar posição
+        audioPlayerPosicao.x = window.innerWidth - boundedX - audioContainer.offsetWidth;
+        audioPlayerPosicao.y = boundedY;
+    });
+    
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            dragHandle.style.cursor = 'move';
+        }
+    });
 }
 
 // --- FUNÇÕES DO JOGO (QUESTÕES) ---

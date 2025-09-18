@@ -126,26 +126,39 @@
         </div>
     </div>
     
-    <!-- PLAYER DE ÁUDIO -->
-    <div id="audio-player-container" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
-        <div style="background-color:white; padding:30px; border-radius:12px; position:relative; max-width:600px; width:90%;">
-            <button onclick="fecharAudioPlayer()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; cursor:pointer; color:#666;">×</button>
-            
-            <div style="text-align:center; margin-bottom:20px;">
-                <h3 id="audio-title" style="margin:0; color:#333;">Podcast de Revisão</h3>
-                <p id="audio-subtitle" style="margin:5px 0; color:#666; font-size:0.9em;"></p>
+    <!-- PLAYER DE ÁUDIO POPUP -->
+    <div id="audio-player-container" style="display:none; position:fixed; top:20px; right:20px; z-index:1000; width:350px; max-width:90vw;">
+        <div id="audio-player-popup" style="background-color:white; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.3); border:2px solid #3498db; overflow:hidden;">
+            <!-- Barra de título -->
+            <div style="background:#3498db; color:white; padding:12px 15px; display:flex; justify-content:space-between; align-items:center; cursor:move;" id="audio-drag-handle">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:16px;">🎧</span>
+                    <span style="font-weight:bold; font-size:14px;">Podcast</span>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <button onclick="minimizarAudioPlayer()" style="background:rgba(255,255,255,0.2); border:none; color:white; width:24px; height:24px; border-radius:4px; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center;">−</button>
+                    <button onclick="fecharAudioPlayer()" style="background:rgba(255,255,255,0.2); border:none; color:white; width:24px; height:24px; border-radius:4px; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center;">×</button>
+                </div>
             </div>
             
-            <audio id="audio-player" controls style="width:100%; margin-bottom:15px;">
-                <source id="audio-source" src="" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            
-            <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
-                <button onclick="retrocederAudio(30)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">⏪ 30s</button>
-                <button onclick="retrocederAudio(10)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">⏪ 10s</button>
-                <button onclick="avancarAudio(10)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">10s ⏩</button>
-                <button onclick="avancarAudio(30)" style="padding:8px 12px; background:#f0f0f0; border:1px solid #ccc; border-radius:5px; cursor:pointer;">30s ⏩</button>
+            <!-- Conteúdo do player -->
+            <div id="audio-player-content" style="padding:15px;">
+                <div style="text-align:center; margin-bottom:15px;">
+                    <h4 id="audio-title" style="margin:0 0 5px 0; color:#333; font-size:14px;">Podcast de Revisão</h4>
+                    <p id="audio-subtitle" style="margin:0; color:#666; font-size:12px;"></p>
+                </div>
+                
+                <audio id="audio-player" controls style="width:100%; margin-bottom:12px; height:32px;">
+                    <source id="audio-source" src="" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+                
+                <div style="display:flex; justify-content:center; gap:6px; flex-wrap:wrap;">
+                    <button onclick="retrocederAudio(30)" style="padding:6px 10px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">⏪ 30s</button>
+                    <button onclick="retrocederAudio(10)" style="padding:6px 10px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">⏪ 10s</button>
+                    <button onclick="avancarAudio(10)" style="padding:6px 10px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">10s ⏩</button>
+                    <button onclick="avancarAudio(30)" style="padding:6px 10px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">30s ⏩</button>
+                </div>
             </div>
         </div>
     </div>
