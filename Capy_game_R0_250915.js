@@ -299,7 +299,7 @@ function gerarListaCapitulos(capitulos) {
     });
 }
 
-function selecionarCapitulo(capituloId) {
+function iniciarCapitulo(capituloId) {
     const arena = estruturaCapitulos[arenaAtual];
     const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
     
@@ -309,29 +309,31 @@ function selecionarCapitulo(capituloId) {
     }
     
     capituloAtual = capituloId;
-    nomeCapituloAtual = `Cap. ${capitulo.numero} - ${capitulo.titulo}`;
+    nomeCapituloAtual = capitulo.titulo;
     
-    // Carregar questões do capítulo
-    switch(capitulo.questoes) {
-        case 'dadosDoQuiz':
-            bancoDeQuestoesAtual = dadosDoQuiz;
+    // Definir banco de questões baseado no capítulo
+    switch(capituloId) {
+        case 'cap10_matematica':
+            bancoDeQuestoesAtual = questoesMatematica;
             break;
-        case 'dadosDoQuizLP':
-            bancoDeQuestoesAtual = dadosDoQuizLP;
+        case 'cap10_portugues':
+            bancoDeQuestoesAtual = questoesPortugues;
             break;
-        case 'questoesHistoria':
+        case 'cap06_historia':
             bancoDeQuestoesAtual = questoesHistoria;
             break;
         default:
-            alert('Questões não encontradas para este capítulo!');
+            alert('Questões ainda não disponíveis para este capítulo!');
             return;
     }
     
-    // Inicializar arrays de controle
-    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
-    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
-    
+    // Inicializar o jogo
     iniciarJogo();
+}
+
+function selecionarCapitulo(capituloId) {
+    // Função mantida para compatibilidade
+    iniciarCapitulo(capituloId);
 }
 
 function voltarParaArenas() {
@@ -470,10 +472,10 @@ function togglePlayPause() {
     
     if (audioPlayer.paused) {
         audioPlayer.play();
-        playPauseBtn.textContent = '⏸️';
+        playPauseBtn.textContent = '⏸';
     } else {
         audioPlayer.pause();
-        playPauseBtn.textContent = '▶️';
+        playPauseBtn.textContent = '▶';
     }
 }
 
@@ -522,6 +524,20 @@ function avancarAudio(segundos) {
     audioPlayer.currentTime = Math.min(audioPlayer.duration || 0, audioPlayer.currentTime + segundos);
 }
 
+// Controle de velocidade
+let velocidadeAtual = 1.0;
+const velocidades = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+let indiceVelocidade = 2; // Começa em 1.0x
+
+function toggleVelocidade() {
+    indiceVelocidade = (indiceVelocidade + 1) % velocidades.length;
+    velocidadeAtual = velocidades[indiceVelocidade];
+    audioPlayer.playbackRate = velocidadeAtual;
+    
+    const velocidadeBtn = document.getElementById('velocidade-btn');
+    velocidadeBtn.textContent = velocidadeAtual + 'x';
+}
+
 // Event listeners para o player de áudio
 function configurarEventosAudio() {
     audioPlayer.addEventListener('timeupdate', updateProgress);
@@ -530,7 +546,7 @@ function configurarEventosAudio() {
         document.getElementById('current-time').textContent = '0:00';
     });
     audioPlayer.addEventListener('ended', function() {
-        document.getElementById('play-pause-btn').textContent = '▶️';
+        document.getElementById('play-pause-btn').textContent = '▶';
     });
 }
 

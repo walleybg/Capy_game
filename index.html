@@ -101,67 +101,56 @@
     </div>
     
     <!-- PLAYER DE ÁUDIO POPUP -->
-    <div id="audio-player-container" style="display:none; position:fixed; top:20px; right:20px; z-index:1000; width:400px; max-width:90vw;">
-        <div id="audio-player-popup" style="background-color:white; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.3); border:2px solid #3498db; overflow:hidden;">
-            <!-- Barra de título -->
-            <div style="background:#3498db; color:white; padding:12px 15px; display:flex; justify-content:space-between; align-items:center; cursor:move;" id="audio-drag-handle">
-                <div style="display:flex; align-items:center; gap:8px;">
-                    <span style="font-size:16px;">🎧</span>
-                    <span style="font-weight:bold; font-size:14px;">Podcast</span>
+    <div id="audio-player-container" style="display:none; position:fixed; top:20px; right:20px; z-index:1000; width:450px; max-width:90vw;">
+        <div id="audio-player-popup" style="background-color:white; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.15); border:1px solid #ddd; overflow:hidden;">
+            <!-- Cabeçalho -->
+            <div style="background:#f8f9fa; padding:12px 20px; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; cursor:move;" id="audio-drag-handle">
+                <div>
+                    <h4 id="audio-title" style="margin:0; color:#333; font-size:14px; font-weight:600;">Arena dos números</h4>
+                    <p id="audio-subtitle" style="margin:0; color:#666; font-size:12px;">Cap. 10 - Novos Cálculos</p>
                 </div>
                 <div style="display:flex; gap:8px;">
-                    <button onclick="minimizarAudioPlayer()" style="background:rgba(255,255,255,0.2); border:none; color:white; width:24px; height:24px; border-radius:4px; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center;">−</button>
-                    <button onclick="fecharAudioPlayer()" style="background:rgba(255,255,255,0.2); border:none; color:white; width:24px; height:24px; border-radius:4px; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center;">×</button>
+                    <button onclick="minimizarAudioPlayer()" style="background:#6c757d; border:none; color:white; width:20px; height:20px; border-radius:3px; cursor:pointer; font-size:12px; display:flex; align-items:center; justify-content:center;">−</button>
+                    <button onclick="fecharAudioPlayer()" style="background:#dc3545; border:none; color:white; width:20px; height:20px; border-radius:3px; cursor:pointer; font-size:12px; display:flex; align-items:center; justify-content:center;">×</button>
                 </div>
             </div>
             
             <!-- Conteúdo do player -->
             <div id="audio-player-content" style="padding:20px;">
-                <div style="text-align:center; margin-bottom:20px;">
-                    <h4 id="audio-title" style="margin:0 0 5px 0; color:#333; font-size:15px;">Podcast de Revisão</h4>
-                    <p id="audio-subtitle" style="margin:0; color:#666; font-size:13px;"></p>
+                <!-- Tempo e barra de progresso -->
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <span id="current-time" style="font-size:12px; color:#666;">2:26</span>
+                    <span id="total-time" style="font-size:12px; color:#666;">29:25</span>
                 </div>
                 
-                <!-- Controles de reprodução personalizados -->
-                <div style="margin-bottom:15px;">
-                    <!-- Botão Play/Pause -->
-                    <div style="display:flex; align-items:center; justify-content:center; margin-bottom:15px;">
-                        <button id="play-pause-btn" onclick="togglePlayPause()" style="background:#3498db; border:none; color:white; width:50px; height:50px; border-radius:50%; cursor:pointer; font-size:20px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(52,152,219,0.3);">▶️</button>
-                    </div>
-                    
-                    <!-- Barra de progresso -->
-                    <div style="margin-bottom:10px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <span id="current-time" style="font-size:12px; color:#666;">0:00</span>
-                            <span id="total-time" style="font-size:12px; color:#666;">0:00</span>
-                        </div>
-                        <div id="progress-container" onclick="seekAudio(event)" style="background:#e0e0e0; height:6px; border-radius:3px; cursor:pointer; position:relative;">
-                            <div id="progress-bar" style="background:#3498db; height:100%; border-radius:3px; width:0%; transition:width 0.1s;"></div>
-                            <div id="progress-handle" style="position:absolute; top:-4px; right:-6px; width:14px; height:14px; background:#3498db; border-radius:50%; cursor:pointer; transform:translateX(50%); box-shadow:0 2px 4px rgba(0,0,0,0.2);"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Controle de volume -->
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                <div id="progress-container" onclick="seekAudio(event)" style="background:#e9ecef; height:8px; border-radius:4px; cursor:pointer; position:relative; margin-bottom:20px;">
+                    <div id="progress-bar" style="background:#17a2b8; height:100%; border-radius:4px; width:8%; transition:width 0.1s;"></div>
+                </div>
+                
+                <!-- Controles principais -->
+                <div style="display:flex; justify-content:center; align-items:center; gap:15px; margin-bottom:20px;">
+                    <button onclick="retrocederAudio(30)" style="background:#e9ecef; border:none; padding:8px 12px; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">⏪ 30s</button>
+                    <button onclick="retrocederAudio(10)" style="background:#e9ecef; border:none; padding:8px 12px; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">⏪ 10s</button>
+                    <button id="play-pause-btn" onclick="togglePlayPause()" style="background:#007bff; border:none; color:white; width:45px; height:45px; border-radius:50%; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center;">▶</button>
+                    <button onclick="avancarAudio(10)" style="background:#e9ecef; border:none; padding:8px 12px; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">10s ⏩</button>
+                    <button onclick="avancarAudio(30)" style="background:#e9ecef; border:none; padding:8px 12px; border-radius:4px; cursor:pointer; font-size:11px; color:#495057;">30s ⏩</button>
+                </div>
+                
+                <!-- Controle de volume e velocidade -->
+                <div style="display:flex; align-items:center; gap:15px;">
+                    <div style="display:flex; align-items:center; gap:8px; flex:1;">
                         <span style="font-size:14px;">🔊</span>
-                        <input type="range" id="volume-slider" min="0" max="100" value="100" onchange="changeVolume(this.value)" style="flex:1; height:4px; background:#e0e0e0; border-radius:2px; outline:none; cursor:pointer;">
-                        <span id="volume-display" style="font-size:12px; color:#666; min-width:35px;">100%</span>
+                        <input type="range" id="volume-slider" min="0" max="100" value="100" onchange="changeVolume(this.value)" style="flex:1; height:4px; background:#e9ecef; border-radius:2px; outline:none; cursor:pointer;">
+                        <span id="volume-display" style="font-size:11px; color:#666; min-width:30px;">100%</span>
                     </div>
+                    <button onclick="toggleVelocidade()" id="velocidade-btn" style="background:#6c757d; border:none; color:white; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:11px;">Velocidade</button>
                 </div>
                 
-                <!-- Áudio oculto -->
-                <audio id="audio-player" style="display:none;">
+                <!-- Áudio oculto sem controles nativos -->
+                <audio id="audio-player" preload="metadata" controlslist="nodownload nofullscreen noremoteplayback" style="display:none;">
                     <source id="audio-source" src="" type="audio/mpeg">
                     Seu navegador não suporta o elemento de áudio.
                 </audio>
-                
-                <!-- Botões de navegação -->
-                <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap;">
-                    <button onclick="retrocederAudio(30)" style="padding:8px 12px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:6px; cursor:pointer; font-size:12px; color:#495057; transition:all 0.2s;">⏪ 30s</button>
-                    <button onclick="retrocederAudio(10)" style="padding:8px 12px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:6px; cursor:pointer; font-size:12px; color:#495057; transition:all 0.2s;">⏪ 10s</button>
-                    <button onclick="avancarAudio(10)" style="padding:8px 12px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:6px; cursor:pointer; font-size:12px; color:#495057; transition:all 0.2s;">10s ⏩</button>
-                    <button onclick="avancarAudio(30)" style="padding:8px 12px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:6px; cursor:pointer; font-size:12px; color:#495057; transition:all 0.2s;">30s ⏩</button>
-                </div>
             </div>
         </div>
     </div>
