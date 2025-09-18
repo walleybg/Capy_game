@@ -1,5 +1,6 @@
 // Questões do Capítulo 6 de História - "Da formação à reforma das cidades"
 const questoesHistoria = [
+    // --- GRUPO 1: MÚLTIPLA ESCOLHA (10 questões) ---
     {
         id: 1,
         titulo: "Contexto Geral da Transformação Urbana",
@@ -103,7 +104,7 @@ const questoesHistoria = [
             "Sua construção levou várias décadas para ser concluída, devido à sua complexidade."
         ],
         respostaCorreta: 3,
-        explicacao: "Brasília foi construída em pouco mais de três anos, não várias décadas. Foi um projeto de construção relativamente rápido para uma capital."
+        explicacao: "Brasília foi construída em pouco mais de três anos, não várias décadas. A construção foi relativamente rápida considerando a magnitude do projeto."
     },
     {
         id: 8,
@@ -118,7 +119,7 @@ const questoesHistoria = [
             "A conservação de museus e acervos históricos é crucial para a memória do Brasil e da humanidade, pois eles guardam informações e reflexões importantes para todos."
         ],
         respostaCorreta: 3,
-        explicacao: "A conservação de museus e acervos históricos é fundamental para preservar a memória coletiva e o conhecimento histórico para as futuras gerações."
+        explicacao: "A conservação de museus e acervos históricos é fundamental para preservar a memória coletiva, oferecendo conhecimento e reflexões importantes para toda a sociedade."
     },
     {
         id: 9,
@@ -133,7 +134,7 @@ const questoesHistoria = [
             "São Vicente, Recife e Manaus."
         ],
         respostaCorreta: 1,
-        explicacao: "Belo Horizonte, Palmas e Goiânia são explicitamente mencionadas no texto como cidades planejadas."
+        explicacao: "Belo Horizonte, Palmas e Goiânia são explicitamente mencionadas no texto como exemplos de cidades planejadas."
     },
     {
         id: 10,
@@ -150,125 +151,311 @@ const questoesHistoria = [
         respostaCorreta: 3,
         explicacao: "O texto não menciona que o Viaduto do Chá foi construído sobre um rio navegável. Seu objetivo era ligar duas ruas no centro da cidade."
     },
+
+    // --- GRUPO 2: VERDADEIRO OU FALSO (10 questões) ---
     {
         id: 11,
         titulo: "Transformação das Cidades Brasileiras",
         contexto: "O capítulo inicia afirmando que \"Ao longo da história do Brasil, várias cidades foram formadas e se transformaram bastante com a passagem do tempo.\"",
-        pergunta: "Analise as afirmativas: I. A paisagem urbana de Natal permaneceu a mesma entre 1957 e os dias atuais. II. A formação e transformação das cidades são fenômenos que ocorrem ao longo do tempo. III. As cidades brasileiras se modificam devido a fatores como o crescimento populacional e necessidades dos habitantes. IV. O capítulo 6 foca apenas na formação de cidades, sem abordar suas reformas.",
-        tipo: "multipla_escolha",
+        pergunta: "Analise as afirmações sobre a transformação das cidades brasileiras:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "A paisagem urbana de Natal permaneceu a mesma entre 1957 e os dias atuais.",
+            "A formação e transformação das cidades são fenômenos que ocorrem ao longo do tempo.",
+            "As cidades brasileiras se modificam devido a fatores como o crescimento populacional e necessidades dos habitantes.",
+            "O capítulo 6 foca apenas na formação de cidades, sem abordar suas reformas."
+        ],
         opcoes: [
             "F, V, V, F",
             "V, F, V, F",
             "F, V, F, V",
             "V, V, F, F"
         ],
-        respostaCorreta: 0,
-        explicacao: "I. Falso - Natal se transformou muito entre 1957 e hoje. II. Verdadeiro - as cidades se transformam ao longo do tempo. III. Verdadeiro - fatores como crescimento populacional influenciam as mudanças. IV. Falso - o capítulo aborda tanto formação quanto reformas."
+        respostaCorreta: "F, V, V, F",
+        explicacao: "I. Falso (a paisagem mudou). II. Verdadeiro. III. Verdadeiro. IV. Falso (aborda formação e reformas)."
     },
     {
         id: 12,
         titulo: "Os Primeiros Povoamentos Urbanos",
         contexto: "O texto informa que \"No Brasil, os primeiros povoamentos urbanos surgiram por volta de 1530, quando os portugueses passaram a morar no país. A partir de então, vilas com casas, igrejas, comércios, entre outros estabelecimentos, foram sendo construídas.\"",
-        pergunta: "Analise as afirmativas: I. Os primeiros povoamentos urbanos no Brasil surgiram antes da chegada dos portugueses. II. As vilas iniciais eram construídas com casas, igrejas e comércios. III. As primeiras vilas não se tornaram cidades, permanecendo como povoados. IV. As necessidades dos habitantes impulsionaram reformas e modernizações das vilas.",
-        tipo: "multipla_escolha",
+        pergunta: "Analise as afirmações sobre os primeiros povoamentos urbanos:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "Os primeiros povoamentos urbanos no Brasil surgiram antes da chegada dos portugueses.",
+            "As vilas iniciais eram construídas com casas, igrejas e comércios.",
+            "As primeiras vilas não se tornaram cidades, permanecendo como povoados.",
+            "As necessidades dos habitantes impulsionaram reformas e modernizações das vilas."
+        ],
         opcoes: [
             "V, F, V, F",
             "F, V, F, V",
             "F, V, V, F",
             "V, F, F, V"
         ],
-        respostaCorreta: 1,
-        explicacao: "I. Falso - surgiram por volta de 1530 com os portugueses. II. Verdadeiro - as vilas tinham casas, igrejas e comércios. III. Falso - muitas vilas se tornaram cidades. IV. Verdadeiro - as necessidades dos habitantes motivaram reformas."
+        respostaCorreta: "F, V, F, V",
+        explicacao: "I. Falso (surgiram por volta de 1530 com os portugueses). II. Verdadeiro. III. Falso (muitas se tornaram cidades). IV. Verdadeiro."
     },
     {
         id: 13,
         titulo: "A História de São Vicente",
         contexto: "O capítulo relata que \"A primeira vila brasileira foi fundada em 1532 (...) Em 1542, grande parte da Vila de São Vicente foi destruída pelo mar, que invadiu ruas, casas e a igreja. Assim, a vila precisou ser reconstruída um pouco mais distante da praia.\"",
-        pergunta: "Analise as afirmativas: I. São Vicente foi a primeira vila brasileira e surgiu no interior do Brasil. II. O desenvolvimento de São Vicente foi impulsionado por atividades econômicas como o comércio e a produção de açúcar. III. A vila de São Vicente nunca sofreu nenhuma catástrofe natural. IV. Após ser destruída, São Vicente foi reconstruída em um local diferente, mais distante do mar.",
-        tipo: "multipla_escolha",
+        pergunta: "Analise as afirmações sobre São Vicente:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "São Vicente foi a primeira vila brasileira e surgiu no interior do Brasil.",
+            "O desenvolvimento de São Vicente foi impulsionado por atividades econômicas como o comércio e a produção de açúcar.",
+            "A vila de São Vicente nunca sofreu nenhuma catástrofe natural.",
+            "Após ser destruída, São Vicente foi reconstruída em um local diferente, mais distante do mar."
+        ],
         opcoes: [
             "F, V, F, V",
             "V, V, F, F",
             "F, F, V, V",
             "V, F, V, F"
         ],
-        respostaCorreta: 0,
-        explicacao: "I. Falso - surgiu nas proximidades do mar, não no interior. II. Verdadeiro - foi impulsionada pelo comércio e produção de açúcar. III. Falso - foi destruída pelo mar em 1542. IV. Verdadeiro - foi reconstruída mais distante da praia."
+        respostaCorreta: "F, V, F, V",
+        explicacao: "I. Falso (surgiu nas proximidades do mar). II. Verdadeiro. III. Falso (foi destruída pelo mar). IV. Verdadeiro."
     },
     {
         id: 14,
         titulo: "A Administração Holandesa em Recife",
         contexto: "De acordo com o texto, \"A cidade de Recife, no estado de Pernambuco, passou por uma reforma urbana entre os anos de 1637 e 1644, quando era administrada por holandeses. Nessa época, os holandeses construíram ruas, pontes, casas, jardim botânico e zoológico na cidade.\"",
-        pergunta: "Analise as afirmativas: I. Recife passou por reformas urbanas sob administração portuguesa. II. As reformas em Recife incluíram a construção de pontes e jardins botânicos. III. O período de administração holandesa em Recife durou menos de 5 anos. IV. As construções realizadas pelos holandeses em Recife refletiam a riqueza da população local.",
-        tipo: "multipla_escolha",
+        pergunta: "Analise as afirmações sobre a administração holandesa em Recife:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "Recife passou por reformas urbanas sob administração portuguesa.",
+            "As reformas em Recife incluíram a construção de pontes e jardins botânicos.",
+            "O período de administração holandesa em Recife durou menos de 5 anos.",
+            "As construções realizadas pelos holandeses em Recife refletiam a riqueza da população local."
+        ],
         opcoes: [
             "V, V, F, F",
             "F, V, F, V",
             "V, F, V, F",
             "F, F, V, V"
         ],
-        respostaCorreta: 1,
-        explicacao: "I. Falso - foi sob administração holandesa. II. Verdadeiro - incluíram pontes e jardins botânicos. III. Falso - durou de 1637 a 1644, ou seja, 7 anos. IV. Verdadeiro - as construções demonstravam riqueza."
+        respostaCorreta: "F, V, F, V",
+        explicacao: "I. Falso (foi sob administração holandesa). II. Verdadeiro. III. Falso (durou 7 anos, de 1637 a 1644). IV. Verdadeiro."
     },
     {
         id: 15,
         titulo: "As Reformas no Rio de Janeiro",
         contexto: "O capítulo descreve que \"Entre os anos de 1808 e 1821, outra cidade brasileira foi reformada: o Rio de Janeiro. (...) a família real portuguesa decidiu partir em direção ao Rio de Janeiro, trazendo consigo soldados, comerciantes e funcionários públicos, de modo que o número de habitantes da região aumentou consideravelmente.\" Também é mencionado que \"O Jardim Botânico do Rio de Janeiro, construído há mais de 200 anos, é um espaço muito antigo na cidade.\"",
-        pergunta: "Analise as afirmativas: I. As reformas no Rio de Janeiro ocorreram durante o período em que a família real portuguesa residiu na cidade. II. A vinda da família real causou uma diminuição da população no Rio de Janeiro. III. O Jardim Botânico do Rio de Janeiro é um exemplo de construção recente na cidade. IV. As reformas urbanas no Rio de Janeiro visavam apenas atender às necessidades da família real, sem impactar a população.",
-        tipo: "multipla_escolha",
+        pergunta: "Analise as afirmações sobre as reformas no Rio de Janeiro:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "As reformas no Rio de Janeiro ocorreram durante o período em que a família real portuguesa residiu na cidade.",
+            "A vinda da família real causou uma diminuição da população no Rio de Janeiro.",
+            "O Jardim Botânico do Rio de Janeiro é um exemplo de construção recente na cidade.",
+            "As reformas urbanas no Rio de Janeiro visavam apenas atender às necessidades da família real, sem impactar a população."
+        ],
         opcoes: [
             "V, F, F, F",
             "F, V, F, V",
             "V, F, V, F",
             "F, V, V, F"
         ],
-        respostaCorreta: 0,
-        explicacao: "I. Verdadeiro - as reformas ocorreram entre 1808-1821, período da família real. II. Falso - causou aumento populacional. III. Falso - o Jardim Botânico tem mais de 200 anos. IV. Falso - as reformas impactaram toda a cidade."
+        respostaCorreta: "V, F, F, F",
+        explicacao: "I. Verdadeiro. II. Falso (causou aumento populacional). III. Falso (tem mais de 200 anos). IV. Falso (impactaram toda a cidade)."
     },
     {
         id: 16,
-        titulo: "O que são cidades espontâneas?",
-        contexto: "Com base no conteúdo estudado sobre a formação das cidades brasileiras.",
-        pergunta: "O que são \"cidades espontâneas\" e como elas se desenvolvem?",
-        tipo: "resposta_aberta",
-        respostaCorreta: "Cidades espontâneas são aquelas que surgiram e se desenvolveram sem planejamento prévio. Elas se formaram a partir de pequenos povoados que, com o tempo, foram crescendo até se transformarem em vilas e depois em cidades. Esse crescimento aconteceu de forma natural, conforme as necessidades dos habitantes e as atividades econômicas da região.",
-        explicacao: "As cidades espontâneas cresceram organicamente, sem um projeto inicial, adaptando-se às necessidades locais e às condições geográficas e econômicas."
+        titulo: "Compreendendo Cidades Planejadas",
+        contexto: "O texto explica: \"Nem todas as cidades brasileiras surgiram a partir de povoados; algumas delas foram projetadas antes de serem construídas. Essas cidades são conhecidas como cidades planejadas. (...) Alguns exemplos de cidades brasileiras planejadas: Teresina, Belo Horizonte e Palmas.\"",
+        pergunta: "Analise as afirmações sobre cidades planejadas:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "Todas as cidades brasileiras se desenvolveram de forma espontânea, sem planejamento prévio.",
+            "Cidades planejadas são aquelas que são projetadas antes de sua construção.",
+            "Teresina e Belo Horizonte são exemplos de cidades que surgiram espontaneamente.",
+            "O planejamento de uma cidade considera a localização de residências, parques e escolas."
+        ],
+        opcoes: [
+            "F, V, F, V",
+            "V, F, V, F",
+            "F, V, V, F",
+            "V, V, F, V"
+        ],
+        respostaCorreta: "F, V, F, V",
+        explicacao: "I. Falso (algumas foram planejadas). II. Verdadeiro. III. Falso (são exemplos de cidades planejadas). IV. Verdadeiro."
     },
     {
         id: 17,
-        titulo: "Crescimento de São Vicente",
-        contexto: "Considerando a história da primeira vila brasileira.",
-        pergunta: "Cite duas razões que levaram a Vila de São Vicente a crescer e se tornar uma cidade.",
-        tipo: "resposta_aberta",
-        respostaCorreta: "Duas razões principais foram: 1) O comércio de mercadorias pelo porto, que facilitava as trocas comerciais; 2) A construção de engenhos pelos portugueses para produzir açúcar, que se tornou uma importante atividade econômica da região.",
-        explicacao: "São Vicente cresceu devido às atividades econômicas como comércio portuário, criação de gado, cultivo de alimentos e principalmente a produção de açúcar nos engenhos."
+        titulo: "A Construção de Brasília",
+        contexto: "O capítulo detalha que \"Brasília é uma cidade totalmente planejada e foi construída para ser a capital do país. Em pouco mais de três anos, milhares de trabalhadores de diversos lugares do Brasil trabalharam em sua construção.\"",
+        pergunta: "Analise as afirmações sobre Brasília:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "Brasília é um exemplo de cidade espontânea que cresceu sem planejamento.",
+            "A construção de Brasília durou mais de uma década.",
+            "Trabalhadores de diferentes regiões do Brasil foram essenciais para a construção de Brasília.",
+            "Brasília foi planejada para ser uma capital política, com avenidas largas e diversas praças."
+        ],
+        opcoes: [
+            "V, F, V, F",
+            "F, F, V, V",
+            "F, V, F, V",
+            "V, V, F, F"
+        ],
+        respostaCorreta: "F, F, V, V",
+        explicacao: "I. Falso (é totalmente planejada). II. Falso (foi construída em pouco mais de três anos). III. Verdadeiro. IV. Verdadeiro."
     },
     {
         id: 18,
-        titulo: "Impacto da Família Real",
-        contexto: "Sobre as transformações no Rio de Janeiro no início do século XIX.",
-        pergunta: "Como a chegada da família real portuguesa impactou o Rio de Janeiro no início do século XIX?",
-        tipo: "resposta_aberta",
-        respostaCorreta: "A chegada da família real portuguesa (1808-1821) causou um grande aumento populacional no Rio de Janeiro, pois trouxe consigo soldados, comerciantes e funcionários públicos. Isso levou a reformas urbanas na cidade para atender às novas necessidades e ao crescimento da população.",
-        explicacao: "A presença da corte portuguesa transformou o Rio de Janeiro, aumentando sua importância política e econômica, e exigindo melhorias na infraestrutura urbana."
+        titulo: "Planejamento em Goiânia e Salvador",
+        contexto: "O texto afirma: \"Goiânia foi a primeira cidade brasileira planejada no século 20 (...). Salvador (...) também é considerada um município planejado. O planejamento a colocava como uma cidade administrativa e militar.\"",
+        pergunta: "Analise as afirmações sobre Goiânia e Salvador:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "Goiânia foi planejada no século 20 e teve influência do estilo Art Deco.",
+            "Salvador é uma cidade que cresceu de forma totalmente espontânea.",
+            "O planejamento de Salvador visava sua função administrativa e militar.",
+            "Goiânia e Salvador são exemplos de cidades que não passaram por reformas significativas."
+        ],
+        opcoes: [
+            "V, F, V, F",
+            "F, V, F, V",
+            "V, F, F, V",
+            "F, F, V, V"
+        ],
+        respostaCorreta: "V, F, V, F",
+        explicacao: "I. Verdadeiro. II. Falso (é considerada planejada). III. Verdadeiro. IV. Falso (passaram por reformas)."
     },
     {
         id: 19,
-        titulo: "Cidades Planejadas",
-        contexto: "Sobre os diferentes tipos de formação urbana no Brasil.",
-        pergunta: "O que são \"cidades planejadas\" e qual a principal característica que as diferencia das espontâneas?",
-        tipo: "resposta_aberta",
-        respostaCorreta: "Cidades planejadas são aquelas que foram projetadas antes de serem construídas. A principal diferença das espontâneas é que elas têm um plano inicial que define a localização de residências, parques, escolas e outros elementos urbanos, enquanto as espontâneas crescem naturalmente sem planejamento prévio.",
-        explicacao: "O planejamento prévio permite uma organização mais eficiente do espaço urbano, considerando aspectos como transporte, áreas verdes e distribuição de serviços."
+        titulo: "Curitiba, a \"Capital Ecológica\"",
+        contexto: "O capítulo descreve: \"Curitiba, apesar de não ter sido planejada (...), a cidade de Curitiba passou por um processo de reestruturação (...). Os ônibus biarticulados, os canais exclusivos, o programa de coleta de lixo reciclável e o grande número de parques e áreas verdes fizeram a cidade adotar o título de 'capital ecológica'.\"",
+        pergunta: "Analise as afirmações sobre Curitiba:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "Curitiba foi planejada desde sua fundação para ser uma \"capital ecológica\".",
+            "O sistema de ônibus biarticulados contribuiu para a reestruturação urbana de Curitiba.",
+            "Curitiba possui poucos parques e áreas verdes.",
+            "O programa de coleta de lixo reciclável é uma das características que a levaram a ser conhecida como \"capital ecológica\"."
+        ],
+        opcoes: [
+            "V, V, F, F",
+            "F, V, F, V",
+            "V, F, V, F",
+            "F, F, V, V"
+        ],
+        respostaCorreta: "F, V, F, V",
+        explicacao: "I. Falso (não foi planejada inicialmente para isso). II. Verdadeiro. III. Falso (possui grande número de parques). IV. Verdadeiro."
     },
     {
         id: 20,
-        titulo: "Função de Brasília",
-        contexto: "Sobre a construção da capital brasileira.",
+        titulo: "Razões para Reformas Urbanas",
+        contexto: "O capítulo sintetiza: \"Para atender às necessidades de seus habitantes, muitas cidades passaram por reformas. São Vicente, Recife, Rio de Janeiro e São Paulo são algumas delas.\"",
+        pergunta: "Analise as afirmações sobre reformas urbanas:",
+        tipo: "verdadeiro_falso",
+        afirmacoes: [
+            "As reformas urbanas sempre visam melhorar a qualidade de vida dos habitantes.",
+            "São Vicente e Recife são exemplos de cidades que nunca passaram por reformas.",
+            "Reformas urbanas são exclusivas de cidades planejadas.",
+            "O objetivo das reformas pode ser a abertura de ruas e avenidas ou a criação de praças."
+        ],
+        opcoes: [
+            "V, F, F, V",
+            "F, V, V, F",
+            "V, V, F, F",
+            "F, F, V, V"
+        ],
+        respostaCorreta: "V, F, F, V",
+        explicacao: "I. Verdadeiro. II. Falso (são exemplos de cidades que passaram por reformas). III. Falso (ocorrem em ambos os tipos). IV. Verdadeiro."
+    },
+
+    // --- GRUPO 3: PERGUNTAS ABERTAS (7 questões) ---
+    {
+        id: 21,
+        titulo: "O que são \"cidades espontâneas\" e como elas se desenvolvem?",
+        contexto: "",
+        pergunta: "O que são \"cidades espontâneas\" e como elas se desenvolvem?",
+        tipo: "aberta",
+        respostaEsperada: "Cidades espontâneas são aquelas que surgiram e se desenvolveram sem planejamento prévio. Elas se formaram a partir de pequenos povoados que, com o tempo, foram crescendo até se transformar em vilas e, depois, em cidades. Esse crescimento aconteceu de forma natural, conforme as necessidades dos habitantes e as atividades econômicas da região.",
+        explicacao: "As cidades espontâneas representam a maioria das cidades brasileiras históricas, que cresceram organicamente ao longo do tempo."
+    },
+    {
+        id: 22,
+        titulo: "Cite duas razões que levaram a Vila de São Vicente a crescer e se tornar uma cidade.",
+        contexto: "",
+        pergunta: "Cite duas razões que levaram a Vila de São Vicente a crescer e se tornar uma cidade.",
+        tipo: "aberta",
+        respostaEsperada: "Duas razões principais foram: 1) O comércio de mercadorias pelo porto; 2) A construção de engenhos pelos portugueses para produzir açúcar. Outras razões incluem a criação de gado e o cultivo de alimentos para consumo local.",
+        explicacao: "O crescimento de São Vicente estava diretamente ligado às atividades econômicas que se desenvolveram na região."
+    },
+    {
+        id: 23,
+        titulo: "Como a chegada da família real portuguesa impactou o Rio de Janeiro no início do século XIX?",
+        contexto: "",
+        pergunta: "Como a chegada da família real portuguesa impactou o Rio de Janeiro no início do século XIX?",
+        tipo: "aberta",
+        respostaEsperada: "A chegada da família real portuguesa (1808-1821) causou um grande aumento populacional no Rio de Janeiro, pois trouxe consigo soldados, comerciantes e funcionários públicos. Esse crescimento populacional levou a reformas urbanas na cidade para atender às novas necessidades e à importância política que o Rio adquiriu como sede do governo português.",
+        explicacao: "A presença da corte portuguesa transformou o Rio de Janeiro em um importante centro político e econômico."
+    },
+    {
+        id: 24,
+        titulo: "O que são \"cidades planejadas\" e qual a principal característica que as diferencia das espontâneas?",
+        contexto: "",
+        pergunta: "O que são \"cidades planejadas\" e qual a principal característica que as diferencia das espontâneas?",
+        tipo: "aberta",
+        respostaEsperada: "Cidades planejadas são aquelas que foram projetadas antes de serem construídas. A principal diferença é que elas têm um plano inicial que considera a localização de residências, parques, escolas e outros elementos urbanos, enquanto as cidades espontâneas crescem naturalmente sem um projeto prévio.",
+        explicacao: "O planejamento urbano permite uma organização mais eficiente do espaço e dos serviços da cidade."
+    },
+    {
+        id: 25,
+        titulo: "De acordo com o texto, qual a função principal para a qual Brasília foi planejada?",
+        contexto: "",
         pergunta: "De acordo com o texto, qual a função principal para a qual Brasília foi planejada?",
-        tipo: "resposta_aberta",
-        respostaCorreta: "Brasília foi planejada para ser a capital do país, ou seja, sua função principal é política e administrativa, servindo como sede do governo federal brasileiro.",
+        tipo: "aberta",
+        respostaEsperada: "Brasília foi planejada para ser a capital do país, concentrando as funções políticas e administrativas do Brasil. Foi projetada como uma capital política, com avenidas largas e diversas praças.",
         explicacao: "Brasília foi construída especificamente para ser a nova capital do Brasil, concentrando os poderes executivo, legislativo e judiciário."
+    },
+    {
+        id: 26,
+        titulo: "Por que a preservação de locais como o Museu Nacional é considerada fundamental para a memória do Brasil e da humanidade?",
+        contexto: "",
+        pergunta: "Por que a preservação de locais como o Museu Nacional é considerada fundamental para a memória do Brasil e da humanidade?",
+        tipo: "aberta",
+        respostaEsperada: "A preservação de museus é fundamental porque eles guardam informações, objetos históricos e reflexões importantes sobre nossa história e cultura. Eles representam a memória coletiva da sociedade e permitem que as futuras gerações conheçam e aprendam com o passado. A perda de acervos, como no incêndio do Museu Nacional em 2018, representa uma perda irreparável de conhecimento e patrimônio cultural.",
+        explicacao: "Os museus são guardiões da memória coletiva e do patrimônio cultural da humanidade."
+    },
+    {
+        id: 27,
+        titulo: "Mencione um exemplo de reforma urbana que aconteceu no Rio de Janeiro e qual era seu objetivo.",
+        contexto: "",
+        pergunta: "Mencione um exemplo de reforma urbana que aconteceu no Rio de Janeiro e qual era seu objetivo.",
+        tipo: "aberta",
+        respostaEsperada: "Um exemplo é a construção do Jardim Botânico do Rio de Janeiro, que tem mais de 200 anos. O objetivo das reformas urbanas no Rio de Janeiro era atender às necessidades da crescente população e adequar a cidade à sua nova importância como sede da família real portuguesa.",
+        explicacao: "As reformas urbanas no Rio de Janeiro visavam modernizar a cidade e adequá-la ao seu novo status político."
+    },
+
+    // --- GRUPO 4: QUESTÕES DE OPINIÃO (3 questões) ---
+    {
+        id: 28,
+        titulo: "Comunidade e Planejamento Urbano",
+        contexto: "Imagine que sua comunidade está crescendo rapidamente e as ruas estão ficando muito congestionadas, com poucas áreas de lazer e transporte público ineficiente. Se você pudesse propor uma solução para melhorar a vida das pessoas, o que você sugeriria para planejar melhor o desenvolvimento dessa comunidade? Baseie-se nas ideias de cidades planejadas e reformas urbanas discutidas no capítulo.",
+        pergunta: "Imagine que sua comunidade está crescendo rapidamente e as ruas estão ficando muito congestionadas, com poucas áreas de lazer e transporte público ineficiente. Se você pudesse propor uma solução para melhorar a vida das pessoas, o que você sugeriria para planejar melhor o desenvolvimento dessa comunidade? Baseie-se nas ideias de cidades planejadas e reformas urbanas discutidas no capítulo.",
+        tipo: "opiniao",
+        respostaEsperada: "Resposta pessoal. O estudante deve propor soluções baseadas nos conceitos estudados, como: criação de mais áreas verdes e parques, melhoria do transporte público, planejamento de ruas mais largas, criação de ciclovias, organização de espaços comerciais e residenciais, etc.",
+        explicacao: "Esta questão permite ao estudante aplicar os conceitos de planejamento urbano em uma situação prática."
+    },
+    {
+        id: 29,
+        titulo: "Patrimônio Histórico vs. Desenvolvimento Moderno",
+        contexto: "Recentemente, a cidade de São Luís, no Maranhão (Patrimônio Mundial da UNESCO, exemplo de cidade histórica), tem debatido a construção de um grande empreendimento moderno em uma área próxima ao seu centro histórico. Alguns argumentam que isso traria desenvolvimento econômico e empregos, enquanto outros temem que a construção descaracterize a paisagem e o patrimônio cultural da cidade. Qual sua opinião sobre essa situação? Como sua cidade poderia equilibrar o desenvolvimento com a preservação de sua história?",
+        pergunta: "Recentemente, a cidade de São Luís, no Maranhão (Patrimônio Mundial da UNESCO, exemplo de cidade histórica), tem debatido a construção de um grande empreendimento moderno em uma área próxima ao seu centro histórico. Alguns argumentam que isso traria desenvolvimento econômico e empregos, enquanto outros temem que a construção descaracterize a paisagem e o patrimônio cultural da cidade. Qual sua opinião sobre essa situação? Como sua cidade poderia equilibrar o desenvolvimento com a preservação de sua história?",
+        tipo: "opiniao",
+        respostaEsperada: "Resposta pessoal. O estudante deve demonstrar compreensão da importância tanto do desenvolvimento econômico quanto da preservação histórica, propondo soluções equilibradas como: construção em áreas afastadas do centro histórico, projetos que respeitem a arquitetura local, investimento em turismo histórico, etc.",
+        explicacao: "Esta questão desenvolve o pensamento crítico sobre a tensão entre modernização e preservação histórica."
+    },
+    {
+        id: 30,
+        titulo: "Desafios de Cidades em Crescimento",
+        contexto: "Em muitas cidades brasileiras, como Natal que vimos se transformar ao longo do tempo, o crescimento rápido pode trazer desafios como a falta de moradias adequadas, a poluição e a sobrecarga dos serviços públicos. Se você fosse o prefeito dessa cidade, qual seria sua principal prioridade para resolver um desses problemas e qual ação concreta você implementaria?",
+        pergunta: "Em muitas cidades brasileiras, como Natal que vimos se transformar ao longo do tempo, o crescimento rápido pode trazer desafios como a falta de moradias adequadas, a poluição e a sobrecarga dos serviços públicos. Se você fosse o prefeito dessa cidade, qual seria sua principal prioridade para resolver um desses problemas e qual ação concreta você implementaria?",
+        tipo: "opiniao",
+        respostaEsperada: "Resposta pessoal. O estudante deve escolher um problema específico e propor uma solução concreta, como: programas habitacionais, melhoria do transporte público, criação de áreas verdes, investimento em saneamento, etc. A resposta deve demonstrar compreensão dos desafios urbanos.",
+        explicacao: "Esta questão estimula o pensamento sobre gestão pública e responsabilidade cidadã."
     }
 ];
 
