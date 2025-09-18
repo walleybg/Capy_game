@@ -464,12 +464,74 @@ function minimizarAudioPlayer() {
     }
 }
 
+// --- FUNÇÕES DO PLAYER DE ÁUDIO AVANÇADO ---
+function togglePlayPause() {
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = '⏸️';
+    } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = '▶️';
+    }
+}
+
+function updateProgress() {
+    if (audioPlayer.duration) {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        const progressBar = document.getElementById('progress-bar');
+        const progressHandle = document.getElementById('progress-handle');
+        
+        progressBar.style.width = progress + '%';
+        progressHandle.style.right = (100 - progress) + '%';
+        
+        // Atualizar tempo atual
+        document.getElementById('current-time').textContent = formatTime(audioPlayer.currentTime);
+        document.getElementById('total-time').textContent = formatTime(audioPlayer.duration);
+    }
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs.toString().padStart(2, '0')}`;
+}
+
+function seekAudio(event) {
+    const progressContainer = document.getElementById('progress-container');
+    const rect = progressContainer.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const percentage = clickX / rect.width;
+    
+    if (audioPlayer.duration) {
+        audioPlayer.currentTime = percentage * audioPlayer.duration;
+    }
+}
+
+function changeVolume(value) {
+    audioPlayer.volume = value / 100;
+    document.getElementById('volume-display').textContent = value + '%';
+}
+
 function retrocederAudio(segundos) {
     audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - segundos);
 }
 
 function avancarAudio(segundos) {
     audioPlayer.currentTime = Math.min(audioPlayer.duration || 0, audioPlayer.currentTime + segundos);
+}
+
+// Event listeners para o player de áudio
+function configurarEventosAudio() {
+    audioPlayer.addEventListener('timeupdate', updateProgress);
+    audioPlayer.addEventListener('loadedmetadata', function() {
+        document.getElementById('total-time').textContent = formatTime(audioPlayer.duration);
+        document.getElementById('current-time').textContent = '0:00';
+    });
+    audioPlayer.addEventListener('ended', function() {
+        document.getElementById('play-pause-btn').textContent = '▶️';
+    });
 }
 
 function inicializarArrastarPlayer() {
@@ -1051,6 +1113,7 @@ function gerarArenas() {
 window.onload = () => {
     inicializar();
     gerarArenas();
+    configurarEventosAudio();
 };
 
 // Chamar gerarArenas() no início para garantir que as arenas sejam criadas
