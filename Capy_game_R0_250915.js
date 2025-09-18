@@ -327,18 +327,18 @@ function iniciarCapitulo(capituloId) {
     // Definir banco de questões baseado no capítulo
     switch(capituloId) {
         case 'cap10_matematica':
-            if (typeof questoesMatematica === 'undefined') {
+            if (typeof dadosDoQuiz === 'undefined') {
                 alert('Erro: Questões de Matemática não carregadas!');
                 return;
             }
-            bancoDeQuestoesAtual = questoesMatematica;
+            bancoDeQuestoesAtual = dadosDoQuiz;
             break;
         case 'cap10_portugues':
-            if (typeof questoesPortugues === 'undefined') {
+            if (typeof dadosDoQuizLP === 'undefined') {
                 alert('Erro: Questões de Português não carregadas!');
                 return;
             }
-            bancoDeQuestoesAtual = questoesPortugues;
+            bancoDeQuestoesAtual = dadosDoQuizLP;
             break;
         case 'cap06_historia':
             if (typeof questoesHistoria === 'undefined') {
@@ -540,14 +540,25 @@ function formatTime(seconds) {
 
 function seekAudio(event) {
     const progressContainer = document.getElementById('progress-container');
-    if (!progressContainer || !audioPlayer.duration) return;
+    if (!progressContainer || !audioPlayer.duration || isNaN(audioPlayer.duration)) {
+        console.log('Seek não disponível - duração:', audioPlayer.duration);
+        return;
+    }
     
     const rect = progressContainer.getBoundingClientRect();
     const clickX = event.clientX - rect.left;
     const percentage = Math.max(0, Math.min(1, clickX / rect.width));
+    const newTime = percentage * audioPlayer.duration;
     
-    audioPlayer.currentTime = percentage * audioPlayer.duration;
-    updateProgress(); // Atualizar imediatamente
+    console.log('Seek para:', formatTime(newTime), '(' + (percentage * 100).toFixed(1) + '%)');
+    
+    // Definir novo tempo
+    audioPlayer.currentTime = newTime;
+    
+    // Forçar atualização imediata da interface
+    setTimeout(() => {
+        updateProgress();
+    }, 100);
 }
 
 function changeVolume(value) {
@@ -581,11 +592,19 @@ function toggleVelocidade() {
 function configurarEventosAudio() {
     audioPlayer.addEventListener('timeupdate', updateProgress);
     audioPlayer.addEventListener('loadedmetadata', function() {
+        console.log('Áudio carregado - duração:', formatTime(audioPlayer.duration));
         document.getElementById('total-time').textContent = formatTime(audioPlayer.duration);
         document.getElementById('current-time').textContent = '0:00';
     });
     audioPlayer.addEventListener('ended', function() {
         document.getElementById('play-pause-btn').textContent = '▶';
+    });
+    audioPlayer.addEventListener('seeked', function() {
+        console.log('Seek concluído para:', formatTime(audioPlayer.currentTime));
+        updateProgress();
+    });
+    audioPlayer.addEventListener('canplay', function() {
+        console.log('Áudio pronto para reprodução');
     });
 }
 
