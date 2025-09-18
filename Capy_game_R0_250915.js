@@ -53,6 +53,11 @@ function selecionarArena(tipoArena) {
         nomeArenaAtual = 'Torre das Palavras';
         arenaAtual = 'portugues';
         headerIcon.src = 'ICON_Portugues.png';
+    } else if (tipoArena === 'historia') {
+        bancoDeQuestoesAtual = questoesHistoria; // Carrega dados de historia
+        nomeArenaAtual = 'Castelo do Tempo';
+        arenaAtual = 'historia';
+        headerIcon.src = 'ICON_Historia.png';
     }
 
     respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
@@ -406,6 +411,8 @@ function abrirAudioPlayerPopup(arena) {
         audioSrc = 'Cap_10_Matematica_podcast_compressed.mp4';
     } else if (arena === 'portugues') {
         audioSrc = 'Cap_10_Portugues_podcast_compressed.mp4';
+    } else if (arena === 'historia') {
+        audioSrc = 'Cap_06_Historia_podcast_compressed.mp4';
     } else {
         alert("Podcast não disponível para esta arena.");
         return;
