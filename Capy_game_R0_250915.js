@@ -418,6 +418,16 @@ function abrirAudioPlayerPopup(arena) {
         return;
     }
 
+    // Definir título baseado na arena
+    let tituloArena = '';
+    if (arena === 'matematica') {
+        tituloArena = 'Matemática';
+    } else if (arena === 'portugues') {
+        tituloArena = 'Português';
+    } else if (arena === 'historia') {
+        tituloArena = 'História';
+    }
+
     // Conteúdo HTML para o iframe
     const iframeContent = `
         <!DOCTYPE html>
@@ -425,17 +435,82 @@ function abrirAudioPlayerPopup(arena) {
         <head>
             <title>Podcast Capy Game</title>
             <style>
-                body { font-family: sans-serif; margin: 0; padding: 10px; background-color: #f4f7f9; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: calc(100vh - 20px); }
-                audio { width: 90%; margin-top: 10px; }
-                h3 { color: #34495e; }
+                body { 
+                    font-family: sans-serif; 
+                    margin: 0; 
+                    padding: 10px; 
+                    background-color: #f4f7f9; 
+                    display: flex; 
+                    flex-direction: column; 
+                    justify-content: center; 
+                    align-items: center; 
+                    min-height: calc(100vh - 20px); 
+                }
+                audio { 
+                    width: 90%; 
+                    margin-top: 10px; 
+                }
+                h3 { 
+                    color: #34495e; 
+                    margin-bottom: 15px;
+                }
+                .controls {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 10px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .control-btn {
+                    background-color: #3498db;
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 12px;
+                    transition: background-color 0.3s;
+                }
+                .control-btn:hover {
+                    background-color: #2980b9;
+                }
+                .control-btn:active {
+                    background-color: #21618c;
+                }
             </style>
         </head>
         <body>
-            <h3>Podcast de Revisão - ${arena === 'matematica' ? 'Matemática' : 'Português'}</h3>
-            <audio controls autoplay>
+            <h3>Podcast de Revisão - ${tituloArena}</h3>
+            <audio id="audioPlayer" controls autoplay>
                 <source src="${audioSrc}" type="audio/mp4">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
+            <div class="controls">
+                <button class="control-btn" onclick="retroagir30s()">⏪ 30s</button>
+                <button class="control-btn" onclick="retroagir10s()">⏪ 10s</button>
+                <button class="control-btn" onclick="avancar10s()">10s ⏩</button>
+                <button class="control-btn" onclick="avancar30s()">30s ⏩</button>
+            </div>
+            
+            <script>
+                const audio = document.getElementById('audioPlayer');
+                
+                function retroagir30s() {
+                    audio.currentTime = Math.max(0, audio.currentTime - 30);
+                }
+                
+                function retroagir10s() {
+                    audio.currentTime = Math.max(0, audio.currentTime - 10);
+                }
+                
+                function avancar10s() {
+                    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+                }
+                
+                function avancar30s() {
+                    audio.currentTime = Math.min(audio.duration, audio.currentTime + 30);
+                }
+            </script>
         </body>
         </html>
     `;
