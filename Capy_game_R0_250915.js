@@ -220,6 +220,22 @@ const estruturaCapitulos = {
                 audio: 'Cap_06_Historia_podcast_compressed.mp3',
                 questoes: 'questoesHistoria',
                 disponivel: true
+            },
+            {
+                id: 'cap07_historia',
+                numero: 7,
+                titulo: 'Vida e trabalho nos espaços urbanos',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap08_historia',
+                numero: 8,
+                titulo: 'Um Brasil de patrimônios',
+                audio: null,
+                questoes: null,
+                disponivel: false
             }
         ]
     },
