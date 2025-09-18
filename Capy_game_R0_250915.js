@@ -295,7 +295,7 @@ function gerarListaCapitulos(capitulos) {
             </div>
         `;
         
-        capitulosContainer.appendChild(capituloCard);
+        listaCapitulos.appendChild(capituloCard);
     });
 }
 
