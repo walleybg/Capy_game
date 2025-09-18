@@ -301,8 +301,7 @@ const dadosDoQuizCiencias = [
         ],
         respostaCorreta: "F, F, V, F",
         justificativa: "I. Falso (nem sempre intencionais). II. Falso (diminuem as chances). III. Verdadeiro. IV. Falso (animais de todos os tamanhos são afetados)."
-    }
-];
+    },
 
     {
         tipo: "verdadeiro_falso",
