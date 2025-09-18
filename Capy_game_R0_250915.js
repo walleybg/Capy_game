@@ -54,6 +54,46 @@ const estruturaCapitulos = {
                 audio: null,
                 questoes: null,
                 disponivel: false
+            },
+            {
+                id: 'cap12_matematica',
+                numero: 12,
+                titulo: 'Muitas multiplicações',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap13_matematica',
+                numero: 13,
+                titulo: 'Qual é a sua massa',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap14_matematica',
+                numero: 14,
+                titulo: 'Dividir para valer',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap15_matematica',
+                numero: 15,
+                titulo: 'A capacidade para medir',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap16_matematica',
+                numero: 16,
+                titulo: 'Matemática em 2D e 3D',
+                audio: null,
+                questoes: null,
+                disponivel: false
             }
         ]
     },
