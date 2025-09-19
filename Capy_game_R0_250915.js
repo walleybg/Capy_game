@@ -99,9 +99,9 @@ const estruturaCapitulos = {
                 id: 'cap11_matematica',
                 numero: 11,
                 titulo: 'Para medir o mundo',
-                audio: null,
+                audio: 'Cap_11_Matematica_podcast.mp3',
                 questoes: null,
-                disponivel: false
+                disponivel: true
             },
             {
                 id: 'cap12_matematica',
