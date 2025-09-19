@@ -36,9 +36,9 @@ const estruturaCapitulos = {
                 id: 'cap11_portugues',
                 numero: 11,
                 titulo: 'Notícias do mundo selvagem',
-                audio: null,
-                questoes: null,
-                disponivel: false
+                audio: 'Cap_11_Portugues_podcast.mp3',
+                questoes: 'dadosDoQuizPortugues11',
+                disponivel: true
             },
             {
                 id: 'cap12_portugues',
@@ -421,6 +421,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizLP;
+            break;
+        case 'cap11_portugues':
+            if (typeof dadosDoQuizPortugues11 === 'undefined') {
+                alert('Erro: Questões de Português 11 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues11;
             break;
         case 'cap06_historia':
             if (typeof questoesHistoria === 'undefined') {
