@@ -245,6 +245,14 @@ const estruturaCapitulos = {
         descricao: 'Desafios de Geografia',
         capitulos: [
             {
+                id: 'cap06_geografia',
+                numero: 6,
+                titulo: 'De onde vêm e para onde vão as coisas que consumimos?',
+                audio: 'Cap_06_Geografia_podcast.mp3',
+                questoes: 'dadosDoQuizGeografia',
+                disponivel: true
+            },
+            {
                 id: 'cap07_geografia',
                 numero: 7,
                 titulo: 'De gota em gota, de grão em grão',
@@ -427,6 +435,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias;
+            break;
+        case 'cap06_geografia':
+            if (typeof dadosDoQuizGeografia === 'undefined') {
+                alert('Erro: Questões de Geografia não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizGeografia;
             break;
         default:
             alert('Questões ainda não disponíveis para este capítulo!');
