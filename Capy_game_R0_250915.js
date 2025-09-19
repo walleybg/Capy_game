@@ -1036,7 +1036,7 @@ function verificarResposta() {
     let estaCorreta = false;
     
     if (questao.tipo === 'multipla_escolha') {
-        estaCorreta = parseInt(resposta) === questao.respostaCorreta;
+        estaCorreta = resposta === questao.respostaCorreta;
     } else if (questao.tipo === 'verdadeiro_falso') {
         estaCorreta = resposta === questao.respostaCorreta;
     } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
@@ -1096,7 +1096,13 @@ function mostrarFeedback(estaCorreta, questao) {
         } else {
             let respostaCorretaTexto = '';
             if (questao.tipo === 'multipla_escolha') {
-                respostaCorretaTexto = questao.opcoes[questao.respostaCorreta];
+                // Encontrar o índice da resposta correta
+                const indiceCorreto = questao.opcoes.findIndex(opcao => opcao === questao.respostaCorreta);
+                if (indiceCorreto !== -1) {
+                    respostaCorretaTexto = questao.opcoes[indiceCorreto];
+                } else {
+                    respostaCorretaTexto = questao.respostaCorreta;
+                }
             } else {
                 respostaCorretaTexto = questao.respostaCorreta;
             }
@@ -1121,13 +1127,14 @@ function aplicarFeedbackVisual(estaCorreta, questao) {
     if (questao.tipo === 'multipla_escolha') {
         const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
         if (respostaSelecionada) {
-            const indexSelecionado = parseInt(respostaSelecionada.value);
+            const valorSelecionado = respostaSelecionada.value;
             
             opcoesCaixas.forEach((caixa, index) => {
-                if (index === indexSelecionado) {
+                const input = caixa.previousElementSibling;
+                if (input && input.value === valorSelecionado) {
                     // Caixa selecionada
                     caixa.classList.add(estaCorreta ? 'feedback-correto-caixa' : 'feedback-incorreto-caixa');
-                } else if (index === questao.respostaCorreta && !estaCorreta) {
+                } else if (questao.opcoes[index] === questao.respostaCorreta && !estaCorreta) {
                     // Mostrar resposta correta se errou
                     caixa.classList.add('feedback-correto-caixa');
                 }
