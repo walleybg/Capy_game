@@ -162,9 +162,9 @@ const estruturaCapitulos = {
                 id: 'cap11_ciencias',
                 numero: 11,
                 titulo: 'O planeta terra',
-                audio: null,
+                audio: 'Cap_11_Ciencias_podcast.mp3',
                 questoes: null,
-                disponivel: false
+                disponivel: true
             },
             {
                 id: 'cap12_ciencias',
