@@ -1013,6 +1013,7 @@ function mostrarQuestaoAberta(questao) {
 function restaurarResposta() {
     const resposta = respostasDoUsuario[perguntaAtual];
     const questao = bancoDeQuestoesAtual[perguntaAtual];
+    const status = statusDasQuestoes[perguntaAtual];
     
     if (questao.tipo === 'multipla_escolha') {
         const radio = document.querySelector(`input[name="resposta"][value="${resposta}"]`);
@@ -1020,8 +1021,21 @@ function restaurarResposta() {
     } else if (questao.tipo === 'verdadeiro_falso') {
         const radio = document.querySelector(`input[name="resposta"][value="${resposta}"]`);
         if (radio) radio.checked = true;
-    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
         inputResposta.value = resposta || '';
+    }
+    
+    // Se a questão já foi respondida (correta ou incorreta), mostrar o gabarito e explicação permanentemente
+    if (status === 'correta' || status === 'incorreta') {
+        // Aplicar feedback visual nas opções
+        if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso') {
+            const estaCorreta = (status === 'correta');
+            aplicarFeedbackVisual(estaCorreta, questao);
+        }
+        
+        // Mostrar feedback com gabarito e explicação
+        mostrarFeedback(status === 'correta', questao);
+        feedbackImediato.style.display = 'block';
     }
 }
 
