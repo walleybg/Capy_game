@@ -1107,7 +1107,7 @@ function verificarResposta() {
 function mostrarFeedback(estaCorreta, questao) {
     let mensagem = '';
     
-    if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+    if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta' || questao.tipo === 'analise_caso') {
         let respostaEsperada = '';
         if (questao.respostaEsperada) {
             respostaEsperada = `<br><strong>Resposta esperada:</strong> ${questao.respostaEsperada}`;
