@@ -899,8 +899,30 @@ function mostrarQuestaoVerdadeiroFalso(questao) {
     
     opcoesRespostaDiv.innerHTML = '';
     
-    // Se a questão tem opções (novo formato), tratar como múltipla escolha
+    // Se a questão tem opções (novo formato), mostrar afirmativas e opções
     if (questao.opcoes && questao.opcoes.length > 0) {
+        // Primeiro, mostrar as afirmativas
+        if (questao.afirmacoes) {
+            const afirmacoesDiv = document.createElement('div');
+            afirmacoesDiv.className = 'afirmacoes-container';
+            afirmacoesDiv.innerHTML = '<h4>Analise as afirmações:</h4>';
+            
+            questao.afirmacoes.forEach((afirmacao, index) => {
+                const div = document.createElement('div');
+                div.className = 'afirmacao-item afirmacao-caixa-branca';
+                div.innerHTML = `
+                    <div class="afirmacao-header">
+                        <span class="afirmacao-numero">${['I', 'II', 'III', 'IV'][index]}.</span>
+                    </div>
+                    <div class="afirmacao-texto">${afirmacao}</div>
+                `;
+                afirmacoesDiv.appendChild(div);
+            });
+            
+            opcoesRespostaDiv.appendChild(afirmacoesDiv);
+        }
+        
+        // Depois, mostrar as opções de resposta
         const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
         
         questao.opcoes.forEach((opcao, index) => {
@@ -1012,7 +1034,7 @@ function salvarResposta() {
         if (radioSelecionado) {
             resposta = radioSelecionado.value;
         }
-    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
         resposta = inputResposta.value.trim();
     }
     
@@ -1039,7 +1061,7 @@ function verificarResposta() {
         if (radioSelecionado) {
             resposta = radioSelecionado.value;
         }
-    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
         resposta = inputResposta.value.trim();
     }
     
@@ -1057,7 +1079,7 @@ function verificarResposta() {
         estaCorreta = resposta === questao.respostaCorreta;
     } else if (questao.tipo === 'verdadeiro_falso') {
         estaCorreta = resposta === questao.respostaCorreta;
-    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
         estaCorreta = true; // Questões abertas são sempre "corretas"
     }
     
