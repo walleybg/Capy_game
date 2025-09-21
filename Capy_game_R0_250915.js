@@ -857,7 +857,7 @@ function irParaQuestao(indice) {
         mostrarQuestaoMultiplaEscolha(questao);
     } else if (questao.tipo === 'verdadeiro_falso') {
         mostrarQuestaoVerdadeiroFalso(questao);
-    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao') {
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
         mostrarQuestaoAberta(questao);
     }
     
@@ -898,6 +898,24 @@ function mostrarQuestaoVerdadeiroFalso(questao) {
     areaRespostaAberta.style.display = 'none';
     
     opcoesRespostaDiv.innerHTML = '';
+    
+    // Se a questão tem opções (novo formato), tratar como múltipla escolha
+    if (questao.opcoes && questao.opcoes.length > 0) {
+        const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+        
+        questao.opcoes.forEach((opcao, index) => {
+            const div = document.createElement('div');
+            div.className = 'opcao-resposta opcao-multipla-escolha';
+            div.innerHTML = `
+                <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+                <label for="opcao${index}" class="opcao-caixa">
+                    <strong>${letras[index]}</strong> ${opcao}
+                </label>
+            `;
+            opcoesRespostaDiv.appendChild(div);
+        });
+        return;
+    }
     
     // Mostrar afirmações com caixas V/F
     if (questao.afirmacoes) {

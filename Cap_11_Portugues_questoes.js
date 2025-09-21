@@ -147,13 +147,14 @@ const dadosDoQuizPortugues11 = [
         tipo: "verdadeiro_falso",
         titulo: "Informações sobre o Herrerasaurídeo",
         contexto: "Uma turma está estudando sobre diferentes tipos de dinossauros e suas características. Eles leram sobre o Herrerasaurídeo encontrado no Rio Grande do Sul.",
-        pergunta: "Analise as afirmações sobre o Herrerasaurídeo:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
             "O texto diz que ele era herbívoro.",
             "O texto o apresenta como 'outra descoberta', que não foi a 'primeira' no contexto da notícia principal.",
             "A expressão 'encontrado por lá' indica que foi na mesma região.",
             "Ele viveu há 225 milhões de anos, enquanto o Herrerassaurídeo viveu há 233 milhões, sendo este último mais antigo."
         ],
+        opcoes: ["F-V-V-F", "V-V-V-F", "F-F-V-V", "V-F-F-F"],
         respostaCorreta: "F-V-V-F",
         justificativa: "(F) O texto diz que ele era herbívoro. (V) O texto o apresenta como 'outra descoberta', que não foi a 'primeira' no contexto da notícia principal. (V) A expressão 'encontrado por lá' indica que foi na mesma região. (F) Ele viveu há 225 milhões de anos, enquanto o Herrerassaurídeo viveu há 233 milhões, sendo este último mais antigo."
     },
@@ -161,127 +162,136 @@ const dadosDoQuizPortugues11 = [
         tipo: "verdadeiro_falso",
         titulo: "Processo de Descoberta de Fósseis",
         contexto: "Uma turma está estudando sobre como os cientistas descobrem e estudam fósseis de dinossauros. Eles leram sobre o processo descrito na notícia.",
-        pergunta: "Analise as afirmações sobre o processo de descoberta de fósseis:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "As chuvas também apresentam um risco, pois 'o excesso de água pode destruir esses materiais'.",
-            "O risco de destruição pela água é real para fósseis ainda não coletados.",
-            "As chuvas 'ajudaram a desgastar as rochas e revelaram o fóssil'.",
-            "O texto diz que os cientistas estão 'correndo para salvar outros fósseis', indicando a necessidade de pressa."
+            "As chuvas tiveram um papel exclusivamente positivo na descoberta do fóssil.",
+            "O excesso de água representa um risco para a preservação de fósseis que ainda não foram encontrados.",
+            "O fóssil foi revelado devido a um processo natural intensificado pelas chuvas.",
+            "Os cientistas não precisam ter pressa para coletar outros fósseis na região."
         ],
+        opcoes: ["F-V-V-F", "V-V-F-V", "F-F-V-V", "V-F-F-F"],
         respostaCorreta: "F-V-V-F",
-        justificativa: "(F) As chuvas também apresentam um risco, pois 'o excesso de água pode destruir esses materiais'. (V) O risco de destruição pela água é real para fósseis ainda não coletados. (V) As chuvas 'ajudaram a desgastar as rochas e revelaram o fóssil'. (F) O texto diz que os cientistas estão 'correndo para salvar outros fósseis', indicando a necessidade de pressa."
+        justificativa: "(F) As chuvas tiveram um papel exclusivamente positivo na descoberta do fóssil. (V) O excesso de água representa um risco para a preservação de fósseis que ainda não foram encontrados. (V) O fóssil foi revelado devido a um processo natural intensificado pelas chuvas. (F) Os cientistas não precisam ter pressa para coletar outros fósseis na região."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Processo de Pesquisa Científica",
         contexto: "Uma turma está estudando sobre como os cientistas trabalham para descobrir e estudar fósseis. Eles leram sobre as etapas do processo científico.",
-        pergunta: "Analise as afirmações sobre o processo de pesquisa científica:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "A divulgação (escrita de artigos) é a última etapa mencionada.",
-            "O estudo ocorre em um laboratório para onde os fósseis são levados.",
-            "O trabalho continua por meses no laboratório após a retirada.",
-            "É por meio dos artigos que eles contam 'ao mundo sobre o que descobriram'."
+            "A divulgação da descoberta para o mundo é a primeira etapa do processo.",
+            "O estudo detalhado do fóssil ocorre em laboratório.",
+            "O trabalho dos cientistas com o fóssil termina assim que ele é retirado da rocha.",
+            "A publicação de artigos científicos é a forma de comunicar a descoberta."
         ],
+        opcoes: ["F-V-F-V", "V-F-V-F", "F-F-V-V", "V-V-F-F"],
         respostaCorreta: "F-V-F-V",
-        justificativa: "(F) A divulgação (escrita de artigos) é a última etapa mencionada. (V) O estudo ocorre em um laboratório para onde os fósseis são levados. (F) O trabalho continua por meses no laboratório após a retirada. (V) É por meio dos artigos que eles contam 'ao mundo sobre o que descobriram'."
+        justificativa: "(F) A divulgação da descoberta para o mundo é a primeira etapa do processo. (V) O estudo detalhado do fóssil ocorre em laboratório. (F) O trabalho dos cientistas com o fóssil termina assim que ele é retirado da rocha. (V) A publicação de artigos científicos é a forma de comunicar a descoberta."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Características das Notícias",
         contexto: "Uma turma está aprendendo sobre os elementos que compõem uma notícia e como elas são estruturadas para informar o público.",
-        pergunta: "Analise as afirmações sobre as características das notícias:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "O texto diz que notícias 'podem apresentar imagens'.",
-            "O texto afirma que as notícias 'possuem título', indicando ser um elemento padrão.",
-            "As informações principais estão 'no primeiro parágrafo, geralmente'.",
-            "A legenda acompanha uma imagem para explicá-la, como visto no exemplo do fóssil."
+            "Uma notícia nunca pode ter imagens.",
+            "O título é um elemento opcional em uma notícia.",
+            "As informações mais importantes costumam estar no final do texto.",
+            "A legenda serve para explicar a imagem que acompanha a notícia."
         ],
+        opcoes: ["V-V-V-F", "F-F-F-V", "F-V-F-V", "V-F-V-F"],
         respostaCorreta: "F-F-F-V",
-        justificativa: "(F) O texto diz que notícias 'podem apresentar imagens'. (F) O texto afirma que as notícias 'possuem título', indicando ser um elemento padrão. (F) As informações principais estão 'no primeiro parágrafo, geralmente'. (V) A legenda acompanha uma imagem para explicá-la, como visto no exemplo do fóssil."
+        justificativa: "(F) Uma notícia nunca pode ter imagens. (F) O título é um elemento opcional em uma notícia. (F) As informações mais importantes costumam estar no final do texto. (V) A legenda serve para explicar a imagem que acompanha a notícia."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Características do Quokka",
         contexto: "Uma turma está estudando sobre o quokka, um marsupial que vive na Austrália. Eles leram sobre suas características físicas e comportamentais.",
-        pergunta: "Analise as afirmações sobre o quokka:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "Ele tem 'cerca de 50 centímetros', sendo um animal pequeno.",
-            "O nome científico é dado entre parênteses no texto.",
-            "O texto o descreve como 'uma versão miniatura do canguru'.",
-            "A semelhança principal, além da aparência, é que ambos são marsupiais e carregam seus filhotes em uma bolsa."
+            "O quokka é um animal de grande porte, com mais de 2 metros de comprimento.",
+            "O nome científico do quokka é Setonix brachyurus.",
+            "A aparência do quokka é frequentemente comparada à de um canguru em miniatura.",
+            "A razão da comparação com o canguru é o fato de ambos serem marsupiais."
         ],
+        opcoes: ["F-V-V-V", "V-F-F-V", "F-V-V-F", "V-F-V-F"],
         respostaCorreta: "F-V-V-V",
-        justificativa: "(F) Ele tem 'cerca de 50 centímetros', sendo um animal pequeno. (V) O nome científico é dado entre parênteses no texto. (V) O texto o descreve como 'uma versão miniatura do canguru'. (V) A semelhança principal, além da aparência, é que ambos são marsupiais e carregam seus filhotes em uma bolsa."
+        justificativa: "(F) O quokka é um animal de grande porte, com mais de 2 metros de comprimento. (V) O nome científico do quokka é Setonix brachyurus. (V) A aparência do quokka é frequentemente comparada à de um canguru em miniatura. (V) A razão da comparação com o canguru é o fato de ambos serem marsupiais."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Status de Conservação do Quokka",
         contexto: "Uma turma está estudando sobre os riscos que o quokka enfrenta na natureza e seu status de conservação.",
-        pergunta: "Analise as afirmações sobre o status de conservação do quokka:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "A expressão contrasta a aparência 'sorridente' com os problemas reais que o animal enfrenta.",
-            "'Vulnerável' já é um nível de ameaça, indicando que a espécie precisa de proteção.",
-            "A aparência feliz não reflete a realidade de risco que ele enfrenta.",
-            "Essa é a definição de uma categoria de conservação para espécies em risco."
+            "A expressão 'nem tudo são sorrisos' significa que, apesar da aparência feliz, o animal enfrenta problemas.",
+            "Ser 'vulnerável na natureza' indica que a espécie do quokka não corre nenhum risco de extinção.",
+            "A aparência do quokka reflete sua real situação de segurança no meio ambiente.",
+            "O status de 'vulnerável' é uma classificação usada para animais que precisam de atenção para sua conservação."
         ],
+        opcoes: ["V-F-F-V", "F-V-V-F", "V-V-F-F", "F-F-V-V"],
         respostaCorreta: "V-F-F-V",
-        justificativa: "(V) A expressão contrasta a aparência 'sorridente' com os problemas reais que o animal enfrenta. (F) 'Vulnerável' já é um nível de ameaça, indicando que a espécie precisa de proteção. (F) A aparência feliz não reflete a realidade de risco que ele enfrenta. (V) Essa é a definição de uma categoria de conservação para espécies em risco."
+        justificativa: "(V) A expressão 'nem tudo são sorrisos' significa que, apesar da aparência feliz, o animal enfrenta problemas. (F) Ser 'vulnerável na natureza' indica que a espécie do quokka não corre nenhum risco de extinção. (F) A aparência do quokka reflete sua real situação de segurança no meio ambiente. (V) O status de 'vulnerável' é uma classificação usada para animais que precisam de atenção para sua conservação."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Regras de Acentuação de Proparoxítonas",
         contexto: "Uma turma está estudando as regras de acentuação em português. O professor explica que existe uma regra específica para proparoxítonas.",
-        pergunta: "Analise as afirmações sobre acentuação de proparoxítonas:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "LÂM-pa-da tem a antepenúltima sílaba tônica, sendo proparoxítona e acentuada pela regra.",
-            "A regra é que todas as proparoxítonas são acentuadas.",
-            "MÉ-di-co segue exatamente a mesma regra.",
-            "A regra das proparoxítonas é conhecida por não ter exceções na língua portuguesa."
+            "A palavra 'lâmpada' é acentuada por ser proparoxítona.",
+            "Nenhuma palavra proparoxítona leva acento gráfico.",
+            "A palavra 'médico' é um exemplo de proparoxítona.",
+            "A regra de acentuação das proparoxítonas possui muitas exceções."
         ],
+        opcoes: ["V-F-V-F", "F-V-F-V", "V-V-F-F", "F-F-V-V"],
         respostaCorreta: "V-F-V-F",
-        justificativa: "(V) LÂM-pa-da tem a antepenúltima sílaba tônica, sendo proparoxítona e acentuada pela regra. (F) A regra é que todas as proparoxítonas são acentuadas. (V) MÉ-di-co segue exatamente a mesma regra. (F) A regra das proparoxítonas é conhecida por não ter exceções na língua portuguesa."
+        justificativa: "(V) A palavra 'lâmpada' é acentuada por ser proparoxítona. (F) Nenhuma palavra proparoxítona leva acento gráfico. (V) A palavra 'médico' é um exemplo de proparoxítona. (F) A regra de acentuação das proparoxítonas possui muitas exceções."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Conceito de Fake News",
         contexto: "Uma turma está aprendendo sobre fake news e como elas se espalham na internet e redes sociais.",
-        pergunta: "Analise as afirmações sobre fake news:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "Fake news são notícias falsas, o oposto de notícias verdadeiras.",
-            "O capítulo incentiva a checagem em sites confiáveis para confirmar informações.",
-            "Repassar informações duvidosas é o que aumenta o alcance das fake news.",
-            "Elas podem causar pânico e desinformação, representando um grande risco."
+            "Fake news são o mesmo que notícias verdadeiras de fontes confiáveis.",
+            "Uma forma de combater as fake news é checar a informação na fonte original ou em sites confiáveis.",
+            "Compartilhar uma notícia sem ter certeza de sua veracidade ajuda a espalhar fake news.",
+            "As fake news não oferecem nenhum risco para as pessoas."
         ],
+        opcoes: ["F-V-V-F", "V-F-F-V", "F-F-V-V", "V-V-F-F"],
         respostaCorreta: "F-V-V-F",
-        justificativa: "Fake news são notícias falsas, o oposto de notícias verdadeiras. (V) O capítulo incentiva a checagem em sites confiáveis para confirmar informações. (V) Repassar informações duvidosas é o que aumenta o alcance das fake news. (F) Elas podem causar pânico e desinformação, representando um grande risco."
+        justificativa: "(F) Fake news são o mesmo que notícias verdadeiras de fontes confiáveis. (V) Uma forma de combater as fake news é checar a informação na fonte original ou em sites confiáveis. (V) Compartilhar uma notícia sem ter certeza de sua veracidade ajuda a espalhar fake news. (F) As fake news não oferecem nenhum risco para as pessoas."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Análise de Monossílabos Tônicos",
         contexto: "Uma turma está estudando sobre monossílabos e suas regras de acentuação. O professor explica a diferença entre tônicos e átonos.",
-        pergunta: "Analise as afirmações sobre monossílabos tônicos:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "'Dê' é um verbo (ordem) com sentido próprio, sendo um monossílabo tônico.",
-            "'de' é uma preposição que apenas liga palavras, sendo um monossílabo átono.",
-            "Os átonos são pronunciados de forma fraca e não têm sentido sozinhos.",
-            "'Sol' é um substantivo com significado próprio, portanto, é tônico."
+            "Na frase 'Dê o livro para mim', o monossílabo 'Dê' é tônico.",
+            "Na frase 'Eu gosto de sorvete', o monossílabo 'de' é tônico.",
+            "Monossílabos átonos são as palavras mais fortes e importantes da frase.",
+            "A palavra 'sol' é um exemplo de monossílabo tônico."
         ],
+        opcoes: ["V-F-F-V", "F-V-V-F", "V-V-F-F", "F-F-V-V"],
         respostaCorreta: "V-F-F-V",
-        justificativa: "(V) 'Dê' é um verbo (ordem) com sentido próprio, sendo um monossílabo tônico. (F) 'de' é uma preposição que apenas liga palavras, sendo um monossílabo átono. (F) Os átonos são pronunciados de forma fraca e não têm sentido sozinhos. (V) 'Sol' é um substantivo com significado próprio, portanto, é tônico."
+        justificativa: "(V) Na frase 'Dê o livro para mim', o monossílabo 'Dê' é tônico. (F) Na frase 'Eu gosto de sorvete', o monossílabo 'de' é tônico. (F) Monossílabos átonos são as palavras mais fortes e importantes da frase. (V) A palavra 'sol' é um exemplo de monossílabo tônico."
     },
     {
         tipo: "verdadeiro_falso",
         titulo: "Trabalho dos Jornalistas",
         contexto: "Uma turma está estudando sobre o trabalho dos jornalistas e como eles produzem notícias confiáveis para informar o público.",
-        pergunta: "Analise as afirmações sobre o trabalho dos jornalistas:",
+        pergunta: "Analise as afirmações e marque V (Verdadeiro) ou F (Falso):",
         afirmacoes: [
-            "O texto afirma que os jornalistas 'investigam o fato ou o assunto'.",
-            "O objetivo é 'levar informações corretas ao leitor'.",
-            "O texto define fontes confiáveis como aquelas baseadas 'em fatos e dados reais'.",
-            "O capítulo enfatiza que é 'muito importante' ler notícias de fontes confiáveis."
+            "O trabalho do jornalista não envolve investigação, apenas a escrita.",
+            "O objetivo dos jornalistas é levar informações corretas ao leitor.",
+            "Ler notícias de fontes confiáveis é muito importante.",
+            "Fontes confiáveis são baseadas em fatos e dados reais."
         ],
-        respostaCorreta: "F-V-V-F",
-        justificativa: "(F) O texto afirma que os jornalistas 'investigam o fato ou o assunto'. (V) O objetivo é 'levar informações corretas ao leitor'. (V) O texto define fontes confiáveis como aquelas baseadas 'em fatos e dados reais'. (F) O capítulo enfatiza que é 'muito importante' ler notícias de fontes confiáveis."
+        opcoes: ["F-V-V-V", "V-F-F-V", "F-F-V-V", "V-V-F-F"],
+        respostaCorreta: "F-V-V-V",
+        justificativa: "(F) O trabalho do jornalista não envolve investigação, apenas a escrita. (V) O objetivo dos jornalistas é levar informações corretas ao leitor. (V) Ler notícias de fontes confiáveis é muito importante. (V) Fontes confiáveis são baseadas em fatos e dados reais."
     },
 
     // --- GRUPO 3: PERGUNTAS ABERTAS ---
