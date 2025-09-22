@@ -270,18 +270,18 @@ const estruturaCapitulos = {
             }
         ]
     },
-    english: {
+    ingles: {
         nome: 'Castle of Words',
-        icone: 'ICON_English.png',
+        icone: 'ICON_Ingles.png',
         descricao: 'English Challenges',
         capitulos: [
             {
-                id: 'cap01_english',
-                numero: 1,
-                titulo: 'Coming Soon',
-                audio: null,
-                questoes: null,
-                disponivel: false
+                id: 'unit05_ingles',
+                numero: 5,
+                titulo: 'Helping Verbs, Suffixes, Modal Verbs',
+                audio: 'Unit_05_Ingles_podcast.mp3',
+                questoes: 'dadosDoQuizIngles',
+                disponivel: true
             }
         ]
     },
@@ -449,6 +449,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizGeografia;
+            break;
+        case 'unit05_ingles':
+            if (typeof dadosDoQuizIngles === 'undefined') {
+                alert('Erro: Questões de Inglês não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles;
             break;
         default:
             alert('Questões ainda não disponíveis para este capítulo!');
@@ -855,6 +862,8 @@ function irParaQuestao(indice) {
     // Configurar tipo de questão
     if (questao.tipo === 'multipla_escolha') {
         mostrarQuestaoMultiplaEscolha(questao);
+    } else if (questao.tipo === 'interpretacao') {
+        mostrarQuestaoInterpretacao(questao);
     } else if (questao.tipo === 'verdadeiro_falso') {
         mostrarQuestaoVerdadeiroFalso(questao);
     } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
@@ -888,6 +897,46 @@ function mostrarQuestaoMultiplaEscolha(questao) {
             <label for="opcao${index}" class="opcao-caixa">
                 <strong>${letras[index]}</strong> ${opcao}
             </label>
+        `;
+        opcoesRespostaDiv.appendChild(div);
+    });
+}
+
+function mostrarQuestaoInterpretacao(questao) {
+    opcoesRespostaDiv.style.display = 'block';
+    areaRespostaAberta.style.display = 'none';
+    
+    opcoesRespostaDiv.innerHTML = '';
+    
+    // Adicionar o texto base fixo no topo
+    if (questao.textoBase) {
+        const textoBaseDiv = document.createElement('div');
+        textoBaseDiv.className = 'texto-base-interpretacao';
+        textoBaseDiv.style.cssText = `
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            white-space: pre-line;
+            max-height: 300px;
+            overflow-y: auto;
+        `;
+        textoBaseDiv.innerHTML = `<strong>Text:</strong><br><br>${questao.textoBase}`;
+        opcoesRespostaDiv.appendChild(textoBaseDiv);
+    }
+    
+    // Adicionar as opções de resposta
+    const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+    
+    questao.opcoes.forEach((opcao, index) => {
+        const div = document.createElement('div');
+        div.className = 'opcao-resposta opcao-multipla-escolha';
+        div.innerHTML = `
+            <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+            <label for="opcao${index}" class="opcao-caixa">${letras[index]} ${opcao}</label>
         `;
         opcoesRespostaDiv.appendChild(div);
     });
@@ -1028,7 +1077,7 @@ function restaurarResposta() {
     // Se a questão já foi respondida (correta ou incorreta), mostrar o gabarito e explicação permanentemente
     if (status === 'correta' || status === 'incorreta') {
         // Aplicar feedback visual nas opções
-        if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso') {
+        if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso' || questao.tipo === 'interpretacao') {
             const estaCorreta = (status === 'correta');
             aplicarFeedbackVisual(estaCorreta, questao);
         }
@@ -1043,7 +1092,7 @@ function salvarResposta() {
     const questao = bancoDeQuestoesAtual[perguntaAtual];
     let resposta = null;
     
-    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso') {
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso' || questao.tipo === 'interpretacao') {
         const radioSelecionado = document.querySelector('input[name="resposta"]:checked');
         if (radioSelecionado) {
             resposta = radioSelecionado.value;
@@ -1070,7 +1119,7 @@ function verificarResposta() {
     const questao = bancoDeQuestoesAtual[perguntaAtual];
     let resposta = null;
     
-    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso') {
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso' || questao.tipo === 'interpretacao') {
         const radioSelecionado = document.querySelector('input[name="resposta"]:checked');
         if (radioSelecionado) {
             resposta = radioSelecionado.value;
@@ -1089,7 +1138,7 @@ function verificarResposta() {
     // Verificar se está correta
     let estaCorreta = false;
     
-    if (questao.tipo === 'multipla_escolha') {
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
         estaCorreta = resposta === questao.respostaCorreta;
     } else if (questao.tipo === 'verdadeiro_falso') {
         estaCorreta = resposta === questao.respostaCorreta;
@@ -1149,7 +1198,7 @@ function mostrarFeedback(estaCorreta, questao) {
             `;
         } else {
             let respostaCorretaTexto = '';
-            if (questao.tipo === 'multipla_escolha') {
+            if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
                 // Encontrar o índice da resposta correta
                 const indiceCorreto = questao.opcoes.findIndex(opcao => opcao === questao.respostaCorreta);
                 if (indiceCorreto !== -1) {
@@ -1178,7 +1227,7 @@ function mostrarFeedback(estaCorreta, questao) {
 function aplicarFeedbackVisual(estaCorreta, questao) {
     const opcoesCaixas = document.querySelectorAll('.opcao-caixa');
     
-    if (questao.tipo === 'multipla_escolha') {
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
         const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
         if (respostaSelecionada) {
             const valorSelecionado = respostaSelecionada.value;
@@ -1340,7 +1389,7 @@ function gerarArenas() {
     telaSelecaoArena.innerHTML = '';
     
     // Ordem específica das arenas
-    const ordemArenas = ['portugues', 'matematica', 'ciencias', 'historia', 'geografia', 'english', 'math'];
+    const ordemArenas = ['portugues', 'matematica', 'ciencias', 'historia', 'geografia', 'ingles', 'math'];
     
     ordemArenas.forEach(arenaId => {
         const arena = estruturaCapitulos[arenaId];
