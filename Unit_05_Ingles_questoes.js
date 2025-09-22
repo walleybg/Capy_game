@@ -8,11 +8,11 @@ const dadosDoQuizIngles = [
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "What is the main part of a computer, according to the text?",
         opcoes: [
             "The screen",
@@ -30,11 +30,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "What is the CPU compared to?",
         opcoes: [
             "A box",
@@ -52,11 +52,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "What part of the computer do you use to look at pictures and words?",
         opcoes: [
             "The keyboard",
@@ -74,11 +74,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "According to the text, what is a computer without a CPU?",
         opcoes: [
             "A helpful tool",
@@ -96,11 +96,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "What do you have to do to tell the computer what to do?",
         opcoes: [
             "Talk to it",
@@ -118,11 +118,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "The text says the computer's goodness depends on what?",
         opcoes: [
             "The color of the machine",
@@ -140,11 +140,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "What is one thing a person must do to make a computer work?",
         opcoes: [
             "Play games",
@@ -162,11 +162,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "What does the suffix \"-ful\" in the word \"helpful\" mean?",
         opcoes: [
             "Full of",
@@ -184,11 +184,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "The text says a computer is a wonderful tool. What does that mean?",
         opcoes: [
             "It is a boring tool.",
@@ -206,11 +206,11 @@ To make a computer work, a person must turn it on. The computer does not do ever
         contexto: "Read the text carefully and answer the questions based on the information provided.",
         textoBase: `The Computer
 
-A computer is a helpful machine. It is a truly wonderful tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. It is the computer's brain. Without the CPU, a computer is a useless box. It does not work at all.
+A computer is a <strong>helpful</strong> machine. <strong>It is</strong> a truly <strong>wonderful</strong> tool for learning and playing games. The main part of a computer is the CPU, or Central Processing Unit. <strong>It is</strong> the computer's brain. Without the CPU, a computer <strong>is a useless</strong> box. It <strong>does</strong> not work at all.
 
-Computers have many important parts. You have to use the screen to look at pictures and words. The keyboard is the part you use for typing. Its usefulness is incredible. Every part is essential for the machine to be functional.
+Computers <strong>have</strong> many important parts. You <strong>have to</strong> use the screen to look at pictures and words. The keyboard <strong>is</strong> the part you use for typing. Its <strong>usefulness</strong> <strong>is incredible</strong>. Every part is <strong>essential</strong> for the machine to be <strong>functional</strong>.
 
-To make a computer work, a person must turn it on. The computer does not do everything by itself. You have to tell it what to do by clicking the mouse or typing. The computer does what you tell it. You must follow the instructions to make things happen. The goodness of a computer's performance depends on how well all its parts work together.`,
+To make a computer work, a person <strong>must</strong> turn it on. The computer <strong>does</strong> not do everything by itself. You <strong>have to</strong> tell it what to do by clicking the mouse or typing. The computer <strong>does</strong> what you tell it. You <strong>must</strong> follow the instructions to make things happen. The <strong>goodness</strong> of a computer's performance depends on how well all its parts work together.`,
         pergunta: "The text says a computer is functional. What does that mean?",
         opcoes: [
             "It is capable of working.",
