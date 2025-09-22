@@ -280,7 +280,20 @@ const estruturaCapitulos = {
                 numero: 5,
                 titulo: 'Helping Verbs, Suffixes, Modal Verbs',
                 audio: 'Unit_05_Ingles_podcast.mp3',
-                questoes: 'dadosDoQuizIngles',
+                jogos: [
+                    {
+                        id: 'jogo1',
+                        titulo: 'Jogo 1',
+                        questoes: 'dadosDoQuizIngles',
+                        disponivel: true
+                    },
+                    {
+                        id: 'jogo2',
+                        titulo: 'Jogo 2',
+                        questoes: 'dadosDoQuizIngles2',
+                        disponivel: true
+                    }
+                ],
                 disponivel: true
             }
         ]
@@ -361,21 +374,49 @@ function gerarListaCapitulos(capitulos) {
         const capituloCard = document.createElement('div');
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
-        capituloCard.innerHTML = `
-            <div class="capitulo-numero">Cap. ${capitulo.numero}</div>
-            <div class="capitulo-info">
-                <h3>${capitulo.titulo}</h3>
-                <p>${capitulo.disponivel ? 'Clique para jogar!' : 'Em breve...'}</p>
-            </div>
-            <div class="capitulo-acoes">
-                ${capitulo.disponivel ? `
-                    <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
-                    <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
-                ` : `
-                    <span class="status-indisponivel">🔒 ${capitulo.titulo === 'Em breve' || capitulo.titulo === 'Coming Soon' ? 'Bloqueado' : 'Em breve'}</span>
-                `}
-            </div>
-        `;
+        // Verificar se o capítulo tem jogos (estrutura especial para inglês)
+        if (capitulo.jogos && capitulo.jogos.length > 0) {
+            capituloCard.innerHTML = `
+                <div class="capitulo-numero">Unit ${capitulo.numero}</div>
+                <div class="capitulo-info">
+                    <h3>${capitulo.titulo}</h3>
+                    <p>${capitulo.disponivel ? 'Escolha um jogo para jogar!' : 'Em breve...'}</p>
+                </div>
+                <div class="capitulo-acoes">
+                    ${capitulo.disponivel ? `
+                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+                        <div class="jogos-container">
+                            ${capitulo.jogos.map(jogo => `
+                                <button class="btn-jogo ${jogo.disponivel ? 'disponivel' : 'indisponivel'}" 
+                                        onclick="iniciarJogo('${capitulo.id}', '${jogo.id}')"
+                                        ${!jogo.disponivel ? 'disabled' : ''}>
+                                    🎮 ${jogo.titulo}
+                                </button>
+                            `).join('')}
+                        </div>
+                    ` : `
+                        <span class="status-indisponivel">🔒 Em breve</span>
+                    `}
+                </div>
+            `;
+        } else {
+            // Estrutura padrão para outros capítulos
+            capituloCard.innerHTML = `
+                <div class="capitulo-numero">Cap. ${capitulo.numero}</div>
+                <div class="capitulo-info">
+                    <h3>${capitulo.titulo}</h3>
+                    <p>${capitulo.disponivel ? 'Clique para jogar!' : 'Em breve...'}</p>
+                </div>
+                <div class="capitulo-acoes">
+                    ${capitulo.disponivel ? `
+                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+                        <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
+                    ` : `
+                        <span class="status-indisponivel">🔒 ${capitulo.titulo === 'Em breve' || capitulo.titulo === 'Coming Soon' ? 'Bloqueado' : 'Em breve'}</span>
+                    `}
+                </div>
+            `;
+        }
         
         listaCapitulos.appendChild(capituloCard);
     });
@@ -450,13 +491,7 @@ function iniciarCapitulo(capituloId) {
             }
             bancoDeQuestoesAtual = dadosDoQuizGeografia;
             break;
-        case 'unit05_ingles':
-            if (typeof dadosDoQuizIngles === 'undefined') {
-                alert('Erro: Questões de Inglês não carregadas!');
-                return;
-            }
-            bancoDeQuestoesAtual = dadosDoQuizIngles;
-            break;
+
         default:
             alert('Questões ainda não disponíveis para este capítulo!');
             return;
@@ -469,7 +504,70 @@ function iniciarCapitulo(capituloId) {
     statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
     
     // Inicializar o jogo
-    iniciarJogo();
+    iniciarJogoInterface();
+}
+
+function iniciarJogo(capituloId, jogoId) {
+    console.log('iniciarJogo chamado com:', capituloId, jogoId);
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    const jogo = capitulo.jogos.find(j => j.id === jogoId);
+    if (!jogo) {
+        console.error('Jogo não encontrado:', jogoId);
+        alert('Erro: Jogo não encontrado!');
+        return;
+    }
+    
+    if (!jogo.disponivel) {
+        alert('Este jogo ainda não está disponível!');
+        return;
+    }
+    
+    capituloAtual = capituloId;
+    nomeCapituloAtual = `${capitulo.titulo} - ${jogo.titulo}`;
+    
+    // Carregar banco de questões baseado no jogo
+    switch(jogo.questoes) {
+        case 'dadosDoQuizIngles':
+            if (typeof dadosDoQuizIngles === 'undefined') {
+                alert('Erro: Questões do Jogo 1 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles;
+            break;
+        case 'dadosDoQuizIngles2':
+            if (typeof dadosDoQuizIngles2 === 'undefined') {
+                alert('Erro: Questões do Jogo 2 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles2;
+            break;
+        default:
+            alert('Questões ainda não disponíveis para este jogo!');
+            return;
+    }
+    
+    console.log('Banco de questões carregado:', bancoDeQuestoesAtual.length, 'questões');
+    
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
+    
+    // Inicializar o jogo
+    iniciarJogoInterface();
 }
 
 function selecionarCapitulo(capituloId) {
@@ -501,7 +599,7 @@ function voltarParaCapitulos() {
     }
 }
 
-function iniciarJogo() {
+function iniciarJogoInterface() {
     telaCapitulos.style.display = 'none';
     telaGabarito.style.display = 'none';
     telaPergunta.style.display = 'block';
