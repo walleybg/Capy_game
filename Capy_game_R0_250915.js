@@ -163,7 +163,7 @@ const estruturaCapitulos = {
                 numero: 11,
                 titulo: 'O planeta terra',
                 audio: 'Cap_11_Ciencias_podcast.mp3',
-                questoes: null,
+                questoes: 'dadosDoQuizCiencias11',
                 disponivel: true
             },
             {
@@ -483,6 +483,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias;
+            break;
+        case 'cap11_ciencias':
+            if (typeof dadosDoQuizCiencias11 === 'undefined') {
+                alert('Erro: Questões de Ciências 11 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias11;
             break;
         case 'cap06_geografia':
             if (typeof dadosDoQuizGeografia === 'undefined') {
