@@ -100,7 +100,7 @@ const estruturaCapitulos = {
                 numero: 11,
                 titulo: 'Para medir o mundo',
                 audio: 'Cap_11_Matematica_podcast.mp3',
-                questoes: null,
+                questoes: 'dadosDoQuizMatematica11',
                 disponivel: true
             },
             {
@@ -490,6 +490,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias11;
+            break;
+        case 'cap11_matematica':
+            if (typeof dadosDoQuizMatematica11 === 'undefined') {
+                alert('Erro: Questões de Matemática 11 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica11;
             break;
         case 'cap06_geografia':
             if (typeof dadosDoQuizGeografia === 'undefined') {
