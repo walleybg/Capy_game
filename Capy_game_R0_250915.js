@@ -44,9 +44,9 @@ const estruturaCapitulos = {
                 id: 'cap12_portugues',
                 numero: 12,
                 titulo: 'No meio da gataria',
-                audio: null,
-                questoes: null,
-                disponivel: false
+                audio: 'Cap_12_Portugues_podcast.mp3',
+                questoes: 'dadosDoQuizPortugues12',
+                disponivel: true
             },
             {
                 id: 'cap13_portugues',
@@ -469,6 +469,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizPortugues11;
+            break;
+        case 'cap12_portugues':
+            if (typeof dadosDoQuizPortugues12 === 'undefined') {
+                alert('Erro: Questões de Português 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues12;
             break;
         case 'cap06_historia':
             if (typeof questoesHistoria === 'undefined') {
