@@ -107,9 +107,9 @@ const estruturaCapitulos = {
                 id: 'cap12_matematica',
                 numero: 12,
                 titulo: 'Muitas multiplicações',
-                audio: null,
-                questoes: null,
-                disponivel: false
+                audio: 'Cap_12_Matematica_podcast.mp3',
+                questoes: 'dadosDoQuizMatematica12',
+                disponivel: true
             },
             {
                 id: 'cap13_matematica',
@@ -504,6 +504,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizMatematica11;
+            break;
+        case 'cap12_matematica':
+            if (typeof dadosDoQuizMatematica12 === 'undefined') {
+                alert('Erro: Questões de Matemática 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica12;
             break;
         case 'cap06_geografia':
             if (typeof dadosDoQuizGeografia === 'undefined') {
