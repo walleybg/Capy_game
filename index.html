@@ -167,6 +167,7 @@
     <script src="Cap_06_Historia_questoes.js"></script>
     <script src="Cap_10_Ciencias_questoes.js"></script>
     <script src="Cap_11_Ciencias_questoes.js"></script>
+    <script src="Cap_12_Ciencias_questoes.js"></script>
     <script src="Cap_06_Geografia_questoes.js"></script>
     <script src="Unit_05_Ingles_questoes.js"></script>
     <script src="Unit_05_Ingles_Jogo2_questoes.js"></script>
@@ -174,3 +175,72 @@
     <script src="Capy_game_R0_250915.js"></script>
 </body>
 </html>
+
+    <!-- Overlay do Mapa Mental -->
+    <div id="mapa-mental-overlay" class="mapa-mental-overlay">
+        <div class="mapa-mental-container">
+            <div class="mapa-mental-header">
+                <div>
+                    <div class="mapa-mental-title">Mapa Mental - O Dia e a Noite</div>
+                    <div class="mapa-mental-subtitle">Navegue pelo mapa usando zoom e arrastar</div>
+                </div>
+                <button class="mapa-mental-close" onclick="fecharMapaMental()">✕</button>
+            </div>
+            <div class="mapa-mental-viewer">
+                <img id="mapa-mental-image" class="mapa-mental-image" src="Cap12_Mindmap-1.png" alt="Mapa Mental - O Dia e a Noite">
+                <div class="mapa-mental-controls">
+                    <button id="zoom-in" class="mapa-mental-btn" title="Zoom In">+</button>
+                    <button id="zoom-out" class="mapa-mental-btn" title="Zoom Out">−</button>
+                    <button id="zoom-reset" class="mapa-mental-btn" title="Reset">⌂</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay do Player de Vídeo -->
+    <div id="video-player-overlay" class="video-player-overlay">
+        <div class="video-player-container">
+            <div class="video-player-header">
+                <div>
+                    <div class="video-player-title">Laboratório da Descoberta - Cap. 12 - O dia e a noite</div>
+                    <div class="video-player-subtitle">Vídeo Educativo</div>
+                </div>
+                <button class="video-player-close" onclick="fecharVideoPlayer()">✕</button>
+            </div>
+            <div class="video-player-content">
+                <video id="video-element" class="video-element" src="Cap_12_Ciencias_video.mp4" preload="metadata">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <div class="video-controls">
+                    <div class="video-progress-container">
+                        <div id="video-progress-bar" class="video-progress-bar">
+                            <div id="video-progress-fill" class="video-progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="video-controls-row">
+                        <div class="video-controls-left">
+                            <button id="video-play-pause" class="video-btn play-pause">▶️</button>
+                            <span id="video-time" class="video-time">0:00 / 0:00</span>
+                        </div>
+                        <div class="video-controls-right">
+                            <div class="video-volume-container">
+                                <button id="video-volume" class="video-btn">🔊</button>
+                                <div id="video-volume-slider" class="video-volume-slider">
+                                    <div id="video-volume-fill" class="video-volume-fill"></div>
+                                </div>
+                            </div>
+                            <select id="video-speed" class="video-speed-selector">
+                                <option value="0.5">0.5x</option>
+                                <option value="0.75">0.75x</option>
+                                <option value="1" selected>1x</option>
+                                <option value="1.25">1.25x</option>
+                                <option value="1.5">1.5x</option>
+                                <option value="2">2x</option>
+                            </select>
+                            <button id="video-fullscreen" class="video-btn">⛶</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -52,32 +52,32 @@ const estruturaCapitulos = {
                 id: 'cap13_portugues',
                 numero: 13,
                 titulo: 'Jogando os dados',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap14_portugues',
                 numero: 14,
                 titulo: 'De cabeça para baixo',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap15_portugues',
                 numero: 15,
                 titulo: 'Quais são os meus direitos',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap16_portugues',
                 numero: 16,
                 titulo: 'Nas linha da rede',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             }
         ]
@@ -115,32 +115,32 @@ const estruturaCapitulos = {
                 id: 'cap13_matematica',
                 numero: 13,
                 titulo: 'Qual é a sua massa',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap14_matematica',
                 numero: 14,
                 titulo: 'Dividir para valer',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap15_matematica',
                 numero: 15,
                 titulo: 'A capacidade para medir',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap16_matematica',
                 numero: 16,
                 titulo: 'Matemática em 2D e 3D',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             }
         ]
@@ -170,40 +170,40 @@ const estruturaCapitulos = {
                 id: 'cap12_ciencias',
                 numero: 12,
                 titulo: 'O dia e a noite',
-                audio: null,
-                questoes: null,
-                disponivel: false
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
+                disponivel: true
             },
             {
                 id: 'cap13_ciencias',
                 numero: 13,
                 titulo: 'Lua, estrela e planetas',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap14_ciencias',
                 numero: 14,
                 titulo: 'O solo e sua importância',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap15_ciencias',
                 numero: 15,
                 titulo: 'Características do solo',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap16_ciencias',
                 numero: 16,
                 titulo: 'Usos do solo',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             }
         ]
@@ -225,16 +225,16 @@ const estruturaCapitulos = {
                 id: 'cap07_historia',
                 numero: 7,
                 titulo: 'Vida e trabalho nos espaços urbanos',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap08_historia',
                 numero: 8,
                 titulo: 'Um Brasil de patrimônios',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             }
         ]
@@ -256,16 +256,16 @@ const estruturaCapitulos = {
                 id: 'cap07_geografia',
                 numero: 7,
                 titulo: 'De gota em gota, de grão em grão',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             },
             {
                 id: 'cap08_geografia',
                 numero: 8,
                 titulo: 'Vegetação e ar: uma conexão vital',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             }
         ]
@@ -307,8 +307,8 @@ const estruturaCapitulos = {
                 id: 'cap01_math',
                 numero: 1,
                 titulo: 'Coming Soon',
-                audio: null,
-                questoes: null,
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
                 disponivel: false
             }
         ]
@@ -497,6 +497,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias11;
+            break;
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
             break;
         case 'cap11_matematica':
             if (typeof dadosDoQuizMatematica11 === 'undefined') {

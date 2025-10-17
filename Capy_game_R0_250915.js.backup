@@ -1,0 +1,1911 @@
+// --- MAPEAMENTO DOS ELEMENTOS HTML ---
+let cabecalhoPergunta, perguntaObjetiva, telaInicial, telaPergunta, telaGabarito, telaCapitulos,
+    progressBar, progressText, contextoPergunta, opcoesRespostaDiv,
+    areaRespostaAberta, inputResposta, feedbackImediato, btnAcao, btnSalvar,
+    navegacaoQuestoes, containerPrincipal, somAcerto, somErro,
+    headerIcon, headerTitle, headerCapitulo, arenaIcon, arenaTitle, arenaSubtitle,
+    listaCapitulos, audioPlayerContainer, audioPlayer, audioSource, audioTitle, audioSubtitle;
+
+// --- VARIÁVEIS GLOBAIS DO JOGO ---
+let perguntaAtual = 0;
+let pontuacao = 0;
+let respostasDoUsuario; // Armazena a resposta salva ou respondida pelo usuário
+let statusDasQuestoes;  // 'nao_respondida', 'salva', 'correta', 'incorreta'
+let bancoDeQuestoesAtual;
+let arenaAtual = ''; // 'matematica', 'portugues', 'historia'
+let capituloAtual = '';
+let nomeArenaAtual = '';
+let nomeCapituloAtual = '';
+
+// --- ESTRUTURA DE DADOS DOS CAPÍTULOS ---
+const estruturaCapitulos = {
+    portugues: {
+        nome: 'Torre das Palavras',
+        icone: 'ICON_Portugues.png',
+        descricao: 'Desafios de Português',
+        capitulos: [
+            {
+                id: 'cap10_portugues',
+                numero: 10,
+                titulo: 'Informação em cores, imagens e números',
+                audio: 'Cap_10_Portugues_podcast_compressed.mp4',
+                questoes: 'questoesPortugues',
+                disponivel: true
+            },
+            {
+                id: 'cap11_portugues',
+                numero: 11,
+                titulo: 'Notícias do mundo selvagem',
+                audio: 'Cap_11_Portugues_podcast.mp3',
+                questoes: 'dadosDoQuizPortugues11',
+                disponivel: true
+            },
+            {
+                id: 'cap12_portugues',
+                numero: 12,
+                titulo: 'No meio da gataria',
+                audio: 'Cap_12_Portugues_podcast.mp3',
+                questoes: 'dadosDoQuizPortugues12',
+                disponivel: true
+            },
+            {
+                id: 'cap13_portugues',
+                numero: 13,
+                titulo: 'Jogando os dados',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap14_portugues',
+                numero: 14,
+                titulo: 'De cabeça para baixo',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap15_portugues',
+                numero: 15,
+                titulo: 'Quais são os meus direitos',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap16_portugues',
+                numero: 16,
+                titulo: 'Nas linha da rede',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    matematica: {
+        nome: 'Arena dos Números',
+        icone: 'ICON_Matematica.png',
+        descricao: 'Desafios de Matemática',
+        capitulos: [
+            {
+                id: 'cap10_matematica',
+                numero: 10,
+                titulo: 'Novos Cálculos',
+                audio: 'Cap_10_Matematica_podcast_compressed.mp4',
+                questoes: 'questoesMatematica',
+                disponivel: true
+            },
+            {
+                id: 'cap11_matematica',
+                numero: 11,
+                titulo: 'Para medir o mundo',
+                audio: 'Cap_11_Matematica_podcast.mp3',
+                questoes: 'dadosDoQuizMatematica11',
+                disponivel: true
+            },
+            {
+                id: 'cap12_matematica',
+                numero: 12,
+                titulo: 'Muitas multiplicações',
+                audio: 'Cap_12_Matematica_podcast.mp3',
+                questoes: 'dadosDoQuizMatematica12',
+                disponivel: true
+            },
+            {
+                id: 'cap13_matematica',
+                numero: 13,
+                titulo: 'Qual é a sua massa',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap14_matematica',
+                numero: 14,
+                titulo: 'Dividir para valer',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap15_matematica',
+                numero: 15,
+                titulo: 'A capacidade para medir',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap16_matematica',
+                numero: 16,
+                titulo: 'Matemática em 2D e 3D',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    ciencias: {
+        nome: 'Laboratório da Descoberta',
+        icone: 'ICON_Ciencias.png',
+        descricao: 'Desafios de Ciências',
+        capitulos: [
+            {
+                id: 'cap10_ciencias',
+                numero: 10,
+                titulo: 'Seres humanos e outros animais',
+                audio: 'Cap_10_Ciencias_podcast.mp3',
+                questoes: 'dadosDoQuizCiencias',
+                disponivel: true
+            },
+            {
+                id: 'cap11_ciencias',
+                numero: 11,
+                titulo: 'O planeta terra',
+                audio: 'Cap_11_Ciencias_podcast.mp3',
+                questoes: 'dadosDoQuizCiencias11',
+                disponivel: true
+            },
+            {
+                id: 'cap12_ciencias',
+                numero: 12,
+                titulo: 'O dia e a noite',
+                audio: "Cap_12_Ciencias_podcast.mp3",
+                questoes: "dadosDoQuizCiencias12",
+                disponivel: true
+            },
+            {
+                id: 'cap13_ciencias',
+                numero: 13,
+                titulo: 'Lua, estrela e planetas',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap14_ciencias',
+                numero: 14,
+                titulo: 'O solo e sua importância',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap15_ciencias',
+                numero: 15,
+                titulo: 'Características do solo',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap16_ciencias',
+                numero: 16,
+                titulo: 'Usos do solo',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    historia: {
+        nome: 'Castelo do Tempo',
+        icone: 'ICON_Historia.png',
+        descricao: 'Desafios de História',
+        capitulos: [
+            {
+                id: 'cap06_historia',
+                numero: 6,
+                titulo: 'Da formação à reforma das cidades',
+                audio: 'Cap_06_Historia_podcast_compressed.mp3',
+                questoes: 'questoesHistoria',
+                disponivel: true
+            },
+            {
+                id: 'cap07_historia',
+                numero: 7,
+                titulo: 'Vida e trabalho nos espaços urbanos',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap08_historia',
+                numero: 8,
+                titulo: 'Um Brasil de patrimônios',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    geografia: {
+        nome: 'Mundo das Aventuras',
+        icone: 'ICON_Geografia.png',
+        descricao: 'Desafios de Geografia',
+        capitulos: [
+            {
+                id: 'cap06_geografia',
+                numero: 6,
+                titulo: 'De onde vêm e para onde vão as coisas que consumimos?',
+                audio: 'Cap_06_Geografia_podcast.mp3',
+                questoes: 'dadosDoQuizGeografia',
+                disponivel: true
+            },
+            {
+                id: 'cap07_geografia',
+                numero: 7,
+                titulo: 'De gota em gota, de grão em grão',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            },
+            {
+                id: 'cap08_geografia',
+                numero: 8,
+                titulo: 'Vegetação e ar: uma conexão vital',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    },
+    ingles: {
+        nome: 'Castle of Words',
+        icone: 'ICON_Ingles.png',
+        descricao: 'English Challenges',
+        capitulos: [
+            {
+                id: 'unit05_ingles',
+                numero: 5,
+                titulo: 'Helping Verbs, Suffixes, Modal Verbs',
+                audio: 'Unit_05_Ingles_podcast.mp3',
+                jogos: [
+                    {
+                        id: 'jogo1',
+                        titulo: 'Jogo 1',
+                        questoes: 'dadosDoQuizIngles',
+                        disponivel: true
+                    },
+                    {
+                        id: 'jogo2',
+                        titulo: 'Jogo 2',
+                        questoes: 'dadosDoQuizIngles2',
+                        disponivel: true
+                    }
+                ],
+                disponivel: true
+            }
+        ]
+    },
+    math: {
+        nome: 'Numbers Kingdom',
+        icone: 'ICON_Math.png',
+        descricao: 'Math Challenges',
+        capitulos: [
+            {
+                id: 'cap01_math',
+                numero: 1,
+                titulo: 'Coming Soon',
+                audio: null,
+                questoes: null,
+                disponivel: false
+            }
+        ]
+    }
+};
+
+// --- ELEMENTOS DO DOM ---
+function inicializar() {
+    telaInicial = document.getElementById('tela-inicial');
+    telaPergunta = document.getElementById('tela-pergunta');
+    telaGabarito = document.getElementById('tela-gabarito');
+    telaCapitulos = document.getElementById('tela-capitulos');
+    progressBar = document.getElementById('progress-bar');
+    progressText = document.getElementById('progress-text');
+    contextoPergunta = document.getElementById('contexto-pergunta');
+    cabecalhoPergunta = document.getElementById('cabecalho-pergunta');
+    perguntaObjetiva = document.getElementById('pergunta-objetiva');
+    opcoesRespostaDiv = document.getElementById('opcoes-resposta');
+    areaRespostaAberta = document.getElementById('area-resposta-aberta');
+    inputResposta = document.getElementById('input-resposta');
+    feedbackImediato = document.getElementById('feedback-imediato');
+    btnAcao = document.getElementById('btn-acao');
+    btnSalvar = document.getElementById('btn-salvar');
+    navegacaoQuestoes = document.getElementById('navegacao-questoes');
+    containerPrincipal = document.querySelector('.container-principal');
+    somAcerto = document.getElementById('som-acerto');
+    somErro = document.getElementById('som-erro');
+    headerIcon = document.getElementById('header-icon');
+    headerTitle = document.getElementById('header-title');
+    headerCapitulo = document.getElementById('header-capitulo');
+    arenaIcon = document.getElementById('arena-icon');
+    arenaTitle = document.getElementById('arena-title');
+    arenaSubtitle = document.getElementById('arena-subtitle');
+    listaCapitulos = document.getElementById('lista-capitulos');
+    audioPlayerContainer = document.getElementById('audio-player-container');
+    audioPlayer = document.getElementById('audio-player');
+    audioSource = document.getElementById('audio-source');
+    audioTitle = document.getElementById('audio-title');
+    audioSubtitle = document.getElementById('audio-subtitle');
+}
+
+// --- FUNÇÕES DE NAVEGAÇÃO ENTRE TELAS ---
+function selecionarArena(tipoArena) {
+    arenaAtual = tipoArena;
+    const arena = estruturaCapitulos[tipoArena];
+    
+    nomeArenaAtual = arena.nome;
+    arenaIcon.src = arena.icone;
+    arenaTitle.textContent = arena.nome;
+    
+    // Mostrar tela de capítulos
+    telaInicial.style.display = 'none';
+    telaCapitulos.style.display = 'block';
+    
+    // Gerar lista de capítulos
+    gerarListaCapitulos(arena.capitulos);
+}
+
+function gerarListaCapitulos(capitulos) {
+    listaCapitulos.innerHTML = '';
+    
+    capitulos.forEach(capitulo => {
+        const capituloCard = document.createElement('div');
+        capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
+        
+        // Verificar se o capítulo tem jogos (estrutura especial para inglês)
+        if (capitulo.jogos && capitulo.jogos.length > 0) {
+        // Interface especial para Capítulo 12 de Ciências
+        if (capitulo.id === "cap12_ciencias") {
+            capituloCard.innerHTML = gerarInterfaceCapitulo12Ciencias(capitulo);
+        } else if (capitulo.jogos && capitulo.jogos.length > 0) {
+            capituloCard.innerHTML = `
+                <div class="capitulo-numero">Unit ${capitulo.numero}</div>
+                <div class="capitulo-info">
+                    <h3>${capitulo.titulo}</h3>
+                    <p>${capitulo.disponivel ? 'Escolha um jogo para jogar!' : 'Em breve...'}</p>
+                </div>
+                <div class="capitulo-acoes">
+                    ${capitulo.disponivel ? `
+                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+                        <div class="jogos-container">
+                            ${capitulo.jogos.map(jogo => `
+                                <button class="btn-jogo ${jogo.disponivel ? 'disponivel' : 'indisponivel'}" 
+                                        onclick="iniciarJogo('${capitulo.id}', '${jogo.id}')"
+                                        ${!jogo.disponivel ? 'disabled' : ''}>
+                                    🎮 ${jogo.titulo}
+                                </button>
+                            `).join('')}
+                        </div>
+                    ` : `
+                        <span class="status-indisponivel">🔒 Em breve</span>
+                    `}
+                </div>
+            `;
+        } else {
+            // Estrutura padrão para outros capítulos
+        // Interface especial para Capítulo 12 de Ciências
+        if (capitulo.id === "cap12_ciencias") {
+            capituloCard.innerHTML = gerarInterfaceCapitulo12Ciencias(capitulo);
+        } else if (capitulo.jogos && capitulo.jogos.length > 0) {
+            capituloCard.innerHTML = `
+                <div class="capitulo-numero">Cap. ${capitulo.numero}</div>
+                <div class="capitulo-info">
+                    <h3>${capitulo.titulo}</h3>
+                    <p>${capitulo.disponivel ? 'Clique para jogar!' : 'Em breve...'}</p>
+                </div>
+                <div class="capitulo-acoes">
+                    ${capitulo.disponivel ? `
+                        <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+                        <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
+                    ` : `
+                        <span class="status-indisponivel">🔒 ${capitulo.titulo === 'Em breve' || capitulo.titulo === 'Coming Soon' ? 'Bloqueado' : 'Em breve'}</span>
+                    `}
+                </div>
+            `;
+        }
+        
+        listaCapitulos.appendChild(capituloCard);
+    });
+}
+
+function iniciarCapitulo(capituloId) {
+    console.log('iniciarCapitulo chamado com:', capituloId);
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    if (!capitulo.disponivel) {
+        alert('Este capítulo ainda não está disponível!');
+        return;
+    }
+    
+    capituloAtual = capituloId;
+    nomeCapituloAtual = capitulo.titulo;
+    
+    // Definir banco de questões baseado no capítulo
+    switch(capituloId) {
+        case 'cap10_matematica':
+            if (typeof dadosDoQuiz === 'undefined') {
+                alert('Erro: Questões de Matemática não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuiz;
+            break;
+        case 'cap10_portugues':
+            if (typeof dadosDoQuizLP === 'undefined') {
+                alert('Erro: Questões de Português não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizLP;
+            break;
+        case 'cap11_portugues':
+            if (typeof dadosDoQuizPortugues11 === 'undefined') {
+                alert('Erro: Questões de Português 11 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues11;
+            break;
+        case 'cap12_portugues':
+            if (typeof dadosDoQuizPortugues12 === 'undefined') {
+                alert('Erro: Questões de Português 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues12;
+            break;
+        case 'cap06_historia':
+            if (typeof questoesHistoria === 'undefined') {
+                alert('Erro: Questões de História não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = questoesHistoria;
+            break;
+        case 'cap10_ciencias':
+            if (typeof dadosDoQuizCiencias === 'undefined') {
+                alert('Erro: Questões de Ciências não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias;
+            break;
+        case 'cap11_ciencias':
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+            if (typeof dadosDoQuizCiencias11 === 'undefined') {
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+                alert('Erro: Questões de Ciências 11 não carregadas!');
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+                return;
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+            }
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+            bancoDeQuestoesAtual = dadosDoQuizCiencias11;
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+            break;
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12 === 'undefined') {
+                alert('Erro: Questões de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+        case 'cap11_matematica':
+            if (typeof dadosDoQuizMatematica11 === 'undefined') {
+                alert('Erro: Questões de Matemática 11 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica11;
+            break;
+        case 'cap12_matematica':
+            if (typeof dadosDoQuizMatematica12 === 'undefined') {
+                alert('Erro: Questões de Matemática 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica12;
+            break;
+        case 'cap06_geografia':
+            if (typeof dadosDoQuizGeografia === 'undefined') {
+                alert('Erro: Questões de Geografia não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizGeografia;
+            break;
+
+        default:
+            alert('Questões ainda não disponíveis para este capítulo!');
+            return;
+    }
+    
+    console.log('Banco de questões carregado:', bancoDeQuestoesAtual.length, 'questões');
+    
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
+    
+    // Inicializar o jogo
+    iniciarJogoInterface();
+}
+
+function iniciarJogo(capituloId, jogoId) {
+    console.log('iniciarJogo chamado com:', capituloId, jogoId);
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    const jogo = capitulo.jogos.find(j => j.id === jogoId);
+    if (!jogo) {
+        console.error('Jogo não encontrado:', jogoId);
+        alert('Erro: Jogo não encontrado!');
+        return;
+    }
+    
+    if (!jogo.disponivel) {
+        alert('Este jogo ainda não está disponível!');
+        return;
+    }
+    
+    capituloAtual = capituloId;
+    nomeCapituloAtual = `${capitulo.titulo} - ${jogo.titulo}`;
+    
+    // Carregar banco de questões baseado no jogo
+    switch(jogo.questoes) {
+        case 'dadosDoQuizIngles':
+            if (typeof dadosDoQuizIngles === 'undefined') {
+                alert('Erro: Questões do Jogo 1 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles;
+            break;
+        case 'dadosDoQuizIngles2':
+            if (typeof dadosDoQuizIngles2 === 'undefined') {
+                alert('Erro: Questões do Jogo 2 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles2;
+            break;
+        default:
+            alert('Questões ainda não disponíveis para este jogo!');
+            return;
+    }
+    
+    console.log('Banco de questões carregado:', bancoDeQuestoesAtual.length, 'questões');
+    
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
+    
+    // Inicializar o jogo
+    iniciarJogoInterface();
+}
+
+function selecionarCapitulo(capituloId) {
+    // Função mantida para compatibilidade
+    iniciarCapitulo(capituloId);
+}
+
+function voltarParaArenas() {
+    telaCapitulos.style.display = 'none';
+    telaInicial.style.display = 'flex';
+    arenaAtual = '';
+    nomeArenaAtual = '';
+}
+
+function voltarParaCapitulos() {
+    if (confirm("Você tem certeza que deseja voltar aos capítulos? Todo o progresso atual será perdido.")) {
+        telaPergunta.style.display = 'none';
+        telaGabarito.style.display = 'none';
+        telaCapitulos.style.display = 'block';
+        
+        // Reset das variáveis do jogo
+        perguntaAtual = 0;
+        pontuacao = 0;
+        respostasDoUsuario = [];
+        statusDasQuestoes = [];
+        bancoDeQuestoesAtual = null;
+        capituloAtual = '';
+        nomeCapituloAtual = '';
+    }
+}
+
+function iniciarJogoInterface() {
+    telaCapitulos.style.display = 'none';
+    telaGabarito.style.display = 'none';
+    telaPergunta.style.display = 'block';
+    
+    // Configurar cabeçalho
+    headerTitle.textContent = nomeArenaAtual;
+    headerCapitulo.textContent = nomeCapituloAtual;
+    headerIcon.src = estruturaCapitulos[arenaAtual].icone;
+    headerIcon.style.display = 'inline-block';
+
+    perguntaAtual = 0;
+    pontuacao = 0;
+    
+    criarNavegadorDeQuestoes();
+    irParaQuestao(0);
+}
+
+// --- FUNÇÕES DO PLAYER DE ÁUDIO ---
+let audioPlayerMinimizado = false;
+let audioPlayerPosicao = { x: 20, y: 20 };
+
+function abrirAudioPlayerPopup(capituloId = null) {
+    let audioFile = '';
+    let titulo = 'Podcast de Revisão';
+    let subtitulo = '';
+    
+    if (capituloId) {
+        // Chamado da tela de capítulos
+        const arena = estruturaCapitulos[arenaAtual];
+        const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+        
+        if (capitulo && capitulo.audio) {
+            audioFile = capitulo.audio;
+            titulo = arena.nome;
+            subtitulo = `Cap. ${capitulo.numero} - ${capitulo.titulo}`;
+        }
+    } else {
+        // Chamado durante o jogo
+        const arena = estruturaCapitulos[arenaAtual];
+        const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
+        
+        if (capitulo && capitulo.audio) {
+            audioFile = capitulo.audio;
+            titulo = arena.nome;
+            subtitulo = `Cap. ${capitulo.numero} - ${capitulo.titulo}`;
+        }
+    }
+    
+    if (!audioFile) {
+        alert('Áudio não disponível para este capítulo.');
+        return;
+    }
+    
+    // Usar o player moderno se disponível
+    if (window.modernAudioPlayer) {
+        window.modernAudioPlayer.open(audioFile, titulo, subtitulo);
+        console.log('Player moderno aberto:', audioFile);
+        return;
+    }
+    
+    // Fallback para o player antigo
+    audioTitle.textContent = titulo;
+    audioSubtitle.textContent = subtitulo;
+    audioSource.src = audioFile;
+    audioPlayer.load();
+    
+    // Mostrar player como popup não-modal
+    audioPlayerContainer.style.display = 'block';
+    
+    // Restaurar posição se foi movido
+    audioPlayerContainer.style.top = audioPlayerPosicao.y + 'px';
+    audioPlayerContainer.style.right = audioPlayerPosicao.x + 'px';
+    
+    // Restaurar estado minimizado
+    if (audioPlayerMinimizado) {
+        document.getElementById('audio-player-content').style.display = 'none';
+        document.querySelector('#audio-player-container button[onclick="minimizarAudioPlayer()"]').textContent = '□';
+    } else {
+        document.getElementById('audio-player-content').style.display = 'block';
+        document.querySelector('#audio-player-container button[onclick="minimizarAudioPlayer()"]').textContent = '−';
+    }
+    
+    // Inicializar funcionalidade de arrastar (apenas uma vez)
+    if (!audioPlayerContainer.hasAttribute('data-drag-initialized')) {
+        inicializarArrastarPlayer();
+        audioPlayerContainer.setAttribute('data-drag-initialized', 'true');
+    }
+}
+
+function fecharAudioPlayer() {
+    audioPlayerContainer.style.display = 'none';
+    audioPlayer.pause();
+    audioPlayerMinimizado = false;
+}
+
+function minimizarAudioPlayer() {
+    const audioContent = document.getElementById('audio-player-content');
+    const minimizeBtn = document.querySelector('#audio-player-container button[onclick="minimizarAudioPlayer()"]');
+    
+    if (audioPlayerMinimizado) {
+        // Expandir
+        audioContent.style.display = 'block';
+        minimizeBtn.textContent = '−';
+        audioPlayerMinimizado = false;
+    } else {
+        // Minimizar
+        audioContent.style.display = 'none';
+        minimizeBtn.textContent = '□';
+        audioPlayerMinimizado = true;
+    }
+}
+
+// --- FUNÇÕES DO PLAYER DE ÁUDIO AVANÇADO ---
+function togglePlayPause() {
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = '⏸';
+    } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = '▶';
+    }
+}
+
+function updateProgress() {
+    if (audioPlayer.duration && !isNaN(audioPlayer.duration)) {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        const progressBar = document.getElementById('progress-bar');
+        
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
+        
+        // Atualizar tempo atual e total
+        const currentTimeEl = document.getElementById('current-time');
+        const totalTimeEl = document.getElementById('total-time');
+        
+        if (currentTimeEl) {
+            currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+        }
+        if (totalTimeEl) {
+            totalTimeEl.textContent = formatTime(audioPlayer.duration);
+        }
+    }
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs.toString().padStart(2, '0')}`;
+}
+
+function seekAudio(event) {
+    const progressContainer = document.getElementById('progress-container');
+    if (!progressContainer || !audioPlayer.duration || isNaN(audioPlayer.duration)) {
+        console.log('Seek não disponível - duração:', audioPlayer.duration);
+        return;
+    }
+    
+    const rect = progressContainer.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const percentage = Math.max(0, Math.min(1, clickX / rect.width));
+    const newTime = percentage * audioPlayer.duration;
+    
+    console.log('Seek para:', formatTime(newTime), '(' + (percentage * 100).toFixed(1) + '%)');
+    
+    // Definir novo tempo
+    audioPlayer.currentTime = newTime;
+    
+    // Forçar atualização imediata da interface
+    setTimeout(() => {
+        updateProgress();
+    }, 100);
+}
+
+function changeVolume(value) {
+    audioPlayer.volume = value / 100;
+    document.getElementById('volume-display').textContent = value + '%';
+}
+
+function retrocederAudio(segundos) {
+    audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - segundos);
+}
+
+function avancarAudio(segundos) {
+    audioPlayer.currentTime = Math.min(audioPlayer.duration || 0, audioPlayer.currentTime + segundos);
+}
+
+// Controle de velocidade
+let velocidadeAtual = 1.0;
+const velocidades = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+let indiceVelocidade = 2; // Começa em 1.0x
+
+function toggleVelocidade() {
+    indiceVelocidade = (indiceVelocidade + 1) % velocidades.length;
+    velocidadeAtual = velocidades[indiceVelocidade];
+    audioPlayer.playbackRate = velocidadeAtual;
+    
+    const velocidadeBtn = document.getElementById('velocidade-btn');
+    velocidadeBtn.textContent = velocidadeAtual + 'x';
+}
+
+// Event listeners para o player de áudio
+function configurarEventosAudio() {
+    audioPlayer.addEventListener('timeupdate', updateProgress);
+    audioPlayer.addEventListener('loadedmetadata', function() {
+        console.log('Áudio carregado - duração:', formatTime(audioPlayer.duration));
+        document.getElementById('total-time').textContent = formatTime(audioPlayer.duration);
+        document.getElementById('current-time').textContent = '0:00';
+    });
+    audioPlayer.addEventListener('ended', function() {
+        document.getElementById('play-pause-btn').textContent = '▶';
+    });
+    audioPlayer.addEventListener('seeked', function() {
+        console.log('Seek concluído para:', formatTime(audioPlayer.currentTime));
+        updateProgress();
+    });
+    audioPlayer.addEventListener('canplay', function() {
+        console.log('Áudio pronto para reprodução');
+    });
+    
+    // Adicionar event listener para a barra de progresso
+    const progressContainer = document.getElementById('progress-container');
+    if (progressContainer) {
+        progressContainer.addEventListener('click', seekAudio);
+        console.log('Event listener da barra de progresso configurado');
+    }
+}
+
+function inicializarArrastarPlayer() {
+    const dragHandle = document.getElementById('audio-drag-handle');
+    const audioContainer = document.getElementById('audio-player-container');
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+    
+    dragHandle.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        
+        const rect = audioContainer.getBoundingClientRect();
+        initialX = rect.left;
+        initialY = rect.top;
+        
+        dragHandle.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        
+        const newX = initialX + deltaX;
+        const newY = initialY + deltaY;
+        
+        // Limitar às bordas da tela
+        const maxX = window.innerWidth - audioContainer.offsetWidth;
+        const maxY = window.innerHeight - audioContainer.offsetHeight;
+        
+        const boundedX = Math.max(0, Math.min(newX, maxX));
+        const boundedY = Math.max(0, Math.min(newY, maxY));
+        
+        audioContainer.style.left = boundedX + 'px';
+        audioContainer.style.top = boundedY + 'px';
+        audioContainer.style.right = 'auto';
+        
+        // Salvar posição
+        audioPlayerPosicao.x = window.innerWidth - boundedX - audioContainer.offsetWidth;
+        audioPlayerPosicao.y = boundedY;
+    });
+    
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            dragHandle.style.cursor = 'move';
+        }
+    });
+}
+
+// --- FUNÇÕES DO JOGO (QUESTÕES) ---
+function criarNavegadorDeQuestoes() {
+    navegacaoQuestoes.innerHTML = '';
+    
+    // Criar estrutura de linhas (3 linhas de 10 questões cada)
+    const totalQuestoes = bancoDeQuestoesAtual.length;
+    const questoesPorLinha = 10;
+    const totalLinhas = Math.ceil(totalQuestoes / questoesPorLinha);
+    
+    for (let linha = 0; linha < totalLinhas; linha++) {
+        const linhaDiv = document.createElement('div');
+        linhaDiv.className = 'linha-navegacao';
+        
+        const inicioLinha = linha * questoesPorLinha;
+        const fimLinha = Math.min(inicioLinha + questoesPorLinha, totalQuestoes);
+        
+        for (let i = inicioLinha; i < fimLinha; i++) {
+            const botao = document.createElement('button');
+            botao.textContent = i + 1;
+            botao.className = 'nav-questao';
+            botao.onclick = () => irParaQuestao(i);
+            linhaDiv.appendChild(botao);
+        }
+        
+        navegacaoQuestoes.appendChild(linhaDiv);
+    }
+    
+    atualizarNavegadorDeQuestoes();
+}
+
+function atualizarNavegadorDeQuestoes() {
+    const botoes = navegacaoQuestoes.querySelectorAll('.nav-questao');
+    botoes.forEach((botao, index) => {
+        // Reset classes
+        botao.className = 'nav-questao';
+        
+        // Adicionar classe baseada no status
+        switch(statusDasQuestoes[index]) {
+            case 'correta':
+                botao.classList.add('correta');
+                break;
+            case 'incorreta':
+                botao.classList.add('incorreta');
+                break;
+            case 'salva':
+                botao.classList.add('salva');
+                break;
+        }
+        
+        // Destacar questão atual
+        if (index === perguntaAtual) {
+            botao.classList.add('atual');
+        }
+    });
+}
+
+function irParaQuestao(indice) {
+    if (indice < 0 || indice >= bancoDeQuestoesAtual.length) return;
+    
+    perguntaAtual = indice;
+    const questao = bancoDeQuestoesAtual[perguntaAtual];
+    
+    // Atualizar progresso
+    progressText.textContent = `Questão ${perguntaAtual + 1} de ${bancoDeQuestoesAtual.length}`;
+    progressBar.style.width = `${((perguntaAtual + 1) / bancoDeQuestoesAtual.length) * 100}%`;
+    
+    // Mostrar questão
+    cabecalhoPergunta.textContent = questao.titulo;
+    contextoPergunta.textContent = questao.contexto || '';
+    contextoPergunta.style.display = questao.contexto ? 'block' : 'none';
+    perguntaObjetiva.textContent = questao.pergunta;
+    
+    // Limpar feedback
+    feedbackImediato.style.display = 'none';
+    
+    // Configurar tipo de questão
+    if (questao.tipo === 'multipla_escolha') {
+        mostrarQuestaoMultiplaEscolha(questao);
+    } else if (questao.tipo === 'interpretacao') {
+        mostrarQuestaoInterpretacao(questao);
+    } else if (questao.tipo === 'verdadeiro_falso') {
+        mostrarQuestaoVerdadeiroFalso(questao);
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
+        mostrarQuestaoAberta(questao);
+    }
+    
+    // Restaurar resposta salva
+    if (respostasDoUsuario[perguntaAtual] !== null) {
+        restaurarResposta();
+    }
+    
+    // Atualizar navegador
+    atualizarNavegadorDeQuestoes();
+    
+    // Configurar botões
+    atualizarBotoesAcao();
+}
+
+function mostrarQuestaoMultiplaEscolha(questao) {
+    opcoesRespostaDiv.style.display = 'block';
+    areaRespostaAberta.style.display = 'none';
+    
+    opcoesRespostaDiv.innerHTML = '';
+    const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+    
+    questao.opcoes.forEach((opcao, index) => {
+        const div = document.createElement('div');
+        div.className = 'opcao-resposta opcao-multipla-escolha';
+        div.innerHTML = `
+            <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+            <label for="opcao${index}" class="opcao-caixa">
+                <strong>${letras[index]}</strong> ${opcao}
+            </label>
+        `;
+        opcoesRespostaDiv.appendChild(div);
+    });
+}
+
+function mostrarQuestaoInterpretacao(questao) {
+    opcoesRespostaDiv.style.display = 'block';
+    areaRespostaAberta.style.display = 'none';
+    
+    opcoesRespostaDiv.innerHTML = '';
+    
+    // Adicionar o texto base fixo no topo
+    if (questao.textoBase) {
+        const textoBaseDiv = document.createElement('div');
+        textoBaseDiv.className = 'texto-base-interpretacao';
+        textoBaseDiv.style.cssText = `
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            white-space: pre-line;
+            max-height: 300px;
+            overflow-y: auto;
+        `;
+        textoBaseDiv.innerHTML = `<strong>Text:</strong><br><br>${questao.textoBase}`;
+        opcoesRespostaDiv.appendChild(textoBaseDiv);
+    }
+    
+    // Adicionar as opções de resposta
+    const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+    
+    questao.opcoes.forEach((opcao, index) => {
+        const div = document.createElement('div');
+        div.className = 'opcao-resposta opcao-multipla-escolha';
+        div.innerHTML = `
+            <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+            <label for="opcao${index}" class="opcao-caixa">${letras[index]} ${opcao}</label>
+        `;
+        opcoesRespostaDiv.appendChild(div);
+    });
+}
+
+function mostrarQuestaoVerdadeiroFalso(questao) {
+    opcoesRespostaDiv.style.display = 'block';
+    areaRespostaAberta.style.display = 'none';
+    
+    opcoesRespostaDiv.innerHTML = '';
+    
+    // Se a questão tem opções (novo formato), mostrar afirmativas e opções
+    if (questao.opcoes && questao.opcoes.length > 0) {
+        // Primeiro, mostrar as afirmativas
+        if (questao.afirmacoes) {
+            const afirmacoesDiv = document.createElement('div');
+            afirmacoesDiv.className = 'afirmacoes-container';
+            afirmacoesDiv.innerHTML = '<h4>Analise as afirmações:</h4>';
+            
+            questao.afirmacoes.forEach((afirmacao, index) => {
+                const div = document.createElement('div');
+                div.className = 'afirmacao-item afirmacao-caixa-branca';
+                div.innerHTML = `
+                    <div class="afirmacao-header">
+                        <span class="afirmacao-numero">${['I', 'II', 'III', 'IV'][index]}.</span>
+                    </div>
+                    <div class="afirmacao-texto">${afirmacao}</div>
+                `;
+                afirmacoesDiv.appendChild(div);
+            });
+            
+            opcoesRespostaDiv.appendChild(afirmacoesDiv);
+        }
+        
+        // Depois, mostrar as opções de resposta
+        const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+        
+        questao.opcoes.forEach((opcao, index) => {
+            const div = document.createElement('div');
+            div.className = 'opcao-resposta opcao-multipla-escolha';
+            div.innerHTML = `
+                <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+                <label for="opcao${index}" class="opcao-caixa">
+                    <strong>${letras[index]}</strong> ${opcao}
+                </label>
+            `;
+            opcoesRespostaDiv.appendChild(div);
+        });
+        return;
+    }
+    
+    // Mostrar afirmações com caixas V/F
+    if (questao.afirmacoes) {
+        const afirmacoesDiv = document.createElement('div');
+        afirmacoesDiv.className = 'afirmacoes-container';
+        afirmacoesDiv.innerHTML = '<h4>Analise as afirmações e marque V (Verdadeiro) ou F (Falso):</h4>';
+        
+        questao.afirmacoes.forEach((afirmacao, index) => {
+            const div = document.createElement('div');
+            div.className = 'afirmacao-item afirmacao-caixa-branca';
+            div.innerHTML = `
+                <div class="afirmacao-header">
+                    <span class="afirmacao-numero">${['I', 'II', 'III', 'IV'][index]}.</span>
+                    <div class="vf-boxes">
+                        <label class="vf-option">
+                            <input type="checkbox" class="vf-checkbox" data-afirmacao="${index}" data-valor="V"> V
+                        </label>
+                        <label class="vf-option">
+                            <input type="checkbox" class="vf-checkbox" data-afirmacao="${index}" data-valor="F"> F
+                        </label>
+                    </div>
+                </div>
+                <div class="afirmacao-texto">${afirmacao}</div>
+            `;
+            afirmacoesDiv.appendChild(div);
+        });
+        
+        opcoesRespostaDiv.appendChild(afirmacoesDiv);
+        
+        // Mostrar opções de resposta (sequências)
+        const opcoesDiv = document.createElement('div');
+        opcoesDiv.className = 'opcoes-vf-container';
+        opcoesDiv.innerHTML = '<h4>Escolha a sequência correta:</h4>';
+        const letras = ['a)', 'b)', 'c)', 'd)', 'e)', 'f)'];
+        
+        questao.opcoes.forEach((opcao, index) => {
+            const div = document.createElement('div');
+            div.className = 'opcao-resposta opcao-vf-escolha';
+            div.innerHTML = `
+                <input type="radio" id="opcao${index}" name="resposta" value="${opcao}" style="display: none;">
+                <label for="opcao${index}" class="opcao-caixa">
+                    <strong>${letras[index]}</strong> ${opcao}
+                </label>
+            `;
+            opcoesDiv.appendChild(div);
+        });
+        
+        opcoesRespostaDiv.appendChild(opcoesDiv);
+        
+        // Adicionar event listeners para as caixas V/F
+        document.querySelectorAll('.vf-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const afirmacao = this.dataset.afirmacao;
+                const valor = this.dataset.valor;
+                
+                // Desmarcar a outra opção da mesma afirmação
+                document.querySelectorAll(`[data-afirmacao="${afirmacao}"]`).forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+            });
+        });
+    }
+}
+
+function mostrarQuestaoAberta(questao) {
+    opcoesRespostaDiv.style.display = 'none';
+    areaRespostaAberta.style.display = 'block';
+    inputResposta.value = '';
+    inputResposta.placeholder = questao.tipo === 'opiniao' ? 
+        'Digite sua opinião aqui...' : 'Digite sua resposta aqui...';
+}
+
+function restaurarResposta() {
+    const resposta = respostasDoUsuario[perguntaAtual];
+    const questao = bancoDeQuestoesAtual[perguntaAtual];
+    const status = statusDasQuestoes[perguntaAtual];
+    
+    if (questao.tipo === 'multipla_escolha') {
+        const radio = document.querySelector(`input[name="resposta"][value="${resposta}"]`);
+        if (radio) radio.checked = true;
+    } else if (questao.tipo === 'verdadeiro_falso') {
+        const radio = document.querySelector(`input[name="resposta"][value="${resposta}"]`);
+        if (radio) radio.checked = true;
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
+        inputResposta.value = resposta || '';
+    }
+    
+    // Se a questão já foi respondida (correta ou incorreta), mostrar o gabarito e explicação permanentemente
+    if (status === 'correta' || status === 'incorreta') {
+        // Aplicar feedback visual nas opções
+        if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso' || questao.tipo === 'interpretacao') {
+            const estaCorreta = (status === 'correta');
+            aplicarFeedbackVisual(estaCorreta, questao);
+        }
+        
+        // Mostrar feedback com gabarito e explicação
+        mostrarFeedback(status === 'correta', questao);
+        feedbackImediato.style.display = 'block';
+    }
+}
+
+function salvarResposta() {
+    const questao = bancoDeQuestoesAtual[perguntaAtual];
+    let resposta = null;
+    
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso' || questao.tipo === 'interpretacao') {
+        const radioSelecionado = document.querySelector('input[name="resposta"]:checked');
+        if (radioSelecionado) {
+            resposta = radioSelecionado.value;
+        }
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
+        resposta = inputResposta.value.trim();
+    }
+    
+    if (resposta === null || resposta === '') {
+        alert('Por favor, selecione ou digite uma resposta antes de gravar.');
+        return;
+    }
+    
+    respostasDoUsuario[perguntaAtual] = resposta;
+    statusDasQuestoes[perguntaAtual] = 'salva';
+    
+    atualizarNavegadorDeQuestoes();
+    atualizarBotoesAcao();
+    
+    alert('Resposta gravada com sucesso!');
+}
+
+function verificarResposta() {
+    const questao = bancoDeQuestoesAtual[perguntaAtual];
+    let resposta = null;
+    
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'verdadeiro_falso' || questao.tipo === 'interpretacao') {
+        const radioSelecionado = document.querySelector('input[name="resposta"]:checked');
+        if (radioSelecionado) {
+            resposta = radioSelecionado.value;
+        }
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
+        resposta = inputResposta.value.trim();
+    }
+    
+    if (resposta === null || resposta === '') {
+        alert('Por favor, selecione ou digite uma resposta antes de verificar.');
+        return;
+    }
+    
+    respostasDoUsuario[perguntaAtual] = resposta;
+    
+    // Verificar se está correta
+    let estaCorreta = false;
+    
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
+        estaCorreta = resposta === questao.respostaCorreta;
+    } else if (questao.tipo === 'verdadeiro_falso') {
+        estaCorreta = resposta === questao.respostaCorreta;
+    } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
+        estaCorreta = true; // Questões abertas são sempre "corretas"
+    }
+    
+    // Atualizar status
+    statusDasQuestoes[perguntaAtual] = estaCorreta ? 'correta' : 'incorreta';
+    
+    if (estaCorreta) {
+        pontuacao++;
+    }
+    
+    // Mostrar feedback
+    mostrarFeedback(estaCorreta, questao);
+    
+    // Tocar som
+    if (estaCorreta && somAcerto) {
+        somAcerto.play().catch(() => {});
+    } else if (!estaCorreta && somErro) {
+        somErro.play().catch(() => {});
+    }
+    
+    atualizarNavegadorDeQuestoes();
+    atualizarBotoesAcao();
+}
+
+function mostrarFeedback(estaCorreta, questao) {
+    let mensagem = '';
+    
+    if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta' || questao.tipo === 'analise_caso') {
+        let respostaEsperada = '';
+        if (questao.respostaEsperada) {
+            respostaEsperada = `<br><strong>Resposta esperada:</strong> ${questao.respostaEsperada}`;
+        } else if (questao.respostaCorreta && questao.respostaCorreta !== 'Resposta aberta') {
+            respostaEsperada = `<br><strong>Resposta esperada:</strong> ${questao.respostaCorreta}`;
+        }
+        
+        mensagem = `
+            <div class="feedback-correto">
+                <strong>✓ Resposta registrada!</strong><br>
+                ${questao.explicacao || 'Sua resposta foi salva com sucesso.'}
+                ${respostaEsperada}
+            </div>
+        `;
+    } else {
+        // Aplicar feedback visual nas caixas
+        aplicarFeedbackVisual(estaCorreta, questao);
+        
+        if (estaCorreta) {
+            mensagem = `
+                <div class="feedback-correto">
+                    <strong>✓ Correto!</strong><br>
+                    ${questao.explicacao || questao.justificativa || 'Parabéns!'}
+                </div>
+            `;
+        } else {
+            let respostaCorretaTexto = '';
+            if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
+                // Encontrar o índice da resposta correta
+                const indiceCorreto = questao.opcoes.findIndex(opcao => opcao === questao.respostaCorreta);
+                if (indiceCorreto !== -1) {
+                    respostaCorretaTexto = questao.opcoes[indiceCorreto];
+                } else {
+                    respostaCorretaTexto = questao.respostaCorreta;
+                }
+            } else {
+                respostaCorretaTexto = questao.respostaCorreta;
+            }
+            
+            mensagem = `
+                <div class="feedback-incorreto">
+                    <strong>✗ Incorreto</strong><br>
+                    <strong>Resposta correta:</strong> ${respostaCorretaTexto}<br>
+                    ${questao.explicacao || questao.justificativa || ''}
+                </div>
+            `;
+        }
+    }
+    
+    feedbackImediato.innerHTML = mensagem;
+    feedbackImediato.style.display = 'block';
+}
+
+function aplicarFeedbackVisual(estaCorreta, questao) {
+    const opcoesCaixas = document.querySelectorAll('.opcao-caixa');
+    
+    if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
+        const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
+        if (respostaSelecionada) {
+            const valorSelecionado = respostaSelecionada.value;
+            
+            opcoesCaixas.forEach((caixa, index) => {
+                const input = caixa.previousElementSibling;
+                if (input && input.value === valorSelecionado) {
+                    // Caixa selecionada
+                    caixa.classList.add(estaCorreta ? 'feedback-correto-caixa' : 'feedback-incorreto-caixa');
+                } else if (questao.opcoes[index] === questao.respostaCorreta && !estaCorreta) {
+                    // Mostrar resposta correta se errou
+                    caixa.classList.add('feedback-correto-caixa');
+                }
+            });
+        }
+    } else if (questao.tipo === 'verdadeiro_falso') {
+        const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
+        if (respostaSelecionada) {
+            const valorSelecionado = respostaSelecionada.value;
+            
+            opcoesCaixas.forEach((caixa) => {
+                const input = caixa.previousElementSibling;
+                if (input && input.value === valorSelecionado) {
+                    // Caixa selecionada
+                    caixa.classList.add(estaCorreta ? 'feedback-correto-caixa' : 'feedback-incorreto-caixa');
+                } else if (input && input.value === questao.respostaCorreta && !estaCorreta) {
+                    // Mostrar resposta correta se errou
+                    caixa.classList.add('feedback-correto-caixa');
+                }
+            });
+        }
+    }
+}
+
+function atualizarBotoesAcao() {
+    const status = statusDasQuestoes[perguntaAtual];
+    
+    if (status === 'correta' || status === 'incorreta') {
+        btnAcao.textContent = 'Próxima';
+        btnAcao.onclick = proximaQuestao;
+        btnSalvar.style.display = 'none';
+    } else {
+        btnAcao.textContent = 'Responder';
+        btnAcao.onclick = verificarResposta;
+        btnSalvar.style.display = 'inline-block';
+    }
+}
+
+function proximaQuestao() {
+    if (perguntaAtual < bancoDeQuestoesAtual.length - 1) {
+        irParaQuestao(perguntaAtual + 1);
+    } else {
+        // Fim do jogo
+        mostrarResultadoFinal();
+    }
+}
+
+function mostrarResultadoFinal() {
+    const totalQuestoes = bancoDeQuestoesAtual.length;
+    const questoesCorretas = statusDasQuestoes.filter(status => status === 'correta').length;
+    const percentual = Math.round((questoesCorretas / totalQuestoes) * 100);
+    
+    let mensagem = `
+        Parabéns! Você completou o ${nomeCapituloAtual}!
+        
+        Resultado: ${questoesCorretas}/${totalQuestoes} questões corretas (${percentual}%)
+        
+        O que deseja fazer agora?
+    `;
+    
+    if (confirm(mensagem + '\n\nClique OK para ver o gabarito completo ou Cancelar para voltar aos capítulos.')) {
+        mostrarGabarito('total');
+    } else {
+        voltarParaCapitulos();
+    }
+}
+
+// --- FUNÇÕES DE GABARITO ---
+function mostrarGabarito(tipo) {
+    telaPergunta.style.display = 'none';
+    telaGabarito.style.display = 'block';
+    
+    let tituloGabarito = tipo === 'parcial' ? 'Gabarito Parcial' : 'Gabarito Total';
+    let textoGabarito = tipo === 'parcial' ? 
+        'Aqui estão as respostas das questões que você já respondeu:' :
+        'Aqui estão as respostas de todas as questões:';
+    
+    document.getElementById('gabarito-titulo').textContent = tituloGabarito;
+    document.getElementById('gabarito-texto').textContent = textoGabarito;
+    
+    const corpoTabela = document.getElementById('corpo-tabela-resultados');
+    corpoTabela.innerHTML = '';
+    
+    bancoDeQuestoesAtual.forEach((questao, index) => {
+        if (tipo === 'total' || statusDasQuestoes[index] === 'correta' || statusDasQuestoes[index] === 'incorreta') {
+            const tr = document.createElement('tr');
+            
+            let respostaCorretaTexto = '';
+            if (questao.tipo === 'multipla_escolha') {
+                respostaCorretaTexto = questao.opcoes[questao.respostaCorreta];
+            } else {
+                respostaCorretaTexto = questao.respostaCorreta || 'Resposta aberta';
+            }
+            
+            let statusTexto = '';
+            switch(statusDasQuestoes[index]) {
+                case 'correta': statusTexto = '✓ Correta'; break;
+                case 'incorreta': statusTexto = '✗ Incorreta'; break;
+                case 'salva': statusTexto = '💾 Salva'; break;
+                default: statusTexto = '⚪ Não respondida';
+            }
+            
+            tr.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${questao.titulo}</td>
+                <td>${respostasDoUsuario[index] || 'Não respondida'}</td>
+                <td>${respostaCorretaTexto}</td>
+                <td>${statusTexto}</td>
+            `;
+            corpoTabela.appendChild(tr);
+        }
+    });
+}
+
+function voltarAoJogo() {
+    telaGabarito.style.display = 'none';
+    telaPergunta.style.display = 'block';
+}
+
+// --- FUNÇÃO DE DISCORDÂNCIA ---
+function registrarDiscordancia() {
+    const questao = bancoDeQuestoesAtual[perguntaAtual];
+    const respostaDoAluno = respostasDoUsuario[perguntaAtual] || "Não respondida";
+    const status = statusDasQuestoes[perguntaAtual];
+
+    const mensagem = `
+Questão: ${perguntaAtual + 1} - "${questao.titulo}"
+Pergunta: ${questao.pergunta}
+Sua Resposta: ${respostaDoAluno}
+Status: ${status}
+Resposta Correta: ${questao.respostaCorreta}
+Justificativa: ${questao.justificativa || questao.explicacao}
+
+Por favor, descreva sua discordância:`;
+
+    const discordancia = prompt(mensagem);
+    if (discordancia) {
+        alert("Sua discordância foi registrada e será analisada. Obrigado por sua contribuição!");
+        console.log("Discordância registrada:", { questao, respostaDoAluno, status, discordancia });
+    }
+}
+
+// --- INICIALIZAÇÃO ---
+// --- FUNÇÃO PARA GERAR ARENAS DINAMICAMENTE ---
+function gerarArenas() {
+    const telaSelecaoArena = document.getElementById('tela-selecao-arena');
+    if (!telaSelecaoArena) return;
+    
+    telaSelecaoArena.innerHTML = '';
+    
+    // Ordem específica das arenas
+    const ordemArenas = ['portugues', 'matematica', 'ciencias', 'historia', 'geografia', 'ingles', 'math'];
+    
+    ordemArenas.forEach(arenaId => {
+        const arena = estruturaCapitulos[arenaId];
+        if (!arena) return;
+        
+        const arenaCard = document.createElement('div');
+        arenaCard.className = 'arena-card';
+        
+        arenaCard.innerHTML = `
+            <img src="${arena.icone}" alt="Ícone de ${arena.nome}">
+            <h3>${arena.nome}</h3>
+            <p>${arena.descricao}</p>
+            <div>
+                <button class="btn-principal" onclick="selecionarArena('${arenaId}')">Entrar na Arena</button>
+            </div>
+        `;
+        
+        telaSelecaoArena.appendChild(arenaCard);
+    });
+}
+
+window.onload = () => {
+    inicializar();
+    gerarArenas();
+    configurarEventosAudio();
+};
+
+// Chamar gerarArenas() no início para garantir que as arenas sejam criadas
+document.addEventListener('DOMContentLoaded', gerarArenas);
+
+
+// --- FUNÇÕES DO MAPA MENTAL ---
+function abrirMapaMental() {
+    const overlay = document.getElementById('mapa-mental-overlay');
+    const image = document.getElementById('mapa-mental-image');
+    
+    // Resetar transformações
+    image.style.transform = 'scale(1) translate(0px, 0px)';
+    
+    // Mostrar overlay
+    overlay.style.display = 'flex';
+    
+    // Adicionar event listeners para zoom e pan
+    setupMapaMentalControls();
+}
+
+function fecharMapaMental() {
+    const overlay = document.getElementById('mapa-mental-overlay');
+    overlay.style.display = 'none';
+}
+
+function setupMapaMentalControls() {
+    const image = document.getElementById('mapa-mental-image');
+    const viewer = document.querySelector('.mapa-mental-viewer');
+    
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    
+    // Zoom com botões
+    document.getElementById('zoom-in').onclick = () => {
+        scale = Math.min(scale * 1.2, 5);
+        updateTransform();
+    };
+    
+    document.getElementById('zoom-out').onclick = () => {
+        scale = Math.max(scale / 1.2, 0.5);
+        updateTransform();
+    };
+    
+    document.getElementById('zoom-reset').onclick = () => {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        updateTransform();
+    };
+    
+    // Zoom com scroll do mouse
+    viewer.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? 0.9 : 1.1;
+        scale = Math.min(Math.max(scale * delta, 0.5), 5);
+        updateTransform();
+    });
+    
+    // Pan com mouse
+    image.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        image.style.cursor = 'grabbing';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        updateTransform();
+    });
+    
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        image.style.cursor = 'grab';
+    });
+    
+    // Touch events para dispositivos móveis
+    let lastTouchDistance = 0;
+    
+    image.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            isDragging = true;
+            startX = e.touches[0].clientX - translateX;
+            startY = e.touches[0].clientY - translateY;
+        } else if (e.touches.length === 2) {
+            lastTouchDistance = getTouchDistance(e.touches);
+        }
+    });
+    
+    image.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        if (e.touches.length === 1 && isDragging) {
+            translateX = e.touches[0].clientX - startX;
+            translateY = e.touches[0].clientY - startY;
+            updateTransform();
+        } else if (e.touches.length === 2) {
+            const currentDistance = getTouchDistance(e.touches);
+            const scaleChange = currentDistance / lastTouchDistance;
+            scale = Math.min(Math.max(scale * scaleChange, 0.5), 5);
+            lastTouchDistance = currentDistance;
+            updateTransform();
+        }
+    });
+    
+    image.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+    
+    function getTouchDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    
+    function updateTransform() {
+        image.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+    }
+}
+
+// Fechar mapa mental com ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        fecharMapaMental();
+    }
+});
+
+// --- FUNÇÕES DO PLAYER DE VÍDEO ---
+function abrirVideoPlayer() {
+    const overlay = document.getElementById('video-player-overlay');
+    const video = document.getElementById('video-element');
+    
+    // Mostrar overlay
+    overlay.style.display = 'flex';
+    
+    // Setup do player de vídeo
+    setupVideoControls();
+}
+
+function fecharVideoPlayer() {
+    const overlay = document.getElementById('video-player-overlay');
+    const video = document.getElementById('video-element');
+    
+    // Pausar vídeo
+    video.pause();
+    
+    // Esconder overlay
+    overlay.style.display = 'none';
+}
+
+function setupVideoControls() {
+    const video = document.getElementById('video-element');
+    const playPauseBtn = document.getElementById('video-play-pause');
+    const progressBar = document.getElementById('video-progress-bar');
+    const progressFill = document.getElementById('video-progress-fill');
+    const timeDisplay = document.getElementById('video-time');
+    const volumeBtn = document.getElementById('video-volume');
+    const volumeSlider = document.getElementById('video-volume-slider');
+    const volumeFill = document.getElementById('video-volume-fill');
+    const speedSelector = document.getElementById('video-speed');
+    const fullscreenBtn = document.getElementById('video-fullscreen');
+    
+    let isDragging = false;
+    
+    // Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playPauseBtn.innerHTML = '⏸️';
+        } else {
+            video.pause();
+            playPauseBtn.innerHTML = '▶️';
+        }
+    });
+    
+    // Atualizar tempo e progresso
+    video.addEventListener('timeupdate', () => {
+        if (!isDragging) {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressFill.style.width = progress + '%';
+        }
+        
+        const currentMinutes = Math.floor(video.currentTime / 60);
+        const currentSeconds = Math.floor(video.currentTime % 60);
+        const durationMinutes = Math.floor(video.duration / 60);
+        const durationSeconds = Math.floor(video.duration % 60);
+        
+        timeDisplay.textContent = 
+            `${currentMinutes}:${currentSeconds.toString().padStart(2, '0')} / ` +
+            `${durationMinutes}:${durationSeconds.toString().padStart(2, '0')}`;
+    });
+    
+    // Controle de progresso
+    progressBar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updateProgress(e);
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            updateProgress(e);
+        }
+    });
+    
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+    
+    function updateProgress(e) {
+        const rect = progressBar.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        const newTime = percent * video.duration;
+        video.currentTime = Math.max(0, Math.min(newTime, video.duration));
+        progressFill.style.width = (percent * 100) + '%';
+    }
+    
+    // Controle de volume
+    volumeBtn.addEventListener('click', () => {
+        if (video.muted) {
+            video.muted = false;
+            volumeBtn.innerHTML = '🔊';
+            volumeFill.style.width = (video.volume * 100) + '%';
+        } else {
+            video.muted = true;
+            volumeBtn.innerHTML = '🔇';
+            volumeFill.style.width = '0%';
+        }
+    });
+    
+    volumeSlider.addEventListener('click', (e) => {
+        const rect = volumeSlider.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        video.volume = Math.max(0, Math.min(percent, 1));
+        video.muted = false;
+        volumeFill.style.width = (percent * 100) + '%';
+        volumeBtn.innerHTML = percent > 0 ? '🔊' : '🔇';
+    });
+    
+    // Controle de velocidade
+    speedSelector.addEventListener('change', () => {
+        video.playbackRate = parseFloat(speedSelector.value);
+    });
+    
+    // Tela cheia
+    fullscreenBtn.addEventListener('click', () => {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    });
+    
+    // Teclas de atalho
+    document.addEventListener('keydown', (e) => {
+        if (document.getElementById('video-player-overlay').style.display === 'flex') {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    playPauseBtn.click();
+                    break;
+                case 'ArrowLeft':
+                    video.currentTime = Math.max(0, video.currentTime - 10);
+                    break;
+                case 'ArrowRight':
+                    video.currentTime = Math.min(video.duration, video.currentTime + 10);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    video.volume = Math.min(1, video.volume + 0.1);
+                    volumeFill.style.width = (video.volume * 100) + '%';
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    video.volume = Math.max(0, video.volume - 0.1);
+                    volumeFill.style.width = (video.volume * 100) + '%';
+                    break;
+                case 'f':
+                    fullscreenBtn.click();
+                    break;
+                case 'Escape':
+                    fecharVideoPlayer();
+                    break;
+            }
+        }
+    });
+}
+
+// Função para gerar interface especial do Capítulo 12 de Ciências
+function gerarInterfaceCapitulo12Ciencias(capitulo) {
+    return `
+        <div class="capitulo-numero">Cap. ${capitulo.numero}</div>
+        <div class="capitulo-info">
+            <h3>${capitulo.titulo}</h3>
+            <p>Explore através de diferentes módulos!</p>
+        </div>
+        <div class="capitulo-acoes">
+            <button class="btn-secundario" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+            <button class="btn-video" onclick="abrirVideoPlayer()">🎬 Vídeo</button>
+            <button class="btn-mapa-mental" onclick="abrirMapaMental()">🧠 Mapa Mental</button>
+            <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
+        </div>
+    `;
+}
