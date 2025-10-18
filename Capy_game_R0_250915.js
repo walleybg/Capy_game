@@ -374,8 +374,30 @@ function gerarListaCapitulos(capitulos) {
         const capituloCard = document.createElement('div');
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
+        // Interface especial para Capítulo 12 de Ciências
+        if (capitulo.id === 'cap12_ciencias') {
+            capituloCard.innerHTML = `
+                <div class="capitulo-numero">Cap. ${capitulo.numero}</div>
+                <div class="capitulo-info">
+                    <h3>${capitulo.titulo}</h3>
+                    <p>${capitulo.disponivel ? 'Escolha uma opção para explorar!' : 'Em breve...'}</p>
+                </div>
+                <div class="capitulo-acoes">
+                    ${capitulo.disponivel ? `
+                        <div class="modulos-container">
+                            <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+                            <button class="btn-modulo" onclick="abrirMapaMental()">🗺️ Mapa Mental</button>
+                            <button class="btn-modulo" onclick="abrirVideoPlayer()">🎬 Vídeo</button>
+                            <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
+                        </div>
+                    ` : `
+                        <span class="status-indisponivel">🔒 Em breve</span>
+                    `}
+                </div>
+            `;
+        }
         // Verificar se o capítulo tem jogos (estrutura especial para inglês)
-        if (capitulo.jogos && capitulo.jogos.length > 0) {
+        else if (capitulo.jogos && capitulo.jogos.length > 0) {
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">Unit ${capitulo.numero}</div>
                 <div class="capitulo-info">
@@ -1552,3 +1574,343 @@ window.onload = () => {
 
 // Chamar gerarArenas() no início para garantir que as arenas sejam criadas
 document.addEventListener('DOMContentLoaded', gerarArenas);
+
+// Variáveis globais para o mapa mental
+let mapaScale = 1;
+let mapaPosX = 0;
+let mapaPosY = 0;
+let isDragging = false;
+let startX, startY;
+
+// Função para abrir o mapa mental
+function abrirMapaMental() {
+    const popup = document.getElementById('mapa-mental-overlay');
+    const image = document.getElementById('mapa-mental-image');
+    
+    popup.style.display = 'block';
+    resetMapaMental();
+    
+    // Adicionar eventos de arrastar
+    image.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+    
+    // Eventos para dispositivos móveis
+    image.addEventListener('touchstart', startDragTouch);
+    document.addEventListener('touchmove', dragTouch);
+    document.addEventListener('touchend', stopDrag);
+}
+
+// Função para fechar o mapa mental
+function fecharMapaMental() {
+    const popup = document.getElementById('mapa-mental-overlay');
+    const image = document.getElementById('mapa-mental-image');
+    
+    popup.style.display = 'none';
+    
+    // Remover eventos
+    image.removeEventListener('mousedown', startDrag);
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', stopDrag);
+    image.removeEventListener('touchstart', startDragTouch);
+    document.removeEventListener('touchmove', dragTouch);
+    document.removeEventListener('touchend', stopDrag);
+}
+
+// Função para zoom no mapa mental
+function zoomMapaMental(factor) {
+    const image = document.getElementById('mapa-mental-image');
+    mapaScale *= factor;
+    
+    // Limitar o zoom
+    if (mapaScale < 0.5) mapaScale = 0.5;
+    if (mapaScale > 5) mapaScale = 5;
+    
+    updateMapaTransform();
+}
+
+// Função para resetar o mapa mental
+function resetMapaMental() {
+    const image = document.getElementById('mapa-mental-image');
+    const container = document.querySelector('.mapa-mental-container');
+    
+    mapaScale = 1;
+    mapaPosX = 0;
+    mapaPosY = 0;
+    
+    // Centralizar a imagem
+    const containerRect = container.getBoundingClientRect();
+    const imageRect = image.getBoundingClientRect();
+    
+    mapaPosX = (containerRect.width - image.naturalWidth) / 2;
+    mapaPosY = (containerRect.height - image.naturalHeight) / 2;
+    
+    updateMapaTransform();
+}
+
+// Função para atualizar a transformação do mapa
+function updateMapaTransform() {
+    const image = document.getElementById('mapa-mental-image');
+    image.style.transform = `translate(${mapaPosX}px, ${mapaPosY}px) scale(${mapaScale})`;
+}
+
+// Funções de arrastar - Mouse
+function startDrag(e) {
+    isDragging = true;
+    startX = e.clientX - mapaPosX;
+    startY = e.clientY - mapaPosY;
+    e.preventDefault();
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    
+    mapaPosX = e.clientX - startX;
+    mapaPosY = e.clientY - startY;
+    
+    updateMapaTransform();
+}
+
+function stopDrag() {
+    isDragging = false;
+}
+
+// Funções de arrastar - Touch
+function startDragTouch(e) {
+    isDragging = true;
+    const touch = e.touches[0];
+    startX = touch.clientX - mapaPosX;
+    startY = touch.clientY - mapaPosY;
+    e.preventDefault();
+}
+
+function dragTouch(e) {
+    if (!isDragging) return;
+    
+    const touch = e.touches[0];
+    mapaPosX = touch.clientX - startX;
+    mapaPosY = touch.clientY - startY;
+    
+    updateMapaTransform();
+    e.preventDefault();
+}
+
+// Função para abrir o player de vídeo
+function abrirVideoPlayer() {
+    const popup = document.getElementById('video-player-overlay');
+    const video = document.getElementById('video-element');
+    
+    popup.style.display = 'block';
+    
+    // Pausar o vídeo ao abrir para evitar reprodução automática
+    video.pause();
+    video.currentTime = 0;
+    
+    // Adicionar evento para fechar com ESC
+    document.addEventListener('keydown', handleVideoKeydown);
+    
+    // Focar no vídeo para permitir controles por teclado
+    video.focus();
+}
+
+// Função para fechar o player de vídeo
+function fecharVideoPlayer() {
+    const popup = document.getElementById('video-player-overlay');
+    const video = document.getElementById('video-element');
+    
+    popup.style.display = 'none';
+    
+    // Pausar o vídeo ao fechar
+    video.pause();
+    
+    // Remover evento de teclado
+    document.removeEventListener('keydown', handleVideoKeydown);
+}
+
+// Função para lidar com teclas no player de vídeo
+function handleVideoKeydown(e) {
+    if (e.key === 'Escape') {
+        fecharVideoPlayer();
+    }
+}
+
+// Fechar popup ao clicar fora do vídeo
+document.addEventListener('DOMContentLoaded', function() {
+    const videoPopup = document.getElementById('video-player-overlay');
+    const mapaPopup = document.getElementById('mapa-mental-overlay');
+    
+    if (videoPopup) {
+        videoPopup.addEventListener('click', function(e) {
+            if (e.target === videoPopup) {
+                fecharVideoPlayer();
+            }
+        });
+    }
+    
+    if (mapaPopup) {
+        mapaPopup.addEventListener('click', function(e) {
+            if (e.target === mapaPopup) {
+                fecharMapaMental();
+            }
+        });
+    }
+    
+    // Event listeners para os botões de zoom do mapa mental
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const zoomResetBtn = document.getElementById('zoom-reset');
+    
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', function() {
+            zoomMapaMental(1.2);
+        });
+    }
+    
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', function() {
+            zoomMapaMental(0.8);
+        });
+    }
+    
+    if (zoomResetBtn) {
+        zoomResetBtn.addEventListener('click', function() {
+            resetMapaMental();
+        });
+    }
+    
+    // Event listeners para controles do vídeo
+    const video = document.getElementById('video-element');
+    const playPauseBtn = document.getElementById('video-play-pause');
+    const volumeBtn = document.getElementById('video-volume');
+    const progressBar = document.getElementById('video-progress-bar');
+    const progressFill = document.getElementById('video-progress-fill');
+    const timeDisplay = document.getElementById('video-time');
+    const volumeSlider = document.getElementById('video-volume-slider');
+    const volumeFill = document.getElementById('video-volume-fill');
+    const speedBtn = document.getElementById('video-speed');
+    
+    if (video && playPauseBtn) {
+        // Play/Pause
+        playPauseBtn.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.textContent = '⏸️';
+            } else {
+                video.pause();
+                playPauseBtn.textContent = '▶️';
+            }
+        });
+        
+        // Atualizar progresso
+        video.addEventListener('timeupdate', function() {
+            const progress = (video.currentTime / video.duration) * 100;
+            if (progressFill) progressFill.style.width = progress + '%';
+            
+            if (timeDisplay) {
+                const current = formatTime(video.currentTime);
+                const total = formatTime(video.duration);
+                timeDisplay.textContent = `${current} / ${total}`;
+            }
+        });
+        
+        // Quando o vídeo termina
+        video.addEventListener('ended', function() {
+            playPauseBtn.textContent = '▶️';
+        });
+        
+        // Clique na barra de progresso
+        if (progressBar) {
+            progressBar.addEventListener('click', function(e) {
+                const rect = progressBar.getBoundingClientRect();
+                const pos = (e.clientX - rect.left) / rect.width;
+                video.currentTime = pos * video.duration;
+            });
+        }
+        
+        // Controle de volume
+        if (volumeBtn) {
+            volumeBtn.addEventListener('click', function() {
+                if (video.muted) {
+                    video.muted = false;
+                    volumeBtn.textContent = '🔊';
+                    if (volumeFill) volumeFill.style.width = (video.volume * 100) + '%';
+                } else {
+                    video.muted = true;
+                    volumeBtn.textContent = '🔇';
+                    if (volumeFill) volumeFill.style.width = '0%';
+                }
+            });
+        }
+        
+        // Slider de volume
+        if (volumeSlider) {
+            volumeSlider.addEventListener('click', function(e) {
+                const rect = volumeSlider.getBoundingClientRect();
+                const pos = (e.clientX - rect.left) / rect.width;
+                video.volume = Math.max(0, Math.min(1, pos));
+                video.muted = false;
+                volumeBtn.textContent = '🔊';
+                if (volumeFill) volumeFill.style.width = (video.volume * 100) + '%';
+            });
+        }
+        
+        // Controle de velocidade
+        if (speedBtn) {
+            speedBtn.addEventListener('change', function() {
+                video.playbackRate = parseFloat(speedBtn.value);
+            });
+        }
+        
+        // Botão de tela cheia
+        const fullscreenBtn = document.getElementById('video-fullscreen');
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', function() {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            });
+        }
+        
+        // Teclas de atalho para o vídeo
+        video.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case ' ':
+                case 'k':
+                    e.preventDefault();
+                    playPauseBtn.click();
+                    break;
+                case 'ArrowLeft':
+                    video.currentTime = Math.max(0, video.currentTime - 5);
+                    break;
+                case 'ArrowRight':
+                    video.currentTime = Math.min(video.duration, video.currentTime + 5);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    video.volume = Math.min(1, video.volume + 0.1);
+                    if (volumeFill) volumeFill.style.width = (video.volume * 100) + '%';
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    video.volume = Math.max(0, video.volume - 0.1);
+                    if (volumeFill) volumeFill.style.width = (video.volume * 100) + '%';
+                    break;
+                case 'm':
+                    volumeBtn.click();
+                    break;
+            }
+        });
+    }
+});
+
+// Função auxiliar para formatar tempo
+function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
