@@ -1582,31 +1582,24 @@ let mapaPosY = 0;
 let isDragging = false;
 let startX, startY;
 
-// Função para abrir o mapa mental
+// Função para abrir o mapa mental em janela popup
 function abrirMapaMental() {
-    const popup = document.getElementById('mapa-mental-overlay');
-    const image = document.getElementById('mapa-mental-image');
+    // Abrir janela popup com o mapa mental
+    const largura = 1200;
+    const altura = 800;
+    const left = (screen.width - largura) / 2;
+    const top = (screen.height - altura) / 2;
     
-    popup.style.display = 'block';
+    const features = `width=${largura},height=${altura},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`;
     
-    // Garantir que a imagem seja carregada antes de resetar
-    if (image.complete && image.naturalWidth > 0) {
-        resetMapaMental();
+    // Abrir popup com a imagem do mapa mental
+    const popupWindow = window.open('Cap12_Mindmap-1.png', 'MapaMental', features);
+    
+    if (popupWindow) {
+        popupWindow.focus();
     } else {
-        image.onload = function() {
-            resetMapaMental();
-        };
+        alert('Por favor, permita popups para visualizar o mapa mental.');
     }
-    
-    // Adicionar eventos de arrastar
-    image.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', stopDrag);
-    
-    // Eventos para dispositivos móveis
-    image.addEventListener('touchstart', startDragTouch);
-    document.addEventListener('touchmove', dragTouch);
-    document.addEventListener('touchend', stopDrag);
 }
 
 // Função para fechar o mapa mental
