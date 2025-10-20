@@ -1584,16 +1584,16 @@ let startX, startY;
 
 // Função para abrir o mapa mental em janela popup
 function abrirMapaMental() {
-    // Abrir janela popup com o mapa mental
+    // Abrir janela popup com o mapa mental interativo
     const largura = 1200;
     const altura = 800;
     const left = (screen.width - largura) / 2;
     const top = (screen.height - altura) / 2;
     
-    const features = `width=${largura},height=${altura},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`;
+    const features = `width=${largura},height=${altura},left=${left},top=${top},resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no,status=no`;
     
-    // Abrir popup com a imagem do mapa mental
-    const popupWindow = window.open('Cap12_Mindmap-1.png', 'MapaMental', features);
+    // Abrir popup com a página HTML personalizada do mapa mental
+    const popupWindow = window.open('mapa_mental_viewer.html', 'MapaMental', features);
     
     if (popupWindow) {
         popupWindow.focus();
