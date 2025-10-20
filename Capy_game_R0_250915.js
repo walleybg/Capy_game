@@ -1588,7 +1588,15 @@ function abrirMapaMental() {
     const image = document.getElementById('mapa-mental-image');
     
     popup.style.display = 'block';
-    resetMapaMental();
+    
+    // Garantir que a imagem seja carregada antes de resetar
+    if (image.complete && image.naturalWidth > 0) {
+        resetMapaMental();
+    } else {
+        image.onload = function() {
+            resetMapaMental();
+        };
+    }
     
     // Adicionar eventos de arrastar
     image.addEventListener('mousedown', startDrag);
@@ -1622,8 +1630,8 @@ function zoomMapaMental(factor) {
     const image = document.getElementById('mapa-mental-image');
     mapaScale *= factor;
     
-    // Limitar o zoom
-    if (mapaScale < 0.5) mapaScale = 0.5;
+    // Limitar o zoom - permitir mais redução para visualizar imagem inteira
+    if (mapaScale < 0.1) mapaScale = 0.1;
     if (mapaScale > 5) mapaScale = 5;
     
     updateMapaTransform();
@@ -1632,18 +1640,25 @@ function zoomMapaMental(factor) {
 // Função para resetar o mapa mental
 function resetMapaMental() {
     const image = document.getElementById('mapa-mental-image');
-    const container = document.querySelector('.mapa-mental-container');
+    const container = document.querySelector('.mapa-mental-viewer');
     
-    mapaScale = 1;
-    mapaPosX = 0;
-    mapaPosY = 0;
+    if (!container || !image.naturalWidth) {
+        // Se a imagem ainda não carregou, tentar novamente em 100ms
+        setTimeout(resetMapaMental, 100);
+        return;
+    }
+    
+    // Calcular escala para caber na tela
+    const containerRect = container.getBoundingClientRect();
+    const scaleX = (containerRect.width - 40) / image.naturalWidth;
+    const scaleY = (containerRect.height - 40) / image.naturalHeight;
+    
+    // Usar a menor escala para garantir que cabe inteira
+    mapaScale = Math.min(scaleX, scaleY, 1); // Não aumentar além do tamanho original
     
     // Centralizar a imagem
-    const containerRect = container.getBoundingClientRect();
-    const imageRect = image.getBoundingClientRect();
-    
-    mapaPosX = (containerRect.width - image.naturalWidth) / 2;
-    mapaPosY = (containerRect.height - image.naturalHeight) / 2;
+    mapaPosX = (containerRect.width - image.naturalWidth * mapaScale) / 2;
+    mapaPosY = (containerRect.height - image.naturalHeight * mapaScale) / 2;
     
     updateMapaTransform();
 }
