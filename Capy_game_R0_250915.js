@@ -225,9 +225,11 @@ const estruturaCapitulos = {
                 id: 'cap07_historia',
                 numero: 7,
                 titulo: 'Vida e trabalho nos espaços urbanos',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_07_Historia.mp3',
+                questoes: 'dadosDoQuizHistoriaCap7',
+                video: 'Cap_07_Historia_Video.mp4',
+                mapaMental: 'Cap_07_Historia_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap08_historia',
@@ -401,8 +403,8 @@ function gerarListaCapitulos(capitulos) {
         const capituloCard = document.createElement('div');
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
-        // Interface especial para Capítulo 12 de Ciências e Unit 6 de Inglês
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles') {
+        // Interface especial para Capítulo 12 de Ciências, Unit 6 de Inglês e Capítulo 7 de História
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -582,6 +584,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizInglesUnit6;
+            break;
+        case 'cap07_historia':
+            if (typeof dadosDoQuizHistoriaCap7 === 'undefined') {
+                alert('Erro: Questões de História Capítulo 7 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizHistoriaCap7;
             break;
 
         default:
