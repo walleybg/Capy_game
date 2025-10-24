@@ -358,9 +358,23 @@ function inicializar() {
     audioSource = document.getElementById('audio-source');
     audioTitle = document.getElementById('audio-title');
     audioSubtitle = document.getElementById('audio-subtitle');
-}
-
-// --- FUNÇÕES DE NAVEGAÇÃO ENTRE TELAS ---
+    
+    // Configurar botões de zoom do mapa mental
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const zoomResetBtn = document.getElementById('zoom-reset');
+    
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', () => zoomMapaMental(1.2));
+    }
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', () => zoomMapaMental(0.8));
+    }
+    if (zoomResetBtn) {
+        zoomResetBtn.addEventListener('click', resetMapaMental);
+    }
+    
+    gerarArenas();VEGAÇÃO ENTRE TELAS ---
 function selecionarArena(tipoArena) {
     arenaAtual = tipoArena;
     const arena = estruturaCapitulos[tipoArena];
@@ -1634,7 +1648,7 @@ function abrirMapaMental() {
 // Função para fechar o mapa mental
 function fecharMapaMental() {
     const popup = document.getElementById('mapa-mental-overlay');
-    const image = document.getElementById('mapaImage');
+    const image = document.getElementById('mapa-mental-image');
     
     popup.style.display = 'none';
     
@@ -1649,7 +1663,7 @@ function fecharMapaMental() {
 
 // Função para zoom no mapa mental
 function zoomMapaMental(factor) {
-    const image = document.getElementById('mapaImage');
+    const image = document.getElementById('mapa-mental-image');
     mapaScale *= factor;
     
     // Limitar o zoom
@@ -1661,26 +1675,44 @@ function zoomMapaMental(factor) {
 
 // Função para resetar o mapa mental
 function resetMapaMental() {
-    const image = document.getElementById('mapaImage');
-    const container = document.querySelector('.mapa-mental-container');
+    const image = document.getElementById('mapa-mental-image');
+    const viewer = document.querySelector('.mapa-mental-viewer');
     
-    mapaScale = 1;
-    mapaPosX = 0;
-    mapaPosY = 0;
+    if (!image || !viewer) return;
+    
+    // Aguardar carregamento da imagem
+    if (image.complete && image.naturalWidth > 0) {
+        ajustarMapaMental();
+    } else {
+        image.onload = ajustarMapaMental;
+    }
+}
+
+function ajustarMapaMental() {
+    const image = document.getElementById('mapa-mental-image');
+    const viewer = document.querySelector('.mapa-mental-viewer');
+    
+    if (!image || !viewer) return;
+    
+    const viewerRect = viewer.getBoundingClientRect();
+    const imgWidth = image.naturalWidth;
+    const imgHeight = image.naturalHeight;
+    
+    // Calcular escala para caber na tela (com margem de 20px)
+    const scaleX = (viewerRect.width - 40) / imgWidth;
+    const scaleY = (viewerRect.height - 40) / imgHeight;
+    mapaScale = Math.min(scaleX, scaleY, 1); // Não aumentar além do tamanho original
     
     // Centralizar a imagem
-    const containerRect = container.getBoundingClientRect();
-    const imageRect = image.getBoundingClientRect();
-    
-    mapaPosX = (containerRect.width - image.naturalWidth) / 2;
-    mapaPosY = (containerRect.height - image.naturalHeight) / 2;
+    mapaPosX = (viewerRect.width - imgWidth * mapaScale) / 2;
+    mapaPosY = (viewerRect.height - imgHeight * mapaScale) / 2;
     
     updateMapaTransform();
 }
 
 // Função para atualizar a transformação do mapa
 function updateMapaTransform() {
-    const image = document.getElementById('mapaImage');
+    const image = document.getElementById('mapa-mental-image');
     image.style.transform = `translate(${mapaPosX}px, ${mapaPosY}px) scale(${mapaScale})`;
 }
 
@@ -1779,8 +1811,8 @@ function handleVideoKeydown(e) {
 
 // Fechar popup ao clicar fora do vídeo
 document.addEventListener('DOMContentLoaded', function() {
-    const videoPopup = document.getElementById('videoPlayer');
-    const mapaPopup = document.getElementById('mapaMental');
+    const videoPopup = document.getElementById('video-player-overlay');
+    const mapaPopup = document.getElementById('mapa-mental-overlay');
     
     if (videoPopup) {
         videoPopup.addEventListener('click', function(e) {
