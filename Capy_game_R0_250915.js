@@ -1610,6 +1610,21 @@ function gerarArenas() {
     });
 }
 
+// Função para atualizar versão (hard refresh)
+function atualizarVersao() {
+    // Mostrar mensagem antes de recarregar
+    alert('Este é um sistema em desenvolvimento.\n\nSempre aperte este botão para garantir que você está na última atualização!');
+    
+    // Fazer hard refresh (equivalente a Ctrl + Shift + R)
+    // Método 1: Recarregar sem cache
+    location.reload(true);
+    
+    // Método 2 (fallback): Forçar recarga completa
+    setTimeout(() => {
+        window.location.href = window.location.href + '?t=' + new Date().getTime();
+    }, 100);
+}
+
 window.onload = () => {
     inicializar();
     gerarArenas();

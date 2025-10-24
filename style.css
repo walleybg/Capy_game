@@ -94,6 +94,28 @@ button:disabled {
 .btn-neutro { background-color: var(--cor-neutra); }
 .btn-neutro:hover { background-color: #95a5a6; }
 
+/* Botão Atualizar Versão */
+.btn-atualizar-versao {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+.btn-atualizar-versao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+.btn-atualizar-versao:active {
+    transform: translateY(0);
+}
+
 
 /* Menu Suspenso */
 .dropdown {
