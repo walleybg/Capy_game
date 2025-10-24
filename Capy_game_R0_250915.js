@@ -408,7 +408,7 @@ function gerarListaCapitulos(capitulos) {
             `;
         }
         // Verificar se o capítulo tem jogos (estrutura especial para inglês)
-        if (capitulo.jogos && capitulo.jogos.length > 0) {
+        else if (capitulo.jogos && capitulo.jogos.length > 0) {
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">Unit ${capitulo.numero}</div>
                 <div class="capitulo-info">
@@ -558,6 +558,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizGeografia;
+            break;
+        case 'unit06_ingles':
+            if (typeof dadosDoQuizInglesUnit6 === 'undefined') {
+                alert('Erro: Questões de Inglês Unit 6 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizInglesUnit6;
             break;
 
         default:
@@ -1595,8 +1602,20 @@ let startX, startY;
 
 // Função para abrir o mapa mental
 function abrirMapaMental() {
-    const popup = document.getElementById('mapaMental');
-    const image = document.getElementById('mapaImage');
+    const arena = estruturaCapitulos[arenaAtual];
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
+    
+    const popup = document.getElementById('mapa-mental-overlay');
+    const image = document.getElementById('mapa-mental-image');
+    const title = document.querySelector('.mapa-mental-title');
+    
+    // Atualizar título e imagem do mapa mental
+    if (title && capitulo) {
+        title.textContent = `Mapa Mental - ${capitulo.titulo}`;
+    }
+    if (image && capitulo && capitulo.mapaMental) {
+        image.src = capitulo.mapaMental;
+    }
     
     popup.style.display = 'block';
     resetMapaMental();
@@ -1614,7 +1633,7 @@ function abrirMapaMental() {
 
 // Função para fechar o mapa mental
 function fecharMapaMental() {
-    const popup = document.getElementById('mapaMental');
+    const popup = document.getElementById('mapa-mental-overlay');
     const image = document.getElementById('mapaImage');
     
     popup.style.display = 'none';
@@ -1708,8 +1727,21 @@ function dragTouch(e) {
 
 // Função para abrir o player de vídeo
 function abrirVideoPlayer() {
-    const popup = document.getElementById('videoPlayer');
-    const video = document.getElementById('videoElement');
+    const arena = estruturaCapitulos[arenaAtual];
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
+    
+    const popup = document.getElementById('video-player-overlay');
+    const video = document.getElementById('video-element');
+    const title = document.querySelector('.video-player-title');
+    
+    // Atualizar título e fonte do vídeo
+    if (title && capitulo) {
+        const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
+        title.textContent = `${arena.nome} - ${prefixo} ${capitulo.numero} - ${capitulo.titulo}`;
+    }
+    if (video && capitulo && capitulo.video) {
+        video.src = capitulo.video;
+    }
     
     popup.style.display = 'block';
     
@@ -1726,8 +1758,8 @@ function abrirVideoPlayer() {
 
 // Função para fechar o player de vídeo
 function fecharVideoPlayer() {
-    const popup = document.getElementById('videoPlayer');
-    const video = document.getElementById('videoElement');
+    const popup = document.getElementById('video-player-overlay');
+    const video = document.getElementById('video-element');
     
     popup.style.display = 'none';
     
