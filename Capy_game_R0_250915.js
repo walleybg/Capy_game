@@ -258,9 +258,11 @@ const estruturaCapitulos = {
                 id: 'cap07_geografia',
                 numero: 7,
                 titulo: 'De gota em gota, de grão em grão',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_07_Geografia.mp3',
+                questoes: 'dadosDoQuizGeografiaCap7',
+                video: 'Cap_07_Geografia_Video.mp4',
+                mapaMental: 'Cap_07_Geografia_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap08_geografia',
@@ -403,8 +405,8 @@ function gerarListaCapitulos(capitulos) {
         const capituloCard = document.createElement('div');
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
-        // Interface especial para Capítulo 12 de Ciências, Unit 6 de Inglês e Capítulo 7 de História
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia') {
+        // Interface especial para Capítulo 12 de Ciências, Unit 6 de Inglês, Capítulo 7 de História e Capítulo 7 de Geografia
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -591,6 +593,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizHistoriaCap7;
+            break;
+        case 'cap07_geografia':
+            if (typeof dadosDoQuizGeografiaCap7 === 'undefined') {
+                alert('Erro: Questões de Geografia Capítulo 7 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizGeografiaCap7;
             break;
 
         default:
