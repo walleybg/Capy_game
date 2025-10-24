@@ -3,7 +3,7 @@ const dadosDoQuizInglesUnit6 = [
     // PARTE 1: QUESTÕES DE MÚLTIPLA ESCOLHA (1-10)
     {
         id: 1,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Past Tense - Regular Verbs",
         contexto: "Helena and Sarah were working on a school project. Helena told Sarah, 'Let's download the video and put it on the computer to watch!'",
         pergunta: "The verb 'download' in the past tense is:",
@@ -18,7 +18,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 2,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Verb 'to be' and Irregular Verbs in Past Tense",
         contexto: "Grandma Lília visited Helena and Gigi. They played together. Grandma Lília __________ happy when she __________ them.",
         pergunta: "Complete the sentence with the correct form of the verb 'to be' (Past Tense) and the verb 'to see' (Past Tense):",
@@ -33,7 +33,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 3,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Adjectives - Vocabulary",
         contexto: "Lara (Helena's mom) looked at the videos and said, 'Jill, your video is so __________!'",
         pergunta: "Choose the adjective that means 'extremely impressive or inspiring awe':",
@@ -48,7 +48,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 4,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Past Tense - Regular Verbs",
         contexto: "Walley (Helena's dad) was talking about how he records memories. He said he __________ pictures to an album last summer.",
         pergunta: "Choose the correct Past Tense form of the verb 'to add' to complete the sentence:",
@@ -63,7 +63,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 5,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Adverbs of Time",
         contexto: "Gigi (Helena's sister) wants to tell Babá Magna that she wants to see a movie __________.",
         pergunta: "Which adverb of Time can complete the sentence?",
@@ -78,7 +78,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 6,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Adverbs of Manner",
         contexto: "Helena and her friends (Karol, Alice, Rafa, Giulia) are discussing online safety. They know they should share photos __________ and not tell secrets to strangers.",
         pergunta: "Which adverb of Manner (Mode) fits best?",
@@ -93,7 +93,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 7,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Verb 'to be' in Past Tense - Plural",
         contexto: "Grandpa Bolivar was talking about old computers. He said they __________ much slower than modern computers.",
         pergunta: "Based on the context, what is the correct Past Tense of the verb 'to be' for 'they'?",
@@ -108,7 +108,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 8,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Adverbs of Degree",
         contexto: "Pacotinho (the dog) is __________ hungry. He always asks for food!",
         pergunta: "Which adverb of Degree (Grau) can complete the sentence?",
@@ -123,7 +123,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 9,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Irregular Verbs - Past Tense",
         contexto: "Helena and Manuela were looking for the lost remote control. They finally __________ it in the living room.",
         pergunta: "The verb 'to find' (irregular) in the past tense is:",
@@ -138,7 +138,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 10,
-        tipo: "multiplaEscolha",
+        tipo: "multipla_escolha",
         titulo: "Past Tense - General Concepts",
         contexto: "",
         pergunta: "All the following sentences are correct about Past Tense Verbs, EXCEPT:",
@@ -155,7 +155,7 @@ const dadosDoQuizInglesUnit6 = [
     // PARTE 2: QUESTÕES VERDADEIRO OU FALSO (11-20)
     {
         id: 11,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Irregular Verbs - Past Tense Forms",
         contexto: "Helena is studying the verbs 'to give', 'to hold', and 'to run'.",
         pergunta: "Analyze the statements about these irregular verbs:",
@@ -176,7 +176,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 12,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Adverbs of Frequency",
         contexto: "The girls are practicing Adverbs of Frequency (How Often?).",
         pergunta: "Analyze the statements about Adverbs of Frequency:",
@@ -197,7 +197,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 13,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Regular vs Irregular Verbs",
         contexto: "Helene Cerigato is reviewing the difference between the verbs 'to call' and 'to see' in the past tense.",
         pergunta: "Analyze the statements about these verbs:",
@@ -218,7 +218,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 14,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Verb 'to be' in Past Tense",
         contexto: "Grandma Denise is telling a story about when she was young. She used the verb 'to be' a lot.",
         pergunta: "Analyze the statements about the verb 'to be' in Past Tense:",
@@ -239,7 +239,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 15,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Adverbs of Place",
         contexto: "Sarah is asking about Adverbs of Place (Where?).",
         pergunta: "Analyze the statements about Adverbs of Place:",
@@ -260,7 +260,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 16,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Vocabulary - Technology Terms",
         contexto: "The class is studying the meaning of some words from the unit.",
         pergunta: "Analyze the statements about vocabulary:",
@@ -281,7 +281,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 17,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Adverbs of Manner",
         contexto: "Maria Clara is using Adverbs of Manner (How?).",
         pergunta: "Analyze the statements about Adverbs of Manner:",
@@ -302,7 +302,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 18,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Regular Verbs - Past Tense",
         contexto: "Manuela and Giulia are comparing the present and past tense of the verbs 'to ask' and 'to look'.",
         pergunta: "Analyze the statements about these verbs:",
@@ -323,7 +323,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 19,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Technology Concepts",
         contexto: "Helena is thinking about what technology is.",
         pergunta: "Analyze the statements about technology:",
@@ -344,7 +344,7 @@ const dadosDoQuizInglesUnit6 = [
     },
     {
         id: 20,
-        tipo: "verdadeiroFalso",
+        tipo: "verdadeiro_falso",
         titulo: "Adverbs of Degree",
         contexto: "Rafa is reading about Adverbs of Degree (To What Extent?).",
         pergunta: "Analyze the statements about Adverbs of Degree:",
