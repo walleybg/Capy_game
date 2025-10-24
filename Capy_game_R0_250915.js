@@ -396,10 +396,10 @@ function gerarListaCapitulos(capitulos) {
                 <div class="capitulo-acoes">
                     ${capitulo.disponivel ? `
                         <div class="modulos-container">
-                            <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
-                            <button class="btn-modulo" onclick="abrirMapaMental()">🗺️ Mapa Mental</button>
-                            <button class="btn-modulo" onclick="abrirVideoPlayer()">🎬 Vídeo</button>
-                            <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
+                            <button class="btn-modulo" onclick="abrirVideoPlayer()">🎬 1. Video</button>
+                            <button class="btn-modulo" onclick="abrirMapaMental()">🗺️ 2. Mind Map</button>
+                            <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
+                            <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                         </div>
                     ` : `
                         <span class="status-indisponivel">🔒 Em breve</span>
