@@ -410,8 +410,8 @@ function gerarListaCapitulos(capitulos) {
                 <div class="capitulo-acoes">
                     ${capitulo.disponivel ? `
                         <div class="modulos-container">
-                            <button class="btn-modulo" onclick="abrirVideoPlayer()">🎬 1. Video</button>
-                            <button class="btn-modulo" onclick="abrirMapaMental()">🗺️ 2. Mind Map</button>
+                            <button class="btn-modulo" onclick="abrirVideoPlayer('${capitulo.id}')">🎬 1. Video</button>
+                            <button class="btn-modulo" onclick="abrirMapaMental('${capitulo.id}')">🗺️ 2. Mind Map</button>
                             <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                         </div>
@@ -1615,7 +1615,12 @@ let isDragging = false;
 let startX, startY;
 
 // Função para abrir o mapa mental
-function abrirMapaMental() {
+function abrirMapaMental(capituloId) {
+    // Se capituloId foi passado, definir como capituloAtual
+    if (capituloId) {
+        capituloAtual = capituloId;
+    }
+    
     const arena = estruturaCapitulos[arenaAtual];
     const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
     
@@ -1758,7 +1763,12 @@ function dragTouch(e) {
 }
 
 // Função para abrir o player de vídeo
-function abrirVideoPlayer() {
+function abrirVideoPlayer(capituloId) {
+    // Se capituloId foi passado, definir como capituloAtual
+    if (capituloId) {
+        capituloAtual = capituloId;
+    }
+    
     const arena = estruturaCapitulos[arenaAtual];
     const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
     
@@ -1773,6 +1783,7 @@ function abrirVideoPlayer() {
     }
     if (video && capitulo && capitulo.video) {
         video.src = capitulo.video;
+        video.load(); // Forçar carregamento do vídeo
     }
     
     popup.style.display = 'block';
@@ -1780,6 +1791,9 @@ function abrirVideoPlayer() {
     // Pausar o vídeo ao abrir para evitar reprodução automática
     video.pause();
     video.currentTime = 0;
+    
+    // Configurar controles do vídeo se ainda não foram configurados
+    configurarControlesVideo();
     
     // Adicionar evento para fechar com ESC
     document.addEventListener('keydown', handleVideoKeydown);
@@ -1807,6 +1821,102 @@ function handleVideoKeydown(e) {
     if (e.key === 'Escape') {
         fecharVideoPlayer();
     }
+}
+
+// Função para configurar controles do vídeo
+let videoControlesConfigurados = false;
+
+function configurarControlesVideo() {
+    if (videoControlesConfigurados) return;
+    
+    const video = document.getElementById('video-element');
+    const playPauseBtn = document.getElementById('video-play-pause');
+    const progressBar = document.getElementById('video-progress-bar');
+    const progressFill = document.getElementById('video-progress-fill');
+    const timeDisplay = document.getElementById('video-time');
+    const volumeBtn = document.getElementById('video-volume');
+    const volumeSlider = document.getElementById('video-volume-slider');
+    const volumeFill = document.getElementById('video-volume-fill');
+    const speedSelect = document.getElementById('video-speed');
+    const fullscreenBtn = document.getElementById('video-fullscreen');
+    
+    if (!video || !playPauseBtn) return;
+    
+    // Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playPauseBtn.textContent = '⏸️';
+        } else {
+            video.pause();
+            playPauseBtn.textContent = '▶️';
+        }
+    });
+    
+    // Atualizar progresso
+    video.addEventListener('timeupdate', () => {
+        const progress = (video.currentTime / video.duration) * 100;
+        if (progressFill) progressFill.style.width = progress + '%';
+        
+        if (timeDisplay) {
+            const current = formatTime(video.currentTime);
+            const duration = formatTime(video.duration);
+            timeDisplay.textContent = `${current} / ${duration}`;
+        }
+    });
+    
+    // Clicar na barra de progresso
+    if (progressBar) {
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            video.currentTime = percent * video.duration;
+        });
+    }
+    
+    // Volume
+    if (volumeBtn) {
+        volumeBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            volumeBtn.textContent = video.muted ? '🔇' : '🔊';
+        });
+    }
+    
+    if (volumeSlider) {
+        volumeSlider.addEventListener('click', (e) => {
+            const rect = volumeSlider.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            video.volume = percent;
+            if (volumeFill) volumeFill.style.width = (percent * 100) + '%';
+        });
+    }
+    
+    // Velocidade
+    if (speedSelect) {
+        speedSelect.addEventListener('change', () => {
+            video.playbackRate = parseFloat(speedSelect.value);
+        });
+    }
+    
+    // Fullscreen
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+        });
+    }
+    
+    videoControlesConfigurados = true;
+}
+
+function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
 // Fechar popup ao clicar fora do vídeo
