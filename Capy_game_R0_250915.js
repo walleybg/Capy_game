@@ -295,6 +295,16 @@ const estruturaCapitulos = {
                     }
                 ],
                 disponivel: true
+            },
+            {
+                id: 'unit06_ingles',
+                numero: 6,
+                titulo: 'Adverbs, Past Tense, Irregular Verbs',
+                audio: 'Unit_06_Ingles.mp3',
+                video: 'Unit_06_Video.mp4',
+                mapaMental: 'Unit_06_Mindmap.png',
+                questoes: 'dadosDoQuizInglesUnit6',
+                disponivel: true
             }
         ]
     },
@@ -374,6 +384,29 @@ function gerarListaCapitulos(capitulos) {
         const capituloCard = document.createElement('div');
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
+        // Interface especial para Capítulo 12 de Ciências e Unit 6 de Inglês
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles') {
+            const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
+            capituloCard.innerHTML = `
+                <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
+                <div class="capitulo-info">
+                    <h3>${capitulo.titulo}</h3>
+                    <p>${capitulo.disponivel ? 'Escolha uma opção para explorar!' : 'Em breve...'}</p>
+                </div>
+                <div class="capitulo-acoes">
+                    ${capitulo.disponivel ? `
+                        <div class="modulos-container">
+                            <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 Ouvir</button>
+                            <button class="btn-modulo" onclick="abrirMapaMental()">🗺️ Mapa Mental</button>
+                            <button class="btn-modulo" onclick="abrirVideoPlayer()">🎬 Vídeo</button>
+                            <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 Jogar!</button>
+                        </div>
+                    ` : `
+                        <span class="status-indisponivel">🔒 Em breve</span>
+                    `}
+                </div>
+            `;
+        }
         // Verificar se o capítulo tem jogos (estrutura especial para inglês)
         if (capitulo.jogos && capitulo.jogos.length > 0) {
             capituloCard.innerHTML = `
@@ -1552,3 +1585,184 @@ window.onload = () => {
 
 // Chamar gerarArenas() no início para garantir que as arenas sejam criadas
 document.addEventListener('DOMContentLoaded', gerarArenas);
+
+// Variáveis globais para o mapa mental
+let mapaScale = 1;
+let mapaPosX = 0;
+let mapaPosY = 0;
+let isDragging = false;
+let startX, startY;
+
+// Função para abrir o mapa mental
+function abrirMapaMental() {
+    const popup = document.getElementById('mapaMental');
+    const image = document.getElementById('mapaImage');
+    
+    popup.style.display = 'block';
+    resetMapaMental();
+    
+    // Adicionar eventos de arrastar
+    image.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+    
+    // Eventos para dispositivos móveis
+    image.addEventListener('touchstart', startDragTouch);
+    document.addEventListener('touchmove', dragTouch);
+    document.addEventListener('touchend', stopDrag);
+}
+
+// Função para fechar o mapa mental
+function fecharMapaMental() {
+    const popup = document.getElementById('mapaMental');
+    const image = document.getElementById('mapaImage');
+    
+    popup.style.display = 'none';
+    
+    // Remover eventos
+    image.removeEventListener('mousedown', startDrag);
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', stopDrag);
+    image.removeEventListener('touchstart', startDragTouch);
+    document.removeEventListener('touchmove', dragTouch);
+    document.removeEventListener('touchend', stopDrag);
+}
+
+// Função para zoom no mapa mental
+function zoomMapaMental(factor) {
+    const image = document.getElementById('mapaImage');
+    mapaScale *= factor;
+    
+    // Limitar o zoom
+    if (mapaScale < 0.5) mapaScale = 0.5;
+    if (mapaScale > 5) mapaScale = 5;
+    
+    updateMapaTransform();
+}
+
+// Função para resetar o mapa mental
+function resetMapaMental() {
+    const image = document.getElementById('mapaImage');
+    const container = document.querySelector('.mapa-mental-container');
+    
+    mapaScale = 1;
+    mapaPosX = 0;
+    mapaPosY = 0;
+    
+    // Centralizar a imagem
+    const containerRect = container.getBoundingClientRect();
+    const imageRect = image.getBoundingClientRect();
+    
+    mapaPosX = (containerRect.width - image.naturalWidth) / 2;
+    mapaPosY = (containerRect.height - image.naturalHeight) / 2;
+    
+    updateMapaTransform();
+}
+
+// Função para atualizar a transformação do mapa
+function updateMapaTransform() {
+    const image = document.getElementById('mapaImage');
+    image.style.transform = `translate(${mapaPosX}px, ${mapaPosY}px) scale(${mapaScale})`;
+}
+
+// Funções de arrastar - Mouse
+function startDrag(e) {
+    isDragging = true;
+    startX = e.clientX - mapaPosX;
+    startY = e.clientY - mapaPosY;
+    e.preventDefault();
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    
+    mapaPosX = e.clientX - startX;
+    mapaPosY = e.clientY - startY;
+    
+    updateMapaTransform();
+}
+
+function stopDrag() {
+    isDragging = false;
+}
+
+// Funções de arrastar - Touch
+function startDragTouch(e) {
+    isDragging = true;
+    const touch = e.touches[0];
+    startX = touch.clientX - mapaPosX;
+    startY = touch.clientY - mapaPosY;
+    e.preventDefault();
+}
+
+function dragTouch(e) {
+    if (!isDragging) return;
+    
+    const touch = e.touches[0];
+    mapaPosX = touch.clientX - startX;
+    mapaPosY = touch.clientY - startY;
+    
+    updateMapaTransform();
+    e.preventDefault();
+}
+
+// Função para abrir o player de vídeo
+function abrirVideoPlayer() {
+    const popup = document.getElementById('videoPlayer');
+    const video = document.getElementById('videoElement');
+    
+    popup.style.display = 'block';
+    
+    // Pausar o vídeo ao abrir para evitar reprodução automática
+    video.pause();
+    video.currentTime = 0;
+    
+    // Adicionar evento para fechar com ESC
+    document.addEventListener('keydown', handleVideoKeydown);
+    
+    // Focar no vídeo para permitir controles por teclado
+    video.focus();
+}
+
+// Função para fechar o player de vídeo
+function fecharVideoPlayer() {
+    const popup = document.getElementById('videoPlayer');
+    const video = document.getElementById('videoElement');
+    
+    popup.style.display = 'none';
+    
+    // Pausar o vídeo ao fechar
+    video.pause();
+    
+    // Remover evento de teclado
+    document.removeEventListener('keydown', handleVideoKeydown);
+}
+
+// Função para lidar com teclas no player de vídeo
+function handleVideoKeydown(e) {
+    if (e.key === 'Escape') {
+        fecharVideoPlayer();
+    }
+}
+
+// Fechar popup ao clicar fora do vídeo
+document.addEventListener('DOMContentLoaded', function() {
+    const videoPopup = document.getElementById('videoPlayer');
+    const mapaPopup = document.getElementById('mapaMental');
+    
+    if (videoPopup) {
+        videoPopup.addEventListener('click', function(e) {
+            if (e.target === videoPopup) {
+                fecharVideoPlayer();
+            }
+        });
+    }
+    
+    if (mapaPopup) {
+        mapaPopup.addEventListener('click', function(e) {
+            if (e.target === mapaPopup) {
+                fecharMapaMental();
+            }
+        });
+    }
+});
