@@ -374,7 +374,10 @@ function inicializar() {
         zoomResetBtn.addEventListener('click', resetMapaMental);
     }
     
-    gerarArenas();VEGAÇÃO ENTRE TELAS ---
+    gerarArenas();
+}
+
+// --- NAVEGAÇÃO ENTRE TELAS ---
 function selecionarArena(tipoArena) {
     arenaAtual = tipoArena;
     const arena = estruturaCapitulos[tipoArena];
