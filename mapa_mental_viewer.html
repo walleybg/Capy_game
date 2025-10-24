@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Mental - O Dia e a Noite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin: 5px 0 0 0;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            min-width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-reset {
+            background: #e74c3c;
+        }
+
+        .btn-reset:hover {
+            background: #c0392b;
+        }
+
+        .btn-close {
+            background: #95a5a6;
+            font-size: 24px;
+        }
+
+        .btn-close:hover {
+            background: #7f8c8d;
+        }
+
+        .zoom-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .viewer-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: #f8f9fa;
+            cursor: grab;
+        }
+
+        .viewer-container.dragging {
+            cursor: grabbing;
+        }
+
+        .mapa-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+            max-width: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .instruction-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .instruction-icon {
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 16px;
+                min-width: 40px;
+                height: 40px;
+            }
+
+            .instructions {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>🗺️ Mapa Mental - O Dia e a Noite</h1>
+            <p>Use os controles para navegar e dar zoom no mapa</p>
+        </div>
+        <div class="controls">
+            <button class="btn" onclick="zoomIn()" title="Aumentar zoom">+</button>
+            <div class="zoom-info" id="zoomInfo">100%</div>
+            <button class="btn" onclick="zoomOut()" title="Diminuir zoom">−</button>
+            <button class="btn btn-reset" onclick="resetView()" title="Resetar visualização">⌂</button>
+            <button class="btn btn-close" onclick="window.close()" title="Fechar janela">✕</button>
+        </div>
+    </div>
+
+    <div class="viewer-container" id="viewerContainer">
+        <img src="Cap12_Mindmap-1.png" alt="Mapa Mental - O Dia e a Noite" class="mapa-image" id="mapaImage">
+    </div>
+
+    <div class="instructions">
+        <div class="instruction-item">
+            <span class="instruction-icon">🖱️</span>
+            <span>Arraste para navegar</span>
+        </div>
+        <div class="instruction-item">
+            <span class="instruction-icon">🔍</span>
+            <span>Use +/− para zoom</span>
+        </div>
+        <div class="instruction-item">
+            <span class="instruction-icon">⌂</span>
+            <span>Resetar para visualização inicial</span>
+        </div>
+    </div>
+
+    <script>
+        // Variáveis globais
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        const image = document.getElementById('mapaImage');
+        const container = document.getElementById('viewerContainer');
+        const zoomInfo = document.getElementById('zoomInfo');
+
+        // Configurações
+        const ZOOM_STEP = 0.2;
+        const MIN_SCALE = 0.1;
+        const MAX_SCALE = 5;
+
+        // Inicializar visualização
+        window.addEventListener('load', () => {
+            resetView();
+        });
+
+        // Função de zoom in
+        function zoomIn() {
+            scale = Math.min(scale + ZOOM_STEP, MAX_SCALE);
+            updateTransform();
+            updateZoomInfo();
+        }
+
+        // Função de zoom out
+        function zoomOut() {
+            scale = Math.max(scale - ZOOM_STEP, MIN_SCALE);
+            updateTransform();
+            updateZoomInfo();
+        }
+
+        // Função de reset
+        function resetView() {
+            // Calcular escala para caber na tela
+            const containerRect = container.getBoundingClientRect();
+            const imageNaturalWidth = image.naturalWidth || image.width;
+            const imageNaturalHeight = image.naturalHeight || image.height;
+
+            const scaleX = (containerRect.width - 40) / imageNaturalWidth;
+            const scaleY = (containerRect.height - 40) / imageNaturalHeight;
+
+            // Usar a menor escala para garantir que cabe inteira
+            scale = Math.min(scaleX, scaleY, 1);
+            translateX = 0;
+            translateY = 0;
+
+            updateTransform();
+            updateZoomInfo();
+        }
+
+        // Atualizar transformação da imagem
+        function updateTransform() {
+            image.style.transform = `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+
+        // Atualizar informação de zoom
+        function updateZoomInfo() {
+            zoomInfo.textContent = Math.round(scale * 100) + '%';
+        }
+
+        // Eventos de arrastar - Mouse
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            container.classList.add('dragging');
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+            e.preventDefault();
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            currentX = e.clientX - startX;
+            currentY = e.clientY - startY;
+            translateX = currentX;
+            translateY = currentY;
+
+            updateTransform();
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.classList.remove('dragging');
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+            container.classList.remove('dragging');
+        });
+
+        // Eventos de arrastar - Touch (dispositivos móveis)
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            const touch = e.touches[0];
+            startX = touch.clientX - currentX;
+            startY = touch.clientY - currentY;
+            e.preventDefault();
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+
+            const touch = e.touches[0];
+            currentX = touch.clientX - startX;
+            currentY = touch.clientY - startY;
+            translateX = currentX;
+            translateY = currentY;
+
+            updateTransform();
+            e.preventDefault();
+        });
+
+        container.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Zoom com scroll do mouse
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            
+            if (e.deltaY < 0) {
+                // Scroll up - zoom in
+                zoomIn();
+            } else {
+                // Scroll down - zoom out
+                zoomOut();
+            }
+        }, { passive: false });
+
+        // Atalhos de teclado
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case '+':
+                case '=':
+                    zoomIn();
+                    break;
+                case '-':
+                case '_':
+                    zoomOut();
+                    break;
+                case '0':
+                case 'Home':
+                    resetView();
+                    break;
+                case 'Escape':
+                    window.close();
+                    break;
+            }
+        });
+
+        // Prevenir comportamentos padrão
+        image.addEventListener('dragstart', (e) => e.preventDefault());
+        image.addEventListener('contextmenu', (e) => e.preventDefault());
+    </script>
+</body>
+</html>
+
