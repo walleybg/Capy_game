@@ -1636,30 +1636,233 @@ function abrirMapaMental(capituloId) {
     const arena = estruturaCapitulos[arenaAtual];
     const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
     
-    const popup = document.getElementById('mapa-mental-overlay');
-    const image = document.getElementById('mapa-mental-image');
-    const title = document.querySelector('.mapa-mental-title');
-    
-    // Atualizar título e imagem do mapa mental
-    if (title && capitulo) {
-        title.textContent = `Mapa Mental - ${capitulo.titulo}`;
-    }
-    if (image && capitulo && capitulo.mapaMental) {
-        image.src = capitulo.mapaMental;
+    if (!capitulo || !capitulo.mapaMental) {
+        alert('Mapa mental não disponível para este capítulo.');
+        return;
     }
     
-    popup.style.display = 'block';
-    resetMapaMental();
+    // Abrir em nova janela popup
+    const largura = Math.min(1200, window.screen.width * 0.9);
+    const altura = Math.min(800, window.screen.height * 0.9);
+    const esquerda = (window.screen.width - largura) / 2;
+    const topo = (window.screen.height - altura) / 2;
     
-    // Adicionar eventos de arrastar
-    image.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', stopDrag);
+    const opcoes = `width=${largura},height=${altura},left=${esquerda},top=${topo},resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`;
     
-    // Eventos para dispositivos móveis
-    image.addEventListener('touchstart', startDragTouch);
-    document.addEventListener('touchmove', dragTouch);
-    document.addEventListener('touchend', stopDrag);
+    // Criar conteúdo HTML para a nova janela
+    const novaJanela = window.open('', 'MapaMental', opcoes);
+    
+    if (!novaJanela) {
+        alert('Por favor, permita pop-ups para visualizar o mapa mental.');
+        return;
+    }
+    
+    novaJanela.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Mapa Mental - ${capitulo.titulo}</title>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    background: #f0f0f0;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100vh;
+                }
+                .header {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 15px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+                .header h2 {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                .controls {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+                .btn {
+                    background: rgba(255,255,255,0.2);
+                    border: 1px solid rgba(255,255,255,0.3);
+                    color: white;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    transition: all 0.3s;
+                }
+                .btn:hover {
+                    background: rgba(255,255,255,0.3);
+                    transform: translateY(-1px);
+                }
+                .zoom-info {
+                    background: rgba(255,255,255,0.2);
+                    padding: 5px 12px;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    min-width: 60px;
+                    text-align: center;
+                }
+                .container {
+                    flex: 1;
+                    overflow: hidden;
+                    position: relative;
+                    background: #e0e0e0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .image-wrapper {
+                    cursor: grab;
+                    position: relative;
+                    transition: transform 0.1s ease-out;
+                }
+                .image-wrapper:active {
+                    cursor: grabbing;
+                }
+                #mapa-image {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    user-select: none;
+                    -webkit-user-drag: none;
+                }
+                .instructions {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(0,0,0,0.7);
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    font-size: 13px;
+                    pointer-events: none;
+                    opacity: 0;
+                    animation: fadeInOut 4s ease-in-out;
+                }
+                @keyframes fadeInOut {
+                    0%, 100% { opacity: 0; }
+                    10%, 90% { opacity: 1; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h2>Mapa Mental - ${capitulo.titulo}</h2>
+                <div class="controls">
+                    <button class="btn" onclick="zoomOut()">− Zoom Out</button>
+                    <span class="zoom-info" id="zoom-display">100%</span>
+                    <button class="btn" onclick="zoomIn()">+ Zoom In</button>
+                    <button class="btn" onclick="resetZoom()">↻ Reset</button>
+                    <button class="btn" onclick="window.close()">× Fechar</button>
+                </div>
+            </div>
+            <div class="container" id="container">
+                <div class="image-wrapper" id="wrapper">
+                    <img id="mapa-image" src="${capitulo.mapaMental}" alt="Mapa Mental">
+                </div>
+                <div class="instructions">
+                    🔍 Use o scroll do mouse para zoom | 👆 Arraste para navegar
+                </div>
+            </div>
+            <script>
+                let scale = 1;
+                let isDragging = false;
+                let startX, startY, translateX = 0, translateY = 0;
+                const wrapper = document.getElementById('wrapper');
+                const container = document.getElementById('container');
+                const zoomDisplay = document.getElementById('zoom-display');
+                
+                // Zoom com scroll do mouse
+                container.addEventListener('wheel', function(e) {
+                    e.preventDefault();
+                    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                    scale = Math.max(0.5, Math.min(5, scale + delta));
+                    updateTransform();
+                });
+                
+                // Zoom com botões
+                function zoomIn() {
+                    scale = Math.min(5, scale + 0.2);
+                    updateTransform();
+                }
+                
+                function zoomOut() {
+                    scale = Math.max(0.5, scale - 0.2);
+                    updateTransform();
+                }
+                
+                function resetZoom() {
+                    scale = 1;
+                    translateX = 0;
+                    translateY = 0;
+                    updateTransform();
+                }
+                
+                function updateTransform() {
+                    wrapper.style.transform = \`translate(\${translateX}px, \${translateY}px) scale(\${scale})\`;
+                    zoomDisplay.textContent = Math.round(scale * 100) + '%';
+                }
+                
+                // Arrastar para navegar
+                wrapper.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                });
+                
+                document.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                });
+                
+                document.addEventListener('mouseup', function() {
+                    isDragging = false;
+                });
+                
+                // Touch events para dispositivos móveis
+                wrapper.addEventListener('touchstart', function(e) {
+                    if (e.touches.length === 1) {
+                        isDragging = true;
+                        startX = e.touches[0].clientX - translateX;
+                        startY = e.touches[0].clientY - translateY;
+                    }
+                });
+                
+                document.addEventListener('touchmove', function(e) {
+                    if (!isDragging || e.touches.length !== 1) return;
+                    e.preventDefault();
+                    translateX = e.touches[0].clientX - startX;
+                    translateY = e.touches[0].clientY - startY;
+                    updateTransform();
+                });
+                
+                document.addEventListener('touchend', function() {
+                    isDragging = false;
+                });
+            </script>
+        </body>
+        </html>
+    `);
+    
+    novaJanela.document.close();
 }
 
 // Função para fechar o mapa mental
