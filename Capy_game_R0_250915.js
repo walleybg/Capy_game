@@ -170,8 +170,10 @@ const estruturaCapitulos = {
                 id: 'cap12_ciencias',
                 numero: 12,
                 titulo: 'O dia e a noite',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
+                audio: 'Cap_12_Ciencias_podcast.mp3',
+                questoes: 'dadosDoQuizCiencias12',
+                video: 'Cap_12_Ciencias_video.mp4',
+                mapaMental: 'Cap12_Mindmap-1.png',
                 disponivel: true
             },
             {
