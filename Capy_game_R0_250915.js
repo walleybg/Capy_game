@@ -52,9 +52,10 @@ const estruturaCapitulos = {
                 id: 'cap13_portugues',
                 numero: 13,
                 titulo: 'Jogando os dados',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_13_Portugues.mp3',
+                questoes: 'dadosDoQuizPortugues13',
+                video: 'Cap_13_Portugues_Video.mp4',
+                disponivel: true
             },
             {
                 id: 'cap14_portugues',
@@ -115,9 +116,11 @@ const estruturaCapitulos = {
                 id: 'cap13_matematica',
                 numero: 13,
                 titulo: 'Qual é a sua massa',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_13_Matematica.mp3',
+                questoes: 'dadosDoQuizMatematica13',
+                video: 'Cap_13_Matematica_Video.mp4',
+                mapaMental: 'Cap_13_Matematica_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap14_matematica',
@@ -407,8 +410,8 @@ function gerarListaCapitulos(capitulos) {
         const capituloCard = document.createElement('div');
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
-        // Interface especial para Capítulo 12 de Ciências, Unit 6 de Inglês, Capítulo 7 de História e Capítulo 7 de Geografia
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia') {
+        // Interface especial para capítulos com 4 módulos ou 3 módulos
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -533,6 +536,13 @@ function iniciarCapitulo(capituloId) {
             }
             bancoDeQuestoesAtual = dadosDoQuizPortugues12;
             break;
+        case 'cap13_portugues':
+            if (typeof dadosDoQuizPortugues13 === 'undefined') {
+                alert('Erro: Questões de Português 13 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues13;
+            break;
         case 'cap06_historia':
             if (typeof questoesHistoria === 'undefined') {
                 alert('Erro: Questões de História não carregadas!');
@@ -574,6 +584,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizMatematica12;
+            break;
+        case 'cap13_matematica':
+            if (typeof dadosDoQuizMatematica13 === 'undefined') {
+                alert('Erro: Questões de Matemática 13 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica13;
             break;
         case 'cap06_geografia':
             if (typeof dadosDoQuizGeografia === 'undefined') {
