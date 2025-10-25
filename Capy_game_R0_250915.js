@@ -61,9 +61,11 @@ const estruturaCapitulos = {
                 id: 'cap14_portugues',
                 numero: 14,
                 titulo: 'De cabeça para baixo',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_14_Portugues.mp3',
+                questoes: 'dadosDoQuizPortugues14',
+                video: 'Cap_14_Portugues_Video.mp4',
+                mapaMental: 'Cap_14_Portugues_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap15_portugues',
@@ -411,7 +413,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -542,6 +544,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizPortugues13;
+            break;
+        case 'cap14_portugues':
+            if (typeof dadosDoQuizPortugues14 === 'undefined') {
+                alert('Erro: Questões de Português 14 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues14;
             break;
         case 'cap06_historia':
             if (typeof questoesHistoria === 'undefined') {
