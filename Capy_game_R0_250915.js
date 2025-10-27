@@ -194,10 +194,12 @@ const estruturaCapitulos = {
             {
                 id: 'cap13_ciencias',
                 numero: 13,
-                titulo: 'Lua, estrela e planetas',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                titulo: 'Lua, estrelas e planetas',
+                audio: 'Cap_13_Ciencias.mp3',
+                questoes: 'dadosDoQuizCiencias13',
+                video: 'Cap_13_Ciencias_Video.mp4',
+                mapaMental: 'Cap_13_Ciencias_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap14_ciencias',
@@ -591,6 +593,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias12;
+            break;
+        case 'cap13_ciencias':
+            if (typeof dadosDoQuizCiencias13 === 'undefined') {
+                alert('Erro: Questões de Ciências 13 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias13;
             break;
         case 'cap11_matematica':
             if (typeof dadosDoQuizMatematica11 === 'undefined') {
