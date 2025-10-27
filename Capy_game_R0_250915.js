@@ -315,6 +315,7 @@ const estruturaCapitulos = {
                 video: 'Unit_06_Video.mp4',
                 mapaMental: 'Unit_06_Mindmap.png',
                 questoes: 'dadosDoQuizInglesUnit6',
+                questoes2: 'dadosDoQuizIngles06Jogo2',
                 disponivel: true
             }
         ]
@@ -428,6 +429,7 @@ function gerarListaCapitulos(capitulos) {
                             <button class="btn-modulo" onclick="abrirMapaMental('${capitulo.id}')">🗺️ 2. Mind Map</button>
                             <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
+                            ${capitulo.questoes2 ? `<button class="btn-principal" onclick="iniciarCapituloJogo2('${capitulo.id}')">🎮 5. Game 2</button>` : ''}
                         </div>
                     ` : `
                         <span class="status-indisponivel">🔒 Em breve</span>
@@ -636,6 +638,62 @@ function iniciarCapitulo(capituloId) {
     }
     
     console.log('Banco de questões carregado:', bancoDeQuestoesAtual.length, 'questões');
+    
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
+    
+    // Inicializar o jogo
+    iniciarJogoInterface();
+}
+
+// Função para iniciar o Game 2 (40 questões)
+function iniciarCapituloJogo2(capituloId) {
+    console.log('iniciarCapituloJogo2 chamado com:', capituloId);
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    if (!capitulo.disponivel) {
+        alert('Este capítulo ainda não está disponível!');
+        return;
+    }
+    
+    if (!capitulo.questoes2) {
+        alert('Game 2 ainda não está disponível para este capítulo!');
+        return;
+    }
+    
+    capituloAtual = capituloId;
+    nomeCapituloAtual = capitulo.titulo + ' - Game 2';
+    
+    // Definir banco de questões do Game 2 baseado no capítulo
+    switch(capituloId) {
+        case 'unit06_ingles':
+            if (typeof dadosDoQuizIngles06Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles06Jogo2;
+            break;
+
+        default:
+            alert('Game 2 ainda não disponível para este capítulo!');
+            return;
+    }
+    
+    console.log('Banco de questões do Game 2 carregado:', bancoDeQuestoesAtual.length, 'questões');
     
     // Inicializar arrays de controle
     respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
