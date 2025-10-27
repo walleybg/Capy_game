@@ -128,6 +128,16 @@ const estruturaCapitulos = {
                 id: 'cap14_matematica',
                 numero: 14,
                 titulo: 'Dividir para valer',
+                audio: 'Cap_14_Matematica.mp3',
+                questoes: 'dadosDoQuizMatematica14',
+                video: 'Cap_14_Matematica_Video.mp4',
+                mapaMental: 'Cap_14_Matematica_Mindmap.png',
+                disponivel: true
+            },
+            {
+                id: 'cap15_matematica',
+                numero: 14,
+                titulo: 'Dividir para valer',
                 audio: "Cap_12_Ciencias_podcast.mp3",
                 questoes: "dadosDoQuizCiencias12",
                 disponivel: false
@@ -414,7 +424,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -602,6 +612,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizMatematica13;
+            break;
+        case 'cap14_matematica':
+            if (typeof dadosDoQuizMatematica14 === 'undefined') {
+                alert('Erro: Questões de Matemática 14 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica14;
             break;
         case 'cap06_geografia':
             if (typeof dadosDoQuizGeografia === 'undefined') {
