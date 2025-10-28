@@ -187,6 +187,7 @@ const estruturaCapitulos = {
                 titulo: 'O dia e a noite',
                 audio: 'Cap_12_Ciencias_podcast.mp3',
                 questoes: 'dadosDoQuizCiencias12',
+                questoes2: 'dadosDoQuizCiencias12Jogo2',
                 video: 'Cap_12_Ciencias_video.mp4',
                 mapaMental: 'Cap12_Mindmap-1.png',
                 disponivel: true
@@ -712,6 +713,14 @@ function iniciarCapituloJogo2(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizIngles06Jogo2;
+            break;
+        
+        case 'cap12_ciencias':
+            if (typeof dadosDoQuizCiencias12Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de Ciências 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias12Jogo2;
             break;
 
         default:
