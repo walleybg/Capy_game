@@ -2,7 +2,6 @@
 const dadosDoQuizCiencias12Jogo2 = [
     {
         titulo: "Questão 1",
-        contexto: "Além das estrelas, os planetas também podem ser vistos no céu noturno, que é muito escuro pela falta da luz do Sol.",
         pergunta: "Todas as afirmativas abaixo estão corretas, exceto:",
         opcoes: [
             "a) Planetas podem ser vistos no céu noturno.",
@@ -16,7 +15,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 2",
-        contexto: "O camaleão é um animal que fica mais tempo acordado durante o dia, tendo hábitos diurnos. O morcego passa a maior parte do dia dormindo e acorda à noite para se alimentar, tendo hábitos noturnos.",
         pergunta: "Qual afirmativa está correta sobre os hábitos dos animais?",
         opcoes: [
             "a) O camaleão tem hábitos noturnos.",
@@ -30,7 +28,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 3",
-        contexto: "O movimento em que a Terra gira em torno de si mesma é chamado de rotação.",
         pergunta: "Como é chamado o movimento da Terra em torno de si mesma?",
         opcoes: [
             "a) Translação.",
@@ -44,7 +41,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 4",
-        contexto: "A ocorrência do dia e da noite é causada pelo movimento de rotação, o giro da Terra em torno de si mesma.",
         pergunta: "O que causa a ocorrência do dia e da noite?",
         opcoes: [
             "a) O movimento de translação da Terra.",
@@ -58,7 +54,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 5",
-        contexto: "No meio-dia, os raios solares chegam ao nosso planeta pouco inclinados ou de forma mais direta.",
         pergunta: "Como os raios solares chegam à Terra no meio-dia?",
         opcoes: [
             "a) Muito inclinados.",
@@ -72,7 +67,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 6",
-        contexto: "O céu noturno é muito escuro porque não tem a luz do Sol.",
         pergunta: "Por que o céu noturno é muito escuro?",
         opcoes: [
             "a) Porque as estrelas não brilham à noite.",
@@ -86,7 +80,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 7",
-        contexto: "O planeta Vênus recebeu seu nome devido à deusa romana Vênus, deusa do amor e da beleza.",
         pergunta: "Por que o planeta Vênus recebeu esse nome?",
         opcoes: [
             "a) Devido ao deus grego Apolo.",
@@ -100,7 +93,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 8",
-        contexto: "Vênus é um planeta e, portanto, não emite luz própria. Ele é brilhante porque reflete a luz do Sol que chega até ele.",
         pergunta: "Por que Vênus é brilhante no céu?",
         opcoes: [
             "a) Porque emite luz própria como uma estrela.",
@@ -114,7 +106,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 9",
-        contexto: "O movimento de rotação da Terra é o que causa o dia e a noite.",
         pergunta: "O que o movimento de rotação da Terra causa?",
         opcoes: [
             "a) As estações do ano.",
@@ -128,7 +119,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 10",
-        contexto: "O céu aparece azul porque a atmosfera espalha a direção dos raios de luz do Sol.",
         pergunta: "Por que o céu aparece azul?",
         opcoes: [
             "a) Porque o Sol é azul.",
@@ -142,7 +132,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 11",
-        contexto: "Durante o dia, adultos trabalham, e os bancos funcionam, abrindo e fechando.",
         pergunta: "Quando os adultos trabalham e os bancos funcionam?",
         opcoes: [
             "a) Durante a noite.",
@@ -156,7 +145,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 12",
-        contexto: "O dia e a noite, juntos, formam um ciclo de aproximadamente 24 horas.",
         pergunta: "Quanto tempo dura o ciclo completo do dia e da noite?",
         opcoes: [
             "a) 12 horas.",
@@ -170,7 +158,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 13",
-        contexto: "As estrelas emitem luz para o espaço. Os planetas não emitem luz, apenas a refletem.",
         pergunta: "Qual é a diferença entre estrelas e planetas em relação à luz?",
         opcoes: [
             "a) Estrelas refletem luz e planetas emitem luz.",
@@ -184,7 +171,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 14",
-        contexto: "A forma das nuvens costuma mudar bastante por causa dos ventos.",
         pergunta: "O que faz com que a forma das nuvens mude?",
         opcoes: [
             "a) A temperatura.",
@@ -198,7 +184,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 15",
-        contexto: "O céu parece azul porque a atmosfera espalha a direção dos raios de luz do Sol.",
         pergunta: "Por que o céu parece azul?",
         opcoes: [
             "a) Porque o ar é azul.",
@@ -212,7 +197,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 16",
-        contexto: "Ao amanhecer, o céu passa de muito escuro a muito claro, e as cores identificadas podem ir do azul vivo ao acinzentado.",
         pergunta: "O que acontece com o céu ao amanhecer?",
         opcoes: [
             "a) Fica completamente escuro.",
@@ -226,7 +210,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 17",
-        contexto: "Ao anoitecer, o céu sofre grandes transformações de cores e fica cada vez mais escuro.",
         pergunta: "O que acontece com o céu ao anoitecer?",
         opcoes: [
             "a) Fica cada vez mais claro.",
@@ -240,7 +223,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 18",
-        contexto: "O escorpião é citado como um exemplo de animal de hábitos noturnos.",
         pergunta: "Qual animal é citado como exemplo de hábitos noturnos?",
         opcoes: [
             "a) Camaleão.",
@@ -254,7 +236,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 19",
-        contexto: "Para visualizar muitas estrelas, é preciso ir a um lugar com pouca ou nenhuma poluição luminosa.",
         pergunta: "Onde é melhor ir para visualizar muitas estrelas?",
         opcoes: [
             "a) No centro da cidade.",
@@ -268,7 +249,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 20",
-        contexto: "O morcego, que tem hábitos noturnos, acorda para se alimentar e realizar outras atividades durante a noite.",
         pergunta: "Quando o morcego acorda para se alimentar?",
         opcoes: [
             "a) Durante o dia.",
@@ -282,7 +262,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 21",
-        contexto: "O astrônomo Nicolau Copérnico, por volta de 1530, criou a explicação de que a Terra gira em torno de si mesma e em torno do Sol.",
         pergunta: "Qual astrônomo criou a explicação sobre a rotação e translação da Terra?",
         opcoes: [
             "a) Galileu Galilei.",
@@ -296,7 +275,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 22",
-        contexto: "A poluição luminosa das cidades grandes e a presença de nuvens podem atrapalhar a visualização do céu noturno.",
         pergunta: "O que pode atrapalhar a visualização do céu noturno?",
         opcoes: [
             "a) A luz do Sol.",
@@ -310,7 +288,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 23",
-        contexto: "O céu diurno é aquele em que o céu é azul-claro, e podemos ver o Sol, as nuvens e, às vezes, a Lua.",
         pergunta: "O que caracteriza o céu diurno?",
         opcoes: [
             "a) Céu muito escuro e sem Sol.",
@@ -324,7 +301,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 24",
-        contexto: "Ao mudar de direção, os raios solares fazem com que o céu pareça azul e o dia fique claro.",
         pergunta: "O que acontece quando os raios solares mudam de direção?",
         opcoes: [
             "a) O céu fica vermelho e a noite chega.",
@@ -338,7 +314,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 25",
-        contexto: "Os astrônomos usam telescópios para estudar os astros, como estrelas e planetas, e melhorar a observação.",
         pergunta: "O que os astrônomos usam para estudar os astros?",
         opcoes: [
             "a) Lâmpadas de alta potência.",
@@ -352,7 +327,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 26",
-        contexto: "Planetas, como Vênus, são classificados assim porque não emitem luz própria.",
         pergunta: "Por que Vênus é classificado como um planeta e não uma estrela?",
         opcoes: [
             "a) Ele é muito pequeno.",
@@ -366,7 +340,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 27",
-        contexto: "A Lua aparece durante o dia em alguns dias do mês quando a parte que vemos da Terra está iluminada pela luz do Sol.",
         pergunta: "Quando a Lua pode ser vista durante o dia?",
         opcoes: [
             "a) Quando o Sol está muito fraco.",
@@ -380,7 +353,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 28",
-        contexto: "A poluição luminosa das grandes cidades e a presença de nuvens dificultam a visualização dos astros.",
         pergunta: "O que dificulta a visualização dos astros nas grandes cidades?",
         opcoes: [
             "a) A falta de telescópios.",
@@ -394,7 +366,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 29",
-        contexto: "Ao amanhecer, o céu passa de muito escuro a muito claro, e as cores podem ir do azul vivo ao acinzentado.",
         pergunta: "Quais cores podem ser vistas no céu ao amanhecer?",
         opcoes: [
             "a) Apenas preto e branco.",
@@ -408,7 +379,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 30",
-        contexto: "No anoitecer e no amanhecer, o Sol nasce ou se põe próximo ao horizonte. O Horizonte é a linha que separa o céu e a Terra.",
         pergunta: "O que é o Horizonte?",
         opcoes: [
             "a) Um planeta.",
@@ -422,7 +392,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 31",
-        contexto: "No experimento, o palito de churrasco que atravessa a bola de isopor (modelo da Terra) representa o eixo de rotação.",
         pergunta: "O que o palito de churrasco representa no experimento?",
         opcoes: [
             "a) O movimento de translação (volta ao redor do Sol).",
@@ -436,7 +405,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 32",
-        contexto: "É durante o dia que ocorrem atividades como o trabalho dos adultos, o funcionamento dos bancos e as brincadeiras das crianças.",
         pergunta: "Quando ocorrem essas atividades?",
         opcoes: [
             "a) Na noite.",
@@ -450,7 +418,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 33",
-        contexto: "Sim, em alguns dias do mês, a Lua é visível durante o dia, pois a parte que vemos está iluminada pela luz do Sol.",
         pergunta: "A Lua pode ser vista no céu durante o dia?",
         opcoes: [
             "a) Não, a Lua só aparece à noite, pois ela não emite luz própria.",
@@ -464,7 +431,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 34",
-        contexto: "Em uma noite nublada, as nuvens impedem que a luz dos astros chegue aos nossos olhos, atrapalhando a visualização.",
         pergunta: "O que impede a visualização do céu noturno em uma noite nublada?",
         opcoes: [
             "a) A poluição luminosa das cidades.",
@@ -478,7 +444,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 35",
-        contexto: "No anoitecer, o céu passa de muito claro para muito escuro. O que acontece com as cores nesse momento?",
         pergunta: "O que acontece com as cores do céu no anoitecer?",
         opcoes: [
             "a) Elas desaparecem instantaneamente.",
@@ -492,7 +457,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 36",
-        contexto: "A volta completa da Terra em torno do Sol (translação) demora um ano inteiro.",
         pergunta: "Quanto tempo a Terra leva para dar uma volta completa ao redor do Sol?",
         opcoes: [
             "a) 24 horas.",
@@ -506,7 +470,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 37",
-        contexto: "As estrelas emitem luz para o espaço, mas os planetas apenas refletem a luz.",
         pergunta: "Qual é a diferença entre estrelas e planetas no céu noturno?",
         opcoes: [
             "a) Estrelas e planetas refletem a luz da Lua.",
@@ -520,7 +483,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 38",
-        contexto: "Além do camaleão, qual outro animal é citado nos excertos como tendo hábitos diurnos (acordado durante o dia)?",
         pergunta: "Qual outro animal tem hábitos diurnos?",
         opcoes: [
             "a) Coruja.",
@@ -534,7 +496,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 39",
-        contexto: "Durante o dia, é tempo para que as crianças façam o quê?",
         pergunta: "O que as crianças fazem durante o dia?",
         opcoes: [
             "a) Dormir e descansar.",
@@ -548,7 +509,6 @@ const dadosDoQuizCiencias12Jogo2 = [
     },
     {
         titulo: "Questão 40",
-        contexto: "Quando as flores soltam seu perfume à noite, qual é o grupo de animais que elas buscam atrair?",
         pergunta: "Quais animais as flores buscam atrair à noite?",
         opcoes: [
             "a) Borboletas e abelhas.",
