@@ -46,6 +46,8 @@ const estruturaCapitulos = {
                 titulo: 'No meio da gataria',
                 audio: 'Cap_12_Portugues_podcast.mp3',
                 questoes: 'dadosDoQuizPortugues12',
+                video: 'Cap_12_Portugues_Video.mp4',
+                questoes2: 'dadosDoQuizPortugues12Jogo2',
                 disponivel: true
             },
             {
@@ -730,6 +732,14 @@ function iniciarCapituloJogo2(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias12Jogo2;
+            break;
+        
+        case 'cap12_portugues':
+            if (typeof dadosDoQuizPortugues12Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de Português 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues12Jogo2;
             break;
 
         default:
