@@ -259,9 +259,11 @@ const estruturaCapitulos = {
                 id: 'cap08_historia',
                 numero: 8,
                 titulo: 'Um Brasil de patrimônios',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_08_Historia.mp3',
+                questoes: 'dadosDoQuizHistoria8',
+                video: 'Cap_08_Historia_Video.mp4',
+                mapaMental: 'Cap_08_Historia_Mindmap.png',
+                disponivel: true
             }
         ]
     },
@@ -431,7 +433,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -661,6 +663,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizHistoriaCap7;
+            break;
+        case 'cap08_historia':
+            if (typeof dadosDoQuizHistoria8 === 'undefined') {
+                alert('Erro: Questões de História Capítulo 8 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizHistoria8;
             break;
         case 'cap07_geografia':
             if (typeof dadosDoQuizGeografiaCap7 === 'undefined') {
