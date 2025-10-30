@@ -294,10 +294,12 @@ const estruturaCapitulos = {
             {
                 id: 'cap08_geografia',
                 numero: 8,
-                titulo: 'Vegetação e ar: uma conexão vital',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                titulo: 'A importância da vegetação',
+                audio: "Cap_08_Geografia.mp3",
+                questoes: "dadosDoQuizGeografiaCap8",
+                video: "Cap_08_Geografia_Video.mp4",
+                mapaMental: "Cap_08_Geografia_Mindmap.png",
+                disponivel: true
             }
         ]
     },
@@ -434,7 +436,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -678,6 +680,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizGeografiaCap7;
+            break;
+        case 'cap08_geografia':
+            if (typeof dadosDoQuizGeografiaCap8 === 'undefined') {
+                alert('Erro: Questões de Geografia Capítulo 8 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizGeografiaCap8;
             break;
 
         default:
