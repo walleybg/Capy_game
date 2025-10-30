@@ -251,6 +251,7 @@ const estruturaCapitulos = {
                 titulo: 'Vida e trabalho nos espaços urbanos',
                 audio: 'Cap_07_Historia.mp3',
                 questoes: 'dadosDoQuizHistoriaCap7',
+                questoes2: 'dadosDoQuizHistoria7Jogo2',
                 video: 'Cap_07_Historia_Video.mp4',
                 mapaMental: 'Cap_07_Historia_Mindmap.png',
                 disponivel: true
@@ -749,6 +750,14 @@ function iniciarCapituloJogo2(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizPortugues12Jogo2;
+            break;
+        
+        case 'cap07_historia':
+            if (typeof dadosDoQuizHistoria7Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de História 7 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizHistoria7Jogo2;
             break;
 
         default:
