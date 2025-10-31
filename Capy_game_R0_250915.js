@@ -158,6 +158,8 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizMatematica13',
                 video: 'Cap_13_Matematica_Video.mp4',
                 mapaMental: 'Cap_13_Matematica_Mindmap.png',
+                geniusLessons: [],
+                geniusGames: [],
                 disponivel: true
             },
             {
@@ -168,6 +170,8 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizMatematica14',
                 video: 'Cap_14_Matematica_Video.mp4',
                 mapaMental: 'Cap_14_Matematica_Mindmap.png',
+                geniusLessons: [],
+                geniusGames: [],
                 disponivel: true
             },
             {
