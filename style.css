@@ -597,18 +597,16 @@ button:disabled {
 .capitulo-acoes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
     flex-shrink: 0;
     width: 100%;
 }
 
 .capitulo-acoes button {
-    padding: 10px 14px;
-    font-size: 0.85em;
-    min-width: 90px;
+    padding: 12px 18px;
+    font-size: 0.9em;
+    min-width: 120px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .btn-desabilitado {
