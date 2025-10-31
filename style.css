@@ -1806,3 +1806,17 @@ button:disabled {
         height: 300px;
     }
 }
+
+/* Botões maiores e centralizados para capítulos 12, 13 e 14 */
+.capitulo-card.cap-especial .capitulo-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.capitulo-card.cap-especial .capitulo-acoes button {
+    min-width: 180px;  /* 120px * 1.5 = 180px */
+    padding: 14px 24px;
+    font-size: 0.95em;
+}
