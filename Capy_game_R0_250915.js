@@ -126,6 +126,11 @@ const estruturaCapitulos = {
                         titulo: 'Propriedades da Multiplicação',
                         descricao: 'Aprenda as propriedades da multiplicação: comutativa, associativa, distributiva, elemento neutro e elemento nulo. Aula completa com exemplos práticos.',
                         videoId: 'bDKTIFxZHN4'
+                    },
+                    {
+                        titulo: 'Exercícios de Multiplicação',
+                        descricao: 'Resolva quatro problemas envolvendo as ideias relacionadas à multiplicação: disposição retangular, combinação, adição de parcelas iguais e proporcionalidade.',
+                        videoId: 'J11SpVF2XXA'
                     }
                 ],
                 geniusGames: [
