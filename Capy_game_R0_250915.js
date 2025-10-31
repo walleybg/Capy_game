@@ -114,6 +114,35 @@ const estruturaCapitulos = {
                 titulo: 'Muitas multiplicações',
                 audio: 'Cap_12_Matematica_podcast.mp3',
                 questoes: 'dadosDoQuizMatematica12',
+                video: 'Cap_12_Matematica_Video.mp4',
+                mapaMental: 'Cap_12_Matematica_Mindmap.png',
+                geniusLessons: [
+                    {
+                        titulo: 'Tabuada de Pitágoras',
+                        descricao: 'Aprenda a fazer e estudar as tabuadas do 1 ao 10 de forma fácil e simples usando a Tabuada de Pitágoras. Ideal para quem já compreendeu o conceito de multiplicação.',
+                        videoId: 'jNvvBXBaPzQ'
+                    },
+                    {
+                        titulo: 'Propriedades da Multiplicação',
+                        descricao: 'Aprenda as propriedades da multiplicação: comutativa, associativa, distributiva, elemento neutro e elemento nulo. Aula completa com exemplos práticos.',
+                        videoId: 'bDKTIFxZHN4'
+                    }
+                ],
+                geniusGames: [
+                    { titulo: 'Agilidade – tabuada 1', descricao: 'Pratique a tabuada do 1 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-01-a-tabuada-do-1/exercicio-04/' },
+                    { titulo: 'Agilidade – tabuada 3', descricao: 'Pratique a tabuada do 3 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-03-a-tabuada-do-3/exercicio-06/' },
+                    { titulo: 'Agilidade – tabuada 4', descricao: 'Pratique a tabuada do 4 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-04-a-tabuada-do-4/exercicio-05/' },
+                    { titulo: 'Agilidade – tabuada 5', descricao: 'Pratique a tabuada do 5 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-05-a-tabuada-do-5/exercicio-05/' },
+                    { titulo: 'Agilidade – tabuada 6', descricao: 'Pratique a tabuada do 6 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-06-a-tabuada-do-6/exercicio-05/' },
+                    { titulo: 'Agilidade – tabuada 7', descricao: 'Pratique a tabuada do 7 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-07-a-tabuada-do-7/exercicio-05/' },
+                    { titulo: 'Agilidade – tabuada 8', descricao: 'Pratique a tabuada do 8 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-08-a-tabuada-do-8/exercicio-05/' },
+                    { titulo: 'Agilidade – tabuada 9', descricao: 'Pratique a tabuada do 9 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-09-a-tabuada-do-9/exercicio-05/' },
+                    { titulo: 'Agilidade – tabuada 10', descricao: 'Pratique a tabuada do 10 com exercícios interativos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-07-tabuada-multiplicacao-ate-10/exercicios-10-a-tabuada-do-10/exercicio-04/' },
+                    { titulo: 'Ideias de multiplicação', descricao: 'Explore diferentes ideias e conceitos de multiplicação', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-06-multiplicacao/exercicios-01-ideias-da-multiplicacao/exercicio-test/' },
+                    { titulo: 'Dobro e triplo', descricao: 'Aprenda sobre dobro e triplo com exercícios práticos', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-06-multiplicacao/exercicios-02-dobro-e-triplo/exercicio-test/' },
+                    { titulo: 'Padrões de multiplicação', descricao: 'Descubra padrões interessantes na multiplicação', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-06-multiplicacao/exercicios-03-padroes-na-multiplicacao/exercicio-test/' },
+                    { titulo: 'Problemas de multiplicação', descricao: 'Resolva problemas do dia a dia usando multiplicação', url: 'https://anton.app/pt/aprender/mate-ano-3/tema-06-multiplicacao/exercicios-04-problemas-de-multiplicacao/exercicio-test/' }
+                ],
                 disponivel: true
             },
             {
@@ -436,7 +465,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'}`;
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -452,6 +481,8 @@ function gerarListaCapitulos(capitulos) {
                             <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                             ${capitulo.questoes2 ? `<button class="btn-principal" onclick="iniciarCapituloJogo2('${capitulo.id}')">🎮 5. Game 2</button>` : ''}
+                            ${capitulo.geniusLessons ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
+                            ${capitulo.geniusGames ? `<button class="btn-genius" onclick="abrirGeniusGames('${capitulo.id}')">🎮 ${capitulo.geniusLessons && capitulo.questoes2 ? '7' : capitulo.geniusLessons || capitulo.questoes2 ? '6' : '5'}. Genius Games!</button>` : ''}
                         </div>
                     ` : `
                         <span class="status-indisponivel">🔒 Em breve</span>
@@ -2346,3 +2377,166 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+// ========================================
+// GENIUS LESSONS E GENIUS GAMES
+// ========================================
+
+function abrirGeniusLessons(capituloId) {
+    const arena = estruturaCapitulos[arenaAtual];
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    
+    if (!capitulo || !capitulo.geniusLessons) {
+        alert('Genius Lessons não disponível para este capítulo!');
+        return;
+    }
+    
+    // Esconder tela de capítulos e mostrar tela de Genius Lessons
+    telaCapitulos.style.display = 'none';
+    
+    // Criar tela de Genius Lessons
+    let telaGeniusLessons = document.getElementById('tela-genius-lessons');
+    if (!telaGeniusLessons) {
+        telaGeniusLessons = document.createElement('div');
+        telaGeniusLessons.id = 'tela-genius-lessons';
+        telaGeniusLessons.className = 'tela-genius';
+        containerPrincipal.appendChild(telaGeniusLessons);
+    }
+    
+    telaGeniusLessons.style.display = 'block';
+    telaGeniusLessons.innerHTML = `
+        <div class="genius-header">
+            <div class="genius-icon">
+                <img src="${arena.icone}" alt="Ícone da Arena" />
+            </div>
+            <div class="genius-info">
+                <h2>${arena.nome}</h2>
+                <h3>${capitulo.titulo}</h3>
+                <p>Genius Lessons - Vídeos Educacionais</p>
+            </div>
+        </div>
+        <div class="genius-content">
+            <div class="genius-lista">
+                ${capitulo.geniusLessons.map((lesson, index) => `
+                    <div class="genius-card">
+                        <div class="genius-card-numero">${index + 1}</div>
+                        <div class="genius-card-info">
+                            <h4>${lesson.titulo}</h4>
+                            <p>${lesson.descricao}</p>
+                        </div>
+                        <button class="btn-genius-play" onclick="reproduzirGeniusLesson('${lesson.videoId}', '${lesson.titulo}')">
+                            🎬 Assistir
+                        </button>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        <div class="genius-footer">
+            <button class="btn-voltar" onclick="voltarDosGeniusLessons()">← Voltar aos Capítulos</button>
+        </div>
+    `;
+}
+
+function reproduzirGeniusLesson(videoId, titulo) {
+    // Abrir popup de vídeo com vídeo do YouTube
+    const videoPopup = document.getElementById('video-player-overlay');
+    const videoContainer = document.getElementById('video-player-container');
+    
+    if (!videoPopup || !videoContainer) {
+        alert('Player de vídeo não encontrado!');
+        return;
+    }
+    
+    videoContainer.innerHTML = `
+        <div class="video-header">
+            <h3>${titulo}</h3>
+            <button class="btn-fechar" onclick="fecharVideoPlayer()">✕</button>
+        </div>
+        <div class="video-content">
+            <iframe 
+                width="100%" 
+                height="500" 
+                src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    `;
+    
+    videoPopup.style.display = 'flex';
+}
+
+function voltarDosGeniusLessons() {
+    const telaGeniusLessons = document.getElementById('tela-genius-lessons');
+    if (telaGeniusLessons) {
+        telaGeniusLessons.style.display = 'none';
+    }
+    telaCapitulos.style.display = 'block';
+}
+
+function abrirGeniusGames(capituloId) {
+    const arena = estruturaCapitulos[arenaAtual];
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    
+    if (!capitulo || !capitulo.geniusGames) {
+        alert('Genius Games não disponível para este capítulo!');
+        return;
+    }
+    
+    // Esconder tela de capítulos e mostrar tela de Genius Games
+    telaCapitulos.style.display = 'none';
+    
+    // Criar tela de Genius Games
+    let telaGeniusGames = document.getElementById('tela-genius-games');
+    if (!telaGeniusGames) {
+        telaGeniusGames = document.createElement('div');
+        telaGeniusGames.id = 'tela-genius-games';
+        telaGeniusGames.className = 'tela-genius';
+        containerPrincipal.appendChild(telaGeniusGames);
+    }
+    
+    telaGeniusGames.style.display = 'block';
+    telaGeniusGames.innerHTML = `
+        <div class="genius-header">
+            <div class="genius-icon">
+                <img src="${arena.icone}" alt="Ícone da Arena" />
+            </div>
+            <div class="genius-info">
+                <h2>${arena.nome}</h2>
+                <h3>${capitulo.titulo}</h3>
+                <p>Genius Games - Jogos Educacionais Externos</p>
+            </div>
+        </div>
+        <div class="genius-content">
+            <div class="genius-lista">
+                ${capitulo.geniusGames.map((game, index) => `
+                    <div class="genius-card">
+                        <div class="genius-card-numero">${index + 1}</div>
+                        <div class="genius-card-info">
+                            <h4>${game.titulo}</h4>
+                            <p>${game.descricao}</p>
+                        </div>
+                        <button class="btn-genius-play" onclick="window.open('${game.url}', '_blank')">
+                            🎮 Jogar
+                        </button>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        <div class="genius-footer">
+            <button class="btn-voltar" onclick="voltarDosGeniusGames()">← Voltar aos Capítulos</button>
+        </div>
+    `;
+}
+
+function voltarDosGeniusGames() {
+    const telaGeniusGames = document.getElementById('tela-genius-games');
+    if (telaGeniusGames) {
+        telaGeniusGames.style.display = 'none';
+    }
+    telaCapitulos.style.display = 'block';
+}
+
