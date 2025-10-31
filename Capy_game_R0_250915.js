@@ -2440,33 +2440,44 @@ function abrirGeniusLessons(capituloId) {
 }
 
 function reproduzirGeniusLesson(videoId, titulo) {
-    // Abrir popup de vídeo com vídeo do YouTube
-    const videoPopup = document.getElementById('video-player-overlay');
-    const videoContainer = document.getElementById('video-player-container');
+    // Criar ou obter popup de vídeo do YouTube
+    let youtubePopup = document.getElementById('youtube-player-popup');
     
-    if (!videoPopup || !videoContainer) {
-        alert('Player de vídeo não encontrado!');
-        return;
+    if (!youtubePopup) {
+        youtubePopup = document.createElement('div');
+        youtubePopup.id = 'youtube-player-popup';
+        youtubePopup.className = 'youtube-popup';
+        document.body.appendChild(youtubePopup);
     }
     
-    videoContainer.innerHTML = `
-        <div class="video-header">
-            <h3>${titulo}</h3>
-            <button class="btn-fechar" onclick="fecharVideoPlayer()">✕</button>
-        </div>
-        <div class="video-content">
-            <iframe 
-                width="100%" 
-                height="500" 
-                src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+    youtubePopup.innerHTML = `
+        <div class="youtube-popup-content">
+            <div class="youtube-header">
+                <h3>${titulo}</h3>
+                <button class="btn-fechar-youtube" onclick="fecharYoutubePlayer()">✕</button>
+            </div>
+            <div class="youtube-video-container">
+                <iframe 
+                    width="100%" 
+                    height="500" 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     `;
     
-    videoPopup.style.display = 'flex';
+    youtubePopup.style.display = 'flex';
+}
+
+function fecharYoutubePlayer() {
+    const youtubePopup = document.getElementById('youtube-player-popup');
+    if (youtubePopup) {
+        youtubePopup.style.display = 'none';
+        youtubePopup.innerHTML = ''; // Limpar para parar o vídeo
+    }
 }
 
 function voltarDosGeniusLessons() {
