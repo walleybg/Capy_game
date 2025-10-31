@@ -595,9 +595,11 @@ button:disabled {
 }
 
 .capitulo-acoes {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     flex-shrink: 0;
+    width: 100%;
 }
 
 .capitulo-acoes button {
@@ -792,8 +794,7 @@ button:disabled {
     }
     
     .capitulo-acoes {
-        justify-content: center;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     #arena-title {
