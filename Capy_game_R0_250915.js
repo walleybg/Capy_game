@@ -369,6 +369,16 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizInglesUnit6',
                 questoes2: 'dadosDoQuizIngles06Jogo2',
                 disponivel: true
+            },
+            {
+                id: 'unit07_ingles',
+                numero: 7,
+                titulo: 'School Clubs and English Skills',
+                audio: 'Unit_07_Ingles.mp3',
+                video: 'Unit_07_Ingles_Video.mp4',
+                mapaMental: 'Unit_07_Ingles_Mindmap.png',
+                questoes: 'dadosDoQuizIngles7',
+                disponivel: true
             }
         ]
     },
@@ -694,6 +704,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizInglesUnit6;
+            break;
+        case 'unit07_ingles':
+            if (typeof dadosDoQuizIngles7 === 'undefined') {
+                alert('Erro: Questões de Inglês Unit 7 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles7;
             break;
         case 'cap07_historia':
             if (typeof dadosDoQuizHistoriaCap7 === 'undefined') {
