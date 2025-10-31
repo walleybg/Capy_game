@@ -51,10 +51,10 @@ const dadosDoQuizMatematica12 = [
             "O número '2' escrito acima do 2 de 25 representa 2 dezenas (20).",
             "O cálculo seguinte é 4×2=8, e somamos as 2 dezenas que subiram, resultando em 10, que, neste caso, representa 10 dezenas (100).",
             "O passo em que o 2 é \"levado\" é necessário porque o produto parcial (4×5) ultrapassou o valor 9 da casa das unidades.",
-            "Se a conta fosse 25×3, o valor \"levado\" seria 1, e o resultado final seria 75."
+            "Se a conta fosse 24×3, o valor \"levado\" seria 1, e o resultado final seria 75."
         ],
-        respostaCorreta: "Se a conta fosse 25×3, o valor \"levado\" seria 1, e o resultado final seria 75.",
-        explicacao: "Se a conta fosse 25×3: 3×5=15 (levamos 1), 3×2=6, somamos 1 = 7. O resultado seria 75, não 75. O valor levado seria 1, mas o resultado final seria 75, não 75. A afirmativa está incorreta na parte do resultado final.",
+        respostaCorreta: "Se a conta fosse 24×3, o valor \"levado\" seria 1, e o resultado final seria 75.",
+        explicacao: "Se a conta fosse 24×3: 3×4=12 (levamos 1), 3×2=6, somamos 1 = 7. O resultado seria 72, não 75. O valor levado seria 1, mas o resultado final seria 72, não 75. A afirmativa está incorreta na parte do resultado final.",
         tipo: "multipla_escolha"
     },
     {
