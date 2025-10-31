@@ -525,7 +525,7 @@ button:disabled {
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px 0;
 }
 
@@ -596,17 +596,19 @@ button:disabled {
 
 .capitulo-acoes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     flex-shrink: 0;
     width: 100%;
 }
 
 .capitulo-acoes button {
-    padding: 12px 20px;
-    font-size: 1em;
-    min-width: 100px;
+    padding: 10px 14px;
+    font-size: 0.85em;
+    min-width: 90px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .btn-desabilitado {
@@ -828,9 +830,9 @@ button:disabled {
     }
     
     .capitulo-acoes button {
-        padding: 6px 12px;
-        font-size: 0.8em;
-        min-width: 70px;
+        padding: 8px 10px;
+        font-size: 0.75em;
+        min-width: 65px;
     }
 }
 
