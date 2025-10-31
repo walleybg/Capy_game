@@ -167,14 +167,6 @@ const estruturaCapitulos = {
             },
             {
                 id: 'cap15_matematica',
-                numero: 14,
-                titulo: 'Dividir para valer',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
-            },
-            {
-                id: 'cap15_matematica',
                 numero: 15,
                 titulo: 'A capacidade para medir',
                 audio: "Cap_12_Ciencias_podcast.mp3",
