@@ -477,6 +477,7 @@ function gerarListaCapitulos(capitulos) {
         // Adicionar classe especial para capítulos 12, 13 e 14
         const isCapEspecial = capitulo.numero === 12 || capitulo.numero === 13 || capitulo.numero === 14;
         capituloCard.className = `capitulo-card ${capitulo.disponivel ? 'disponivel' : 'indisponivel'} ${isCapEspecial ? 'cap-especial' : ''}`;
+        capituloCard.setAttribute('data-id', capitulo.id);
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
         if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {

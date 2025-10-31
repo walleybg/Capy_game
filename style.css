@@ -1821,3 +1821,20 @@ button:disabled {
     font-size: 0.95em;
     width: 100%;  /* Ocupa toda a largura da célula do grid */
 }
+
+/* Layout 2x3 (2 colunas, 3 linhas) para Units 6 e 7 de Inglês */
+.capitulo-card[data-id="unit06_ingles"] .modulos-container,
+.capitulo-card[data-id="unit07_ingles"] .modulos-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 colunas iguais */
+    gap: 15px;
+    justify-items: stretch;  /* Botões ocupam toda a largura da coluna */
+}
+
+.capitulo-card[data-id="unit06_ingles"] .modulos-container button,
+.capitulo-card[data-id="unit07_ingles"] .modulos-container button {
+    min-width: 200px;  /* Botões mais largos */
+    padding: 14px 24px;
+    font-size: 0.95em;
+    width: 100%;  /* Ocupa toda a largura da célula do grid */
+}
