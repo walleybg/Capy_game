@@ -1808,14 +1808,14 @@ button:disabled {
 }
 
 /* Layout 2x3 (2 colunas, 3 linhas) para capítulos 12, 13 e 14 */
-.capitulo-card.cap-especial .capitulo-acoes {
+.capitulo-card.cap-especial .modulos-container {
     display: grid;
     grid-template-columns: 1fr 1fr;  /* 2 colunas iguais */
     gap: 15px;
     justify-items: stretch;  /* Botões ocupam toda a largura da coluna */
 }
 
-.capitulo-card.cap-especial .capitulo-acoes button {
+.capitulo-card.cap-especial .modulos-container button {
     min-width: 200px;  /* Botões mais largos */
     padding: 14px 24px;
     font-size: 0.95em;
