@@ -373,7 +373,7 @@ const estruturaCapitulos = {
             {
                 id: 'unit07_ingles',
                 numero: 7,
-                titulo: 'School Clubs and English Skills',
+                titulo: 'Can, Could, Alliteration, Preffix and Suffix',
                 audio: 'Unit_07_Ingles.mp3',
                 video: 'Unit_07_Ingles_Video.mp4',
                 mapaMental: 'Unit_07_Ingles_Mindmap.png',
