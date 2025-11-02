@@ -366,6 +366,7 @@ const estruturaCapitulos = {
                 audio: 'Unit_06_Ingles.mp3',
                 video: 'Unit_06_Video.mp4',
                 mapaMental: 'Unit_06_Mindmap.png',
+                irregularVerbsList: 'Unit_06_Irregular_Verbs.png',
                 questoes: 'dadosDoQuizInglesUnit6',
                 questoes2: 'dadosDoQuizIngles06Jogo2',
                 disponivel: true
@@ -496,8 +497,9 @@ function gerarListaCapitulos(capitulos) {
                             <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                             ${capitulo.questoes2 ? `<button class="btn-principal" onclick="iniciarCapituloJogo2('${capitulo.id}')">🎮 5. Game 2</button>` : ''}
-                            ${capitulo.geniusLessons ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
-                            ${capitulo.geniusGames ? `<button class="btn-genius" onclick="abrirGeniusGames('${capitulo.id}')">🎮 ${capitulo.geniusLessons && capitulo.questoes2 ? '7' : capitulo.geniusLessons || capitulo.questoes2 ? '6' : '5'}. Genius Games!</button>` : ''}
+                            ${capitulo.irregularVerbsList ? `<button class="btn-modulo" onclick="abrirIrregularVerbsList('${capitulo.id}')">📋 ${capitulo.questoes2 ? '6' : '5'}. Irregular Verbs List</button>` : ''}
+                            ${capitulo.geniusLessons ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.irregularVerbsList && capitulo.questoes2 ? '7' : capitulo.irregularVerbsList || capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
+                            ${capitulo.geniusGames ? `<button class="btn-genius" onclick="abrirGeniusGames('${capitulo.id}')">🎮 ${capitulo.geniusLessons && capitulo.irregularVerbsList && capitulo.questoes2 ? '8' : capitulo.geniusLessons || capitulo.irregularVerbsList || capitulo.questoes2 ? '7' : '6'}. Genius Games!</button>` : ''}
                         </div>
                     ` : `
                         <span class="status-indisponivel">🔒 Em breve</span>
@@ -2571,5 +2573,243 @@ function voltarDosGeniusGames() {
         telaGeniusGames.style.display = 'none';
     }
     telaCapitulos.style.display = 'block';
+}
+
+// Função para abrir a lista de verbos irregulares
+function abrirIrregularVerbsList(capituloId) {
+    // Se capituloId foi passado, definir como capituloAtual
+    if (capituloId) {
+        capituloAtual = capituloId;
+    }
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloAtual);
+    
+    if (!capitulo || !capitulo.irregularVerbsList) {
+        alert('Irregular Verbs List não disponível para este capítulo.');
+        return;
+    }
+    
+    // Abrir em nova janela popup
+    const largura = Math.min(1200, window.screen.width * 0.9);
+    const altura = Math.min(800, window.screen.height * 0.9);
+    const esquerda = (window.screen.width - largura) / 2;
+    const topo = (window.screen.height - altura) / 2;
+    
+    const opcoes = `width=${largura},height=${altura},left=${esquerda},top=${topo},resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`;
+    
+    // Criar conteúdo HTML para a nova janela
+    const novaJanela = window.open('', 'IrregularVerbsList', opcoes);
+    
+    if (!novaJanela) {
+        alert('Por favor, permita pop-ups para visualizar a lista de verbos irregulares.');
+        return;
+    }
+    
+    novaJanela.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Irregular Verbs List - ${capitulo.titulo}</title>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    background: #f0f0f0;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100vh;
+                }
+                .header {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 15px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+                .header h2 {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                .controls {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+                .btn {
+                    background: rgba(255,255,255,0.2);
+                    border: 1px solid rgba(255,255,255,0.3);
+                    color: white;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    transition: all 0.3s;
+                }
+                .btn:hover {
+                    background: rgba(255,255,255,0.3);
+                    transform: translateY(-1px);
+                }
+                .zoom-info {
+                    background: rgba(255,255,255,0.2);
+                    padding: 5px 12px;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    min-width: 60px;
+                    text-align: center;
+                }
+                .container {
+                    flex: 1;
+                    overflow: hidden;
+                    position: relative;
+                    background: #e0e0e0;
+                    cursor: grab;
+                }
+                .container:active {
+                    cursor: grabbing;
+                }
+                .image-wrapper {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform-origin: center center;
+                    transition: transform 0.1s ease-out;
+                }
+                .image-wrapper img {
+                    display: block;
+                    max-width: none;
+                    user-select: none;
+                    -webkit-user-drag: none;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h2>📋 Irregular Verbs List - ${capitulo.titulo}</h2>
+                <div class="controls">
+                    <button class="btn" onclick="zoomIn()">+ Zoom In</button>
+                    <button class="btn" onclick="zoomOut()">− Zoom Out</button>
+                    <button class="btn" onclick="resetZoom()">⌂ Reset</button>
+                    <div class="zoom-info" id="zoom-display">100%</div>
+                    <button class="btn" onclick="window.close()">✕ Close</button>
+                </div>
+            </div>
+            <div class="container" id="container">
+                <div class="image-wrapper" id="wrapper">
+                    <img src="${capitulo.irregularVerbsList}" alt="Irregular Verbs List" id="image">
+                </div>
+            </div>
+            
+            <script>
+                const wrapper = document.getElementById('wrapper');
+                const image = document.getElementById('image');
+                const container = document.getElementById('container');
+                const zoomDisplay = document.getElementById('zoom-display');
+                
+                let scale = 1;
+                let translateX = 0;
+                let translateY = 0;
+                let isDragging = false;
+                let startX, startY;
+                
+                // Centralizar imagem ao carregar
+                image.onload = function() {
+                    const imgWidth = image.naturalWidth;
+                    const imgHeight = image.naturalHeight;
+                    const containerWidth = container.clientWidth;
+                    const containerHeight = container.clientHeight;
+                    
+                    // Calcular escala inicial para caber na tela
+                    const scaleX = containerWidth / imgWidth;
+                    const scaleY = containerHeight / imgHeight;
+                    scale = Math.min(scaleX, scaleY, 1) * 0.9;
+                    
+                    updateTransform();
+                };
+                
+                function zoomIn() {
+                    scale = Math.min(3, scale + 0.2);
+                    updateTransform();
+                }
+                
+                function zoomOut() {
+                    scale = Math.max(0.5, scale - 0.2);
+                    updateTransform();
+                }
+                
+                function resetZoom() {
+                    scale = 1;
+                    translateX = 0;
+                    translateY = 0;
+                    updateTransform();
+                }
+                
+                function updateTransform() {
+                    wrapper.style.transform = \`translate(\${translateX}px, \${translateY}px) scale(\${scale})\`;
+                    zoomDisplay.textContent = Math.round(scale * 100) + '%';
+                }
+                
+                // Arrastar para navegar
+                wrapper.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                });
+                
+                document.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                });
+                
+                document.addEventListener('mouseup', function() {
+                    isDragging = false;
+                });
+                
+                // Touch events para dispositivos móveis
+                wrapper.addEventListener('touchstart', function(e) {
+                    if (e.touches.length === 1) {
+                        isDragging = true;
+                        startX = e.touches[0].clientX - translateX;
+                        startY = e.touches[0].clientY - translateY;
+                    }
+                });
+                
+                document.addEventListener('touchmove', function(e) {
+                    if (!isDragging || e.touches.length !== 1) return;
+                    e.preventDefault();
+                    translateX = e.touches[0].clientX - startX;
+                    translateY = e.touches[0].clientY - startY;
+                    updateTransform();
+                });
+                
+                document.addEventListener('touchend', function() {
+                    isDragging = false;
+                });
+                
+                // Zoom com scroll do mouse
+                container.addEventListener('wheel', function(e) {
+                    e.preventDefault();
+                    if (e.deltaY < 0) {
+                        zoomIn();
+                    } else {
+                        zoomOut();
+                    }
+                });
+            </script>
+        </body>
+        </html>
+    `);
+    
+    novaJanela.document.close();
 }
 

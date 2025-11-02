@@ -128,7 +128,7 @@ const dadosDoQuizIngles7 = [
 
     // ===== INTERPRETAÇÃO COM TEXTO FIXO (Q21-Q30) =====
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -147,7 +147,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -166,7 +166,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -185,7 +185,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -204,7 +204,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -223,7 +223,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -242,7 +242,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -261,7 +261,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -280,7 +280,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
@@ -299,7 +299,7 @@ Come join a club right now today!`,
         tipo: 'interpretacao'
     },
     {
-        contexto: `School Club Fun
+        textoBase: `School Club Fun
 
 Sports Club is fun and fast,
 We kick the ball, the time goes past.
