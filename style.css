@@ -94,6 +94,17 @@ button:disabled {
 .btn-neutro { background-color: var(--cor-neutra); }
 .btn-neutro:hover { background-color: #95a5a6; }
 
+/* Botão Prova Simulada */
+.btn-simulado { 
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: white;
+}
+.btn-simulado:hover { 
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+}
+
 /* Botão Atualizar Versão */
 .btn-atualizar-versao {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

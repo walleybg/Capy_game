@@ -158,8 +158,7 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizMatematica13',
                 video: 'Cap_13_Matematica_Video.mp4',
                 mapaMental: 'Cap_13_Matematica_Mindmap.png',
-                geniusLessons: [],
-                geniusGames: [],
+                provaSimulada: 'dadosDoSimuladoMatematica13',
                 disponivel: true
             },
             {
@@ -497,6 +496,7 @@ function gerarListaCapitulos(capitulos) {
                             <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                             ${capitulo.questoes2 ? `<button class="btn-principal" onclick="iniciarCapituloJogo2('${capitulo.id}')">🎮 5. Game 2</button>` : ''}
+                            ${capitulo.provaSimulada ? `<button class="btn-simulado" onclick="iniciarProvaSimulada('${capitulo.id}')">📝 5. Prova Simulada</button>` : ''}
                             ${capitulo.irregularVerbsList ? `<button class="btn-modulo" onclick="abrirIrregularVerbsList('${capitulo.id}')">📋 ${capitulo.questoes2 ? '6' : '5'}. Irregular Verbs List</button>` : ''}
                             ${capitulo.geniusLessons ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.irregularVerbsList && capitulo.questoes2 ? '7' : capitulo.irregularVerbsList || capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
                             ${capitulo.geniusGames ? `<button class="btn-genius" onclick="abrirGeniusGames('${capitulo.id}')">🎮 ${capitulo.geniusLessons && capitulo.irregularVerbsList && capitulo.questoes2 ? '8' : capitulo.geniusLessons || capitulo.irregularVerbsList || capitulo.questoes2 ? '7' : '6'}. Genius Games!</button>` : ''}
@@ -2811,5 +2811,55 @@ function abrirIrregularVerbsList(capituloId) {
     `);
     
     novaJanela.document.close();
+}
+
+// Função para iniciar a Prova Simulada
+function iniciarProvaSimulada(capituloId) {
+    console.log('iniciarProvaSimulada chamado com:', capituloId);
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    if (!capitulo.disponivel) {
+        alert('Este capítulo ainda não está disponível!');
+        return;
+    }
+    
+    if (!capitulo.provaSimulada) {
+        alert('Prova Simulada ainda não está disponível para este capítulo!');
+        return;
+    }
+    
+    capituloAtual = capituloId;
+    nomeCapituloAtual = capitulo.titulo + ' - Prova Simulada';
+    
+    // Definir banco de questões da Prova Simulada baseado no capítulo
+    switch(capituloId) {
+        case 'cap13_matematica':
+            if (typeof dadosDoSimuladoMatematica13 === 'undefined') {
+                alert('Erro: Questões da Prova Simulada não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoSimuladoMatematica13;
+            break;
+        
+        default:
+            alert('Prova Simulada não configurada para este capítulo.');
+            return;
+    }
+    
+    // Inicializar o jogo
+    iniciarJogoInterface();
 }
 
