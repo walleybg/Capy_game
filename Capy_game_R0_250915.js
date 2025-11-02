@@ -2859,6 +2859,10 @@ function iniciarProvaSimulada(capituloId) {
             return;
     }
     
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
+    
     // Inicializar o jogo
     iniciarJogoInterface();
 }
