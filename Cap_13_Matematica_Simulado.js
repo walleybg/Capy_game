@@ -473,7 +473,7 @@ const dadosDoSimuladoMatematica13 = [
             '6 quilogramas equivalem a 6000 gramas.',
             'Se uma balança está equilibrada, os pratos tem a mesma massa.'
         ],
-        respostaCorreta: 1,
+        respostaCorreta: 3,
         explicacao: 'A afirmação D ("O peso refere-se a massa de um corpo") e a única que e tecnicamente incorreta, embora na linguagem cotidiana, as pessoas usem a palavra "peso" para indicar "massa". Massa e a quantidade de matéria, e peso e a forca da gravidade sobre a massa. No nível de 3o ano, onde se introduz a distinção, esta e a afirmação mais incorreta.',
         tipo: 'multipla_escolha'
     }
