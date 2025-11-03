@@ -50,7 +50,7 @@ const dadosDoSimuladoMatematica13 = [
             'A metade de um quilograma equivale a 500 g.',
             'A quarta parte de um quilograma corresponde a 250 g.',
             'O termo "meio quilo" é usado para representar 500 g.',
-            'Se a balança está equilibrada com um peso de 1 kg e tem 7 maçãs em um prato e 5 maçãs no outro, então 7 + 5 = 12 maçãs pesam 1 kg.',
+            'Se a balança está equilibrada com um peso de 1 kg e tem 7 maçãs em um prato e 5 bananas no outro, então o peso total da 7 maçãs + 5 bananas é de 2 kg.',
             'Uma balança de dois pratos é um instrumento de medição que não é mais utilizado em feiras e mercados.'
         ],
         respostaCorreta: 4,
