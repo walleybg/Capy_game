@@ -8,7 +8,7 @@ const dadosDoSimuladoMatematica13 = [
         questao: 'Paola resolveu a conta 13 x 9 decompondo o número 13 em 10 + 3, realizando as multiplicações 10 x 9 = 90 e 3 x 9 = 27, e somando os resultados para obter 117. Qual é o resultado correto da multiplicação 18 x 9, utilizando o mesmo procedimento de Paola?',
         opcoes: ['171', '162', '99', '180', '153'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 2
     {
@@ -21,7 +21,7 @@ const dadosDoSimuladoMatematica13 = [
             '5 x 60 é igual a 300.'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 3
     {
@@ -34,7 +34,7 @@ const dadosDoSimuladoMatematica13 = [
             'Cinco embalagens, pois é a parte que corresponde a 1000 g.'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 4
     {
@@ -47,7 +47,7 @@ const dadosDoSimuladoMatematica13 = [
             'Uma balança de dois pratos é um instrumento de medição que não é mais utilizado em feiras e mercados.'
         ],
         respostaCorreta: 4,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 5
     {
@@ -60,14 +60,14 @@ const dadosDoSimuladoMatematica13 = [
             'O fato de terem usado o numero 4 como multiplicador.'
         ],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 6
     {
         questao: 'Rodrigo tem um lancha com capacidade para 8 pessoas ou 600 kg. Rodrigo (110 kg), Ana (85 kg) e seis crianças que juntas tem massa igual a 211 kg querem passear. A massa total das pessoas é:',
         opcoes: ['406 kg', '396 kg.', '600 kg.', '416 kg.', '500 kg.'],
         respostaCorreta: 0,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 7
     {
@@ -80,7 +80,7 @@ const dadosDoSimuladoMatematica13 = [
             'O produto de 10 x 100 é 10000.'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 8
     {
@@ -93,7 +93,7 @@ const dadosDoSimuladoMatematica13 = [
             'Não, porque 40+42+36+38 = 160 kg, que excede 156 kg.'
         ],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 9
     {
@@ -106,7 +106,7 @@ const dadosDoSimuladoMatematica13 = [
             'Rinoceronte (2010 kg).'
         ],
         respostaCorreta: 3,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 10
     {
@@ -119,7 +119,7 @@ const dadosDoSimuladoMatematica13 = [
             'A situação ilustra um problema de combinatória.'
         ],
         respostaCorreta: 4,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 11
     {
@@ -132,14 +132,14 @@ const dadosDoSimuladoMatematica13 = [
             '1 tonelada = 1000 quilogramas.'
         ],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 12
     {
         questao: 'Marque a alternativa que apresenta o resultado da multiplicação 8 x 9:',
         opcoes: ['64', '72.', '81', '70', '17'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 13
     {
@@ -152,14 +152,14 @@ const dadosDoSimuladoMatematica13 = [
             '3,2 kg (3200 g).'
         ],
         respostaCorreta: 4,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 14
     {
         questao: 'Qual é o resultado correto da multiplicação 63 x 5?',
         opcoes: ['305', '315', '320', '330', '325'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 15
     {
@@ -172,7 +172,7 @@ const dadosDoSimuladoMatematica13 = [
             'Nenhum dos pacotes, pois 1200 g é igual a 1000 g.'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 16
     {
@@ -185,14 +185,14 @@ const dadosDoSimuladoMatematica13 = [
             '10 x 1000 = 10000.'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 17
     {
         questao: 'Marque a alternativa que mostra corretamente quantos pacotes de 250 g são necessários para formar 1 quilograma:',
         opcoes: ['2 pacotes.', '4 pacotes.', '5 pacotes.', '3 pacotes.', '1 pacote.'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 18
     {
@@ -205,7 +205,7 @@ const dadosDoSimuladoMatematica13 = [
             'A decomposição é uma estratégia eficiente para calcular mentalmente.'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 19
     {
@@ -218,21 +218,21 @@ const dadosDoSimuladoMatematica13 = [
             'A tabuada de Pitágoras mostra apenas os produtos da multiplicação de 1 a 5.'
         ],
         respostaCorreta: 0,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 20
     {
         questao: 'Um feirante levou 140 kg de frutas. Vendeu 15 kg de maça, 12 kg de banana e 9 kg de pera. Quantos quilogramas de frutas ele ainda tem para vender?',
         opcoes: ['140 kg', '104 kg', '106 kg', '36 kg', '176 kg'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 21
     {
         questao: 'Marque a alternativa que mostra corretamente o produto de 4 x 100:',
         opcoes: ['40', '400.', '4000', '100', '104'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 22
     {
@@ -245,7 +245,7 @@ const dadosDoSimuladoMatematica13 = [
             '1 tonelada = 100 quilogramas.'
         ],
         respostaCorreta: 4,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 23
     {
@@ -258,14 +258,14 @@ const dadosDoSimuladoMatematica13 = [
             'Multiplicar 27 x 4 é igual a multiplicar 4 x 27 (propriedade comutativa).'
         ],
         respostaCorreta: 3,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 24
     {
         questao: 'Em uma padaria, pães para cachorro-quente são vendidos em bandejas de 100 g. Se você comprar 4 bandejas, qual será a massa total dos pães em gramas?',
         opcoes: ['40 g', '400 g', '100 g', '1 kg', '250 g'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 25
     {
@@ -278,7 +278,7 @@ const dadosDoSimuladoMatematica13 = [
             'Três e duas quilogramas.'
         ],
         respostaCorreta: 3,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 26
     {
@@ -291,28 +291,28 @@ const dadosDoSimuladoMatematica13 = [
             '5 + 5 + 5 + 5 = 20 azulejos.'
         ],
         respostaCorreta: 3,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 27
     {
         questao: 'Marque a alternativa correta para a equivalência de 1400 kg em toneladas:',
         opcoes: ['14 t.', '1,4 t.', '140 t.', '1400 t.', '0,14 t.'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 28
     {
         questao: 'Marque a alternativa correta para o resultado da operação 44 x 5:',
         opcoes: ['200', '220', '210', '240', '215'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 29
     {
         questao: 'Em um registro de massas, Joao tem 33 quilogramas e Ana tem 21 quilogramas. Qual é a diferença de massa entre eles?',
         opcoes: ['10 kg', '12 kg', '54 kg', '20 kg', '33 kg'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 30
     {
@@ -325,21 +325,21 @@ const dadosDoSimuladoMatematica13 = [
             'Na multiplicação por 1000, acrescentamos apenas dois zeros ao numero.'
         ],
         respostaCorreta: 4,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 31
     {
         questao: 'Quantos gramas há em seis quilogramas e meio?',
         opcoes: ['6000 g.', '650 g.', '6500 g.', '6005 g.', '5600 g.'],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 32
     {
         questao: 'Em um auditório, há 36 fileiras com 7 cadeiras em cada uma. Quantas cadeiras há nesse auditório?',
         opcoes: ['216', '367', '252', '43', '360'],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 33
     {
@@ -352,21 +352,21 @@ const dadosDoSimuladoMatematica13 = [
             '12 combinações.'
         ],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 34
     {
         questao: 'Quantos gramas (g) há em meio quilograma?',
         opcoes: ['1000 g.', '50 g.', '500 g.', '250 g.', '100 g.'],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 35
     {
         questao: 'Marina, em uma biblioteca, está organizando 6 estantes com 8 prateleiras em cada uma. Em cada prateleira, ela quer colocar 7 livros. Qual operação ela deve resolver para saber quantos livros ela já colocou em uma única estante?',
         opcoes: ['9 + 7', '8 x 7.', '7 - 9', '9 x 7', '6 x 8'],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 36
     {
@@ -379,14 +379,14 @@ const dadosDoSimuladoMatematica13 = [
             'Hipopótamo (2500 kg = 2,5 t).'
         ],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 37
     {
         questao: 'Qual é a operação que serve para contar a quantidade de bolinhas de basquete em uma estante com 7 prateleiras e 4 bolas em cada uma?',
         opcoes: ['7 + 4', '7 - 4', '7 x 4.', '7 / 4', '4 + 7'],
         respostaCorreta: 2,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     },
     // Questão 38
     {
@@ -399,7 +399,7 @@ const dadosDoSimuladoMatematica13 = [
             'Se uma balança está equilibrada, os pratos tem a mesma massa.'
         ],
         respostaCorreta: 1,
-        tipo: 'multiplaEscolha'
+        tipo: 'multipla_escolha'
     }
 ];
 
