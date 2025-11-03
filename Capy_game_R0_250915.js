@@ -1284,7 +1284,7 @@ function irParaQuestao(indice) {
     cabecalhoPergunta.textContent = questao.titulo;
     contextoPergunta.textContent = questao.contexto || '';
     contextoPergunta.style.display = questao.contexto ? 'block' : 'none';
-    perguntaObjetiva.textContent = questao.pergunta;
+    perguntaObjetiva.innerHTML = questao.pergunta.replace(/\n/g, '<br>');
     
     // Limpar feedback
     feedbackImediato.style.display = 'none';
