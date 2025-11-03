@@ -137,8 +137,8 @@ const dadosDoSimuladoMatematica13 = [
             'Se a lanchonete adicionasse um tipo de pão, o total de sanduíches aumentaria para 16 (4 pães x 4 carnes = 16).',
             'A situação ilustra um problema de combinatória.'
         ],
-        respostaCorreta: 4,
-        explicacao: 'Um problema de escolha de 3 tipos de pães e 4 tipos de carne e, de fato, um problema de combinatória. O total de combinações e 3 x 4 = 12. Todas as afirmações sobre o problema são factualmente corretas. Assumindo uma Questão de exceção, a opção E seria conceitualmente correta, mas deve ser marcada como a única incorreta.',
+        respostaCorreta: 1,
+        explicacao: 'O total de combinações e encontrado pela multiplicação: 3 tipos de pães x 4 tipos de carne = 12 opções de sanduíche. A alternativa b está correta.',
         tipo: 'multipla_escolha'
     },
     // Questão 11
