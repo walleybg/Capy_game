@@ -66,61 +66,61 @@ const dadosDoQuizIngles7 = [
 
     // ===== VERDADEIRO OU FALSO (Q11-Q20) =====
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Aninha like to play volleyball.\n2. Alice likes to play basketball.\n3. Rafa plays soccer every weekend.\n4. Theo and Miguel plays guitar at the Music Club.',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Aninha like to play volleyball.\nII. Alice likes to play basketball.\nIII. Rafa plays soccer every weekend.\nIV. Theo and Miguel plays guitar at the Music Club.',
         opcoes: ['F, V, V, F', 'V, V, V, F', 'F, V, F, V', 'V, F, V, V'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. The past of sing is sang.\n2. The past of run is runned.\n3. The past of write is wrote.\n4. The past of have is had.',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. The past of sing is sang.\nII. The past of run is runned.\nIII. The past of write is wrote.\nIV. The past of have is had.',
         opcoes: ['V, F, V, V', 'V, V, F, F', 'F, V, F, V', 'F, F, V, V'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Sarah must do the dishes (Obligation).\n2. Malu can sleep late tomorrow (Ability).\n3. They have to take care of Pacotinho (Obligation).\n4. They will go to the park now (Future).',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Sarah must do the dishes (Obligation).\nII. Malu can sleep late tomorrow (Ability).\nIII. They have to take care of Pacotinho (Obligation).\nIV. They will go to the park now (Future).',
         opcoes: ['V, V, V, V', 'F, V, F, V', 'V, F, V, F', 'V, V, F, F'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Do (Present) -> Did (Past).\n2. Go (Present) -> Went (Past).\n3. See (Present) -> Seed (Past).\n4. Kick (Present) -> Kicked (Past).',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Do (Present) -> Did (Past).\nII. Go (Present) -> Went (Past).\nIII. See (Present) -> Seed (Past).\nIV. Kick (Present) -> Kicked (Past).',
         opcoes: ['V, V, F, V', 'F, V, V, F', 'V, F, V, V', 'F, F, F, V'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. To join a club is to Try Out for it.\n2. If you help a friend, you can say "No Problem".\n3. The hardest part of playing is always funny.\n4. The Soccer Club is an example of a Sports Club.',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. To join a club is to Try Out for it.\nII. If you help a friend, you can say "No Problem".\nIII. The hardest part of playing is always funny.\nIV. The Soccer Club is an example of a Sports Club.',
         opcoes: ['F, V, F, V', 'F, F, V, V', 'V, V, V, F', 'F, V, F, V'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Giulia can draw beautiful pictures.\n2. Rafa can jumping high.\n3. Vovo Bolivar cannot run fast now.\n4. Helena can play soccer.',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Giulia can draw beautiful pictures.\nII. Rafa can jumping high.\nIII. Vovo Bolivar cannot run fast now.\nIV. Helena can play soccer.',
         opcoes: ['V, F, V, V', 'F, V, V, V', 'V, F, F, V', 'V, V, F, F'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Play (Present) -> Played (Past).\n2. Dance (Present) -> Danced (Past).\n3. Clean (Present) -> Cleaned (Past).\n4. Jump (Present) -> Jumped (Past).',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Play (Present) -> Played (Past).\nII. Dance (Present) -> Danced (Past).\nIII. Clean (Present) -> Cleaned (Past).\nIV. Jump (Present) -> Jumped (Past).',
         opcoes: ['V, V, V, V', 'V, V, V, F', 'V, V, V, V', 'F, V, F, V'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Tomorrow, Lara will visit Vovo Lilia (Future).\n2. Next year, Helena will be 9 years old (Future).\n3. Will Walley travel next month? (Future Question).\n4. Gigi will watched a movie later (Future Tense Error).',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Tomorrow, Lara will visit Vovo Lilia (Future).\nII. Next year, Helena will be 9 years old (Future).\nIII. Will Walley travel next month? (Future Question).\nIV. Gigi will watched a movie later (Future Tense Error).',
         opcoes: ['V, V, V, F', 'F, V, V, V', 'V, F, V, F', 'V, V, F, F'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Sarah has to share her toys.\n2. Miguel have to feed Pacotinho.\n3. Luca has to help Baba Magna.\n4. We have to be nice to everyone.',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Sarah has to share her toys.\nII. Miguel have to feed Pacotinho.\nIII. Luca has to help Baba Magna.\nIV. We have to be nice to everyone.',
         opcoes: ['V, F, V, V', 'V, V, F, F', 'F, V, V, V', 'V, F, F, V'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
     },
     {
-        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\n\n1. Alliteration helps promote Language Awareness.\n2. Alliteration always uses \'M\' or \'P\'.\n3. Alliteration can build confidence.\n4. Alliteration makes language fun and enjoyment.',
+        pergunta: 'Classify the statements below as True (V) or False (F). Then choose the correct combination of V and F.\nI. Alliteration helps promote Language Awareness.\nII. Alliteration always uses \'M\' or \'P\'.\nIII. Alliteration can build confidence.\nIV. Alliteration makes language fun and enjoyment.',
         opcoes: ['V, F, V, V', 'F, V, V, F', 'V, V, V, V', 'V, F, F, F'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
