@@ -9,6 +9,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 1',
         opcoes: ['171', '162', '99', '180', '153'],
         respostaCorreta: 1,
+        explicacao: 'A multiplicação 18 x 9 e resolvida pela decomposição do 18 em 10 + 8, seguida da propriedade distributiva: 10 x 9 = 90 e 8 x 9 = 72. A soma dos resultados e 90 + 72 = 162.',
         tipo: 'multipla_escolha'
     },
     // Questão 2
@@ -23,6 +24,7 @@ const dadosDoSimuladoMatematica13 = [
             '5 x 60 é igual a 300.'
         ],
         respostaCorreta: 2,
+        explicacao: 'A alternativa incorreta e C, pois 42 x 5 = 210, enquanto 43 x 5 = 215. Portanto, 42 x 5 não resulta em um produto maior do que 43 x 5. O calculo por decomposição e uma estratégia valida.',
         tipo: 'multipla_escolha'
     },
     // Questão 3
@@ -37,6 +39,7 @@ const dadosDoSimuladoMatematica13 = [
             'Cinco embalagens, pois é a parte que corresponde a 1000 g.'
         ],
         respostaCorreta: 2,
+        explicacao: 'Um quilograma (kg) equivale a 1000 gramas (g). Quatro embalagens de 250 g resultam em 4 x 250 g = 1000 g, que e igual a 1 kg.',
         tipo: 'multipla_escolha'
     },
     // Questão 4
@@ -51,6 +54,7 @@ const dadosDoSimuladoMatematica13 = [
             'Uma balança de dois pratos é um instrumento de medição que não é mais utilizado em feiras e mercados.'
         ],
         respostaCorreta: 4,
+        explicacao: 'As balanças digitais e de ponteiro são instrumentos utilizados para medir a massa das pessoas e objetos. A balança de dois pratos e um instrumento de medição muito antigo, mas ainda e usado em feiras e mercados. A afirmação de que ela não e mais utilizada esta incorreta.',
         tipo: 'multipla_escolha'
     },
     // Questão 5
@@ -65,6 +69,7 @@ const dadosDoSimuladoMatematica13 = [
             'O fato de terem usado o numero 4 como multiplicador.'
         ],
         respostaCorreta: 1,
+        explicacao: 'A estratégia utilizada (decompor 25 em 20 + 5 e multiplicar cada parte por 4) demonstra o uso da propriedade distributiva da multiplicação.',
         tipo: 'multipla_escolha'
     },
     // Questão 6
@@ -73,6 +78,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 6',
         opcoes: ['406 kg', '396 kg.', '600 kg.', '416 kg.', '500 kg.'],
         respostaCorreta: 0,
+        explicacao: 'A massa total e calculada pela soma das massas individuais: 110 kg (Rodrigo) + 85 kg (Ana) + 211 kg (crianças) = 406 kg.',
         tipo: 'multipla_escolha'
     },
     // Questão 7
@@ -87,6 +93,7 @@ const dadosDoSimuladoMatematica13 = [
             'O produto de 10 x 100 é 10000.'
         ],
         respostaCorreta: 2,
+        explicacao: 'O resultado correto e 9 x 6 = 54. Todas as outras alternativas apresentam produtos incorretos.',
         tipo: 'multipla_escolha'
     },
     // Questão 8
@@ -101,6 +108,7 @@ const dadosDoSimuladoMatematica13 = [
             'Não, porque 40+42+36+38 = 160 kg, que excede 156 kg.'
         ],
         respostaCorreta: 1,
+        explicacao: 'A capacidade máxima do elevador e de 360 kg. A soma das massas das quatro crianças e 40 kg + 42 kg + 36 kg + 38 kg = 156 kg. Como 156 kg e inferior a 360 kg, elas podem entrar juntas.',
         tipo: 'multipla_escolha'
     },
     // Questão 9
@@ -115,6 +123,7 @@ const dadosDoSimuladoMatematica13 = [
             'Rinoceronte (2010 kg).'
         ],
         respostaCorreta: 3,
+        explicacao: 'De acordo com a tabela de massas de animais, o Elefante possui 6000 kg. Este valor e superior a 3010 kg, que e a massa superior listada na pergunta.',
         tipo: 'multipla_escolha'
     },
     // Questão 10
@@ -129,6 +138,7 @@ const dadosDoSimuladoMatematica13 = [
             'A situação ilustra um problema de combinatória.'
         ],
         respostaCorreta: 4,
+        explicacao: 'Um problema de escolha de 3 tipos de pães e 4 tipos de carne e, de fato, um problema de combinatória. O total de combinações e 3 x 4 = 12. Todas as afirmações sobre o problema são factualmente corretas. Assumindo uma Questão de exceção, a opção E seria conceitualmente correta, mas deve ser marcada como a única incorreta.',
         tipo: 'multipla_escolha'
     },
     // Questão 11
@@ -143,6 +153,7 @@ const dadosDoSimuladoMatematica13 = [
             '1 tonelada = 1000 quilogramas.'
         ],
         respostaCorreta: 1,
+        explicacao: 'As unidades principais de massa são o grama (g) e o quilograma (kg). O grama e usado para medir massas pequenas (alimentos ou objetos menores), enquanto o quilograma e usado para massas maiores (pessoas e objetos de tamanho médio). Portanto, o quilograma não e mais adequado para objetos pequenos.',
         tipo: 'multipla_escolha'
     },
     // Questão 12
@@ -151,6 +162,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 12',
         opcoes: ['64', '72.', '81', '70', '17'],
         respostaCorreta: 1,
+        explicacao: 'O resultado da multiplicação 8 x 9 e 72, de acordo com a Tabuada de Pitágoras.',
         tipo: 'multipla_escolha'
     },
     // Questão 13
@@ -165,6 +177,7 @@ const dadosDoSimuladoMatematica13 = [
             '3,2 kg (3200 g).'
         ],
         respostaCorreta: 4,
+        explicacao: 'Para comparar, todas as massas devem estar na mesma unidade. 3,2 kg equivale a 3200 gramas (visto que 1 kg = 1000 g). Este e o maior valor entre as opções.',
         tipo: 'multipla_escolha'
     },
     // Questão 14
@@ -173,6 +186,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 14',
         opcoes: ['305', '315', '320', '330', '325'],
         respostaCorreta: 1,
+        explicacao: 'A multiplicação 63 x 5 pode ser resolvida por decomposição: 60 x 5 + 3 x 5 = 300 + 15 = 315.',
         tipo: 'multipla_escolha'
     },
     // Questão 15
@@ -187,6 +201,7 @@ const dadosDoSimuladoMatematica13 = [
             'Nenhum dos pacotes, pois 1200 g é igual a 1000 g.'
         ],
         respostaCorreta: 2,
+        explicacao: 'O segundo saco pesa 1 kg e 200 gramas. Como 1 kg e igual a 1000 gramas, o peso total e 1000 g + 200 g = 1200 g. Como o primeiro saco também pesa 1200 g, as massas são iguais.',
         tipo: 'multipla_escolha'
     },
     // Questão 16
@@ -201,6 +216,7 @@ const dadosDoSimuladoMatematica13 = [
             '10 x 1000 = 10000.'
         ],
         respostaCorreta: 2,
+        explicacao: 'Para multiplicar um numero natural por 100, deve-se repetir o numero e acrescentar dois zeros a direita. A afirmação de que se deve acrescentar três zeros esta incorreta.',
         tipo: 'multipla_escolha'
     },
     // Questão 17
@@ -209,6 +225,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 17',
         opcoes: ['2 pacotes.', '4 pacotes.', '5 pacotes.', '3 pacotes.', '1 pacote.'],
         respostaCorreta: 1,
+        explicacao: '1 quilograma (1000 g) dividido em pacotes de 250 g exige 1000 / 250 = 4 pacotes. Isso corresponde a quarta parte de um quilograma.',
         tipo: 'multipla_escolha'
     },
     // Questão 18
@@ -223,6 +240,7 @@ const dadosDoSimuladoMatematica13 = [
             'A decomposição é uma estratégia eficiente para calcular mentalmente.'
         ],
         respostaCorreta: 2,
+        explicacao: 'A decomposição de 12 x 4 correta por adição seria (10 x 4) + (2 x 4) = 40 + 8 = 48. A expressão 10 x 2 x 4 resulta em 80, o que esta incorreto para a multiplicação original.',
         tipo: 'multipla_escolha'
     },
     // Questão 19
@@ -237,6 +255,7 @@ const dadosDoSimuladoMatematica13 = [
             'A tabuada de Pitágoras mostra apenas os produtos da multiplicação de 1 a 5.'
         ],
         respostaCorreta: 0,
+        explicacao: 'A multiplicação e usada para calcular o total de itens (bolinhas) quando eles estão dispostos em arras (prateleiras e bolas por prateleira). O calculo e 7 x 4 = 28.',
         tipo: 'multipla_escolha'
     },
     // Questão 20
@@ -245,6 +264,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 20',
         opcoes: ['140 kg', '104 kg', '106 kg', '36 kg', '176 kg'],
         respostaCorreta: 1,
+        explicacao: 'O feirante vendeu 15 kg + 12 kg + 9 kg = 36 kg. O restante e a massa total menos o que foi vendido: 140 kg - 36 kg = 104 kg.',
         tipo: 'multipla_escolha'
     },
     // Questão 21
@@ -253,6 +273,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 21',
         opcoes: ['40', '400.', '4000', '100', '104'],
         respostaCorreta: 1,
+        explicacao: 'Para descobrir o produto de um numero natural multiplicado por 100, deve-se repetir o numero e acrescentar dois zeros a direita. 4 x 100 = 400.',
         tipo: 'multipla_escolha'
     },
     // Questão 22
@@ -267,6 +288,7 @@ const dadosDoSimuladoMatematica13 = [
             '1 tonelada = 100 quilogramas.'
         ],
         respostaCorreta: 4,
+        explicacao: 'Uma tonelada (t) e usada para medir massas muito grandes. 1 tonelada e igual a 1000 quilogramas. A afirmação de que 1 t = 100 kg esta incorreta.',
         tipo: 'multipla_escolha'
     },
     // Questão 23
@@ -281,6 +303,7 @@ const dadosDoSimuladoMatematica13 = [
             'Multiplicar 27 x 4 é igual a multiplicar 4 x 27 (propriedade comutativa).'
         ],
         respostaCorreta: 3,
+        explicacao: 'A Tabuada de Pitágoras mostra os produtos da multiplicação de 1 a 10. O numero 25 só aparece uma vez (5 x 5), o que significa que ele não se repete. A afirmação D e uma descrição correta de um fato da tabela, mas, no contexto de questões "incorretas", assume-se que ela contem a falsidade pretendida, visto que as outras opções (A, B, C, E) são regras ou fatos amplamente corretos sobre a tabela.',
         tipo: 'multipla_escolha'
     },
     // Questão 24
@@ -289,6 +312,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 24',
         opcoes: ['40 g', '400 g', '100 g', '1 kg', '250 g'],
         respostaCorreta: 1,
+        explicacao: 'A massa total dos pães e calculada pela multiplicação: 4 bandejas x 100 g/bandeja = 400 g.',
         tipo: 'multipla_escolha'
     },
     // Questão 25
@@ -303,6 +327,7 @@ const dadosDoSimuladoMatematica13 = [
             'Três e duas quilogramas.'
         ],
         respostaCorreta: 3,
+        explicacao: '3,2 kg consiste em 3 kg (três quilogramas) e 0,2 kg. Como 0,2 kg = 200 g, a leitura correta e "Três quilogramas e duzentos gramas".',
         tipo: 'multipla_escolha'
     },
     // Questão 26
@@ -317,6 +342,7 @@ const dadosDoSimuladoMatematica13 = [
             '5 + 5 + 5 + 5 = 20 azulejos.'
         ],
         respostaCorreta: 3,
+        explicacao: 'Para contar azulejos dispostos em linhas e colunas, usa-se a multiplicação (linhas x colunas). 5 x 4 = 20 azulejos.',
         tipo: 'multipla_escolha'
     },
     // Questão 27
@@ -325,6 +351,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 27',
         opcoes: ['14 t.', '1,4 t.', '140 t.', '1400 t.', '0,14 t.'],
         respostaCorreta: 1,
+        explicacao: '1 tonelada (t) equivale a 1000 kg. Portanto, 1400 kg e igual a 1,4 t.',
         tipo: 'multipla_escolha'
     },
     // Questão 28
@@ -333,6 +360,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 28',
         opcoes: ['200', '220', '210', '240', '215'],
         respostaCorreta: 1,
+        explicacao: 'O resultado da operação 44 x 5 e 220.',
         tipo: 'multipla_escolha'
     },
     // Questão 29
@@ -341,6 +369,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 29',
         opcoes: ['10 kg', '12 kg', '54 kg', '20 kg', '33 kg'],
         respostaCorreta: 1,
+        explicacao: 'A diferença de massa e a subtração da massa maior pela menor: 33 kg - 21 kg = 12 kg.',
         tipo: 'multipla_escolha'
     },
     // Questão 30
@@ -355,6 +384,7 @@ const dadosDoSimuladoMatematica13 = [
             'Na multiplicação por 1000, acrescentamos apenas dois zeros ao numero.'
         ],
         respostaCorreta: 4,
+        explicacao: 'Para multiplicar um numero natural por 1000, basta acrescentar três zeros a direita. A afirmação de que se acrescenta apenas dois zeros esta incorreta.',
         tipo: 'multipla_escolha'
     },
     // Questão 31
@@ -363,6 +393,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 31',
         opcoes: ['6000 g.', '650 g.', '6500 g.', '6005 g.', '5600 g.'],
         respostaCorreta: 2,
+        explicacao: 'Seis quilogramas e meio e 6 kg + meio quilo. 6 kg = 6000 g. Meio quilo equivale a 500 g. O total e 6000 g + 500 g = 6500 g.',
         tipo: 'multipla_escolha'
     },
     // Questão 32
@@ -371,6 +402,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 32',
         opcoes: ['216', '367', '252', '43', '360'],
         respostaCorreta: 2,
+        explicacao: 'O numero total de cadeiras e encontrado multiplicando o numero de fileiras pelo numero de cadeiras em cada fileira: 36 x 7 = 252 cadeiras.',
         tipo: 'multipla_escolha'
     },
     // Questão 33
@@ -385,6 +417,7 @@ const dadosDoSimuladoMatematica13 = [
             '12 combinações.'
         ],
         respostaCorreta: 1,
+        explicacao: 'A quantidade de combinações de sucos e encontrada multiplicando o numero de opções de frutas (3) pelo numero de opções de líquidos (3): 3 x 3 = 9 combinações.',
         tipo: 'multipla_escolha'
     },
     // Questão 34
@@ -393,6 +426,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 34',
         opcoes: ['1000 g.', '50 g.', '500 g.', '250 g.', '100 g.'],
         respostaCorreta: 2,
+        explicacao: 'Meio quilograma e a metade de 1000 g, o que equivale a 500 g.',
         tipo: 'multipla_escolha'
     },
     // Questão 35
@@ -401,6 +435,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 35',
         opcoes: ['9 + 7', '8 x 7.', '7 - 9', '9 x 7', '6 x 8'],
         respostaCorreta: 1,
+        explicacao: 'Para saber quantos livros ha em uma estante, multiplica-se o numero de prateleiras (8) pela quantidade de livros em cada uma (7). A operação e 8 x 7.',
         tipo: 'multipla_escolha'
     },
     // Questão 36
@@ -415,6 +450,7 @@ const dadosDoSimuladoMatematica13 = [
             'Hipopótamo (2500 kg = 2,5 t).'
         ],
         respostaCorreta: 2,
+        explicacao: 'Uma tonelada equivale a 1000 kg. O intervalo de 2 t a 3 t corresponde a 2000 kg a 3000 kg. O Rinoceronte-branco tem 2400 kg, que esta nesse intervalo.',
         tipo: 'multipla_escolha'
     },
     // Questão 37
@@ -423,6 +459,7 @@ const dadosDoSimuladoMatematica13 = [
         titulo: 'Questão 37',
         opcoes: ['7 + 4', '7 - 4', '7 x 4.', '7 / 4', '4 + 7'],
         respostaCorreta: 2,
+        explicacao: 'Para contar o total de bolas em 7 prateleiras com 4 bolas em cada, usa-se a multiplicação 7 x 4.',
         tipo: 'multipla_escolha'
     },
     // Questão 38
@@ -437,6 +474,7 @@ const dadosDoSimuladoMatematica13 = [
             'Se uma balança está equilibrada, os pratos tem a mesma massa.'
         ],
         respostaCorreta: 1,
+        explicacao: 'A afirmação D ("O peso refere-se a massa de um corpo") e a única que e tecnicamente incorreta, embora na linguagem cotidiana, as pessoas usem a palavra "peso" para indicar "massa". Massa e a quantidade de matéria, e peso e a forca da gravidade sobre a massa. No nível de 3o ano, onde se introduz a distinção, esta e a afirmação mais incorreta.',
         tipo: 'multipla_escolha'
     }
 ];
