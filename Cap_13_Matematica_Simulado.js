@@ -6,6 +6,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 1
     {
         pergunta: 'Paola resolveu a conta 13 x 9 decompondo o número 13 em 10 + 3, realizando as multiplicações 10 x 9 = 90 e 3 x 9 = 27, e somando os resultados para obter 117. Qual é o resultado correto da multiplicação 18 x 9, utilizando o mesmo procedimento de Paola?',
+        titulo: 'Questão 1',
         opcoes: ['171', '162', '99', '180', '153'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -13,6 +14,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 2
     {
         pergunta: 'Marque a alternativa incorreta sobre o cálculo de multiplicação usando a decomposição:',
+        titulo: 'Questão 2',
         opcoes: [
             'O resultado de 16 x 7 pode ser encontrado somando 10 x 7 com 6 x 7, totalizando 70 + 42 = 112.',
             'Na resolução da multiplicação 25 x 4, o numero 2 escrito acima do algarismo 5 no 25 significa 2 dezenas.',
@@ -26,6 +28,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 3
     {
         pergunta: 'Fernanda possui 4 embalagens de café, cada uma com 250 g. Se ela precisar de 1 quilograma de café, quantas embalagens ela deve comprar?',
+        titulo: 'Questão 3',
         opcoes: [
             'Uma embalagem, pois 250 g é o suficiente para meio quilo.',
             'Duas embalagens, pois 250 g x 2 = 500 g (meio quilo).',
@@ -39,6 +42,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 4
     {
         pergunta: 'Todas estão corretas, exceto:',
+        titulo: 'Questão 4',
         opcoes: [
             'A metade de um quilograma equivale a 500 g.',
             'A quarta parte de um quilograma corresponde a 250 g.',
@@ -52,6 +56,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 5
     {
         pergunta: 'Raul e Ana Julia resolveram a multiplicação 25 x 4. Raul decompôs 25 em 20 + 5, calculou 20 x 4 = 80 e 5 x 4 = 20, e somou 80 + 20 = 100. Qual método representa o uso da propriedade distributiva da multiplicação?',
+        titulo: 'Questão 5',
         opcoes: [
             'A soma de 80 + 20.',
             'A decomposição de 25 em 20 + 5 seguida da multiplicação de cada parcela por 4.',
@@ -65,6 +70,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 6
     {
         pergunta: 'Rodrigo tem um lancha com capacidade para 8 pessoas ou 600 kg. Rodrigo (110 kg), Ana (85 kg) e seis crianças que juntas tem massa igual a 211 kg querem passear. A massa total das pessoas é:',
+        titulo: 'Questão 6',
         opcoes: ['406 kg', '396 kg.', '600 kg.', '416 kg.', '500 kg.'],
         respostaCorreta: 0,
         tipo: 'multipla_escolha'
@@ -72,6 +78,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 7
     {
         pergunta: 'Marque a alternativa correta:',
+        titulo: 'Questão 7',
         opcoes: [
             'O resultado de 6 x 7 é 49.',
             '8 x 4 é igual a 36.',
@@ -85,6 +92,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 8
     {
         pergunta: 'O elevador do prédio da Sofia tem capacidade para levar 5 pessoas ou 360 kg. Quatro crianças (Vitor, Gabi, Sofia e Andre) tem massas de 40 kg, 42 kg, 36 kg e 38 kg, respectivamente. Elas podem entrar juntas no elevador?',
+        titulo: 'Questão 8',
         opcoes: [
             'Não, pois a massa total excede 360 kg.',
             'Sim, pois a soma das massas é 156 kg, que é inferior a 360 kg.',
@@ -98,6 +106,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 9
     {
         pergunta: 'Marque a alternativa que representa um animal com massa superior a 3010 kg, de acordo com a tabela do zoológico:',
+        titulo: 'Questão 9',
         opcoes: [
             'Avestruz (110 kg).',
             'Leão (250 kg).',
@@ -111,6 +120,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 10
     {
         pergunta: 'Em uma lanchonete, há 3 tipos de pães e 4 tipos de carne. Combinando um pão com uma carne, quantas opções de sanduíche há na lanchonete?',
+        titulo: 'Questão 10',
         opcoes: [
             'O numero total de combinações é encontrado pela multiplicação.',
             'Existem 12 opções de sanduíche.',
@@ -124,6 +134,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 11
     {
         pergunta: 'Marque a alternativa incorreta sobre as unidades de medida de massa:',
+        titulo: 'Questão 11',
         opcoes: [
             'As unidades principais para determinar massas de corpos são o grama (g) e o quilograma (kg).',
             'O quilograma é mais adequado para medir a massa de objetos pequenos.',
@@ -137,6 +148,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 12
     {
         pergunta: 'Marque a alternativa que apresenta o resultado da multiplicação 8 x 9:',
+        titulo: 'Questão 12',
         opcoes: ['64', '72.', '81', '70', '17'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -144,6 +156,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 13
     {
         pergunta: 'Qual das seguintes massas é a maior?',
+        titulo: 'Questão 13',
         opcoes: [
             'Meio quilograma (500 g).',
             '1000 gramas (1 kg).',
@@ -157,6 +170,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 14
     {
         pergunta: 'Qual é o resultado correto da multiplicação 63 x 5?',
+        titulo: 'Questão 14',
         opcoes: ['305', '315', '320', '330', '325'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -164,6 +178,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 15
     {
         pergunta: 'Se um saco de açúcar pesa 1200 gramas e outro pesa 1 kg e 200 gramas, qual tem a maior massa?',
+        titulo: 'Questão 15',
         opcoes: [
             'O primeiro saco, pois 1200 g é maior que 1 kg e 200 g.',
             'O segundo saco, pois ele tem 1 kg.',
@@ -177,6 +192,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 16
     {
         pergunta: 'Todas estão corretas, exceto:',
+        titulo: 'Questão 16',
         opcoes: [
             'Para descobrir o produto de um numero natural multiplicado por 10, podemos repetir o numero e acrescentar um zero à direita.',
             'Para calcular 400 x 5, podemos usar o fato básico 4 x 5 = 20 e acrescentar dois zeros, resultando em 2000.',
@@ -190,6 +206,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 17
     {
         pergunta: 'Marque a alternativa que mostra corretamente quantos pacotes de 250 g são necessários para formar 1 quilograma:',
+        titulo: 'Questão 17',
         opcoes: ['2 pacotes.', '4 pacotes.', '5 pacotes.', '3 pacotes.', '1 pacote.'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -197,6 +214,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 18
     {
         pergunta: 'Marque a alternativa incorreta sobre a decomposição na multiplicação:',
+        titulo: 'Questão 18',
         opcoes: [
             '14 x 8 pode ser resolvido calculando 10 x 8 e 4 x 8.',
             'A soma dos produtos parciais 80 + 32 resulta no produto final de 14 x 8 (112).',
@@ -210,6 +228,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 19
     {
         pergunta: 'Marque a alternativa correta sobre a operação de multiplicação.',
+        titulo: 'Questão 19',
         opcoes: [
             'A multiplicação pode ser usada para descobrir quantas bolinhas há em um mural, contando-se o numero de bolas em cada prateleira (7) e multiplicando pela quantidade de prateleiras (4), resultando em 28.',
             'A multiplicação de 16 x 7 só pode ser resolvida usando o algoritmo convencional.',
@@ -223,6 +242,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 20
     {
         pergunta: 'Um feirante levou 140 kg de frutas. Vendeu 15 kg de maça, 12 kg de banana e 9 kg de pera. Quantos quilogramas de frutas ele ainda tem para vender?',
+        titulo: 'Questão 20',
         opcoes: ['140 kg', '104 kg', '106 kg', '36 kg', '176 kg'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -230,6 +250,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 21
     {
         pergunta: 'Marque a alternativa que mostra corretamente o produto de 4 x 100:',
+        titulo: 'Questão 21',
         opcoes: ['40', '400.', '4000', '100', '104'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -237,6 +258,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 22
     {
         pergunta: 'Marque a alternativa incorreta:',
+        titulo: 'Questão 22',
         opcoes: [
             'O quilograma é usado para medir massas de corpos.',
             'As balanças digitais e de ponteiro são instrumentos usados para medir massa.',
@@ -250,6 +272,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 23
     {
         pergunta: 'Marque a alternativa incorreta sobre a Tabuada de Pitágoras (Tabela de Multiplicação):',
+        titulo: 'Questão 23',
         opcoes: [
             'Na Tabuada de Pitágoras, o produto da multiplicação de um numero por 1 é sempre o próprio numero.',
             'A Tabuada de Pitágoras mostra os produtos da multiplicação de 1 a 10.',
@@ -263,6 +286,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 24
     {
         pergunta: 'Em uma padaria, pães para cachorro-quente são vendidos em bandejas de 100 g. Se você comprar 4 bandejas, qual será a massa total dos pães em gramas?',
+        titulo: 'Questão 24',
         opcoes: ['40 g', '400 g', '100 g', '1 kg', '250 g'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -270,6 +294,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 25
     {
         pergunta: 'Marque a alternativa que representa a leitura por extenso de 3,2 kg:',
+        titulo: 'Questão 25',
         opcoes: [
             'Três quilogramas e duzentas gramas.',
             'Trinta e dois quilogramas.',
@@ -283,6 +308,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 26
     {
         pergunta: 'Em uma malha quadriculada, se você tem 5 linhas de 4 azulejos cada, qual é o total de azulejos?',
+        titulo: 'Questão 26',
         opcoes: [
             '5 + 4 = 9 azulejos.',
             '5 x 5 = 25 azulejos.',
@@ -296,6 +322,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 27
     {
         pergunta: 'Marque a alternativa correta para a equivalência de 1400 kg em toneladas:',
+        titulo: 'Questão 27',
         opcoes: ['14 t.', '1,4 t.', '140 t.', '1400 t.', '0,14 t.'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -303,6 +330,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 28
     {
         pergunta: 'Marque a alternativa correta para o resultado da operação 44 x 5:',
+        titulo: 'Questão 28',
         opcoes: ['200', '220', '210', '240', '215'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -310,6 +338,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 29
     {
         pergunta: 'Em um registro de massas, Joao tem 33 quilogramas e Ana tem 21 quilogramas. Qual é a diferença de massa entre eles?',
+        titulo: 'Questão 29',
         opcoes: ['10 kg', '12 kg', '54 kg', '20 kg', '33 kg'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -317,6 +346,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 30
     {
         pergunta: 'Todas estão corretas, exceto:',
+        titulo: 'Questão 30',
         opcoes: [
             'Na multiplicação 1 x 6 = 6, o numero 1 é um fator.',
             '20 x 5 tem o mesmo resultado que 2 x 50.',
@@ -330,6 +360,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 31
     {
         pergunta: 'Quantos gramas há em seis quilogramas e meio?',
+        titulo: 'Questão 31',
         opcoes: ['6000 g.', '650 g.', '6500 g.', '6005 g.', '5600 g.'],
         respostaCorreta: 2,
         tipo: 'multipla_escolha'
@@ -337,6 +368,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 32
     {
         pergunta: 'Em um auditório, há 36 fileiras com 7 cadeiras em cada uma. Quantas cadeiras há nesse auditório?',
+        titulo: 'Questão 32',
         opcoes: ['216', '367', '252', '43', '360'],
         respostaCorreta: 2,
         tipo: 'multipla_escolha'
@@ -344,6 +376,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 33
     {
         pergunta: 'Uma lanchonete oferece sucos naturais onde você pode escolher 1 fruta (laranja, kiwi ou morango) e 1 líquido (leite, água mineral ou água de coco). Quantas combinações diferentes de suco são possíveis?',
+        titulo: 'Questão 33',
         opcoes: [
             '3 opções de frutas + 3 opções de líquidos = 6 combinações.',
             '3 x 3 = 9 combinações.',
@@ -357,6 +390,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 34
     {
         pergunta: 'Quantos gramas (g) há em meio quilograma?',
+        titulo: 'Questão 34',
         opcoes: ['1000 g.', '50 g.', '500 g.', '250 g.', '100 g.'],
         respostaCorreta: 2,
         tipo: 'multipla_escolha'
@@ -364,6 +398,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 35
     {
         pergunta: 'Marina, em uma biblioteca, está organizando 6 estantes com 8 prateleiras em cada uma. Em cada prateleira, ela quer colocar 7 livros. Qual operação ela deve resolver para saber quantos livros ela já colocou em uma única estante?',
+        titulo: 'Questão 35',
         opcoes: ['9 + 7', '8 x 7.', '7 - 9', '9 x 7', '6 x 8'],
         respostaCorreta: 1,
         tipo: 'multipla_escolha'
@@ -371,6 +406,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 36
     {
         pergunta: 'Qual a alternativa que indica a massa de um animal que está entre 2 e 3 toneladas:',
+        titulo: 'Questão 36',
         opcoes: [
             'Girafa (1400 kg = 1,4 t).',
             'Búfalo-asiático (800 kg).',
@@ -384,6 +420,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 37
     {
         pergunta: 'Qual é a operação que serve para contar a quantidade de bolinhas de basquete em uma estante com 7 prateleiras e 4 bolas em cada uma?',
+        titulo: 'Questão 37',
         opcoes: ['7 + 4', '7 - 4', '7 x 4.', '7 / 4', '4 + 7'],
         respostaCorreta: 2,
         tipo: 'multipla_escolha'
@@ -391,6 +428,7 @@ const dadosDoSimuladoMatematica13 = [
     // Questão 38
     {
         pergunta: 'Todas estão corretas, exceto:',
+        titulo: 'Questão 38',
         opcoes: [
             'Grama e quilograma são unidades de massa.',
             'Um livro de 300 g deve ser guardado no fundo de uma mala se for o mais pesado de três objetos.',
