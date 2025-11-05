@@ -29,8 +29,8 @@ const dadosDoQuizPortugues12_Game3 = [
             "V - F - V - F",
             "F - V - F - V"
         ],
-        respostaCorreta: 2,
-        explicacao: "A afirmação (B) é Falsa (F). Antagonismo significa fazer oposição a algo ou alguém. O motorista ajuda Sônia, logo, não é o antagonista. A afirmação (D) é Falsa (F), pois Sônia é explicitamente uma tartaruga.",
+        respostaCorreta: 0,
+        explicacao: "I. Verdadeiro - Júlia e Léo são os personagens principais da história. II. Verdadeiro - Antagonismo significa fazer oposição a algo ou alguém. III. Falso - O motorista não aparece nesta história. IV. Falso - Sônia não é mencionada nesta história.",
         tipo: "multipla_escolha"
     },
     
