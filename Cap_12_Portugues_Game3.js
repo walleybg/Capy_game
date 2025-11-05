@@ -66,7 +66,7 @@ const dadosDoQuizPortugues12_Game3 = [
     
     // Questão 5
     {
-        pergunta: "Leia o miniconto:\n\n\"Era uma vez uma locomotiva chamada Lili. Ela adorava viajar pelos trilhos. Um dia, Lili esperou muito tempo na estação. Quando finalmente partiu, ouviu o apito e seguiu viagem feliz.\"\n\nClassifique as afirmações:\nI. Lili é uma locomotiva.\nII. A locomotiva é um objeto, não um personagem.\nIII. O texto usa verbos no passado.\nIV. Os verbos no passado (\"esperou\", \"ouviu\") definem o tempo verbal da narrativa.",
+        pergunta: "Leia o miniconto:\n\n\"Era uma vez uma locomotiva chamada Lili. Ela adorava viajar pelos trilhos. Um dia, Lili esperou muito tempo na estação. Quando finalmente partiu, ouviu o apito e seguiu viagem feliz.\"\n\nClassifique as afirmações:\nI. Lili é o narrador.\nII. A locomotiva é um objeto, não um personagem.\nIII. O texto usa verbos no passado.\nIV. Os verbos no passado (\"esperou\", \"ouviu\") definem o tempo verbal da narrativa.",
         titulo: "Questão 5",
         opcoes: [
             "V - V - F - F",
