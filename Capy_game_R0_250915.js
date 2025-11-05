@@ -48,6 +48,7 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizPortugues12',
                 video: 'Cap_12_Portugues_Video.mp4',
                 questoes2: 'dadosDoQuizPortugues12Jogo2',
+                questoes3: 'dadosDoQuizPortugues12_Game3',
                 disponivel: true
             },
             {
@@ -496,6 +497,7 @@ function gerarListaCapitulos(capitulos) {
                             <button class="btn-modulo" onclick="abrirAudioPlayerPopup('${capitulo.id}')">🎧 3. Podcast</button>
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                             ${capitulo.questoes2 ? `<button class="btn-principal" onclick="iniciarCapituloJogo2('${capitulo.id}')">🎮 5. Game 2</button>` : ''}
+                            ${capitulo.questoes3 ? `<button class="btn-principal" onclick="iniciarCapituloJogo3('${capitulo.id}')">🎮 6. Game 3</button>` : ''}
                             ${capitulo.provaSimulada ? `<button class="btn-simulado" onclick="iniciarProvaSimulada('${capitulo.id}')">📝 5. Prova Simulada</button>` : ''}
                             ${capitulo.irregularVerbsList ? `<button class="btn-modulo" onclick="abrirIrregularVerbsList('${capitulo.id}')">📋 ${capitulo.questoes2 ? '6' : '5'}. Irregular Verbs List</button>` : ''}
                             ${capitulo.geniusLessons ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.irregularVerbsList && capitulo.questoes2 ? '7' : capitulo.irregularVerbsList || capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
@@ -2862,3 +2864,59 @@ function iniciarProvaSimulada(capituloId) {
     iniciarJogoInterface();
 }
 
+
+// Função para iniciar o Game 3 (40 questões)
+function iniciarCapituloJogo3(capituloId) {
+    console.log('iniciarCapituloJogo3 chamado com:', capituloId);
+    
+    const arena = estruturaCapitulos[arenaAtual];
+    if (!arena) {
+        console.error('Arena não encontrada:', arenaAtual);
+        alert('Erro: Arena não encontrada!');
+        return;
+    }
+    
+    const capitulo = arena.capitulos.find(cap => cap.id === capituloId);
+    if (!capitulo) {
+        console.error('Capítulo não encontrado:', capituloId);
+        alert('Erro: Capítulo não encontrado!');
+        return;
+    }
+    
+    if (!capitulo.disponivel) {
+        alert('Este capítulo ainda não está disponível!');
+        return;
+    }
+    
+    if (!capitulo.questoes3) {
+        alert('Game 3 ainda não está disponível para este capítulo!');
+        return;
+    }
+    
+    capituloAtual = capituloId;
+    nomeCapituloAtual = capitulo.titulo + ' - Game 3';
+    
+    // Definir banco de questões do Game 3 baseado no capítulo
+    switch(capituloId) {
+        case 'cap12_portugues':
+            if (typeof dadosDoQuizPortugues12_Game3 === 'undefined') {
+                alert('Erro: Questões do Game 3 de Português 12 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues12_Game3;
+            break;
+
+        default:
+            alert('Game 3 ainda não disponível para este capítulo!');
+            return;
+    }
+    
+    console.log('Banco de questões do Game 3 carregado:', bancoDeQuestoesAtual.length, 'questões');
+    
+    // Inicializar arrays de controle
+    respostasDoUsuario = new Array(bancoDeQuestoesAtual.length).fill(null);
+    statusDasQuestoes = new Array(bancoDeQuestoesAtual.length).fill('nao_respondida');
+    
+    // Inicializar o jogo
+    iniciarJogoInterface();
+}
