@@ -317,6 +317,7 @@ const estruturaCapitulos = {
                 titulo: 'De gota em gota, de grão em grão',
                 audio: 'Cap_07_Geografia.mp3',
                 questoes: 'dadosDoQuizGeografiaCap7',
+                questoes2: 'dadosDoQuizGeografia7Jogo2',
                 video: 'Cap_07_Geografia_Video.mp4',
                 mapaMental: 'Cap_07_Geografia_Mindmap.png',
                 disponivel: true
@@ -824,6 +825,14 @@ function iniciarCapituloJogo2(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizHistoria7Jogo2;
+            break;
+        
+        case 'cap07_geografia':
+            if (typeof dadosDoQuizGeografia7Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de Geografia 7 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizGeografia7Jogo2;
             break;
 
         default:
