@@ -305,8 +305,8 @@ IV. O professor é mencionado.",
             "Fim.",
             "Meio."
         ],
-        respostaCorreta: 1,
-        explicacao: "A alternativa é incorreta. A resolução da história é chamada de desfecho ou fim.",
+        respostaCorreta: 0,
+        explicacao: "Correto! A resolução da história é chamada de desfecho ou fim.",
         tipo: "multipla_escolha"
     },
     
