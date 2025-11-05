@@ -143,7 +143,7 @@ IV. O professor é mencionado.",
     
     // Questão 10
     {
-        pergunta: "Leia o miniconto:\n\n\"Era uma vez um rei chamado Arthur. Ele governava um reino com quatro súditos. Um dia, o rei decidiu fazer uma festa. Todos se divertiram muito, mas o antagonismo surgiu quando faltou comida. No final, o rei resolveu o problema.\"\n\nClassifique as afirmações:\nI. O rei Arthur é o personagem principal.\nII. Os súditos são mencionados.\nIII. A falta de comida é o antagonismo.\nIV. O antagonismo é a oposição entre a expectativa (festa) e a realidade (falta de comida).",
+        pergunta: "Leia o miniconto:\n\n\"Era uma vez um rei chamado Arthur. Ele governava um reino com quatro súditos. Um dia, o rei decidiu fazer uma festa. Todos se divertiram muito, mas o antagonismo surgiu quando faltou comida. No final, o rei resolveu o problema.\"\n\nClassifique as afirmações:\nI. O rei Arthur é o personagem principal.\nII. Os súditos não são mencionados.\nIII. A falta de comida é o antagonismo.\nIV. O antagonismo é a oposição entre a expectativa (festa) e a realidade (falta de comida).",
         titulo: "Questão 10",
         opcoes: [
             "V - F - V - V",
