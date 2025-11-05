@@ -126,7 +126,9 @@ const dadosDoQuizPortugues12_Game3 = [
     
     // Questão 9
     {
-        pergunta: "Leia o miniconto:\n\n\"Um dia, um menino chamado Pedro encontrou uma palavra estranha: 'desolado'. Ele perguntou ao professor o que significava. O professor explicou que 'desolado' significa triste, arrasado. Pedro ficou feliz por aprender algo novo.\"\n\nClassifique as afirmações:\nI. Pedro é o personagem principal.\nII. A palavra 'desolado' significa feliz.\nIII. O miniconto deve ter tamanho reduzido.\nIV. O professor é mencionado.",
+        pergunta: "Leia o miniconto:\n\n\"Um dia, um menino chamado Pedro encontrou uma palavra estranha: 'desolado'. Ele perguntou ao professor o que significava. O professor explicou que 'desolado' significa triste, arrasado. Pedro ficou feliz por aprender algo novo.\"\n\nClassifique as afirmações:\nI. Pedro é o personagem principal.\nII. A palavra 'desolado' significa triste.
+III. O miniconto pode ter tamanho livre e indeterminado.
+IV. O professor é mencionado.",
         titulo: "Questão 9",
         opcoes: [
             "V - V - F - V",
