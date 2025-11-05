@@ -40,12 +40,12 @@ const dadosDoQuizPortugues12_Game3 = [
         titulo: "Questão 3",
         opcoes: [
             "V - F - V - V",
-            "V - F - V - V",
+            "F - V - V - V",
             "F - V - F - V",
             "F - F - F - F"
         ],
         respostaCorreta: 1,
-        explicacao: "A afirmação (B) é Falsa (F), pois o texto não apresenta marcas de primeira pessoa (\"eu\"), caracterizando um narrador observador. A afirmação (D) é Verdadeira (V), pois contos e minicontos são textos narrativos fictícios (histórias inventadas).",
+        explicacao: "",
         tipo: "multipla_escolha"
     },
     
