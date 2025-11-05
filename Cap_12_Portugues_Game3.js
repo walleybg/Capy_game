@@ -6,7 +6,7 @@ const dadosDoQuizPortugues12_Game3 = [
     
     // Questão 1
     {
-        pergunta: "Leia o miniconto abaixo e classifique as afirmações como Verdadeiras (V) ou Falsas (F).\n\n\"Era uma vez uma pequena tartaruga chamada Sônia. Ela vivia em um lago tranquilo. Um dia, Sônia decidiu explorar a floresta. No caminho, encontrou um motorista que estava com o carro quebrado. Sônia ajudou o motorista a empurrar o carro até a oficina. O motorista agradeceu muito e seguiu seu caminho.\"\n\nClassifique as afirmações:\nI. O narrador usa pronomes como \"eu\" ou \"nós\".\nII. O enredo deve ter começo, meio e fim.\nIII. Sônia é a personagem principal.\nIV. O desfecho é quando Sônia encontra o motorista.",
+        pergunta: "Leia o miniconto abaixo e classifique as afirmações como Verdadeiras (V) ou Falsas (F).\n\n\"Era uma vez uma pequena tartaruga chamada Sônia. Ela vivia em um lago tranquilo. Um dia, Sônia decidiu explorar a floresta. No caminho, encontrou um motorista que estava com o carro quebrado. Sônia ajudou o motorista a empurrar o carro até a oficina. O motorista agradeceu muito e seguiu seu caminho.\"\n\nClassifique as afirmações:\nI. O narrador usa pronomes como \"eu\" ou \"nós\".\nII. O enredo deve ter começo, meio e fim.\nIII. Sônia é a personagem principal.\nIV. O desfecho é quando o motorista agradece a Sônia e segue a viagem.",
         titulo: "Questão 1",
         opcoes: [
             "V - V - V - V",
