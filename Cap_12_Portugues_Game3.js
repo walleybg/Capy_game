@@ -111,7 +111,7 @@ const dadosDoQuizPortugues12_Game3 = [
     
     // Questão 8
     {
-        pergunta: "Leia o miniconto:\n\n\"Duque era um cãozinho muito esperto. Ele vivia com sua família em uma casa grande. Um dia, a nevasca começou e todos ficaram presos em casa. Duque ajudou a família a se manter aquecida.\"\n\nClassifique as afirmações:\nI. Duque é o cãozinho.\nII. A nevasca é a situação-problema.\nIII. Duque é o personagem principal.\nIV. A família de Duque é mencionada.",
+        pergunta: "Leia o miniconto:\n\n\"Duque era um cãozinho muito esperto. Ele vivia com sua família em uma casa grande. Um dia, a nevasca começou e todos ficaram presos em casa. Duque ajudou a família a se manter aquecida.\"\n\nClassifique as afirmações:\nI. Duque não é o personagem principal da história.\nII. A nevasca é a situação-problema.\nIII. Duque é o personagem principal.\nIV. A família de Duque é mencionada.",
         titulo: "Questão 8",
         opcoes: [
             "V - V - V - V",
