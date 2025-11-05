@@ -462,6 +462,149 @@ IV. O professor é mencionado.",
         respostaCorreta: 0,
         explicacao: "Ao revisar, é importante avaliar se a história é curta, pois o miniconto deve ter um tamanho reduzido.",
         tipo: "multipla_escolha"
+    },
+    
+    // Seção IV: Substantivos Coletivos (Q31-Q40)
+    
+    // Questão 31
+    {
+        titulo: "Questão 31",
+        pergunta: "Marque a alternativa correta.\n\nO substantivo coletivo que indica um conjunto de pessoas é:",
+        opcoes: [
+            "a) Álbum",
+            "b) Matilha",
+            "c) Multidão",
+            "d) Feixe"
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! Multidão é o coletivo de pessoas.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 32
+    {
+        titulo: "Questão 32",
+        pergunta: "Marque a alternativa incorreta sobre Substantivos Coletivos.",
+        opcoes: [
+            "a) Substantivos coletivos são aqueles que indicam um grupo ou conjunto de seres ou objetos.",
+            "b) Gataria é o coletivo de gatos.",
+            "c) Pinacoteca é o coletivo de mapas.",
+            "d) Orquestra é o coletivo de músicos."
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! A alternativa é incorreta, pois Atlas é o coletivo de mapas. Pinacoteca é o coletivo de quadros ou pinturas.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 33
+    {
+        titulo: "Questão 33",
+        pergunta: "Marque a alternativa correta.\n\nQual é o substantivo coletivo para um conjunto de cães?",
+        opcoes: [
+            "a) Ninhada",
+            "b) Alcateia",
+            "c) Matilha",
+            "d) Cardume"
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! Matilha é o substantivo coletivo para um conjunto de cães ou cachorros.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 34
+    {
+        titulo: "Questão 34",
+        pergunta: "Marque a alternativa incorreta ou que não representa a realidade.\n\nQual dos coletivos abaixo está relacionado a um conjunto de aviões ou aeronaves?",
+        opcoes: [
+            "a) Esquadrilha.",
+            "b) Frota.",
+            "c) Esquadrão.",
+            "d) Caravana."
+        ],
+        respostaCorreta: 3,
+        explicacao: "Correto! A alternativa é incorreta, pois Caravana é o coletivo de viajantes. Esquadrilha é o coletivo de aeronaves e aviões.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 35
+    {
+        titulo: "Questão 35",
+        pergunta: "Marque a alternativa correta.\n\nO substantivo coletivo Cardume refere-se a um conjunto de:",
+        opcoes: [
+            "a) Lobos",
+            "b) Pessoas",
+            "c) Peixes",
+            "d) Chaves"
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! Cardume é o coletivo de peixes.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 36
+    {
+        titulo: "Questão 36",
+        pergunta: "Marque a alternativa incorreta ou que não representa a realidade.",
+        opcoes: [
+            "a) Boiada é o coletivo de bois.",
+            "b) Elenco é o coletivo de artistas ou atores.",
+            "c) Panapaná é o coletivo de espectadores.",
+            "d) Álbum é o coletivo de fotos."
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! A alternativa é incorreta. Panapaná é o coletivo de borboletas, e Plateia é o coletivo de espectadores.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 37
+    {
+        titulo: "Questão 37",
+        pergunta: "Marque a alternativa correta.\n\nSe uma pessoa está observando uma reunião de bandidos ou malfeitores, ela está vendo uma:",
+        opcoes: [
+            "a) Alcateia",
+            "b) Banda ou Córja",
+            "c) Falange",
+            "d) Ninhada"
+        ],
+        respostaCorreta: 1,
+        explicacao: "Correto! Banda e Córja são substantivos coletivos de bandidos ou malfeitores.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 38
+    {
+        titulo: "Questão 38",
+        pergunta: "Marque a alternativa incorreta ou que não representa a realidade.\n\nO coletivo Frota não representa a realidade quando se refere a:",
+        opcoes: [
+            "a) Navios",
+            "b) Ônibus",
+            "c) Caminhões",
+            "d) Flores"
+        ],
+        respostaCorreta: 3,
+        explicacao: "Correto! A alternativa é incorreta. Frota é o coletivo de navios ou veículos (como carros e ônibus). O coletivo de flores é Buquê ou Ramalhete.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 39
+    {
+        titulo: "Questão 39",
+        pergunta: "Marque a alternativa correta.\n\nO coletivo Júri refere-se a um conjunto de:",
+        opcoes: [
+            "a) Soldados",
+            "b) Alunos",
+            "c) Jurados",
+            "d) Parentes"
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! Júri é o coletivo de jurados.",
+        tipo: "multipla_escolha"
+    },
+    // Questão 40
+    {
+        titulo: "Questão 40",
+        pergunta: "Marque a alternativa correta.\n\nO coletivo Cinemateca refere-se a um conjunto de:",
+        opcoes: [
+            "a) Livros",
+            "b) Músicos",
+            "c) Filmes",
+            "d) Versos"
+        ],
+        respostaCorreta: 2,
+        explicacao: "Correto! Cinemateca é o coletivo de filmes.",
+        tipo: "multipla_escolha"
     }
 ];
 
