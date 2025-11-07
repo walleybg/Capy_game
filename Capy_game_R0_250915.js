@@ -73,10 +73,12 @@ const estruturaCapitulos = {
             {
                 id: 'cap15_portugues',
                 numero: 15,
-                titulo: 'Quais são os meus direitos',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                titulo: 'Meus Direitos',
+                audio: 'Cap_15_Portugues_podcast.mp3',
+                questoes: 'dadosDoQuizPortugues15',
+                video: 'Cap_15_Portugues_Video.mp4',
+                mapaMental: 'Cap_15_Portugues_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap16_portugues',
@@ -482,7 +484,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.setAttribute('data-id', capitulo.id);
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -626,6 +628,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizPortugues14;
+            break;
+        case 'cap15_portugues':
+            if (typeof dadosDoQuizPortugues15 === 'undefined') {
+                alert('Erro: Questões de Português 15 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizPortugues15;
             break;
         case 'cap06_historia':
             if (typeof questoesHistoria === 'undefined') {
