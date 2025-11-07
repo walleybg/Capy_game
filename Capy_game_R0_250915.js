@@ -74,7 +74,7 @@ const estruturaCapitulos = {
                 id: 'cap15_portugues',
                 numero: 15,
                 titulo: 'Meus Direitos',
-                audio: 'Cap_15_Portugues_podcast.mp3',
+                audio: 'Cap_15_Portugues.mp3',
                 questoes: 'dadosDoQuizPortugues15',
                 video: 'Cap_15_Portugues_Video.mp4',
                 mapaMental: 'Cap_15_Portugues_Mindmap.png',
