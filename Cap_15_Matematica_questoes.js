@@ -14,7 +14,7 @@ const dadosDoQuizMatematica15 = [
             "c) A garrafa de 1000 mL é o dobro da capacidade que Maria procura.",
             "d) A capacidade de 100 mL representa a mesma quantidade de líquido que Maria busca."
         ],
-        respostaCorreta: "d) A capacidade de 100 mL representa a mesma quantidade de líquido que Maria busca.",
+        respostaCorreta: 3,
         explicacao: "A capacidade de 'meio litro' é igual a 500 mL. 100 mL é uma capacidade menor, não representando a quantidade que Maria busca."
     },
     {
@@ -28,7 +28,7 @@ const dadosDoQuizMatematica15 = [
             "c) O uso de um copo pequeno (aproximadamente 30 mL) ou de uma xícara é um método de medição mais preciso do que usar uma proveta ou um béquer.",
             "d) Fazer uma estimativa antes de realizar a medição ajuda a prever a quantidade aproximada de líquido necessário."
         ],
-        respostaCorreta: "c) O uso de um copo pequeno (aproximadamente 30 mL) ou de uma xícara é um método de medição mais preciso do que usar uma proveta ou um béquer.",
+        respostaCorreta: 2,
         explicacao: "O Litro (L) e o mililitro (mL) são unidades de medida padronizadas. O béquer e a proveta são instrumentos graduados mais precisos para medir capacidade do que um copo ou xícara."
     },
     {
@@ -42,7 +42,7 @@ const dadosDoQuizMatematica15 = [
             "c) Se fosse preciso encher uma embalagem de 1 Litro com este sabonete, seriam necessárias três embalagens de 420 mL.",
             "d) A embalagem de 420 mL contém menos líquido do que uma embalagem de 1 Litro."
         ],
-        respostaCorreta: "c) Se fosse preciso encher uma embalagem de 1 Litro com este sabonete, seriam necessárias três embalagens de 420 mL.",
+        respostaCorreta: 2,
         explicacao: "1 Litro equivale a 1.000 mL. Três embalagens de 420 mL somam 1.260 mL. Essa quantidade é maior do que 1 Litro, e não o volume exato para encher a embalagem de 1 Litro."
     },
     {
@@ -56,7 +56,7 @@ const dadosDoQuizMatematica15 = [
             "c) O Litro (L) é a unidade mais usada para medir grandes quantidades de líquido, como uma garrafa de refrigerante ou água.",
             "d) Se ele usar a lata de refrigerante (aproximadamente 350 mL) como medidor, ele precisará de menos de cinco latas cheias para atingir 2 Litros."
         ],
-        respostaCorreta: "d) Se ele usar a lata de refrigerante (aproximadamente 350 mL) como medidor, ele precisará de menos de cinco latas cheias para atingir 2 Litros.",
+        respostaCorreta: 3,
         explicacao: "2 Litros são 2.000 mL. Usando latas de 350 mL (capacidade aproximada de refrigerante), 2.000 ÷ 350 ≈ 5,7. Ele precisará de 6 latas cheias, ou seja, mais de cinco latas."
     },
     {
@@ -70,7 +70,7 @@ const dadosDoQuizMatematica15 = [
             "c) Para que ele possa fazer 5 queijos em um mês, ele precisará produzir um total de 50 Litros de leite.",
             "d) A capacidade usada para medir a produção de leite (Litros) é uma unidade menor que o mililitro."
         ],
-        respostaCorreta: "d) A capacidade usada para medir a produção de leite (Litros) é uma unidade menor que o mililitro.",
+        respostaCorreta: 3,
         explicacao: "O Litro (L) é a medida de capacidade mais comum e é usada para recipientes maiores. O mililitro (mL) é usado para medir pequenas capacidades. O Litro é uma unidade maior que o mililitro."
     },
     {
@@ -84,7 +84,7 @@ const dadosDoQuizMatematica15 = [
             "c) O número total de garrafinhas que ela precisará será de 20.",
             "d) Ela poderia usar embalagens de 300 mL (como visto na Atividade 8) e precisaria de menos garrafas, pois 300 mL tem mais capacidade que 500 mL."
         ],
-        respostaCorreta: "d) Ela poderia usar embalagens de 300 mL (como visto na Atividade 8) e precisaria de menos garrafas, pois 300 mL tem mais capacidade que 500 mL.",
+        respostaCorreta: 3,
         explicacao: "Joana precisa de 10.000 mL (10 L). Se usasse garrafas de 300 mL (capacidade menor que 500 mL), ela precisaria de aproximadamente 33,3 garrafas. Quanto menor a capacidade do recipiente, maior o número de embalagens necessárias."
     },
     {
@@ -98,7 +98,7 @@ const dadosDoQuizMatematica15 = [
             "c) O tanque de 5.000 Litros é uma capacidade grande, semelhante à de um barril de óleo (Aprox. 160 L).",
             "d) Após gastar 1.200 Litros de óleo em 10 dias, sobraria no tanque uma capacidade de óleo superior a 4.000 Litros."
         ],
-        respostaCorreta: "c) O tanque de 5.000 Litros é uma capacidade grande, semelhante à de um barril de óleo (Aprox. 160 L).",
+        respostaCorreta: 2,
         explicacao: "O consumo diário é de 120 L (4 L x 30). O tanque tem 5.000 L de capacidade. A capacidade de um barril comum de óleo é de 160 L. 5.000 L não é uma capacidade semelhante a 160 L; é muito maior."
     },
     {
@@ -112,7 +112,7 @@ const dadosDoQuizMatematica15 = [
             "c) O volume total de água consumido pela família no dia foi de 585 Litros.",
             "d) Se a família usar a água de uma garrafa de água mineral de 20 Litros (capacidade comum), ela teria água suficiente para tomar banho."
         ],
-        respostaCorreta: "a) A soma do consumo diário de Lavar louça, regar o jardim e descarga é de 135 Litros (40 + 185 + 30).",
+        respostaCorreta: 0,
         explicacao: "De acordo com a tabela, a soma do consumo de Lavar a louça (40 L), Regar o jardim (185 L) e Descarga (30 L) é de 255 Litros. A afirmação de que essa soma é 135 Litros está incorreta."
     },
     {
@@ -126,7 +126,7 @@ const dadosDoQuizMatematica15 = [
             "c) 500 mL corresponde à metade de 1 Litro.",
             "d) Paulo precisará comprar duas latas de 900 mL da tinta azul-marinho para obter exatamente os 500 mL que necessita."
         ],
-        respostaCorreta: "d) Paulo precisará comprar duas latas de 900 mL da tinta azul-marinho para obter exatamente os 500 mL que necessita.",
+        respostaCorreta: 3,
         explicacao: "Paulo precisa de 500 mL de tinta azul-marinho. A lata vendida tem 900 mL. Com uma única lata, ele já atende a sua necessidade e ainda sobra."
     },
     {
@@ -140,7 +140,7 @@ const dadosDoQuizMatematica15 = [
             "c) O mililitro (mL) é frequentemente usado para indicar pequenas medidas de capacidade, como dosagens de remédios.",
             "d) O Litro (L) e o mililitro (mL) são unidades de medida padronizadas para líquidos."
         ],
-        respostaCorreta: "b) O tubo de ensaio tem uma capacidade muito maior que a proveta.",
+        respostaCorreta: 1,
         explicacao: "O tubo de ensaio é um recipiente estreito e geralmente tem uma capacidade muito pequena. A proveta, por sua vez, é um recipiente graduado usado para volumes maiores e precisos."
     },
 
@@ -156,7 +156,7 @@ const dadosDoQuizMatematica15 = [
             "c) V, V, F, F",
             "d) F, F, V, V"
         ],
-        respostaCorreta: "b) F, V, F, V",
+        respostaCorreta: 1,
         explicacao: "I (F): L é a medida mais comum para mensurar líquidos em geral. II (V): 1 mL é a milésima parte de 1 L, pois 1 L = 1.000 mL. III (F): 1.000 mL equivalem a 1 Litro. IV (V): 500 mL é a metade de 1.000 mL, ou seja, meio Litro."
     },
 
@@ -172,7 +172,7 @@ const dadosDoQuizMatematica15 = [
             "c) F, V, F, V",
             "d) F, F, V, V"
         ],
-        respostaCorreta: "a) V, V, V, V",
+        respostaCorreta: 0,
         explicacao: "I (V): E significa empty (vazio). II (V): Metade de 45 L é 22,5 L. III (V): O Litro é usado para medir a capacidade de grandes recipientes, como tanques de carros. IV (V): E e F são iniciais em inglês para vazio e cheio."
     },
     {
@@ -186,7 +186,7 @@ const dadosDoQuizMatematica15 = [
             "c) F, V, V, F",
             "d) V, V, F, F"
         ],
-        respostaCorreta: "a) F, V, V, V",
+        respostaCorreta: 0,
         explicacao: "I (F): 1 Litro é 1.000 mililitros. II (V): 1 Litro equivale a 1.000 mL. III (V): 1.000 mL ÷ 250 mL = 4 copos. IV (V): 2 Litros (2.000 mL) ÷ 250 mL = 8 copos."
     },
     {
@@ -200,7 +200,7 @@ const dadosDoQuizMatematica15 = [
             "c) V, F, V, V",
             "d) V, F, V, F"
         ],
-        respostaCorreta: "d) V, F, V, F",
+        respostaCorreta: 3,
         explicacao: "I (V): O Béquer é menos preciso que a Proveta. II (F): O tubo de ensaio tem capacidade pequena. III (V): A Proveta é um recipiente graduado, geralmente em mL. IV (F): Existem outras unidades, como o microlitro, embora L e mL sejam as mais utilizadas."
     },
     {
@@ -214,7 +214,7 @@ const dadosDoQuizMatematica15 = [
             "c) V, F, F, V",
             "d) F, V, F, V"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "I (V): Gráficos de barras comparam quantidades diferentes. II (V): A legenda diferencia as cores ou símbolos. III (F): Na Terça-feira, a quantidade de 1 L (40 garrafas) é maior que a de 2 L (30 garrafas). IV (V): Pictórico e Barras são formas de representação."
     },
     {
@@ -228,7 +228,7 @@ const dadosDoQuizMatematica15 = [
             "c) V, V, V, V",
             "d) V, F, V, F"
         ],
-        respostaCorreta: "a) V, V, V, F",
+        respostaCorreta: 0,
         explicacao: "I (V): 1 Litro e meio = 1.500 mL. II (V): 1.500 mL ÷ 3 copos = 500 mL por copo. III (V): 500 mL é meio Litro. IV (F): Um copo pequeno de 30 mL não é adequado para medir a porção de 500 mL."
     },
     {
@@ -242,7 +242,7 @@ const dadosDoQuizMatematica15 = [
             "c) V, F, V, F",
             "d) V, V, F, V"
         ],
-        respostaCorreta: "a) V, V, F, F",
+        respostaCorreta: 0,
         explicacao: "I (V): 4 L = 4.000 mL. II (V): 4.000 mL ÷ 500 mL = 8 garrafas. III (F): 100 mL é menor que 300 mL. IV (F): Barris de suco são medidos em Litros, devido à grande capacidade (ex: 160 L)."
     },
     {
@@ -256,7 +256,7 @@ const dadosDoQuizMatematica15 = [
             "c) F, V, V, V",
             "d) F, F, V, F"
         ],
-        respostaCorreta: "a) F, V, F, V",
+        respostaCorreta: 0,
         explicacao: "I (F): Copo é uma unidade não padronizada. II (V): O uso de um copo, se a sua capacidade for desconhecida, resulta em uma estimativa. III (F): Copos e xícaras têm, geralmente, capacidades diferentes. IV (V): O mL é ideal para dosagens precisas e pequenas."
     },
     {
@@ -270,7 +270,7 @@ const dadosDoQuizMatematica15 = [
             "c) F, V, F, V",
             "d) V, F, F, V"
         ],
-        respostaCorreta: "b) V, F, V, V",
+        respostaCorreta: 1,
         explicacao: "I (V): Consumo (585 L) é menor que a metade da caixa (750 L). II (F): Sobra 1500 L - 585 L = 915 L. Sobrou menos de 1.000 L. III (V): Regar jardim (185 L) > Lavar roupa (150 L). IV (V): 1500 L ÷ 750 L = 2 dias."
     },
     {
@@ -284,7 +284,7 @@ const dadosDoQuizMatematica15 = [
             "c) F, V, V, F",
             "d) V, V, V, V"
         ],
-        respostaCorreta: "d) V, V, V, V",
+        respostaCorreta: 3,
         explicacao: "I (V): 10 copos é metade de 20 copos. II (V): Se 20 copos equivalem a 1 L, 10 copos equivalem a 500 mL (meio Litro). III (V): Refere-se à quantidade total. IV (V): 1 L (20 copos) é menos da metade de 3 L."
     },
 

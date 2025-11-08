@@ -1823,14 +1823,14 @@ button:disabled {
     display: grid;
     grid-template-columns: 1fr 1fr;  /* 2 colunas iguais */
     gap: 15px;
-    justify-items: stretch;  /* Botões ocupam toda a largura da coluna */
+    justify-items: center;  /* Centralizar botões */
 }
 
 .capitulo-card.cap-especial .modulos-container button {
-    min-width: 200px;  /* Botões mais largos */
+    min-width: 300px;  /* Botões 50% mais largos (200px -> 300px) */
     padding: 14px 24px;
     font-size: 0.95em;
-    width: 100%;  /* Ocupa toda a largura da célula do grid */
+    width: 150%;  /* Aumentar largura em 50% */
 }
 
 /* Layout 2x3 (2 colunas, 3 linhas) para Units 6 e 7 de Inglês */
