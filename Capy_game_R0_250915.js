@@ -180,9 +180,13 @@ const estruturaCapitulos = {
                 id: 'cap15_matematica',
                 numero: 15,
                 titulo: 'A capacidade para medir',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_15_Matematica.mp3',
+                questoes: 'dadosDoQuizMatematica15',
+                video: 'Cap_15_Matematica_Video.mp4',
+                mapaMental: 'Cap_15_Matematica_Mindmap.png',
+                geniusLessons: [],
+                geniusGames: [],
+                disponivel: true
             },
             {
                 id: 'cap16_matematica',
@@ -484,7 +488,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.setAttribute('data-id', capitulo.id);
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues' || capitulo.id === 'cap15_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -705,6 +709,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizMatematica14;
+            break;
+        case 'cap15_matematica':
+            if (typeof dadosDoQuizMatematica15 === 'undefined') {
+                alert('Erro: Questões de Matemática 15 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMatematica15;
             break;
         case 'cap06_geografia':
             if (typeof dadosDoQuizGeografia === 'undefined') {
