@@ -389,6 +389,16 @@ const estruturaCapitulos = {
                 mapaMental: 'Unit_07_Ingles_Mindmap.png',
                 questoes: 'dadosDoQuizIngles7',
                 disponivel: true
+            },
+            {
+                id: 'unit08_ingles',
+                numero: 8,
+                titulo: 'May, Homophones, Will',
+                audio: 'Unit_08_Ingles.mp3',
+                video: 'Unit_08_Ingles_Video.mp4',
+                mapaMental: 'Unit_08_Ingles_Mindmap.png',
+                questoes: 'dadosDoQuizInglesUnit8',
+                disponivel: true
             }
         ]
     },
@@ -490,7 +500,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.setAttribute('data-id', capitulo.id);
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'cap15_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues' || capitulo.id === 'cap15_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'cap15_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'unit08_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues' || capitulo.id === 'cap15_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -746,6 +756,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizIngles7;
+            break;
+        case 'unit08_ingles':
+            if (typeof dadosDoQuizInglesUnit8 === 'undefined') {
+                alert('Erro: Questões de Inglês Unit 8 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizInglesUnit8;
             break;
         case 'cap07_historia':
             if (typeof dadosDoQuizHistoriaCap7 === 'undefined') {
