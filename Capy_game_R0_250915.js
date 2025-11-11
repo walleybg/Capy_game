@@ -254,9 +254,11 @@ const estruturaCapitulos = {
                 id: 'cap15_ciencias',
                 numero: 15,
                 titulo: 'Características do solo',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                audio: 'Cap_15_Ciencias.mp3',
+                questoes: 'dadosDoQuizCiencias15',
+                video: 'Cap_15_Ciencias_Video.mp4',
+                mapaMental: 'Cap_15_Ciencias_Mindmap.png',
+                disponivel: true
             },
             {
                 id: 'cap16_ciencias',
@@ -488,7 +490,7 @@ function gerarListaCapitulos(capitulos) {
         capituloCard.setAttribute('data-id', capitulo.id);
         
         // Interface especial para capítulos com 4 módulos ou 3 módulos
-        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues' || capitulo.id === 'cap15_matematica') {
+        if (capitulo.id === 'cap12_ciencias' || capitulo.id === 'cap13_ciencias' || capitulo.id === 'cap14_ciencias' || capitulo.id === 'cap15_ciencias' || capitulo.id === 'unit06_ingles' || capitulo.id === 'unit07_ingles' || capitulo.id === 'cap07_historia' || capitulo.id === 'cap08_historia' || capitulo.id === 'cap07_geografia' || capitulo.id === 'cap08_geografia' || capitulo.id === 'cap12_portugues' || capitulo.id === 'cap13_portugues' || capitulo.id === 'cap12_matematica' || capitulo.id === 'cap13_matematica' || capitulo.id === 'cap14_portugues' || capitulo.id === 'cap14_matematica' || capitulo.id === 'cap15_portugues' || capitulo.id === 'cap15_matematica') {
             const prefixo = capitulo.id.includes('unit') ? 'Unit' : 'Cap.';
             capituloCard.innerHTML = `
                 <div class="capitulo-numero">${prefixo} ${capitulo.numero}</div>
@@ -681,6 +683,13 @@ function iniciarCapitulo(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizCiencias14;
+            break;
+        case 'cap15_ciencias':
+            if (typeof dadosDoQuizCiencias15 === 'undefined') {
+                alert('Erro: Questões de Ciências 15 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizCiencias15;
             break;
         case 'cap11_matematica':
             if (typeof dadosDoQuizMatematica11 === 'undefined') {
