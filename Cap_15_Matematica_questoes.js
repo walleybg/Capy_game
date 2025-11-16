@@ -366,3 +366,4 @@ const dadosDoQuizMatematica15 = [
     }
 ];
 
+// Gabarito verificado Q1-Q20 - Sun Nov 16 15:05:34 EST 2025
