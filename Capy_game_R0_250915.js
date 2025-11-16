@@ -881,6 +881,22 @@ function iniciarCapituloJogo2(capituloId) {
             }
             bancoDeQuestoesAtual = dadosDoQuizGeografia7Jogo2;
             break;
+        
+        case 'unit08_ingles':
+            if (typeof dadosDoQuizIngles08Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de Inglês Unit 8 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles08Jogo2;
+            break;
+        
+        case 'unit05_ingles':
+            if (typeof dadosDoQuizIngles05Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de Inglês Unit 5 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizIngles05Jogo2;
+            break;
 
         default:
             alert('Game 2 ainda não disponível para este capítulo!');
