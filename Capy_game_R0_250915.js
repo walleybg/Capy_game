@@ -184,7 +184,28 @@ const estruturaCapitulos = {
                         descricao: 'Entenda o algoritmo de divisão passo a passo'
                     }
                 ],
-                geniusGames: [],
+                geniusGames: [
+                    {
+                        titulo: 'Aprendendo a Divisão',
+                        url: 'https://wordwall.net/pt/resource/5747139/ideias-da-divis%C3%A3o/aprendendo-a-divis%C3%A3o',
+                        descricao: 'Jogo interativo sobre ideias da divisão'
+                    },
+                    {
+                        titulo: 'Jogo de Divisão',
+                        url: 'https://wordwall.net/pt/resource/15777418/jogo-de-divis%C3%A3o',
+                        descricao: 'Pratique divisão de forma divertida'
+                    },
+                    {
+                        titulo: 'Divisão',
+                        url: 'https://wordwall.net/pt/resource/10271811/divis%C3%A3o',
+                        descricao: 'Exercícios de divisão'
+                    },
+                    {
+                        titulo: 'Situações-Problema: Multiplicação e Divisão',
+                        url: 'https://wordwall.net/pt/resource/16497943/situa%C3%A7%C3%B5es-problemas-multiplica%C3%A7%C3%A3o-e-divis%C3%A3o/situa%C3%A7%C3%A3o',
+                        descricao: 'Resolva problemas envolvendo multiplicação e divisão'
+                    }
+                ],
                 disponivel: true
             },
             {
