@@ -172,7 +172,18 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizMatematica14',
                 video: 'Cap_14_Matematica_Video.mp4',
                 mapaMental: 'Cap_14_Matematica_Mindmap.png',
-                geniusLessons: [],
+                geniusLessons: [
+                    {
+                        titulo: 'Divisão com Números Naturais',
+                        videoId: 'lUwgX7XUg4w',
+                        descricao: 'Aprenda sobre divisão com números naturais'
+                    },
+                    {
+                        titulo: 'Algoritmo de Divisão',
+                        videoId: 'ociudK7Oovg',
+                        descricao: 'Entenda o algoritmo de divisão passo a passo'
+                    }
+                ],
                 geniusGames: [],
                 disponivel: true
             },
