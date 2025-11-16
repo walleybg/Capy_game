@@ -153,7 +153,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) V, F, V, V",
             "d) V, V, V, F"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "A, B e D são verbos regulares com conjugação correta (paddle canoes, explore). C é Falso, pois verbos terminados em 'e' (hike) levam apenas 'd' (hiked)."
     },
     {
@@ -167,7 +167,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) V, F, V, V",
             "d) V, V, V, V"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "A, B e D são conjugações corretas de verbos irregulares (see wildlife, make a campfire, tell spooky stories). C é Falso, pois o Simple Past de 'sing' é 'sang'."
     },
     {
@@ -181,7 +181,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) F, V, F, V",
             "d) V, V, F, F"
         ],
-        respostaCorreta: "a) V, V, V, F",
+        respostaCorreta: 0,
         explicacao: "A, B e C estão corretas no uso e conjugação de 'Must' e 'Has to' (para 3ª pessoa do singular) para obrigação. D é Falso, pois Gigi (She) exige 'has to', não 'have to'."
     },
     {
@@ -195,7 +195,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) F, V, F, V",
             "d) V, F, V, V"
         ],
-        respostaCorreta: "a) V, F, V, F",
+        respostaCorreta: 0,
         explicacao: "A e C estão corretas (conceder permissão e fazer um pedido educado). B é Falso, pois 'May' é incerteza (Possibility), e 'Will' é certeza. D é Falso, pois 'Can' é usado para Habilidade (Ability)."
     },
     {
@@ -209,7 +209,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) V, F, F, V",
             "d) F, V, V, V"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "A e D estão corretas (see the stars e set up the camp é a primeira atividade). B é Verdadeiro (wildlife são animais na natureza). C é Falso, pois eles dormem em sleeping bags (sacos de dormir)."
     },
 
@@ -225,7 +225,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) F, V, V, V",
             "d) V, F, F, F"
         ],
-        respostaCorreta: "a) V, F, V, V",
+        respostaCorreta: 0,
         explicacao: "A, C e D estão corretas (verbos no Present Simple com -s para 3ª pessoa do singular). B é Falso, pois Walley (He) deve ser 'goes' (go + es)."
     },
     {
@@ -239,7 +239,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) V, F, V, V",
             "d) V, V, V, V"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "As atividades noturnas incluem make a campfire, roast marshmallows, sing songs e tell spooky stories. C é Falso; eles só vão dormir quando get tired e it gets dark."
     },
     {
@@ -253,7 +253,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) F, V, V, V",
             "d) V, F, V, F"
         ],
-        respostaCorreta: "a) V, F, V, V",
+        respostaCorreta: 0,
         explicacao: "A, C e D são formas válidas de fazer um pedido ou pedir permissão. B é Falso, pois 'May' geralmente não é usado com 'you' para um pedido."
     },
     {
@@ -267,7 +267,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) V, F, F, V",
             "d) F, V, V, V"
         ],
-        respostaCorreta: "d) F, V, V, V",
+        respostaCorreta: 3,
         explicacao: "A é Falso, pois os modais (can, must, may) são seguidos pela forma base do verbo (run), não 'runs'. B, C e D estão corretas no uso dos modais Must, May e Have to."
     },
     {
@@ -281,7 +281,7 @@ const dadosDoQuizInglesUnit8 = [
             "c) V, F, V, V",
             "d) V, V, F, F"
         ],
-        respostaCorreta: "a) V, V, V, V",
+        respostaCorreta: 0,
         explicacao: "Fazer S'mores é o tópico de uma atividade de listening, e as atividades do acampamento incluem roast marshmallows (torrar marshmallows), o que confirma ser uma guloseima comum de acampamento."
     },
     // PARTE 3: QUESTÕES DE INTERPRETAÇÃO (21-30) - COM TEXTO FIXO
