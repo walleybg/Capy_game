@@ -398,6 +398,7 @@ const estruturaCapitulos = {
                 video: 'Unit_08_Ingles_Video.mp4',
                 mapaMental: 'Unit_08_Ingles_Mindmap.png',
                 questoes: 'dadosDoQuizInglesUnit8',
+                questoes2: 'dadosDoQuizIngles08Jogo2',
                 disponivel: true
             }
         ]
