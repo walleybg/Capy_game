@@ -430,3 +430,4 @@ const dadosDoQuizMatematica14 = [
         explicacao: "Este caso trabalha com divisão exata e a relação inversa entre divisão e multiplicação. A divisão 875 ÷ 25 = 35 é exata (resto 0), então não sobram chocolates. Para encontrar quantos chocolates são necessários para 36 caixas, usamos a multiplicação: 36 × 25 = 900."
     }
 ];
+// Gabarito verificado Q11-Q20 - Sun Nov 16 14:54:45 EST 2025
