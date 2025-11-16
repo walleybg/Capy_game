@@ -14,7 +14,7 @@ const dadosDoQuizMatematica14 = [
             "c) O Quociente representa quantos brigadeiros irão em cada caixa.",
             "d) O Resto da divisão sempre será igual ao Divisor."
         ],
-        respostaCorreta: "d) O Resto da divisão sempre será igual ao Divisor.",
+        respostaCorreta: 3,
         explicacao: "O Resto da divisão deve ser sempre MENOR que o Divisor, nunca igual a ele. Se o resto fosse igual ao divisor, significaria que ainda seria possível fazer mais uma divisão completa."
     },
     {
@@ -28,7 +28,7 @@ const dadosDoQuizMatematica14 = [
             "c) O Quociente é o resultado da divisão.",
             "d) O Resto é sempre maior que o Divisor."
         ],
-        respostaCorreta: "d) O Resto é sempre maior que o Divisor.",
+        respostaCorreta: 3,
         explicacao: "O Resto deve ser sempre MENOR que o Divisor. Esta é uma regra fundamental da divisão. Por exemplo, ao dividir 17 por 5, o quociente é 3 e o resto é 2 (que é menor que 5)."
     },
     {
@@ -42,7 +42,7 @@ const dadosDoQuizMatematica14 = [
             "c) 72 ÷ 8 = 9, portanto é uma divisão exata.",
             "d) Em uma divisão inexata, o Dividendo sempre é menor que o Divisor."
         ],
-        respostaCorreta: "d) Em uma divisão inexata, o Dividendo sempre é menor que o Divisor.",
+        respostaCorreta: 3,
         explicacao: "Em uma divisão, o Dividendo pode ser maior, menor ou igual ao Divisor. O que caracteriza uma divisão como inexata é ter resto diferente de zero, não o tamanho do Dividendo em relação ao Divisor."
     },
     {
@@ -56,7 +56,7 @@ const dadosDoQuizMatematica14 = [
             "c) Se 9 × 6 = 54, então 54 ÷ 9 = 6.",
             "d) Para verificar uma divisão, devemos dividir o Quociente pelo Divisor."
         ],
-        respostaCorreta: "d) Para verificar uma divisão, devemos dividir o Quociente pelo Divisor.",
+        respostaCorreta: 3,
         explicacao: "Para verificar uma divisão, devemos MULTIPLICAR o Quociente pelo Divisor. Se o resultado for igual ao Dividendo, a divisão está correta. Por exemplo: 56 ÷ 7 = 8, verificação: 8 × 7 = 56."
     },
     {
@@ -70,7 +70,7 @@ const dadosDoQuizMatematica14 = [
             "c) O resto parcial deve ser sempre menor que o Divisor.",
             "d) No algoritmo da divisão, sempre começamos dividindo as unidades."
         ],
-        respostaCorreta: "d) No algoritmo da divisão, sempre começamos dividindo as unidades.",
+        respostaCorreta: 3,
         explicacao: "No algoritmo da divisão, começamos dividindo pela MAIOR ORDEM (centenas, depois dezenas, depois unidades), não pelas unidades. Isso torna o cálculo mais organizado e eficiente."
     },
     {
@@ -84,7 +84,7 @@ const dadosDoQuizMatematica14 = [
             "c) Para calcular a quarta parte de 80, Lucas deve dividir 80 por 4.",
             "d) Para calcular o quádruplo de 80, Lucas deve dividir 80 por 4."
         ],
-        respostaCorreta: "d) Para calcular o quádruplo de 80, Lucas deve dividir 80 por 4.",
+        respostaCorreta: 3,
         explicacao: "Para calcular o quádruplo de um número, devemos MULTIPLICÁ-LO por 4, não dividi-lo. Dividir por 4 nos dá a quarta parte. Quádruplo de 80 = 80 × 4 = 320."
     },
     {
@@ -98,7 +98,7 @@ const dadosDoQuizMatematica14 = [
             "c) A multiplicação e a divisão são chamadas de operações inversas.",
             "d) O cálculo de 280 ÷ 40 pode ser resolvido usando a tabuada básica 28 ÷ 4, mas o resultado não é diretamente relacionado."
         ],
-        respostaCorreta: "d) O cálculo de 280 ÷ 40 pode ser resolvido usando a tabuada básica 28 ÷ 4, mas o resultado não é diretamente relacionado.",
+        respostaCorreta: 3,
         explicacao: "Na verdade, o resultado É diretamente relacionado! 280 ÷ 40 = 28 ÷ 4 = 7. Podemos simplificar divisões dividindo ambos os números (dividendo e divisor) pelo mesmo valor."
     },
     {
@@ -112,7 +112,7 @@ const dadosDoQuizMatematica14 = [
             "c) É um evento com certeza que Rosana irá retirar uma bola da cor azul, vermelha ou amarela.",
             "d) A bola vermelha tem mais chances de ser retirada do que a bola amarela."
         ],
-        respostaCorreta: "d) A bola vermelha tem mais chances de ser retirada do que a bola amarela.",
+        respostaCorreta: 3,
         explicacao: "A bola AMARELA tem mais chances de ser retirada, pois há 8 bolas amarelas contra apenas 5 vermelhas. Quanto maior a quantidade de um item, maior a probabilidade de ser sorteado."
     },
     {
@@ -126,7 +126,7 @@ const dadosDoQuizMatematica14 = [
             "c) O quíntuplo de um número é encontrado multiplicando o número por 5.",
             "d) A décima parte de um número é encontrada multiplicando o número por 10."
         ],
-        respostaCorreta: "d) A décima parte de um número é encontrada multiplicando o número por 10.",
+        respostaCorreta: 3,
         explicacao: "A décima parte de um número é encontrada DIVIDINDO o número por 10, não multiplicando. Multiplicar por 10 nos dá o décuplo do número. Décima parte de 60 = 60 ÷ 10 = 6."
     },
     {
@@ -140,7 +140,7 @@ const dadosDoQuizMatematica14 = [
             "c) A decomposição é uma técnica que facilita o cálculo mental da divisão.",
             "d) Se Jussara quiser calcular a terça parte de 97, ela deve decompor 97 = 90 + 7 e dividir, encontrando a resposta exata."
         ],
-        respostaCorreta: "d) Se Jussara quiser calcular a terça parte de 97, ela deve decompor 97 = 90 + 7 e dividir, encontrando a resposta exata.",
+        respostaCorreta: 3,
         explicacao: "Ao decompor 97 = 90 + 7 para dividir por 3, a parte 7 não é divisível por 3 sem resto (7 ÷ 3 = 2 resto 1), resultando em uma divisão INEXATA, não exata como afirma a opção."
     },
 
@@ -162,7 +162,7 @@ const dadosDoQuizMatematica14 = [
             "c) F F V V",
             "d) V F V F"
         ],
-        respostaCorreta: "a) F V V F",
+        respostaCorreta: 0,
         explicacao: "I. FALSO: 50 ÷ 8 = 6 resto 2, portanto é INEXATA. II. VERDADEIRO: Resto zero caracteriza divisão exata. III. VERDADEIRO: 30 ÷ 5 = 6 (resto 0). IV. FALSO: O Dividendo não é sempre menor que o Divisor."
     },
     {
@@ -182,7 +182,7 @@ const dadosDoQuizMatematica14 = [
             "c) F V V F",
             "d) V V F V"
         ],
-        respostaCorreta: "a) V V F F",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO: O maior resto possível é sempre o Divisor menos 1. II. VERDADEIRO: Se o resto é 1, a divisão é inexata. III. FALSO: O resto deve ser MENOR que o Divisor. IV. FALSO: Resto zero significa que o Dividendo É divisível."
     },
     {
@@ -202,7 +202,7 @@ const dadosDoQuizMatematica14 = [
             "c) V V V F",
             "d) F F V V"
         ],
-        respostaCorreta: "a) V F V V",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO: 65 ÷ 5 = 13. II. FALSO: 60 ÷ 5 = 12 resto 0, é divisão exata (a afirmação está correta, mas marcada como F no gabarito por erro). III. VERDADEIRO: 62 ÷ 5 = 12 R 2. IV. VERDADEIRO: Dividir por 5 é encontrar a quinta parte."
     },
     {
@@ -222,7 +222,7 @@ const dadosDoQuizMatematica14 = [
             "c) V V F V",
             "d) F F V V"
         ],
-        respostaCorreta: "a) V F V V",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO: 48 ÷ 8 calcula o número de caixas. II. FALSO: Quarta parte é divisão por 4, não por 8. III. VERDADEIRO: 8 ÷ 4 = 2. IV. VERDADEIRO: Multiplicação e divisão são operações inversas."
     },
     {
@@ -242,7 +242,7 @@ const dadosDoQuizMatematica14 = [
             "c) V F F V",
             "d) F V V F"
         ],
-        respostaCorreta: "a) V V V F",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO: Terça parte = dividir por 3. II. VERDADEIRO: Triplo = multiplicar por 3. III. VERDADEIRO: 12 ÷ 3 = 4. IV. FALSO: Multiplicar e dividir pelo mesmo número são operações INVERSAS, não iguais."
     },
     {
@@ -262,7 +262,7 @@ const dadosDoQuizMatematica14 = [
             "c) F V V F",
             "d) V V V F"
         ],
-        respostaCorreta: "b) V V F V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO: Décima parte = dividir por 10. II. VERDADEIRO: Dobro = multiplicar por 2. III. FALSO: Metade de 50 é 25, não 20. IV. VERDADEIRO: 90 ÷ 10 = 9."
     },
     {
@@ -282,7 +282,7 @@ const dadosDoQuizMatematica14 = [
             "c) V F V F",
             "d) F F V V"
         ],
-        respostaCorreta: "b) V V F V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO: 63 ÷ 10 = 6 R 3. II. VERDADEIRO: 6 é maior que 5. III. FALSO: 28 ÷ 5 = 5 R 3, o quociente é 5, que NÃO é menor que 5. IV. VERDADEIRO: A estimativa é uma estratégia importante."
     },
     {
@@ -302,7 +302,7 @@ const dadosDoQuizMatematica14 = [
             "c) F F V V",
             "d) V V F F"
         ],
-        respostaCorreta: "a) F V V F",
+        respostaCorreta: 0,
         explicacao: "I. FALSO: O DIVIDENDO é o número que será dividido, não o Quociente. II. VERDADEIRO: 39 = (4 × 9) + 3. III. VERDADEIRO: O Divisor determina o número de partes. IV. FALSO: O Dividendo pode ser menor que o Divisor."
     },
     {
@@ -322,7 +322,7 @@ const dadosDoQuizMatematica14 = [
             "c) F V F V",
             "d) V V F F"
         ],
-        respostaCorreta: "b) V V V F",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO: 20 ÷ 6 = 3 R 2. II. VERDADEIRO: Repartir igualmente é divisão. III. VERDADEIRO: 24 ÷ 6 = 4 (resto 0), faltam 4 balas. IV. FALSO: O quociente é 3, não 4."
     },
     {
@@ -342,7 +342,7 @@ const dadosDoQuizMatematica14 = [
             "c) V F V F",
             "d) F V V F"
         ],
-        respostaCorreta: "d) F V V F",
+        respostaCorreta: 3,
         explicacao: "I. FALSO: É POSSÍVEL sortear dois meninos. II. VERDADEIRO: É certeza que serão meninos ou meninas. III. VERDADEIRO: É possível sortear duas meninas. IV. FALSO: Há mesma quantidade (2 e 2), chances iguais."
     },
 
