@@ -7,6 +7,7 @@ const questoesSimuladoCap13Ciencias = [
     
     // Questão 1
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 1",
         pergunta: "Durante o dia, não conseguimos ver as estrelas no céu. Qual é a principal razão para isso?",
         opcoes: [
@@ -21,6 +22,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 2
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 2",
         pergunta: "Por que os pontos brilhantes que vemos no céu noturno (estrelas e planetas) parecem tão pequenos?",
         opcoes: [
@@ -35,6 +37,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 3
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 3",
         pergunta: "Qual é a estrela mais próxima da Terra?",
         opcoes: [
@@ -49,6 +52,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 4
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 4",
         pergunta: "A estrela Antares, mencionada no capítulo, tem qual característica em relação ao Sol?",
         opcoes: [
@@ -63,6 +67,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 5
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 5",
         pergunta: "Quantos planetas existem no Sistema Solar?",
         opcoes: [
@@ -77,6 +82,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 6
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 6",
         pergunta: "Qual é o maior planeta do Sistema Solar?",
         opcoes: [
@@ -91,6 +97,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 7
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 7",
         pergunta: "Qual é o menor planeta do Sistema Solar?",
         opcoes: [
@@ -105,6 +112,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 8
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 8",
         pergunta: "Alguns planetas são feitos de rochas, enquanto outros são feitos de gases. Qual dos planetas abaixo é feito principalmente de gases?",
         opcoes: [
@@ -119,6 +127,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 9
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 9",
         pergunta: "Quais planetas do Sistema Solar são visíveis a olho nu no céu?",
         opcoes: [
@@ -133,6 +142,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 10
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 10",
         pergunta: "Por que Urano e Netuno não podem ser vistos a olho nu no céu?",
         opcoes: [
@@ -147,6 +157,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 11
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 11",
         pergunta: "O planeta Mercúrio recebeu esse nome em homenagem a qual deus da mitologia romana?",
         opcoes: [
@@ -161,6 +172,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 12
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 12",
         pergunta: "O planeta Vênus foi nomeado em homenagem à deusa romana da beleza. Qual era o nome dessa deusa na mitologia grega?",
         opcoes: [
@@ -175,6 +187,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 13
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 13",
         pergunta: "Por que o planeta Marte tem esse nome?",
         opcoes: [
@@ -189,6 +202,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 14
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 14",
         pergunta: "Qual planeta é conhecido por ter o maior conjunto de anéis do Sistema Solar?",
         opcoes: [
@@ -203,6 +217,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 15
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 15",
         pergunta: "O que são constelações?",
         opcoes: [
@@ -217,6 +232,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 16
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 16",
         pergunta: "As Três Marias fazem parte de qual constelação?",
         opcoes: [
@@ -231,6 +247,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 17
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 17",
         pergunta: "Qual constelação é muito importante para localização no Brasil e forma uma cruz?",
         opcoes: [
@@ -245,6 +262,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 18
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 18",
         pergunta: "Por que as estrelas parecem se mover juntas no céu durante a noite?",
         opcoes: [
@@ -259,6 +277,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 19
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 19",
         pergunta: "Qual é a principal diferença entre estrelas e planetas em relação à luz?",
         opcoes: [
@@ -273,6 +292,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 20
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 20",
         pergunta: "Os gregos antigos chamavam os planetas de 'astros errantes'. Por quê?",
         opcoes: [
@@ -287,6 +307,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 21
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 21",
         pergunta: "Quando vemos um ponto brilhante no céu logo quando o Sol está se pondo ou logo antes dele nascer, provavelmente estamos vendo:",
         opcoes: [
@@ -301,6 +322,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 22
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 22",
         pergunta: "Por que vemos a Lua em diferentes formatos ao longo do mês?",
         opcoes: [
@@ -315,6 +337,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 23
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 23",
         pergunta: "Quantas fases principais a Lua possui?",
         opcoes: [
@@ -329,6 +352,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 24
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 24",
         pergunta: "Aproximadamente quanto tempo a Lua leva para completar um giro em torno da Terra?",
         opcoes: [
@@ -343,6 +367,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 25
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 25",
         pergunta: "Na fase de Lua Cheia, como vemos a Lua?",
         opcoes: [
@@ -359,6 +384,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 26
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 26",
         pergunta: "Em qual fase da Lua não conseguimos vê-la no céu?",
         opcoes: [
@@ -373,6 +399,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 27
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 27",
         pergunta: "Um estudante observou que um farol de carro aceso pode ser visto tanto de dia quanto de noite. Essa observação ajuda a explicar qual conceito astronômico?",
         opcoes: [
@@ -387,6 +414,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 28
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 28",
         pergunta: "Se você observar o céu durante vários dias e notar que um ponto brilhante se move de forma diferente das estrelas, você provavelmente está observando:",
         opcoes: [
@@ -401,6 +429,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 29
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 29",
         pergunta: "Qual planeta tem aproximadamente o mesmo tamanho da Terra?",
         opcoes: [
@@ -415,6 +444,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 30
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 30",
         pergunta: "Observe a seguinte afirmação: 'Quando meu colega se afasta de mim, ele parece ser menor'. Essa ideia explica por que:",
         opcoes: [
@@ -429,6 +459,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 31
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 31",
         pergunta: "Qual característica é comum a todos os planetas do Sistema Solar?",
         opcoes: [
@@ -443,6 +474,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 32
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 32",
         pergunta: "Por que o Sol parece muito maior do que as outras estrelas quando observado da Terra?",
         opcoes: [
@@ -457,6 +489,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 33
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 33",
         pergunta: "Qual planeta do Sistema Solar foi nomeado em homenagem ao deus romano do tempo?",
         opcoes: [
@@ -471,6 +504,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 34
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 34",
         pergunta: "Netuno foi nomeado em homenagem ao deus dos mares. Qual era o nome desse deus na mitologia grega?",
         opcoes: [
@@ -485,6 +519,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 35
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 35",
         pergunta: "Quantas estrelas formam a figura da cruz no Cruzeiro do Sul?",
         opcoes: [
@@ -499,6 +534,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 36
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 36",
         pergunta: "Durante a noite, você observa que algumas estrelas parecem 'caminhar' juntas no céu. Isso acontece porque:",
         opcoes: [
@@ -513,6 +549,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 37
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 37",
         pergunta: "Qual é a diferença fundamental entre um astro luminoso e um astro iluminado?",
         opcoes: [
@@ -527,6 +564,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 38
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 38",
         pergunta: "Em nosso Sistema Solar, quantos planetas se movem ao redor do Sol?",
         opcoes: [
@@ -541,6 +579,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 39
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 39",
         pergunta: "Por que a parte da Lua que não está iluminada pelo Sol não pode ser vista da Terra?",
         opcoes: [
@@ -555,6 +594,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 40
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 40",
         pergunta: "As fases da Lua dependem de qual fator principal?",
         opcoes: [
@@ -569,6 +609,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 41
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 41",
         pergunta: "Um estudante afirmou: 'A Lua sumiu do céu durante a Lua Nova'. Essa afirmação está:",
         opcoes: [
@@ -583,6 +624,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 42
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 42",
         pergunta: "Mercúrio e Vênus só podem ser vistos ao amanhecer ou ao anoitecer. Por quê?",
         opcoes: [
@@ -597,6 +639,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 43
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 43",
         pergunta: "Qual planeta é conhecido por sua superfície avermelhada?",
         opcoes: [
@@ -611,6 +654,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 44
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 44",
         pergunta: "Qual afirmação sobre os oceanos dos planetas está correta?",
         opcoes: [
@@ -625,6 +669,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 45
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 45",
         pergunta: "As civilizações antigas inventaram constelações e associavam histórias a elas. Isso demonstra que:",
         opcoes: [
@@ -639,6 +684,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 46
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 46",
         pergunta: "Urano foi nomeado em homenagem ao deus grego do Universo. Na mitologia romana, como esse deus era conhecido?",
         opcoes: [
@@ -653,6 +699,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 47
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 47",
         pergunta: "Qual é a ordem correta dos planetas do Sistema Solar, do mais próximo ao mais distante do Sol?",
         opcoes: [
@@ -667,6 +714,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 48
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 48",
         pergunta: "Se você observar o céu durante várias noites seguidas, no mesmo horário, verá que as estrelas parecem estar em posições ligeiramente diferentes. Isso ocorre porque:",
         opcoes: [
@@ -681,6 +729,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 49
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 49",
         pergunta: "Qual fase da Lua vem logo após a Lua Nova?",
         opcoes: [
@@ -695,6 +744,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 50
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 50",
         pergunta: "Por que os planetas são sempre muito menores que as estrelas ao redor das quais orbitam?",
         opcoes: [
@@ -713,6 +763,7 @@ const questoesSimuladoCap13Ciencias = [
     
     // Questão 51
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 51",
         pergunta: "Analise as afirmativas sobre os astros do céu noturno e marque a alternativa CORRETA:",
         opcoes: [
@@ -727,6 +778,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 52
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 52",
         pergunta: "Sobre o Sol, marque a afirmativa VERDADEIRA:",
         opcoes: [
@@ -741,6 +793,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 53
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 53",
         pergunta: "Sobre as estrelas, identifique a afirmação CORRETA:",
         opcoes: [
@@ -755,6 +808,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 54
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 54",
         pergunta: "Sobre o Sistema Solar, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -769,6 +823,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 55
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 55",
         pergunta: "Sobre os planetas do Sistema Solar, identifique a afirmativa CORRETA:",
         opcoes: [
@@ -783,6 +838,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 56
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 56",
         pergunta: "Sobre a visibilidade dos planetas, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -797,6 +853,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 57
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 57",
         pergunta: "Sobre Urano e Netuno, identifique a afirmação CORRETA:",
         opcoes: [
@@ -811,6 +868,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 58
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 58",
         pergunta: "Sobre os nomes dos planetas, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -825,6 +883,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 59
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 59",
         pergunta: "Sobre o planeta Júpiter, identifique a afirmação CORRETA:",
         opcoes: [
@@ -839,6 +898,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 60
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 60",
         pergunta: "Sobre Saturno, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -853,6 +913,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 61
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 61",
         pergunta: "Sobre as constelações, identifique a afirmação CORRETA:",
         opcoes: [
@@ -867,6 +928,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 62
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 62",
         pergunta: "Sobre a constelação de Órion, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -881,6 +943,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 63
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 63",
         pergunta: "Sobre o Cruzeiro do Sul, identifique a afirmação CORRETA:",
         opcoes: [
@@ -895,6 +958,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 64
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 64",
         pergunta: "Sobre o movimento aparente das estrelas, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -909,6 +973,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 65
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 65",
         pergunta: "Sobre a diferença entre estrelas e planetas, identifique a afirmação CORRETA:",
         opcoes: [
@@ -923,6 +988,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 66
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 66",
         pergunta: "Sobre o movimento dos planetas no céu, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -937,6 +1003,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 67
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 67",
         pergunta: "Sobre o planeta Vênus, identifique a afirmação CORRETA:",
         opcoes: [
@@ -951,6 +1018,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 68
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 68",
         pergunta: "Sobre a Lua, marque a alternativa VERDADEIRA:",
         opcoes: [
@@ -965,6 +1033,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 69
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 69",
         pergunta: "Sobre as fases da Lua, identifique a afirmação CORRETA:",
         opcoes: [
@@ -979,6 +1048,7 @@ const questoesSimuladoCap13Ciencias = [
 
     // Questão 70
     {
+        tipo: "multipla_escolha",
         titulo: "Questão 70",
         pergunta: "Sobre o ciclo lunar, marque a alternativa VERDADEIRA:",
         opcoes: [
