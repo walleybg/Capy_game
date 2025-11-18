@@ -14,7 +14,7 @@ const dadosDoQuizCiencias13 = [
             "c) O céu de dia está cheio de estrelas, mas não conseguimos vê-las devido à ofuscação causada pelo Sol.",
             "d) As estrelas só emitem luz à noite, por isso não estão no céu durante o dia."
         ],
-        respostaCorreta: "d) As estrelas só emitem luz à noite, por isso não estão no céu durante o dia.",
+        respostaCorreta: 3,
         explicacao: "As estrelas estão sempre no céu, tanto de dia quanto de noite, e emitem luz constantemente. Durante o dia, não conseguimos vê-las porque a luz intensa do Sol ofusca o brilho mais fraco das estrelas distantes."
     },
     {
@@ -28,7 +28,7 @@ const dadosDoQuizCiencias13 = [
             "c) O Sol é menos luminoso que as outras estrelas.",
             "d) O Sol é o único astro que emite luz própria."
         ],
-        respostaCorreta: "b) O Sol está muito mais próximo da Terra do que qualquer outra estrela.",
+        respostaCorreta: 1,
         explicacao: "O Sol parece maior e mais brilhante porque está muito mais próximo da Terra (cerca de 150 milhões de km) do que outras estrelas, que estão a anos-luz de distância. A proximidade faz com que ele pareça muito maior e mais luminoso, mesmo que existam estrelas muito maiores no universo."
     },
     {
@@ -42,7 +42,7 @@ const dadosDoQuizCiencias13 = [
             "c) Oito planetas giram em torno do Sol.",
             "d) Os planetas emitem luz própria, diferentemente das estrelas."
         ],
-        respostaCorreta: "d) Os planetas emitem luz própria, diferentemente das estrelas.",
+        respostaCorreta: 3,
         explicacao: "Os planetas NÃO emitem luz própria. Eles refletem a luz do Sol, por isso conseguimos vê-los no céu noturno. As estrelas, sim, emitem luz própria através de reações nucleares em seu interior."
     },
     {
@@ -56,7 +56,7 @@ const dadosDoQuizCiencias13 = [
             "c) Objetos celestes, como os planetas, mudam de tamanho quando estão mais distantes.",
             "d) A luz solar faz com que os planetas pareçam menores."
         ],
-        respostaCorreta: "a) A distância faz com que objetos grandes, como estrelas e planetas, pareçam pequenos.",
+        respostaCorreta: 0,
         explicacao: "A distância afeta nossa percepção de tamanho. Objetos grandes parecem pequenos quando estão muito longe. Por isso, estrelas e planetas gigantescos aparecem como pequenos pontos brilhantes no céu noturno."
     },
     {
@@ -70,7 +70,7 @@ const dadosDoQuizCiencias13 = [
             "c) As fases da Lua dependem da luz que ela recebe do Sol.",
             "d) A Lua encolhe ou desaparece completamente durante a fase de Lua Nova, pois não está mais no céu."
         ],
-        respostaCorreta: "d) A Lua encolhe ou desaparece completamente durante a fase de Lua Nova, pois não está mais no céu.",
+        respostaCorreta: 3,
         explicacao: "A Lua não encolhe nem desaparece do céu. Ela está sempre inteira e redonda. Durante a Lua Nova, a face iluminada está voltada para o lado oposto da Terra, por isso não conseguimos vê-la, mas ela continua no céu."
     },
     {
@@ -84,7 +84,7 @@ const dadosDoQuizCiencias13 = [
             "c) Júpiter foi nomeado em homenagem ao deus romano mais poderoso.",
             "d) Júpiter, por ser um planeta gasoso, recebeu o nome do deus romano do mar."
         ],
-        respostaCorreta: "c) Júpiter foi nomeado em homenagem ao deus romano mais poderoso.",
+        respostaCorreta: 2,
         explicacao: "Júpiter recebeu o nome do deus romano mais poderoso (equivalente a Zeus na mitologia grega), o rei dos deuses. O planeta foi assim nomeado por ser o maior do Sistema Solar, refletindo o poder e grandeza do deus."
     },
     {
@@ -98,7 +98,7 @@ const dadosDoQuizCiencias13 = [
             "c) Os planetas se movem em torno de uma estrela.",
             "d) Os pontos brilhantes que vemos no céu noturno são apenas estrelas."
         ],
-        respostaCorreta: "d) Os pontos brilhantes que vemos no céu noturno são apenas estrelas.",
+        respostaCorreta: 3,
         explicacao: "Os pontos brilhantes no céu noturno incluem tanto estrelas quanto planetas. Alguns dos pontos mais brilhantes que vemos são planetas como Vênus, Júpiter, Marte e Saturno, que refletem a luz do Sol."
     },
     {
@@ -112,7 +112,7 @@ const dadosDoQuizCiencias13 = [
             "c) Urano e Netuno.",
             "d) Saturno e Terra."
         ],
-        respostaCorreta: "c) Urano e Netuno.",
+        respostaCorreta: 2,
         explicacao: "Urano e Netuno são os planetas mais distantes do Sol e da Terra, por isso são muito difíceis de ver a olho nu. Eles só foram descobertos com o uso de telescópios. Os outros cinco planetas (Mercúrio, Vênus, Marte, Júpiter e Saturno) são visíveis a olho nu."
     },
     {
@@ -126,7 +126,7 @@ const dadosDoQuizCiencias13 = [
             "c) Vênus e Mercúrio são os planetas mais próximos do Sol.",
             "d) O Sol é menor que a Terra."
         ],
-        respostaCorreta: "d) O Sol é menor que a Terra.",
+        respostaCorreta: 3,
         explicacao: "O Sol é muito maior que a Terra. O Sol tem um diâmetro de aproximadamente 1,4 milhão de km, enquanto a Terra tem cerca de 12.700 km. Caberiam mais de 1 milhão de Terras dentro do Sol!"
     },
     {
@@ -140,7 +140,7 @@ const dadosDoQuizCiencias13 = [
             "c) Elas são chamadas de 'astros errantes'.",
             "d) Elas são apenas pontos de luz que não possuem utilidade."
         ],
-        respostaCorreta: "b) Elas são chamadas de 'constelações', sendo as Três Marias parte da constelação de Órion.",
+        respostaCorreta: 1,
         explicacao: "As constelações são agrupamentos de estrelas que formam figuras imaginárias no céu. As Três Marias (também chamadas de Cinturão de Órion) fazem parte da constelação de Órion, uma das mais conhecidas. Antigamente, as constelações eram usadas para orientação e navegação."
     },
 
@@ -162,7 +162,7 @@ const dadosDoQuizCiencias13 = [
             "c) V, F, V, V",
             "d) F, F, V, V"
         ],
-        respostaCorreta: "b) F, V, V, V",
+        respostaCorreta: 1,
         explicacao: "I. FALSO - As estrelas estão sempre no céu, tanto de dia quanto de noite. II. VERDADEIRO - A luz intensa do Sol ofusca o brilho das estrelas. III. VERDADEIRO - À noite, sem a luz do Sol, conseguimos ver as estrelas. IV. VERDADEIRO - As estrelas emitem luz própria através de reações nucleares."
     },
     {
@@ -182,7 +182,7 @@ const dadosDoQuizCiencias13 = [
             "c) F, V, F, F",
             "d) F, F, V, F"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO - O Sol é uma estrela de tamanho médio. II. VERDADEIRO - Estrelas produzem luz própria, planetas refletem a luz das estrelas. III. FALSO - Planetas e estrelas são completamente diferentes. IV. VERDADEIRO - Os oito planetas do Sistema Solar orbitam o Sol."
     },
     {
@@ -202,7 +202,7 @@ const dadosDoQuizCiencias13 = [
             "c) F, V, V, V",
             "d) V, F, F, V"
         ],
-        respostaCorreta: "b) V, V, V, V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO - Planetas rochosos (Mercúrio, Vênus, Terra, Marte) e gasosos (Júpiter, Saturno, Urano, Netuno). II. VERDADEIRO - Mercúrio é o menor planeta. III. VERDADEIRO - Esses cinco planetas podem ser vistos a olho nu. IV. VERDADEIRO - Todos os planetas têm formato esférico devido à gravidade."
     },
     {
@@ -222,7 +222,7 @@ const dadosDoQuizCiencias13 = [
             "c) V, V, F, V",
             "d) V, V, V, F"
         ],
-        respostaCorreta: "c) V, V, F, V",
+        respostaCorreta: 2,
         explicacao: "I. VERDADEIRO - Essas são as quatro fases principais da Lua. II. VERDADEIRO - O ciclo lunar dura aproximadamente 28 dias. III. FALSO - A Lua não some, apenas sua face iluminada está voltada para o lado oposto. IV. VERDADEIRO - A Lua é sempre esférica, vemos apenas a parte iluminada pelo Sol."
     },
     {
@@ -242,7 +242,7 @@ const dadosDoQuizCiencias13 = [
             "c) F, V, V, F",
             "d) F, F, V, V"
         ],
-        respostaCorreta: "b) V, V, V, V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO - A proximidade faz o Sol parecer maior. II. VERDADEIRO - Existem estrelas supergigantes muito maiores que o Sol. III. VERDADEIRO - A distância afeta nossa percepção de tamanho. IV. VERDADEIRO - Para nós na Terra, a luz do Sol é muito mais intensa que a de todas as outras estrelas juntas."
     },
     {
@@ -262,7 +262,7 @@ const dadosDoQuizCiencias13 = [
             "c) F, V, V, F",
             "d) F, F, V, V"
         ],
-        respostaCorreta: "a) V, V, V, V",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO - Constelações são agrupamentos de estrelas. II. VERDADEIRO - Eram usadas para navegação e orientação. III. VERDADEIRO - As Três Marias fazem parte de Órion. IV. VERDADEIRO - Civilizações antigas criaram histórias mitológicas sobre as constelações."
     },
     {
@@ -282,7 +282,7 @@ const dadosDoQuizCiencias13 = [
             "c) F, V, V, V",
             "d) V, F, F, V"
         ],
-        respostaCorreta: "b) V, V, V, V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO - Existem estrelas supergigantes muito maiores que o Sol. II. VERDADEIRO - Mercúrio é o mais próximo, seguido por Vênus. III. VERDADEIRO - Júpiter e Saturno estão mais distantes. IV. VERDADEIRO - Urano e Netuno são invisíveis a olho nu devido à grande distância."
     },
     {
@@ -302,7 +302,7 @@ const dadosDoQuizCiencias13 = [
             "c) V, F, V, F",
             "d) F, F, V, V"
         ],
-        respostaCorreta: "b) V, V, V, V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO - Vênus é a deusa da beleza. II. VERDADEIRO - Marte, o deus da guerra, tem cor avermelhada. III. VERDADEIRO - Netuno é o deus do mar. IV. VERDADEIRO - Mercúrio, mensageiro dos deuses, é o planeta mais rápido em sua órbita."
     },
     {
@@ -322,7 +322,7 @@ const dadosDoQuizCiencias13 = [
             "c) F, V, V, F",
             "d) V, F, V, V"
         ],
-        respostaCorreta: "b) V, V, V, V",
+        respostaCorreta: 1,
         explicacao: "I. VERDADEIRO - Vênus e Mercúrio são visíveis próximos ao horizonte no amanhecer ou anoitecer. II. VERDADEIRO - Mercúrio é o menor planeta. III. VERDADEIRO - Vênus tem tamanho similar à Terra. IV. VERDADEIRO - Marte, Júpiter e Saturno estão mais distantes do Sol."
     },
     {
@@ -342,7 +342,7 @@ const dadosDoQuizCiencias13 = [
             "c) V, F, F, V",
             "d) F, V, F, F"
         ],
-        respostaCorreta: "a) V, V, F, V",
+        respostaCorreta: 0,
         explicacao: "I. VERDADEIRO - Júpiter é o maior planeta. II. VERDADEIRO - Saturno é o segundo maior. III. FALSO - São planetas gasosos, não rochosos, embora possam ter núcleo sólido. IV. VERDADEIRO - O Sol é muito maior que qualquer planeta do Sistema Solar."
     },
 
