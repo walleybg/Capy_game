@@ -218,6 +218,7 @@ const estruturaCapitulos = {
                 mapaMental: 'Cap_15_Matematica_Mindmap.png',
                 geniusLessons: [],
                 geniusGames: [],
+                simulado: 'dadosDoSimuladoMatematica15',
                 disponivel: true
             },
             {
