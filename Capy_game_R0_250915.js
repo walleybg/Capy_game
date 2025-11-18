@@ -551,10 +551,10 @@ function gerarListaCapitulos(capitulos) {
                             <button class="btn-principal" onclick="iniciarCapitulo('${capitulo.id}')">🎮 4. Game</button>
                             ${capitulo.questoes2 ? `<button class="btn-principal" onclick="iniciarCapituloJogo2('${capitulo.id}')">🎮 5. Game 2</button>` : ''}
                             ${capitulo.questoes3 ? `<button class="btn-principal" onclick="iniciarCapituloJogo3('${capitulo.id}')">🎮 6. Game 3</button>` : ''}
-                            ${capitulo.provaSimulada ? `<button class="btn-simulado" onclick="iniciarProvaSimulada('${capitulo.id}')">📝 5. Prova Simulada</button>` : ''}
                             ${capitulo.irregularVerbsList ? `<button class="btn-modulo" onclick="abrirIrregularVerbsList('${capitulo.id}')">📋 ${capitulo.questoes2 ? '6' : '5'}. Irregular Verbs List</button>` : ''}
-                            ${capitulo.geniusLessons ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.irregularVerbsList && capitulo.questoes2 ? '7' : capitulo.irregularVerbsList || capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
-                            ${capitulo.geniusGames ? `<button class="btn-genius" onclick="abrirGeniusGames('${capitulo.id}')">🎮 ${capitulo.geniusLessons && capitulo.irregularVerbsList && capitulo.questoes2 ? '8' : capitulo.geniusLessons || capitulo.irregularVerbsList || capitulo.questoes2 ? '7' : '6'}. Genius Games!</button>` : ''}
+                            ${capitulo.geniusLessons && capitulo.geniusLessons.length > 0 ? `<button class="btn-genius" onclick="abrirGeniusLessons('${capitulo.id}')">🎓 ${capitulo.irregularVerbsList && capitulo.questoes2 ? '7' : capitulo.irregularVerbsList || capitulo.questoes2 ? '6' : '5'}. Genius Lessons!</button>` : ''}
+                            ${capitulo.geniusGames && capitulo.geniusGames.length > 0 ? `<button class="btn-genius" onclick="abrirGeniusGames('${capitulo.id}')">🎮 ${capitulo.geniusLessons && capitulo.irregularVerbsList && capitulo.questoes2 ? '8' : capitulo.geniusLessons || capitulo.irregularVerbsList || capitulo.questoes2 ? '7' : '6'}. Genius Games!</button>` : ''}
+                            ${capitulo.simulado ? `<button class="btn-simulado" onclick="iniciarProvaSimulada('${capitulo.id}')">📝 7. Prova Simulada</button>` : ''}
                         </div>
                     ` : `
                         <span class="status-indisponivel">🔒 Em breve</span>
@@ -2938,7 +2938,7 @@ function iniciarProvaSimulada(capituloId) {
         return;
     }
     
-    if (!capitulo.provaSimulada) {
+    if (!capitulo.simulado && !capitulo.provaSimulada) {
         alert('Prova Simulada ainda não está disponível para este capítulo!');
         return;
     }
@@ -2954,6 +2954,14 @@ function iniciarProvaSimulada(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoSimuladoMatematica13;
+            break;
+        
+        case 'cap15_matematica':
+            if (typeof dadosDoSimuladoMatematica15 === 'undefined') {
+                alert('Erro: Questões da Prova Simulada não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoSimuladoMatematica15;
             break;
         
         default:
