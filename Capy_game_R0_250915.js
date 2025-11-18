@@ -271,6 +271,7 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizCiencias13',
                 video: 'Cap_13_Ciencias_Video.mp4',
                 mapaMental: 'Cap_13_Ciencias_Mindmap.png',
+                simulado: 'questoesSimuladoCap13Ciencias',
                 disponivel: true
             },
             {
@@ -2962,6 +2963,14 @@ function iniciarProvaSimulada(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoSimuladoMatematica15;
+            break;
+        
+        case 'cap13_ciencias':
+            if (typeof questoesSimuladoCap13Ciencias === 'undefined') {
+                alert('Erro: Questões da Prova Simulada de Ciências 13 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = questoesSimuladoCap13Ciencias;
             break;
         
         default:
