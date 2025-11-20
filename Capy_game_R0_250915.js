@@ -450,7 +450,6 @@ const estruturaCapitulos = {
                 video: 'Unit4_Division_Video.mp4',
                 mapaMental: 'Unit4_Division_Mindmap.png',
                 questoes: 'dadosDoQuizMath04Jogo2',
-                questoes2: 'dadosDoQuizMath04Jogo2',
                 geniusLessons: [],
                 geniusGames: [],
                 disponivel: true
