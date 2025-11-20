@@ -1708,7 +1708,7 @@ function verificarResposta() {
     let estaCorreta = false;
     
     if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
-        estaCorreta = parseInt(resposta) === questao.respostaCorreta;
+        estaCorreta = questao.opcoes[parseInt(resposta)] === questao.respostaCorreta;
     } else if (questao.tipo === 'verdadeiro_falso') {
         estaCorreta = resposta === questao.respostaCorreta;
     } else if (questao.tipo === 'aberta' || questao.tipo === 'opiniao' || questao.tipo === 'pergunta_aberta') {
@@ -1768,8 +1768,8 @@ function mostrarFeedback(estaCorreta, questao) {
         } else {
             let respostaCorretaTexto = '';
             if (questao.tipo === 'multipla_escolha' || questao.tipo === 'interpretacao') {
-                // Usar o índice diretamente
-                respostaCorretaTexto = questao.opcoes[questao.respostaCorreta];
+                // Usar o texto completo da resposta correta
+                respostaCorretaTexto = questao.respostaCorreta;
             } else {
                 respostaCorretaTexto = questao.respostaCorreta;
             }
@@ -1801,7 +1801,7 @@ function aplicarFeedbackVisual(estaCorreta, questao) {
                 if (input && input.value === valorSelecionado) {
                     // Caixa selecionada
                     caixa.classList.add(estaCorreta ? 'feedback-correto-caixa' : 'feedback-incorreto-caixa');
-                } else if (index === questao.respostaCorreta && !estaCorreta) {
+                } else if (questao.opcoes[index] === questao.respostaCorreta && !estaCorreta) {
                     // Mostrar resposta correta se errou
                     caixa.classList.add('feedback-correto-caixa');
                 }
