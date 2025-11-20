@@ -446,10 +446,11 @@ const estruturaCapitulos = {
                 id: 'unit04_math',
                 numero: 4,
                 titulo: 'Unit 4 - Division',
-                audio: 'Unit_04_Math_podcast.mp3',
+                audio: 'Unit4_Division_Podcast.mp3',
                 questoes: 'dadosDoQuizMathUnit04',
-                video: 'Unit_04_Math_Video.mp4',
-                mapaMental: 'Unit_04_Math_Mindmap.png',
+                questoes2: 'dadosDoQuizMath04Jogo2',
+                video: 'Unit4_Division_Video.mp4',
+                mapaMental: 'Unit4_Division_Mindmap.png',
                 geniusLessons: [],
                 geniusGames: [],
                 disponivel: true
@@ -934,6 +935,14 @@ function iniciarCapituloJogo2(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoQuizIngles05Jogo2;
+            break;
+        
+        case 'unit04_math':
+            if (typeof dadosDoQuizMath04Jogo2 === 'undefined') {
+                alert('Erro: Questões do Game 2 de Math Unit 4 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMath04Jogo2;
             break;
 
         default:
