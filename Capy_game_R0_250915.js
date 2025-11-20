@@ -447,10 +447,10 @@ const estruturaCapitulos = {
                 numero: 4,
                 titulo: 'Unit 4 - Division',
                 audio: 'Unit4_Division_Podcast.mp3',
-                questoes: 'dadosDoQuizMathUnit04',
-                questoes2: 'dadosDoQuizMath04Jogo2',
                 video: 'Unit4_Division_Video.mp4',
                 mapaMental: 'Unit4_Division_Mindmap.png',
+                questoes: 'dadosDoQuizMath04Jogo2',
+                questoes2: 'dadosDoQuizMath04Jogo2',
                 geniusLessons: [],
                 geniusGames: [],
                 disponivel: true
