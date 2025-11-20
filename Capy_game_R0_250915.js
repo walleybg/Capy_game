@@ -443,12 +443,16 @@ const estruturaCapitulos = {
         descricao: 'Math Challenges',
         capitulos: [
             {
-                id: 'cap01_math',
-                numero: 1,
-                titulo: 'Coming Soon',
-                audio: "Cap_12_Ciencias_podcast.mp3",
-                questoes: "dadosDoQuizCiencias12",
-                disponivel: false
+                id: 'unit04_math',
+                numero: 4,
+                titulo: 'Unit 4 - Division',
+                audio: 'Unit_04_Math_podcast.mp3',
+                questoes: 'dadosDoQuizMathUnit04',
+                video: 'Unit_04_Math_Video.mp4',
+                mapaMental: 'Unit_04_Math_Mindmap.png',
+                geniusLessons: [],
+                geniusGames: [],
+                disponivel: true
             }
         ]
     }
