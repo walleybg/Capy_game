@@ -372,6 +372,20 @@ const estruturaCapitulos = {
                 questoes: "dadosDoQuizGeografiaCap8",
                 video: "Cap_08_Geografia_Video.mp4",
                 mapaMental: "Cap_08_Geografia_Mindmap.png",
+                geniusLessons: [
+                    {
+                        titulo: 'A Vegetação e o Clima',
+                        videoId: 'fU709f57WUw',
+                        descricao: 'Entenda a relação entre vegetação e clima'
+                    },
+                    {
+                        titulo: 'Biomas Brasileiros',
+                        videoId: 'mF_vnD9yB0Q',
+                        descricao: 'Conheça os principais biomas do Brasil'
+                    }
+                ],
+                geniusGames: [],
+                simulado: 'dadosDoSimuladoGeografia8',
                 disponivel: true
             }
         ]
@@ -2990,6 +3004,14 @@ function iniciarProvaSimulada(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = questoesSimuladoCap13Ciencias;
+            break;
+        
+        case 'cap08_geografia':
+            if (typeof dadosDoSimuladoGeografia8 === 'undefined') {
+                alert('Erro: Questões da Prova Simulada de Geografia 8 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoSimuladoGeografia8;
             break;
         
         default:
