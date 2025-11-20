@@ -831,6 +831,13 @@ function iniciarCapitulo(capituloId) {
             }
             bancoDeQuestoesAtual = dadosDoQuizGeografiaCap8;
             break;
+        case 'unit04_math':
+            if (typeof dadosDoQuizMath04Jogo2 === 'undefined') {
+                alert('Erro: Questões de Math Unit 4 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoQuizMath04Jogo2;
+            break;
 
         default:
             alert('Questões ainda não disponíveis para este capítulo!');
