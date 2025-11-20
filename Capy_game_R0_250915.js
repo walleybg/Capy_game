@@ -1465,9 +1465,7 @@ function mostrarQuestaoMultiplaEscolha(questao) {
         div.className = 'opcao-resposta opcao-multipla-escolha';
         div.innerHTML = `
             <input type="radio" id="opcao${index}" name="resposta" value="${index}" style="display: none;">
-            <label for="opcao${index}" class="opcao-caixa">
-                <strong>${letras[index]}</strong> ${opcao}
-            </label>
+            <label for="opcao${index}" class="opcao-caixa">${opcao}</label>
         `;
         opcoesRespostaDiv.appendChild(div);
     });
