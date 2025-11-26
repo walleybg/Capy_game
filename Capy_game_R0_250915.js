@@ -78,6 +78,7 @@ const estruturaCapitulos = {
                 questoes: 'dadosDoQuizPortugues15',
                 video: 'Cap_15_Portugues_Video.mp4',
                 mapaMental: 'Cap_15_Portugues_Mindmap.png',
+                simulado: 'dadosDoSimuladoPortugues15',
                 disponivel: true
             },
             {
@@ -3010,6 +3011,14 @@ function iniciarProvaSimulada(capituloId) {
                 return;
             }
             bancoDeQuestoesAtual = dadosDoSimuladoGeografia8;
+            break;
+        
+        case 'cap15_portugues':
+            if (typeof dadosDoSimuladoPortugues15 === 'undefined') {
+                alert('Erro: Questões da Prova Simulada de Português 15 não carregadas!');
+                return;
+            }
+            bancoDeQuestoesAtual = dadosDoSimuladoPortugues15;
             break;
         
         default:
